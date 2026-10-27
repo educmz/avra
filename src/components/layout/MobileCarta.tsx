@@ -16,8 +16,8 @@ const cartaItems = [
     href: "/carta",
   },
   {
-    label: "EVENTOS",
-    href: "/eventos",
+    label: "MÁQUINAS",
+    href: "/maquinas",
   },
   {
     label: "NOSOTROS",
