@@ -18,14 +18,14 @@ export function Navbar({ className }: { className?: string }) {
             href={item.href}
             aria-current={active ? "page" : undefined}
             className={cn(
-              "relative inline-flex min-h-10 shrink-0 items-center justify-center rounded-none px-3 text-[13px] font-semibold tracking-[-.01em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] xl:px-4 xl:text-sm",
+              "relative inline-flex min-h-10 shrink-0 items-center justify-center rounded-none px-3 text-[13px] font-medium tracking-[-.01em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B6D79B] xl:px-4 xl:text-sm",
               active
                 ? "text-white"
                 : "text-white/75 hover:text-white"
             )}
           >
             {item.label}
-            {active && <span aria-hidden="true" className="absolute bottom-0 left-3 right-3 h-[2px] rounded-full bg-[#FF8A00]" />}
+            {active && <span aria-hidden="true" className="absolute bottom-0 left-3 right-3 h-[2px] rounded-full bg-[#B6D79B]" />}
           </Link>
         );
       })}
