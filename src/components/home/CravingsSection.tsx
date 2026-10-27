@@ -8,22 +8,22 @@ import { HomeHeading } from "./HomeHeading";
 
 const visuals: Record<CartaCategoryId, { background: string; image: string; alt: string }> = {
   smoothies: {
-    background: "#DCEEF2",
+    background: "#DDEBE1",
     image: "/images/carta/naranja-fresa.webp",
     alt: "Naranja Fresa de Avra",
   },
   "tes-helados": {
-    background: "#F6E9B8",
+    background: "#E8EDCC",
     image: "/images/carta/jamaica.webp",
     alt: "Té helado Jamaica de Avra",
   },
   "bebidas-calientes": {
-    background: "#F5D6C2",
+    background: "#F0DFCE",
     image: "/images/carta/chocolate-caliente.webp",
     alt: "Chocolate Caliente de Avra",
   },
   frappes: {
-    background: "#E6E1F0",
+    background: "#DFEBE9",
     image: "/images/carta/mocaccino.webp",
     alt: "Frappé Mocaccino de Avra",
   },
@@ -51,7 +51,7 @@ const visuals: Record<CartaCategoryId, { background: string; image: string; alt:
 
 export function CravingsSection() {
   return (
-    <section aria-labelledby="cravings-title" className="bg-background pb-12 sm:pb-16 lg:pb-20">
+    <section aria-labelledby="cravings-title" className="bg-[#F5F5DC] py-16 sm:py-20 lg:py-24">
       <Container>
         <HomeHeading id="cravings-title" eyebrow="A tu gusto">
           Elige opciones para tu día
@@ -66,10 +66,10 @@ export function CravingsSection() {
                 <Link
                   key={category.id}
                   href={`/carta#carta-${category.id}`}
-                  className="group flex aspect-[4/5] min-w-0 flex-col items-center overflow-hidden rounded-lg px-3 pb-4 pt-5 text-[#302E2A] transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none sm:px-4 sm:pb-5 sm:pt-6"
+                  className="group flex aspect-[4/5] min-w-0 flex-col items-center overflow-hidden rounded-[24px] border border-[#24572E]/10 shadow-[0_2px_12px_rgba(0,0,0,.06)] px-3 pb-4 pt-5 text-[#203F2A] transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none sm:px-4 sm:pb-5 sm:pt-6"
                   style={{ backgroundColor: visual.background }}
                 >
-                  <h3 className="relative z-10 flex min-h-[2.3em] items-center justify-center text-center font-heading text-[clamp(1.35rem,2.1vw,2rem)] uppercase leading-[1.12]">
+                  <h3 className="relative z-10 flex min-h-[2.3em] items-center justify-center text-center font-sans text-[clamp(1.15rem,2vw,1.75rem)] font-bold leading-[1.12]">
                     {category.name}
                   </h3>
                   <div className="relative mt-3 flex min-h-0 w-full flex-1 items-center justify-center">
@@ -88,12 +88,12 @@ export function CravingsSection() {
             })}
           </div>
 
-          <Link href="/maquinas" className="group flex min-h-[360px] flex-col overflow-hidden rounded-lg bg-[#DFEACF] text-[#302E2A] transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none sm:min-h-[420px] lg:min-h-0">
+          <Link href="/maquinas" className="group flex min-h-[360px] flex-col overflow-hidden rounded-[24px] border border-[#24572E]/10 bg-[#DCECBF] text-[#302E2A] transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none sm:min-h-[420px] lg:min-h-0">
             <div className="relative min-h-[260px] flex-1 overflow-hidden">
               <Image src="/images/home/vending-machine/avra-vending-machine.png" alt="Máquina expendedora Avra" fill sizes="(min-width: 1024px) 25vw, 100vw" className="object-contain object-center" />
             </div>
             <div className="flex items-center justify-center px-6 py-8 text-center lg:py-10">
-              <h3 className="font-heading text-4xl uppercase leading-none sm:text-5xl">Máquinas saludables</h3>
+              <h3 className="font-sans text-3xl font-bold leading-none sm:text-5xl">Máquinas saludables</h3>
             </div>
           </Link>
         </div>
