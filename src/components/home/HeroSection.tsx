@@ -1,40 +1,271 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, Leaf } from "lucide-react";
-import { Container } from "@/components/ui/Container";
+﻿"use client";
+
+import { getImageProps } from "next/image";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+
+const slides = [
+  { id: "products", desktop: "/images/home/banners/home-products-desktop.webp", mobile: "/images/home/banners/home-products-mobile.webp", alt: "Hecho para disfrutar: antojos, bebidas y momentos para compartir" },
+  { id: "drinks", desktop: "/images/home/banners/home-drinks-desktop.webp", mobile: "/images/home/banners/home-drinks-mobile.webp", alt: "Bebidas Avra para disfrutar en cada momento" },
+] as const;
 
 export function HeroSection() {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+
+    const interval = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+    }, 6000);
+
+    return () => window.clearInterval(interval);
+    // Depender de `activeSlide` reinicia el temporizador cada vez que la
+    // diapositiva cambia (también por flechas o indicadores), para que
+    // siempre pase cada 6s completos y no se acelere tras interactuar.
+  }, [paused, activeSlide]);
+
+  function changeSlide(direction: number) {
+    setActiveSlide(
+      (current) =>
+        (current + direction + slides.length) % slides.length,
+    );
+  }
+
   return (
-    <section aria-labelledby="home-hero-title" className="relative isolate overflow-hidden bg-[#D9EB31] pb-12 pt-[112px] sm:pb-16 sm:pt-[130px] lg:pb-20 lg:pt-[148px]">
-      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 size-[420px] rounded-full bg-[#8CD5EE]/45 blur-3xl" />
-      <Container className="relative grid max-w-[1280px] items-center gap-10 lg:grid-cols-[.93fr_1.07fr] lg:gap-14">
-        <div className="relative z-10">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#FFF8F1] px-4 py-2 text-xs font-bold uppercase tracking-[.13em] text-[#173E3A]">
-            <Leaf size={15} aria-hidden="true" /> Fresco, rico y a tu manera
+    <section
+      aria-label="Carrusel principal"
+      aria-roledescription="carrusel"
+      className="
+        w-full
+        bg-background
+        pt-[88px]
+        pb-6
+        sm:pt-24
+        lg:pt-28
+        lg:pb-12
+      "
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          setPaused(false);
+        }
+      }}
+      onKeyDown={(event) => {
+        if (
+          event.key === "ArrowLeft" ||
+          event.key === "ArrowRight"
+        ) {
+          event.preventDefault();
+
+          changeSlide(
+            event.key === "ArrowLeft" ? -1 : 1,
+          );
+        }
+      }}
+    >
+      <div
+        data-home-hero
+        className="
+          group
+          relative
+          aspect-[1122/1402]
+          md:aspect-auto
+          md:h-[clamp(280px,34.6vw,650px)]
+          w-full
+          overflow-hidden
+        "
+      >
+        {/* SLIDES */}
+        {slides.map((slide, index) => {
+          const isActive = index === activeSlide;
+          const shared = {
+            alt: slide.alt,
+            fill: true,
+            sizes: "100vw",
+            loading: index === 0 ? "eager" as const : "lazy" as const,
+            fetchPriority: index === 0 ? "high" as const : "auto" as const,
+            className: "object-cover object-center",
+          };
+          const { props: desktop } = getImageProps({ ...shared, src: slide.desktop });
+          const { props: mobile } = getImageProps({ ...shared, src: slide.mobile });
+
+          return (
+            <div
+              key={slide.id}
+              role="group"
+              aria-roledescription="diapositiva"
+              aria-label={`${index + 1} de ${slides.length}`}
+              aria-hidden={!isActive}
+              className={`
+                absolute
+                inset-0
+                overflow-hidden
+                transition-opacity
+                duration-700
+                ease-out
+                motion-reduce:transition-none
+                ${
+                  isActive
+                    ? "opacity-100"
+                    : "pointer-events-none opacity-0"
+                }
+              `}
+            >
+              <picture>
+                <source media="(min-width: 768px)" srcSet={desktop.srcSet} sizes={desktop.sizes} />
+                <img {...mobile} alt={slide.alt} />
+              </picture>
+            </div>
+          );
+        })}
+
+        {/* FLECHA IZQUIERDA */}
+        <button
+          type="button"
+          onClick={() => changeSlide(-1)}
+          aria-label="Diapositiva anterior"
+          className="
+            absolute
+            left-4
+            top-1/2
+            z-30
+            grid
+            size-11
+            -translate-y-1/2
+            place-items-center
+            rounded-full
+            bg-white/85
+            text-[#302E2A]
+            backdrop-blur-sm
+            transition-all
+            duration-200
+            hover:scale-105
+            hover:bg-white
+            focus-visible:outline-none
+            focus-visible:ring-2
+            focus-visible:ring-white
+            lg:left-7
+            lg:size-12
+            lg:opacity-0
+            lg:group-hover:opacity-100
+            lg:group-focus-within:opacity-100
+          "
+        >
+          <ArrowLeft
+            size={18}
+            strokeWidth={1.8}
+            aria-hidden="true"
+          />
+        </button>
+
+        {/* FLECHA DERECHA */}
+        <button
+          type="button"
+          onClick={() => changeSlide(1)}
+          aria-label="Siguiente diapositiva"
+          className="
+            absolute
+            right-4
+            top-1/2
+            z-30
+            grid
+            size-11
+            -translate-y-1/2
+            place-items-center
+            rounded-full
+            bg-white/85
+            text-[#302E2A]
+            backdrop-blur-sm
+            transition-all
+            duration-200
+            hover:scale-105
+            hover:bg-white
+            focus-visible:outline-none
+            focus-visible:ring-2
+            focus-visible:ring-white
+            lg:right-7
+            lg:size-12
+            lg:opacity-0
+            lg:group-hover:opacity-100
+            lg:group-focus-within:opacity-100
+          "
+        >
+          <ArrowRight
+            size={18}
+            strokeWidth={1.8}
+            aria-hidden="true"
+          />
+        </button>
+
+        {/* INDICADORES */}
+        <div
+          className="
+            absolute
+            bottom-5
+            left-1/2
+            z-30
+            -translate-x-1/2
+            sm:bottom-6
+            lg:bottom-7
+          "
+        >
+          <div
+            className="
+              flex
+              items-center
+              gap-2.5
+              rounded-full
+              bg-black/15
+              px-6
+              py-2
+              backdrop-blur-md
+            "
+            aria-label="Elegir diapositiva"
+          >
+            {slides.map((slide, index) => {
+              const isActive = index === activeSlide;
+
+              return (
+                <button
+                  key={slide.id}
+                  type="button"
+                  onClick={() => setActiveSlide(index)}
+                  aria-label={`Ir a la diapositiva ${index + 1}`}
+                  aria-current={
+                    isActive ? "true" : undefined
+                  }
+                  className="
+                    grid
+                    size-5
+                    place-items-center
+                    rounded-full
+                    focus-visible:outline-none
+                  "
+                >
+                  <span
+                    aria-hidden="true"
+                    className={`
+                      block
+                      rounded-full
+                      transition-all
+                      duration-300
+                      ${
+                        isActive
+                          ? "size-2 bg-white"
+                          : "size-1.5 bg-white/55 hover:bg-white/80"
+                      }
+                    `}
+                  />
+                </button>
+              );
+            })}
           </div>
-          <h1 id="home-hero-title" className="max-w-[670px] font-sans text-[clamp(3.3rem,6.25vw,6.3rem)] font-black leading-[.93] tracking-[-.065em] text-[#1E3431]">
-            Comer rico.<br /><span className="text-[#147F73]">Sentirte bien.</span>
-          </h1>
-          <p className="mt-7 max-w-[48ch] text-base leading-[1.7] text-[#2D4945] sm:text-lg">
-            Lo fresco se disfruta más. Descubre nuestras opciones para tu día y las máquinas saludables Avra, siempre cerca.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/carta" className="inline-flex min-h-12 items-center gap-3 rounded-full bg-[#173E3A] px-7 py-3 text-sm font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-[#10564F] motion-reduce:transform-none">
-              Explora nuestra carta <ArrowRight size={18} aria-hidden="true" />
-            </Link>
-            <Link href="/maquinas" className="inline-flex min-h-12 items-center gap-3 rounded-full border-2 border-[#173E3A] px-6 py-3 text-sm font-bold text-[#173E3A] transition-colors hover:bg-[#D8EAC4]">
-              Conoce las máquinas
-            </Link>
-          </div>
-          <p className="mt-8 text-sm font-semibold tracking-wide text-[#236D62]">SABOR • FRESCURA • BIENESTAR</p>
         </div>
-        <div className="relative">
-          <div className="relative aspect-[5/4] overflow-hidden rounded-[32px_100px_32px_100px] bg-[#8CD5EE] shadow-[0_24px_60px_-40px_rgba(22,65,30,.35)] sm:aspect-[6/5] lg:aspect-[4/5]">
-            <Image src="/images/home/banners/home-drinks-desktop.webp" alt="Bebidas Avra frescas para disfrutar durante el día" fill priority sizes="(min-width: 1024px) 49vw, 100vw" className="object-cover" />
-          </div>
-          <div className="absolute -bottom-4 -left-3 rounded-[20px] bg-[#FFF8F1] px-5 py-4 text-sm font-bold text-[#1E3431] shadow-[0_8px_24px_rgba(25,59,31,.13)] sm:-left-8">Lo bueno está más cerca.</div>
-        </div>
-      </Container>
+      </div>
     </section>
   );
 }
