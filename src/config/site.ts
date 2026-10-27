@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Avra",
   description:
-    "Avra ofrece opciones de alimentación saludable, bebidas y máquinas expendedoras saludables para acompañar el día a día de forma práctica.",
+    "Avra ofrece comida, jugos y bebidas, soluciones con máquinas expendedoras saludables y soluciones con máquinas expendedoras, pensadas para disfrutar de forma práctica y natural.",
   url: "https://avra.pe",
   email: "",
   phone: "",
