@@ -19,7 +19,7 @@ const lifestyleImages = [
   {
     id: "home-lifestyle-kids-events",
     image: "/images/home/lifestyle/home-lifestyle-kids-events.webp",
-    alt: "Personas disfrutando productos Avra",
+    alt: "Niños disfrutando productos durante un evento",
   },
 ] as const;
 
@@ -27,14 +27,14 @@ export function HealthyProductsSection() {
   return (
     <section
       aria-labelledby="lifestyle-title"
-      className="bg-[#FFF8F1] py-16 sm:py-20 lg:py-24"
+      className={styles.section}
     >
       <Container>
         <HomeHeading
           id="lifestyle-title"
-          eyebrow="Vive Avra"
+          eyebrow="para sentirte bien"
         >
-          Momentos que se disfrutan
+          Rico, fresco y a tu manera
         </HomeHeading>
 
         <div className={styles.lifestyle}>
@@ -56,7 +56,7 @@ export function HealthyProductsSection() {
         <div className="mt-7 flex justify-end">
           <Link
             href="/carta"
-            className="group inline-flex items-center gap-3 rounded-full bg-[#173E3A] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#10564F]"
+            className="group inline-flex items-center gap-3 rounded-full bg-[#302E2A] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#FF8A00]"
           >
             Explora nuestra carta
 
