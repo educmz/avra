@@ -63,7 +63,7 @@ export function Footer() {
             </Link>
 
             <Link
-              href="/eventos"
+              href="/maquinas"
               className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#FF6A00] md:self-center"
             >
               Eventos
