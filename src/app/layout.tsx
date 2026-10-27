@@ -3,6 +3,7 @@ import {
   Caveat,
   League_Spartan,
   Manrope,
+  Outfit,
   Pacifico,
 } from "next/font/google";
 
@@ -15,6 +16,12 @@ import "./globals.css";
 const interfaceFont = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
+  display: "swap",
+});
+
+const headerFont = Outfit({
+  subsets: ["latin"],
+  variable: "--font-header",
   display: "swap",
 });
 
@@ -86,7 +93,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`h-full antialiased ${interfaceFont.variable} ${headingFont.variable} ${accentFont.variable} ${cartaFont.variable} ${scriptFont.variable}`}
+      className={`h-full antialiased ${interfaceFont.variable} ${headerFont.variable} ${headingFont.variable} ${accentFont.variable} ${cartaFont.variable} ${scriptFont.variable}`}
     >
       <body className="flex min-h-full flex-col">
         <Header />
