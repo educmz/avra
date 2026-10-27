@@ -3,14 +3,14 @@
 @import "../styles/utilities.css";
 
 :root {
-  --background: #F5F5DC;
-  --foreground: #203F2A;
-  --primary: #228B22;
-  --secondary: #8B4513;
-  --accent: #87CEEB;
-  --surface: #EAF1DF;
-  --surface-strong: #DCE8CF;
-  --hero: #DDECCB;
+  --background: #FFF8F1;
+  --foreground: #252525;
+  --primary: #21C7AA;
+  --secondary: #D9EB31;
+  --accent: #8CD5EE;
+  --surface: #FCE1E5;
+  --surface-strong: #E2F3EF;
+  --hero: #D9EB31;
 }
 
 @theme inline {
