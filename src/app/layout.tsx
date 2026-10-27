@@ -6,7 +6,6 @@ import {
   Pacifico,
 } from "next/font/google";
 
-import { Preloader } from "@/components/animations/Preloader";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { siteConfig } from "@/config/site";
@@ -90,7 +89,6 @@ export default function RootLayout({
       className={`h-full antialiased ${interfaceFont.variable} ${headingFont.variable} ${accentFont.variable} ${cartaFont.variable} ${scriptFont.variable}`}
     >
       <body className="flex min-h-full flex-col">
-        <Preloader />
         <Header />
 
         <main className="flex-1">
