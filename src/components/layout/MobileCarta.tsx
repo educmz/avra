@@ -63,7 +63,7 @@ export function MobileCarta({
   if (!isOpen) return null;
 
   return (
-    <div id="mobile-navigation" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-[#202A22] text-white">
+    <div id="mobile-navigation" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-[#20502D] text-white">
       <div className="flex min-h-full flex-col px-6 pb-[max(24px,env(safe-area-inset-bottom))] pt-[max(20px,env(safe-area-inset-top))] sm:px-8">
         {/* HEADER */}
         <div className="flex items-center justify-between">
@@ -109,7 +109,7 @@ export function MobileCarta({
                       aria-current={isActive ? "page" : undefined}
                       className={`group flex min-h-14 items-center justify-between gap-5 rounded-xl px-5 py-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] motion-reduce:transition-none ${
                         isActive
-                          ? "bg-[#FF8A00] text-[#21190F] hover:bg-[#FFA31E] active:bg-[#F5A328]"
+                          ? "bg-[#DCECBF] text-[#203F2A] hover:bg-[#C8E1AB] active:bg-[#BAD79A]"
                           : "text-white hover:bg-white/10 active:bg-white/15"
                       }`}
                     >
