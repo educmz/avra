@@ -58,53 +58,51 @@ export default function MachinesPage() {
           </div>
         </Container>
       </section>
-      <section aria-labelledby="avra-vending-title" className="bg-[#F4F0E8] py-16 sm:py-20">
+      <section aria-labelledby="avra-vending-title" className="bg-[#F4F0E8] py-14 sm:py-20">
         <Container>
-          <div className="mb-10 max-w-3xl">
-            <p className="mb-3 text-sm font-bold uppercase tracking-[.18em] text-[#C76D00]">Nuestro equipo</p>
-            <h2 id="avra-vending-title" className="font-heading text-4xl uppercase leading-tight text-[#302E2A] sm:text-5xl">Conoce el vending Avra</h2>
-            <p className="mt-4 text-base leading-7 text-[#302E2A]/75">Una propuesta práctica para acercar opciones de alimentación a más espacios.</p>
+          <div className="mb-9 max-w-3xl">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[.18em] text-[#C76D00]">Conoce los equipos</p>
+            <h2 id="avra-vending-title" className="font-heading text-4xl uppercase leading-tight text-[#302E2A] sm:text-5xl">Vending más cerca de ti</h2>
+            <p className="mt-4 text-base leading-7 text-[#302E2A]/75">Dos formatos de máquinas expendedoras para conocer cómo funciona el autoservicio. El equipo Nuna se muestra como referencia.</p>
           </div>
-          <div className="grid items-center gap-8 rounded-[2rem] bg-[#E5EBD8] p-5 sm:p-8 lg:grid-cols-[.85fr_1.15fr] lg:p-12">
-            <div>
-              <h3 className="font-heading text-3xl uppercase text-[#302E2A] sm:text-4xl">Avra, más cerca de ti</h3>
-              <p className="mt-4 max-w-md text-base leading-7 text-[#302E2A]/80">Una solución de autoservicio pensada para sumar practicidad a tu rutina.</p>
-            </div>
-            <div className="flex min-h-[380px] items-center justify-center overflow-hidden rounded-2xl bg-white/50 p-4 sm:min-h-[500px]">
-              <img src="/images/vending/avra-equipo.jpg" alt="Máquina Avra de color naranja" loading="lazy" className="max-h-[620px] w-full object-contain" />
-            </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:gap-8">
+            <figure className="flex min-w-0 flex-col items-center rounded-[1.75rem] bg-[#E5EBD8] px-5 py-7 sm:px-7">
+              <div className="flex h-[290px] w-full items-center justify-center sm:h-[330px] lg:h-[370px]">
+                <img src="/images/vending/avra-equipo.jpg" alt="Máquina expendedora Avra naranja" loading="lazy" className="h-full w-full object-contain" />
+              </div>
+              <figcaption className="mt-5 font-heading text-xl uppercase text-[#302E2A]">Equipo Avra</figcaption>
+            </figure>
+            <figure className="flex min-w-0 flex-col items-center rounded-[1.75rem] bg-[#E5EBD8] px-5 py-7 sm:px-7">
+              <div className="flex h-[290px] w-full items-center justify-center sm:h-[330px] lg:h-[370px]">
+                <img src="/images/vending/nuna-equipo.jpg" alt="Máquina expendedora Nuna con productos" loading="lazy" className="h-full w-full object-contain" />
+              </div>
+              <figcaption className="mt-5 font-heading text-xl uppercase text-[#302E2A]">Equipo Nuna · Referencia</figcaption>
+            </figure>
           </div>
         </Container>
       </section>
-      <section aria-labelledby="vending-demostracion-title" className="bg-background py-16 sm:py-20">
+      <section aria-labelledby="vending-demostracion-title" className="overflow-hidden bg-background py-14 sm:py-20">
         <Container>
-          <div className="mb-9 max-w-3xl">
+          <div className="mx-auto mb-9 max-w-2xl text-center">
             <p className="mb-3 text-sm font-bold uppercase tracking-[.18em] text-[#C76D00]">Explora el formato</p>
             <h2 id="vending-demostracion-title" className="font-heading text-4xl uppercase leading-tight text-[#302E2A] sm:text-5xl">Vending en acción</h2>
-            <p className="mt-4 text-base leading-7 text-[#302E2A]/75">Ejemplo visual de un equipo de vending de otra marca (Nuna). Se muestra únicamente como referencia del formato.</p>
+            <p className="mt-4 text-base leading-7 text-[#302E2A]/75">Mira cómo funciona una máquina de autoservicio en este ejemplo de Nuna.</p>
           </div>
-          <div className="grid items-start gap-6 md:grid-cols-2 lg:gap-8">
-            <div className="flex min-w-0 items-center justify-center">
-              <video
-                controls
-                playsInline
-                preload="metadata"
-                poster="/images/vending/nuna-equipo.jpg"
-                aria-label="Demostración de máquina vending Nuna"
-                className="block h-auto max-h-[420px] w-auto max-w-full rounded-2xl bg-transparent object-contain sm:max-h-[500px] lg:max-h-[560px]"
-              >
-                <source src="/videos/vending/nuna-demostracion.mp4" type="video/mp4" />
-                Tu navegador no permite reproducir este video.
-              </video>
-            </div>
-            <div className="flex min-w-0 items-center justify-center">
-              <img
-                src="/images/vending/nuna-equipo.jpg"
-                alt="Máquina de vending Nuna con productos en exhibición"
-                loading="lazy"
-                className="block h-auto max-h-[420px] w-auto max-w-full rounded-2xl object-contain sm:max-h-[500px] lg:max-h-[560px]"
-              />
-            </div>
+          <div className="relative mx-auto flex max-w-4xl items-center justify-center py-3 sm:py-6">
+            <div aria-hidden="true" className="pointer-events-none absolute left-[3%] top-[12%] h-28 w-28 rounded-full border-[18px] border-[#E5EBD8] opacity-90 sm:left-[10%] sm:h-44 sm:w-44 sm:border-[25px]" />
+            <div aria-hidden="true" className="pointer-events-none absolute bottom-[10%] right-[4%] h-24 w-24 rotate-12 rounded-[2rem] bg-[#F3CC8F]/55 sm:right-[12%] sm:h-40 sm:w-40" />
+            <div aria-hidden="true" className="pointer-events-none absolute left-[12%] bottom-[18%] hidden h-16 w-16 rounded-full bg-[#C3D5A5]/70 md:block" />
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              poster="/images/vending/nuna-equipo.jpg"
+              aria-label="Demostración de máquina vending Nuna"
+              className="relative z-10 block max-h-[380px] w-auto max-w-[min(100%,240px)] rounded-2xl object-contain shadow-[0_16px_42px_rgba(48,46,42,0.14)] sm:max-h-[440px] sm:max-w-[280px]"
+            >
+              <source src="/videos/vending/nuna-demostracion.mp4" type="video/mp4" />
+              Tu navegador no permite reproducir este video.
+            </video>
           </div>
         </Container>
       </section>
