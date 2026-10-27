@@ -16,7 +16,7 @@ const cartaItems = [
     href: "/carta",
   },
   {
-    label: "MÁQUINAS",
+    label: "VENDING SALUDABLE",
     href: "/maquinas",
   },
   {
