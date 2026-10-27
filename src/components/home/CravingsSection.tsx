@@ -2,78 +2,74 @@
 import Link from "next/link";
 
 import { cartaCategories } from "@/data/carta/categories";
-import { ArrowUpRight } from "lucide-react";
 import type { CartaCategoryId } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { HomeHeading } from "./HomeHeading";
 
 const visuals: Record<CartaCategoryId, { background: string; image: string; alt: string }> = {
   smoothies: {
-    background: "#BDEDE3",
+    background: "#DCEEF2",
     image: "/images/carta/naranja-fresa.webp",
     alt: "Naranja Fresa de Avra",
   },
   "tes-helados": {
-    background: "#EAF0AA",
+    background: "#F6E9B8",
     image: "/images/carta/jamaica.webp",
     alt: "Té helado Jamaica de Avra",
   },
   "bebidas-calientes": {
-    background: "#FCE1E5",
+    background: "#F5D6C2",
     image: "/images/carta/chocolate-caliente.webp",
     alt: "Chocolate Caliente de Avra",
   },
   frappes: {
-    background: "#C7EAF7",
+    background: "#E6E1F0",
     image: "/images/carta/mocaccino.webp",
     alt: "Frappé Mocaccino de Avra",
   },
   waffles: {
-    background: "#F3EBA6",
+    background: "#F6E9B8",
     image: "/images/carta/waffle.webp",
     alt: "Waffle de Avra",
   },
   sandwiches: {
-    background: "#D9EBB8",
+    background: "#DFEACF",
     image: "/images/carta/mixto.png",
     alt: "Sándwich Mixto Ninfit de Avra",
   },
   tostones: {
-    background: "#F9DBD5",
+    background: "#F5D6C2",
     image: "/images/carta/toston-benedictino.webp",
     alt: "Tostón Benedictino de Avra",
   },
   pizzas: {
-    background: "#CEEDF4",
+    background: "#DCEEF2",
     image: "/images/carta/pizza-hawaiana.webp",
     alt: "Pizza Hawaiana de Avra",
   },
 };
 
 export function CravingsSection() {
-  const featured = cartaCategories.filter((category) => ["smoothies", "tes-helados", "sandwiches", "tostones"].includes(category.id));
-
   return (
-    <section aria-labelledby="cravings-title" className="bg-[#FFF8F1] py-16 sm:py-20 lg:py-24">
+    <section aria-labelledby="cravings-title" className="bg-background pb-12 sm:pb-16 lg:pb-20">
       <Container>
-        <HomeHeading id="cravings-title" eyebrow="Encuentra tu favorito">
-          Sabores que alegran tu día
+        <HomeHeading id="cravings-title" eyebrow="A tu gusto">
+          ¿Qué se te antoja?
         </HomeHeading>
 
-        <p className="mb-8 max-w-[60ch] text-base leading-7 text-[#4D5D5B]">Desde bebidas refrescantes hasta opciones para acompañar tu rutina. Mira lo que tenemos preparado.</p>
-        <div className="grid gap-5">
-          <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
-            {featured.map((category) => {
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] lg:gap-6">
+          <div className="grid grid-cols-2 gap-3 sm:gap-5 xl:grid-cols-4">
+            {[...cartaCategories].sort((a, b) => a.order - b.order).map((category) => {
               const visual = visuals[category.id];
 
               return (
                 <Link
                   key={category.id}
                   href={`/carta#carta-${category.id}`}
-                  className="group flex aspect-[4/5] sm:aspect-[3/4] min-w-0 flex-col items-center overflow-hidden rounded-[24px] border border-[#24572E]/10 shadow-[0_2px_12px_rgba(0,0,0,.06)] px-3 pb-4 pt-5 text-[#243532] transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(18,62,28,.12)] motion-reduce:transform-none sm:px-4 sm:pb-5 sm:pt-6"
+                  className="group flex aspect-[4/5] min-w-0 flex-col items-center overflow-hidden rounded-lg px-3 pb-4 pt-5 text-[#302E2A] transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none sm:px-4 sm:pb-5 sm:pt-6"
                   style={{ backgroundColor: visual.background }}
                 >
-                  <h3 className="relative z-10 flex min-h-[2.3em] items-center justify-center text-center font-sans text-[clamp(1.15rem,2vw,1.75rem)] font-bold leading-[1.12]">
+                  <h3 className="relative z-10 flex min-h-[2.3em] items-center justify-center text-center font-heading text-[clamp(1.35rem,2.1vw,2rem)] uppercase leading-[1.12]">
                     {category.name}
                   </h3>
                   <div className="relative mt-3 flex min-h-0 w-full flex-1 items-center justify-center">
@@ -92,8 +88,15 @@ export function CravingsSection() {
             })}
           </div>
 
+          <Link href="/maquinas" className="group flex min-h-[360px] flex-col overflow-hidden rounded-lg bg-[#E5EBD8] text-[#302E2A] transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none sm:min-h-[420px] lg:min-h-0">
+            <div className="relative min-h-[260px] flex-1 overflow-hidden">
+              <Image src="/images/home/vending-machine/avra-vending-machine.png" alt="Máquina expendedora Avra" fill sizes="(min-width: 1024px) 25vw, 100vw" className="object-contain object-center" />
+            </div>
+            <div className="flex items-center justify-center px-6 py-8 text-center lg:py-10">
+              <h3 className="font-heading text-4xl uppercase leading-none sm:text-5xl">Máquinas</h3>
+            </div>
+          </Link>
         </div>
-        <div className="mt-8 flex justify-center"><Link href="/carta" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#173E3A] px-7 py-3 text-sm font-bold text-white transition-colors hover:bg-[#10564F]">Ver toda la carta <ArrowUpRight size={18} aria-hidden="true" /></Link></div>
       </Container>
     </section>
   );
