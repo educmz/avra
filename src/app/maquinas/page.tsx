@@ -83,20 +83,28 @@ export default function MachinesPage() {
             <h2 id="vending-demostracion-title" className="font-heading text-4xl uppercase leading-tight text-[#302E2A] sm:text-5xl">Vending en acción</h2>
             <p className="mt-4 text-base leading-7 text-[#302E2A]/75">Ejemplo visual de un equipo de vending de otra marca (Nuna). Se muestra únicamente como referencia del formato.</p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
-            <div className="overflow-hidden rounded-[1.75rem] bg-[#302E2A] p-3 sm:p-5">
-              <video controls playsInline preload="metadata" poster="/images/vending/nuna-equipo.jpg" aria-label="Video de referencia de máquina vending Nuna" className="aspect-[9/16] max-h-[700px] w-full rounded-xl bg-black object-contain">
+          <div className="grid items-start gap-6 md:grid-cols-2 lg:gap-8">
+            <div className="flex min-w-0 items-center justify-center">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster="/images/vending/nuna-equipo.jpg"
+                aria-label="Demostración de máquina vending Nuna"
+                className="block h-auto max-h-[420px] w-auto max-w-full rounded-2xl bg-transparent object-contain sm:max-h-[500px] lg:max-h-[560px]"
+              >
                 <source src="/videos/vending/nuna-demostracion.mp4" type="video/mp4" />
                 Tu navegador no permite reproducir este video.
               </video>
-              <p className="mt-3 text-center text-sm font-medium text-white/80">Video de referencia · Nuna</p>
             </div>
-            <figure className="flex flex-col overflow-hidden rounded-[1.75rem] bg-[#E5EBD8] p-3 sm:p-5">
-              <div className="flex min-h-[350px] flex-1 items-center justify-center rounded-xl bg-white/50 p-3">
-                <img src="/images/vending/nuna-equipo.jpg" alt="Máquina de vending Nuna con productos en exhibición" loading="lazy" className="max-h-[700px] w-full object-contain" />
-              </div>
-              <figcaption className="mt-3 text-center text-sm font-medium text-[#302E2A]/75">Imagen de referencia · Nuna</figcaption>
-            </figure>
+            <div className="flex min-w-0 items-center justify-center">
+              <img
+                src="/images/vending/nuna-equipo.jpg"
+                alt="Máquina de vending Nuna con productos en exhibición"
+                loading="lazy"
+                className="block h-auto max-h-[420px] w-auto max-w-full rounded-2xl object-contain sm:max-h-[500px] lg:max-h-[560px]"
+              />
+            </div>
           </div>
         </Container>
       </section>
