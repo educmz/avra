@@ -10,7 +10,10 @@ export function Navbar({ className }: { className?: string }) {
   const pathname = usePathname();
 
   return (
-    <nav className={cn("hidden items-center gap-1 rounded-full border border-[#302E2A]/10 bg-[#F4F0E8] p-1.5 lg:flex", className)} aria-label="Navegación principal">
+    <nav
+      aria-label="Navegación principal"
+      className={cn("hidden min-w-0 items-center justify-center gap-0.5 lg:flex xl:gap-1", className)}
+    >
       {navigationItems.map((item) => {
         const isActive =
           item.href === "/"
@@ -23,12 +26,12 @@ export function Navbar({ className }: { className?: string }) {
             href={item.href}
             aria-current={isActive ? "page" : undefined}
             className={cn(
-              "flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-4",
-              "font-[family-name:var(--font-heading)] text-[15px] font-semibold tracking-[-0.015em] xl:px-5 xl:text-base",
+              "relative flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-3 xl:px-4",
+              "font-[family-name:var(--font-header)] text-[12px] font-bold uppercase tracking-[0.075em] xl:text-[13px]",
               "transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2",
               isActive
-                ? "bg-[#FF8A00] text-[#302E2A] shadow-sm"
-                : "text-[#302E2A]/75 hover:bg-white/80 hover:text-[#302E2A]",
+                ? "bg-[#FF8A00] text-[#302E2A]"
+                : "text-[#302E2A] hover:bg-[#FBF4EF]/70",
             )}
           >
             {item.label}
