@@ -113,8 +113,8 @@ export function MobileCarta({
                           : "text-[#302E2A] hover:bg-[#302E2A]/5 active:bg-[#302E2A]/10"
                       }`}
                     >
-                      <span className="font-[family-name:var(--font-carta)] text-xl font-semibold normal-case leading-tight tracking-[-0.025em] sm:text-2xl">
-                        {item.label.charAt(0) + item.label.slice(1).toLowerCase()}
+                      <span className="font-[family-name:var(--font-header)] text-lg font-bold uppercase leading-tight tracking-[0.05em] sm:text-2xl">
+                        {item.label}
                       </span>
 
                       <ArrowUpRight
