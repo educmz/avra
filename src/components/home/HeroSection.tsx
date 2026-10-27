@@ -1,271 +1,41 @@
-﻿"use client";
-
-import { getImageProps } from "next/image";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useEffect, useState } from "react";
-
-const slides = [
-  { id: "products", desktop: "/images/home/banners/home-products-desktop.webp", mobile: "/images/home/banners/home-products-mobile.webp", alt: "Hecho para disfrutar: antojos, bebidas y momentos para compartir" },
-  { id: "drinks", desktop: "/images/home/banners/home-drinks-desktop.webp", mobile: "/images/home/banners/home-drinks-mobile.webp", alt: "Bebidas Avra para disfrutar en cada momento" },
-] as const;
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight, Leaf, Sprout } from "lucide-react";
+import { Container } from "@/components/ui/Container";
 
 export function HeroSection() {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  useEffect(() => {
-    if (paused) return;
-
-    const interval = window.setInterval(() => {
-      setActiveSlide((current) => (current + 1) % slides.length);
-    }, 6000);
-
-    return () => window.clearInterval(interval);
-    // Depender de `activeSlide` reinicia el temporizador cada vez que la
-    // diapositiva cambia (también por flechas o indicadores), para que
-    // siempre pase cada 6s completos y no se acelere tras interactuar.
-  }, [paused, activeSlide]);
-
-  function changeSlide(direction: number) {
-    setActiveSlide(
-      (current) =>
-        (current + direction + slides.length) % slides.length,
-    );
-  }
-
   return (
-    <section
-      aria-label="Carrusel principal"
-      aria-roledescription="carrusel"
-      className="
-        w-full
-        bg-background
-        pt-[88px]
-        pb-6
-        sm:pt-24
-        lg:pt-28
-        lg:pb-12
-      "
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocusCapture={() => setPaused(true)}
-      onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) {
-          setPaused(false);
-        }
-      }}
-      onKeyDown={(event) => {
-        if (
-          event.key === "ArrowLeft" ||
-          event.key === "ArrowRight"
-        ) {
-          event.preventDefault();
-
-          changeSlide(
-            event.key === "ArrowLeft" ? -1 : 1,
-          );
-        }
-      }}
-    >
-      <div
-        data-home-hero
-        className="
-          group
-          relative
-          aspect-[1122/1402]
-          md:aspect-auto
-          md:h-[clamp(280px,34.6vw,650px)]
-          w-full
-          overflow-hidden
-        "
-      >
-        {/* SLIDES */}
-        {slides.map((slide, index) => {
-          const isActive = index === activeSlide;
-          const shared = {
-            alt: slide.alt,
-            fill: true,
-            sizes: "100vw",
-            loading: index === 0 ? "eager" as const : "lazy" as const,
-            fetchPriority: index === 0 ? "high" as const : "auto" as const,
-            className: "object-cover object-center",
-          };
-          const { props: desktop } = getImageProps({ ...shared, src: slide.desktop });
-          const { props: mobile } = getImageProps({ ...shared, src: slide.mobile });
-
-          return (
-            <div
-              key={slide.id}
-              role="group"
-              aria-roledescription="diapositiva"
-              aria-label={`${index + 1} de ${slides.length}`}
-              aria-hidden={!isActive}
-              className={`
-                absolute
-                inset-0
-                overflow-hidden
-                transition-opacity
-                duration-700
-                ease-out
-                motion-reduce:transition-none
-                ${
-                  isActive
-                    ? "opacity-100"
-                    : "pointer-events-none opacity-0"
-                }
-              `}
-            >
-              <picture>
-                <source media="(min-width: 768px)" srcSet={desktop.srcSet} sizes={desktop.sizes} />
-                <img {...mobile} alt={slide.alt} />
-              </picture>
-            </div>
-          );
-        })}
-
-        {/* FLECHA IZQUIERDA */}
-        <button
-          type="button"
-          onClick={() => changeSlide(-1)}
-          aria-label="Diapositiva anterior"
-          className="
-            absolute
-            left-4
-            top-1/2
-            z-30
-            grid
-            size-11
-            -translate-y-1/2
-            place-items-center
-            rounded-full
-            bg-white/85
-            text-[#302E2A]
-            backdrop-blur-sm
-            transition-all
-            duration-200
-            hover:scale-105
-            hover:bg-white
-            focus-visible:outline-none
-            focus-visible:ring-2
-            focus-visible:ring-white
-            lg:left-7
-            lg:size-12
-            lg:opacity-0
-            lg:group-hover:opacity-100
-            lg:group-focus-within:opacity-100
-          "
-        >
-          <ArrowLeft
-            size={18}
-            strokeWidth={1.8}
-            aria-hidden="true"
-          />
-        </button>
-
-        {/* FLECHA DERECHA */}
-        <button
-          type="button"
-          onClick={() => changeSlide(1)}
-          aria-label="Siguiente diapositiva"
-          className="
-            absolute
-            right-4
-            top-1/2
-            z-30
-            grid
-            size-11
-            -translate-y-1/2
-            place-items-center
-            rounded-full
-            bg-white/85
-            text-[#302E2A]
-            backdrop-blur-sm
-            transition-all
-            duration-200
-            hover:scale-105
-            hover:bg-white
-            focus-visible:outline-none
-            focus-visible:ring-2
-            focus-visible:ring-white
-            lg:right-7
-            lg:size-12
-            lg:opacity-0
-            lg:group-hover:opacity-100
-            lg:group-focus-within:opacity-100
-          "
-        >
-          <ArrowRight
-            size={18}
-            strokeWidth={1.8}
-            aria-hidden="true"
-          />
-        </button>
-
-        {/* INDICADORES */}
-        <div
-          className="
-            absolute
-            bottom-5
-            left-1/2
-            z-30
-            -translate-x-1/2
-            sm:bottom-6
-            lg:bottom-7
-          "
-        >
-          <div
-            className="
-              flex
-              items-center
-              gap-2.5
-              rounded-full
-              bg-black/15
-              px-6
-              py-2
-              backdrop-blur-md
-            "
-            aria-label="Elegir diapositiva"
-          >
-            {slides.map((slide, index) => {
-              const isActive = index === activeSlide;
-
-              return (
-                <button
-                  key={slide.id}
-                  type="button"
-                  onClick={() => setActiveSlide(index)}
-                  aria-label={`Ir a la diapositiva ${index + 1}`}
-                  aria-current={
-                    isActive ? "true" : undefined
-                  }
-                  className="
-                    grid
-                    size-5
-                    place-items-center
-                    rounded-full
-                    focus-visible:outline-none
-                  "
-                >
-                  <span
-                    aria-hidden="true"
-                    className={`
-                      block
-                      rounded-full
-                      transition-all
-                      duration-300
-                      ${
-                        isActive
-                          ? "size-2 bg-white"
-                          : "size-1.5 bg-white/55 hover:bg-white/80"
-                      }
-                    `}
-                  />
-                </button>
-              );
-            })}
+    <section aria-labelledby="home-hero-title" className="relative isolate overflow-hidden bg-[#F5F5DC] pb-14 pt-[112px] sm:pb-20 sm:pt-[128px] lg:pb-28 lg:pt-[148px]">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-32 -top-32 size-[440px] rounded-full bg-[#DDECCB]/75 blur-3xl" />
+      <Container className="relative grid max-w-[1280px] items-center gap-10 lg:grid-cols-[.95fr_1.05fr] lg:gap-16">
+        <div className="relative z-10">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#228B22]/20 bg-white/65 px-4 py-2 text-xs font-semibold uppercase tracking-[.16em] text-[#276B32]">
+            <Leaf size={15} aria-hidden="true" /> Naturalmente Avra
+          </span>
+          <h1 id="home-hero-title" className="mt-7 max-w-[680px] font-sans text-[clamp(2.8rem,5vw,4.5rem)] font-bold leading-[1.05] tracking-[-.055em] text-[#203F2A]">
+            Una forma más <span className="text-[#228B22]">natural</span> de disfrutar tu día.
+          </h1>
+          <p className="mt-6 max-w-[55ch] text-base leading-[1.7] text-[#465A46] sm:text-lg">
+            Sabores frescos, opciones para tu día y máquinas saludables que acercan lo bueno a donde estés.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Link href="/carta" className="inline-flex min-h-12 items-center gap-3 rounded-full bg-[#228B22] px-7 py-3 font-semibold text-white shadow-[0_3px_12px_rgba(34,139,34,.15)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1B711B] motion-reduce:transform-none">
+              Explorar la carta <ArrowUpRight size={18} aria-hidden="true" />
+            </Link>
+            <Link href="/maquinas" className="inline-flex min-h-12 items-center gap-3 rounded-full border border-[#276B32]/30 bg-white/65 px-6 py-3 font-semibold text-[#24582D] transition-colors duration-200 hover:bg-white">
+              Nuestras máquinas
+            </Link>
           </div>
+          <p className="mt-10 flex items-center gap-2 text-sm font-medium text-[#4D7050]"><Sprout size={17} aria-hidden="true" /> Bienestar en cada elección.</p>
         </div>
-      </div>
+        <div className="relative lg:pl-5">
+          <div className="absolute -left-3 -top-5 z-10 rounded-[1.5rem] bg-[#DCECBF] px-5 py-3 text-sm font-semibold text-[#24582D] shadow-[0_2px_12px_rgba(0,0,0,.06)]">Fresco · Práctico · Avra</div>
+          <div className="relative aspect-[5/4] overflow-hidden rounded-[40px_100px_40px_100px] border border-[#A5C19A]/25 bg-[#DFEBD4] shadow-[0_24px_65px_-35px_rgba(34,80,42,.3)] sm:aspect-[6/5] lg:aspect-[4/5]">
+            <Image src="/images/home/banners/home-drinks-desktop.webp" alt="Bebidas Avra para acompañar tu día" fill priority sizes="(min-width: 1024px) 48vw, 100vw" className="object-cover" />
+          </div>
+          <div aria-hidden="true" className="absolute -bottom-6 -right-4 -z-10 size-40 rounded-[65%_35%_60%_40%] bg-[#87CEEB]/35" />
+        </div>
+      </Container>
     </section>
   );
 }
