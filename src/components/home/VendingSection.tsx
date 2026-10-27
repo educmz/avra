@@ -16,7 +16,7 @@ export function VendingSection() {
   return (
     <section
       aria-labelledby="vending-title"
-      className={styles.section}
+      className={`${styles.section} bg-[#EAF1DF]`}
     >
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
@@ -33,9 +33,9 @@ export function VendingSection() {
               {vendingBenefits.map((benefit) => (
                 <div
                   key={benefit}
-                  className="flex items-center gap-3 text-sm font-semibold text-[#302E2A] sm:text-base"
+                  className="flex items-center gap-3 text-sm font-semibold text-[#203F2A] sm:text-base"
                 >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#FF8A00] text-white">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#228B22] text-white">
                     <Check
                       size={15}
                       strokeWidth={2.5}
@@ -51,7 +51,7 @@ export function VendingSection() {
             <div className="mt-8">
               <Link
                 href="/maquinas"
-                className="group inline-flex items-center gap-3 rounded-full bg-[#302E2A] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#FF8A00]"
+                className="group inline-flex items-center gap-3 rounded-full bg-[#228B22] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#1B711B]"
               >
                 Conoce nuestras máquinas
 
@@ -66,7 +66,7 @@ export function VendingSection() {
           </div>
 
           {/* IMAGEN */}
-          <div className="relative min-h-[520px] sm:min-h-[620px]">
+          <div className="relative min-h-[430px] overflow-hidden rounded-[40px_96px_40px_96px] bg-[#DCE8CF] sm:min-h-[530px]">
             <HomeImage
                 src="/images/home/vending-machine/avra-vending-machine.png"
                 alt="Máquina expendedora Avra"
