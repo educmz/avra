@@ -19,7 +19,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#203F2A] text-white">
+    <footer className="bg-[#173E3A] text-white">
       <Container className="py-11 lg:py-12">
         {/* PARTE SUPERIOR */}
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:items-start lg:gap-16 xl:gap-20">
@@ -30,21 +30,21 @@ export function Footer() {
           >
             <Link
               href="/carta"
-              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#DCECBF]"
+              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#D9EB31]"
             >
               Carta
             </Link>
 
             <Link
               href="/locales"
-              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#FF6A00] md:self-center"
+              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#D9EB31] md:self-center"
             >
               Locales
             </Link>
 
             <Link
               href="/nosotros"
-              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#FF6A00] md:self-end"
+              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#D9EB31] md:self-end"
             >
               Nosotros
             </Link>
@@ -57,14 +57,14 @@ export function Footer() {
           >
             <Link
               href="/"
-              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#FF6A00]"
+              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#D9EB31]"
             >
               Inicio
             </Link>
 
             <Link
               href="/maquinas"
-              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#FF6A00] md:self-center"
+              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#D9EB31] md:self-center"
             >
               Eventos
             </Link>
@@ -79,14 +79,14 @@ export function Footer() {
             <div className="mt-5 space-y-2 text-sm font-semibold uppercase leading-6 text-white">
               <a
                 href="tel:+51999999999"
-                className="block transition-colors hover:text-[#FF6A00]"
+                className="block transition-colors hover:text-[#D9EB31]"
               >
                 +51 999 999 999
               </a>
 
               <a
                 href="mailto:hola@avra.pe"
-                className="block transition-colors hover:text-[#FF6A00]"
+                className="block transition-colors hover:text-[#D9EB31]"
               >
                 hola@avra.pe
               </a>
@@ -114,8 +114,8 @@ export function Footer() {
                       border-white/35
                       text-white
                       transition-all
-                      hover:border-[#DCECBF]
-                      hover:text-[#FF6A00]
+                      hover:border-[#D9EB31]
+                      hover:text-[#D9EB31]
                     "
                   >
                     {social.icon}
@@ -141,7 +141,7 @@ export function Footer() {
                 border
                 border-white/80
                 transition-colors
-                hover:border-[#FF6A00]
+                hover:border-[#D9EB31]
               "
             >
               <Image
@@ -178,7 +178,7 @@ export function Footer() {
                     text-white
                     transition-colors
                     duration-200
-                    hover:text-[#FF6A00]
+                    hover:text-[#D9EB31]
                   "
                 >
                   {item.label}
