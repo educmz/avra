@@ -10,7 +10,7 @@ export function Navbar({ className }: { className?: string }) {
 
   return (
     <nav className={cn("hidden items-center gap-0.5 lg:flex xl:gap-1", className)} aria-label="Navegación principal">
-      {navigationItems.filter((item) => item.href !== "/maquinas").map((item) => {
+      {navigationItems.map((item) => {
         const active = item.href === "/" ? pathname === "/" : pathname === item.href || pathname.startsWith(`${item.href}/`);
         return (
           <Link
