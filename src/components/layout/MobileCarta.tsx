@@ -63,14 +63,14 @@ export function MobileCarta({
   if (!isOpen) return null;
 
   return (
-    <div id="mobile-navigation" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-[#173E3A] text-white">
+    <div id="mobile-navigation" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-[#FFF8F3] text-[#302E2A]">
       <div className="flex min-h-full flex-col px-6 pb-[max(24px,env(safe-area-inset-bottom))] pt-[max(20px,env(safe-area-inset-top))] sm:px-8">
         {/* HEADER */}
         <div className="flex items-center justify-between">
           <Link
             href="/"
             onClick={onClose}
-            className="relative flex min-h-12 w-[120px] shrink-0 items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D9EB31]"
+            className="relative flex min-h-12 w-[120px] shrink-0 items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF8A00]"
           >
             <Image
               src="/images/brand/avra-wordmark-black.png"
@@ -78,15 +78,15 @@ export function MobileCarta({
               width={400}
               height={160}
               priority
-              className="h-auto w-full object-contain brightness-0 invert"
+              className="h-auto w-full object-contain"
             />
           </Link>
 
           <button
             type="button"
             onClick={onClose}
-            aria-label="Cerrar menú de navegación"
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#302E2A]/15 text-white transition-colors duration-200 hover:border-[#D9EB31] hover:bg-[#D9EB31]/5 active:bg-[#D9EB31]/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D9EB31] motion-reduce:transition-none"
+            aria-label="Cerrar carta"
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#302E2A]/15 text-[#302E2A] transition-colors duration-200 hover:border-[#FF8A00] hover:bg-[#FF8A00]/5 active:bg-[#FF8A00]/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF8A00] motion-reduce:transition-none"
           >
             <X className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
           </button>
@@ -107,10 +107,10 @@ export function MobileCarta({
                       href={item.href}
                       onClick={onClose}
                       aria-current={isActive ? "page" : undefined}
-                      className={`group flex min-h-14 items-center justify-between gap-5 rounded-xl px-5 py-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D9EB31] motion-reduce:transition-none ${
+                      className={`group flex min-h-16 items-center justify-between gap-5 rounded-xl px-5 py-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] motion-reduce:transition-none ${
                         isActive
-                          ? "bg-[#D9EB31] text-[#173E3A] hover:bg-[#E5F267] active:bg-[#C7DD28]"
-                          : "text-white hover:bg-white/10 active:bg-white/15"
+                          ? "bg-[#FF8A00] text-[#302E2A] hover:bg-[#F58200] active:bg-[#EB7C00]"
+                          : "text-[#302E2A] hover:bg-[#302E2A]/5 active:bg-[#302E2A]/10"
                       }`}
                     >
                       <span className="font-[family-name:var(--font-carta)] text-xl font-semibold normal-case leading-tight tracking-[-0.025em] sm:text-2xl">
