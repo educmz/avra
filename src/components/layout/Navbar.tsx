@@ -31,7 +31,7 @@ export function Navbar({ className }: { className?: string }) {
             )}
           >
             {item.label}
-            {isActive && <span aria-hidden="true" className="absolute inset-x-4 bottom-1 h-[2px] rounded-full bg-[#295C50]" />}
+            {isActive && <span aria-hidden="true" className="absolute inset-x-4 bottom-1 h-[2px] origin-left rounded-full bg-[#295C50] animate-[avra-nav-underline_650ms_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none" />}
           </Link>
         );
       })}
