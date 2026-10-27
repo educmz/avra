@@ -19,7 +19,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-[#203F2A] text-white">
       <Container className="py-11 lg:py-12">
         {/* PARTE SUPERIOR */}
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:items-start lg:gap-16 xl:gap-20">
@@ -30,7 +30,7 @@ export function Footer() {
           >
             <Link
               href="/carta"
-              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#FF6A00]"
+              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#DCECBF]"
             >
               Carta
             </Link>
@@ -114,7 +114,7 @@ export function Footer() {
                       border-white/35
                       text-white
                       transition-all
-                      hover:border-[#FF6A00]
+                      hover:border-[#DCECBF]
                       hover:text-[#FF6A00]
                     "
                   >
