@@ -41,7 +41,9 @@ export function Header() {
         </button>
         <MobileCarta isOpen={isCartaOpen} onClose={closeCarta} />
       </Container>
-      <div className="h-[3px] w-full bg-gradient-to-r from-[#D7DFCF] via-[#8AAE9A] to-[#D7DFCF]" aria-hidden="true" />
+      <div className="h-[3px] w-full overflow-hidden" aria-hidden="true">
+        <div className="h-full w-full origin-left scale-x-0 animate-[avra-header-line_1.4s_cubic-bezier(0.22,1,0.36,1)_both] bg-gradient-to-r from-[#D7DFCF] via-[#8AAE9A] to-[#D7DFCF] motion-reduce:animate-none motion-reduce:scale-x-100" />
+      </div>
     </header>
   );
 }
