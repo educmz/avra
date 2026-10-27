@@ -72,3 +72,8 @@ button, input, select, textarea { font-family: inherit; font-size: 100%; line-he
 .event-includes-grid {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
 }
+
+@keyframes avra-header-line {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
