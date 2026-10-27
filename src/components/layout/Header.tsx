@@ -15,7 +15,7 @@ export function Header() {
   return (
     <header className="absolute inset-x-0 top-0 z-50 w-full pt-3 sm:pt-4">
       <div className="mx-4 max-w-[1180px] sm:mx-6 lg:mx-auto">
-        <div className="flex h-[64px] items-center justify-between gap-5 rounded-[18px] border border-white/10 bg-[#20502D] px-5 shadow-[0_8px_24px_rgba(25,59,31,0.16)] sm:h-[68px] sm:px-7 lg:h-[70px] lg:px-9">
+        <div className="flex h-[64px] items-center justify-between gap-5 rounded-[20px] border border-white/10 bg-[#205C36] px-5 shadow-[0_8px_24px_rgba(25,59,31,0.16)] sm:h-[68px] sm:px-7 lg:h-[70px] lg:px-9">
           <Link href="/" aria-label="Avra, ir al inicio" className="relative z-10 flex shrink-0 items-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#B6D79B]">
             <Image
               src="/images/brand/avra-wordmark-black.png"
