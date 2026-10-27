@@ -7,41 +7,79 @@ import { Menu } from "lucide-react";
 
 import { MobileCarta } from "@/components/layout/MobileCarta";
 import { Navbar } from "@/components/layout/Navbar";
+import { Container } from "@/components/ui/Container";
+import { socialLinks } from "./socialLinks";
+
+
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
+  const [isCartaOpen, setIsCartaOpen] = useState(false);
+  const closeCarta = useCallback(() => setIsCartaOpen(false), []);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50 w-full pt-3 sm:pt-4">
-      <div className="mx-4 max-w-[1180px] sm:mx-6 lg:mx-auto">
-        <div className="flex h-[64px] items-center justify-between gap-5 rounded-[20px] border border-white/10 bg-[#173E3A] px-5 shadow-[0_8px_24px_rgba(25,59,31,0.16)] sm:h-[68px] sm:px-7 lg:h-[70px] lg:px-9">
-          <Link href="/" aria-label="Avra, ir al inicio" className="relative z-10 flex shrink-0 items-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D9EB31]">
-            <Image
-              src="/images/brand/avra-wordmark-black.png"
-              alt="Avra"
-              width={2172}
-              height={724}
-              priority
-              className="h-auto w-[102px] object-contain brightness-0 invert sm:w-[112px] xl:w-[116px]"
-            />
-          </Link>
+    <header className="absolute inset-x-0 top-0 z-50 w-full bg-background">
+      <Container
+        className="
+          relative flex h-[88px] w-full items-center justify-between sm:h-24 lg:h-28
+        "
+      >
+        <Link
+          href="/"
+          aria-label="Avra, inicio"
+          className="
+            relative z-50 shrink-0
+            transition-transform duration-300
+            hover:scale-[1.04]
+            focus-visible:outline
+          "
+        >
+          <Image
+            src="/images/brand/avra-wordmark-black.png"
+            alt="Avra"
+            width={2172}
+            height={724}
+            priority
+            className="
+              h-auto w-28 object-contain
+              sm:w-32
+              lg:w-36
+            "
+            style={{
+              filter: "drop-shadow(0 5px 10px rgba(0,0,0,0.10))",
+            }}
+          />
+        </Link>
 
-          <Navbar className="ml-auto" />
+        <div className="relative z-50 ml-auto hidden items-center gap-2 lg:flex" aria-label="Redes sociales">
+          {socialLinks.map((social) => {
+            const styles = "grid size-10 place-items-center rounded-full bg-[#FF8A00] text-white transition duration-300 hover:-translate-y-1 hover:bg-[#E67C00]";
 
-          <button
-            type="button"
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Abrir menú de navegación"
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-navigation"
-            className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 text-sm font-bold text-white transition-colors hover:border-[#D9EB31] hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D9EB31] lg:hidden"
-          >
-            Menú <Menu size={19} strokeWidth={1.9} aria-hidden="true" />
-          </button>
+            return social.href ? (
+              <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={social.label} className={styles}>
+                {social.icon}
+              </a>
+            ) : (
+              <span key={social.label} aria-label={social.label} role="img" className={styles}>
+                {social.icon}
+              </span>
+            );
+          })}
         </div>
-      </div>
-      <MobileCarta isOpen={isMenuOpen} onClose={closeMenu} />
+
+        <Navbar className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+
+        <button
+          type="button"
+          onClick={() => setIsCartaOpen(true)}
+          aria-label="Abrir carta"
+          aria-expanded={isCartaOpen}
+          aria-controls="mobile-navigation"
+          className="grid size-12 place-items-center rounded-full bg-[#FF8A00] text-white lg:hidden"
+        >
+          <Menu size={22} aria-hidden="true" />
+        </button>
+        <MobileCarta isOpen={isCartaOpen} onClose={closeCarta} />
+      </Container>
     </header>
   );
 }
