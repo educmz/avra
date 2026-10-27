@@ -2,30 +2,70 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion, useReducedMotion } from "motion/react";
+
 import { navigationItems } from "@/data/navigation";
 import { cn } from "@/lib/utils";
 
 export function Navbar({ className }: { className?: string }) {
   const pathname = usePathname();
+  const reducedMotion = useReducedMotion();
 
   return (
-    <nav className={cn("hidden items-center gap-1 lg:flex xl:gap-2", className)} aria-label="Navegación principal">
+    <nav
+      className={cn(
+        "hidden items-center gap-9 lg:flex xl:gap-12",
+        "[font-family:var(--font-dm-sans)]",
+        className,
+      )}
+      aria-label="Navegación principal"
+    >
       {navigationItems.map((item) => {
-        const active = item.href === "/" ? pathname === "/" : pathname === item.href || pathname.startsWith(`${item.href}/`);
+        const isActive =
+          item.href === "/"
+            ? pathname === "/"
+            : pathname === item.href ||
+              pathname.startsWith(`${item.href}/`);
+
         return (
           <Link
             key={item.href}
             href={item.href}
-            aria-current={active ? "page" : undefined}
+            aria-current={isActive ? "page" : undefined}
             className={cn(
-              "relative inline-flex min-h-10 shrink-0 items-center justify-center rounded-none px-3 text-[14px] font-semibold tracking-[0.005em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D9EB31] xl:px-4 xl:text-[14px]",
-              active
+              "relative isolate flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-full",
+              "px-1 text-[15px] font-medium normal-case tracking-[0.025em]",
+              "transition-colors duration-200",
+              isActive
                 ? "text-white"
-                : "text-white/85 hover:text-white"
+                : "text-[#302E2A]/70 hover:text-[#302E2A]",
             )}
           >
+            {isActive && (
+              <motion.span
+                layoutId="avra-active-nav"
+                aria-hidden="true"
+                className="
+                  absolute
+                  -inset-x-3
+                  inset-y-0
+                  -z-10
+                  rounded-full
+                  bg-[#FF8A00]
+                "
+                transition={
+                  reducedMotion
+                    ? { duration: 0 }
+                    : {
+                        type: "spring",
+                        stiffness: 420,
+                        damping: 32,
+                      }
+                }
+              />
+            )}
+
             {item.label}
-            {active && <span aria-hidden="true" className="absolute bottom-[2px] left-3 right-3 h-[2px] rounded-full bg-[#D9EB31]" />}
           </Link>
         );
       })}
