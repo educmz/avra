@@ -20,8 +20,8 @@ export function Navbar({ className }: { className?: string }) {
             className={cn(
               "relative inline-flex min-h-10 shrink-0 items-center justify-center rounded-none px-3 text-[13px] font-semibold tracking-[-.01em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] xl:px-4 xl:text-sm",
               active
-                ? "text-[#202D24]"
-                : "text-[#525952] hover:text-[#202D24]"
+                ? "text-white"
+                : "text-white/75 hover:text-white"
             )}
           >
             {item.label}
