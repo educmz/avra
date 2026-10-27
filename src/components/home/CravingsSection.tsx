@@ -54,7 +54,7 @@ export function CravingsSection() {
     <section aria-labelledby="cravings-title" className="bg-background pb-12 sm:pb-16 lg:pb-20">
       <Container>
         <HomeHeading id="cravings-title" eyebrow="A tu gusto">
-          ¿Qué se te antoja?
+          Elige opciones para tu día
         </HomeHeading>
 
         <div className="grid gap-5 lg:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] lg:gap-6">
@@ -88,12 +88,12 @@ export function CravingsSection() {
             })}
           </div>
 
-          <Link href="/eventos" className="group flex min-h-[360px] flex-col overflow-hidden rounded-lg bg-[#E5EBD8] text-[#302E2A] transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none sm:min-h-[420px] lg:min-h-0">
+          <Link href="/maquinas" className="group flex min-h-[360px] flex-col overflow-hidden rounded-lg bg-[#DFEACF] text-[#302E2A] transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none sm:min-h-[420px] lg:min-h-0">
             <div className="relative min-h-[260px] flex-1 overflow-hidden">
-              <Image src="/images/events/waffles-salchipapas-churros.webp" alt="Waffles, salchipapas y churros para eventos Avra" fill sizes="(min-width: 1024px) 25vw, 100vw" className="object-cover object-center" />
+              <Image src="/images/home/vending-machine/avra-vending-machine.png" alt="Máquina expendedora Avra" fill sizes="(min-width: 1024px) 25vw, 100vw" className="object-contain object-center" />
             </div>
             <div className="flex items-center justify-center px-6 py-8 text-center lg:py-10">
-              <h3 className="font-heading text-4xl uppercase leading-none sm:text-5xl">Eventos</h3>
+              <h3 className="font-heading text-4xl uppercase leading-none sm:text-5xl">Máquinas saludables</h3>
             </div>
           </Link>
         </div>
