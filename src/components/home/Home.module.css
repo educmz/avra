@@ -1,7 +1,7 @@
 .section { padding-block: clamp(4rem, 8vw, 8rem); background: var(--background); color: var(--foreground); }
-.section.finalSection { padding-bottom: 5rem; background: #E8F2D8; }
+.section.finalSection { padding-bottom: 5rem; background: #FCE1E5; }
  .heading { margin: 0; font-family: system-ui, -apple-system, sans-serif; font-size: clamp(2rem, 3.5vw, 3.5rem); font-weight: 850; line-height: 1.02; letter-spacing: -.045em; text-wrap: balance; }
-.eyebrow { margin-bottom: 12px; font-family: system-ui, sans-serif; font-size: .85rem; font-weight: 600; line-height: 1.5; color: #228B22; }
+.eyebrow { margin-bottom: 12px; font-family: system-ui, sans-serif; font-size: .85rem; font-weight: 600; line-height: 1.5; color: #14A78F; }
 .header { margin-bottom: 30px; }
 .link { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 14px; font-weight: 600; color: #302e2a; transition: color 200ms; }
 .link:hover { color: #c96532; }
@@ -27,7 +27,7 @@
 .eventImage { object-fit: cover; object-position: center; }
 .photo, .eventPhoto { transition: transform 200ms ease-out; }
 .eventFooter { display: flex; justify-content: flex-end; margin-top: clamp(20px, 2.5vw, 32px); }
-.eventLink { display: inline-flex; align-items: center; gap: 12px; padding: 14px 24px; border-radius: 9999px; background: #228B22; font-size: 14px; line-height: 20px; font-weight: 600; color: #fff; transition: background-color 300ms, transform 300ms; }
+.eventLink { display: inline-flex; align-items: center; gap: 12px; padding: 14px 24px; border-radius: 9999px; background: #14A78F; font-size: 14px; line-height: 20px; font-weight: 600; color: #fff; transition: background-color 300ms, transform 300ms; }
 .eventLinkIcon { display: grid; place-items: center; flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: #ffffff1a; color: #fff; transition: transform 300ms, background-color 300ms, color 300ms; }
 @media (hover: hover) and (pointer: fine) {
   .eventControl:not(:disabled):hover { border-color: #c96532; color: #c96532; background: #ff8a0008; }
