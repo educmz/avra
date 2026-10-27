@@ -19,7 +19,7 @@ export default function MachinesPage() {
   return (
     <main className="bg-background pt-[88px] sm:pt-24 lg:pt-28">
       <section aria-label="Presentación de máquinas Avra" className="w-full pb-6 sm:pb-8 lg:pb-10">
-        <div className="relative isolate flex h-[clamp(220px,52vw,320px)] w-full items-center overflow-hidden bg-[#E5EBD8] md:h-[clamp(160px,33.33vw,480px)]">
+        <div className="relative isolate flex h-[clamp(190px,43vw,270px)] w-full items-center overflow-hidden bg-[#E5EBD8] md:h-[clamp(220px,26vw,360px)]">
           <div aria-hidden="true" className="absolute -right-[10%] -top-[70%] h-[190%] w-[65%] rounded-full bg-[#C3D5A5] sm:-right-[5%]" />
           <div aria-hidden="true" className="absolute right-[16%] bottom-[-65%] size-[65vw] max-h-[550px] max-w-[550px] rounded-full bg-[#F3CC8F]/70" />
           <div className="relative z-10 w-3/5 pl-[max(24px,calc((100vw-1280px)/2+24px))] pr-3 md:w-1/2 md:pr-2 lg:pl-[max(40px,calc((100vw-1280px)/2+40px))]">
