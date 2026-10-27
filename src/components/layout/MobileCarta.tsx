@@ -63,7 +63,7 @@ export function MobileCarta({
   if (!isOpen) return null;
 
   return (
-    <div id="mobile-navigation" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-[#FBF4EF] text-[#302E2A]">
+    <div id="mobile-navigation" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-white text-[#242424]">
       <div className="flex min-h-full flex-col px-6 pb-[max(24px,env(safe-area-inset-bottom))] pt-[max(20px,env(safe-area-inset-top))] sm:px-8">
         {/* HEADER */}
         <div className="flex items-center justify-between">
@@ -107,9 +107,9 @@ export function MobileCarta({
                       href={item.href}
                       onClick={onClose}
                       aria-current={isActive ? "page" : undefined}
-                      className={`group flex min-h-16 items-center justify-between gap-5 rounded-2xl px-5 py-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] motion-reduce:transition-none ${
+                      className={`group flex min-h-14 items-center justify-between gap-5 rounded-2xl px-5 py-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] motion-reduce:transition-none ${
                         isActive
-                          ? "bg-[#FF8A00]/15 text-[#A65300] hover:bg-[#FF8A00]/20 active:bg-[#FF8A00]/25"
+                          ? "bg-[#FFF0D7] text-[#3D2A15] hover:bg-[#FFE3B4] active:bg-[#FFD89C]"
                           : "text-[#302E2A] hover:bg-[#302E2A]/5 active:bg-[#302E2A]/10"
                       }`}
                     >
