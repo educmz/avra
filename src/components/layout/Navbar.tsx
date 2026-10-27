@@ -10,7 +10,7 @@ export function Navbar({ className }: { className?: string }) {
 
   return (
     <nav className={cn("hidden items-center gap-0.5 lg:flex xl:gap-1", className)} aria-label="Navegación principal">
-      {navigationItems.map((item) => {
+      {navigationItems.filter((item) => item.href !== "/maquinas").map((item) => {
         const active = item.href === "/" ? pathname === "/" : pathname === item.href || pathname.startsWith(`${item.href}/`);
         return (
           <Link
@@ -18,14 +18,14 @@ export function Navbar({ className }: { className?: string }) {
             href={item.href}
             aria-current={active ? "page" : undefined}
             className={cn(
-              "relative inline-flex min-h-10 shrink-0 items-center justify-center rounded-lg px-3 text-[13px] font-bold tracking-[-.01em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] xl:px-4 xl:text-sm",
+              "relative inline-flex min-h-10 shrink-0 items-center justify-center rounded-none px-3 text-[13px] font-semibold tracking-[-.01em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] xl:px-4 xl:text-sm",
               active
-                ? "bg-[#FFF0D7] text-[#3D2A15]"
-                : "text-[#3E3E3E] hover:bg-[#F6F6F4] hover:text-[#151515]"
+                ? "text-[#202D24]"
+                : "text-[#525952] hover:text-[#202D24]"
             )}
           >
             {item.label}
-            {active && <span aria-hidden="true" className="absolute bottom-1 left-1/2 size-1 -translate-x-1/2 rounded-full bg-[#FF8A00]" />}
+            {active && <span aria-hidden="true" className="absolute bottom-0 left-3 right-3 h-[2px] rounded-full bg-[#FF8A00]" />}
           </Link>
         );
       })}
