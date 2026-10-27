@@ -16,17 +16,17 @@ export function VendingSection() {
   return (
     <section
       aria-labelledby="vending-title"
-      className={`${styles.section} bg-[#EAF1DF]`}
+      className="bg-[#E6F0D8] py-16 sm:py-20 lg:py-24"
     >
       <Container>
-        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
           {/* CONTENIDO */}
           <div>
             <HomeHeading
               id="vending-title"
-              eyebrow="máquinas avra"
+              eyebrow="Siempre cerca de ti"
             >
-              Alimentación práctica, donde la necesites
+              Lo saludable también puede ser práctico
             </HomeHeading>
 
             <div className="space-y-3">
@@ -51,7 +51,7 @@ export function VendingSection() {
             <div className="mt-8">
               <Link
                 href="/maquinas"
-                className="group inline-flex items-center gap-3 rounded-full bg-[#228B22] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#1B711B]"
+                className="group inline-flex items-center gap-3 rounded-full bg-[#205C36] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#1B711B]"
               >
                 Conoce nuestras máquinas
 
@@ -66,7 +66,7 @@ export function VendingSection() {
           </div>
 
           {/* IMAGEN */}
-          <div className="relative min-h-[430px] overflow-hidden rounded-[40px_96px_40px_96px] bg-[#DCE8CF] sm:min-h-[530px]">
+          <div className="relative min-h-[430px] overflow-hidden rounded-[40px_96px_40px_96px] bg-[#D4E7C0] sm:min-h-[530px]">
             <HomeImage
                 src="/images/home/vending-machine/avra-vending-machine.png"
                 alt="Máquina expendedora Avra"
