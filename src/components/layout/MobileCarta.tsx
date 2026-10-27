@@ -63,7 +63,7 @@ export function MobileCarta({
   if (!isOpen) return null;
 
   return (
-    <div id="mobile-navigation" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-[#FFF8F3] text-[#302E2A]">
+    <div id="mobile-navigation" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-[#FBF4EF] text-[#302E2A]">
       <div className="flex min-h-full flex-col px-6 pb-[max(24px,env(safe-area-inset-bottom))] pt-[max(20px,env(safe-area-inset-top))] sm:px-8">
         {/* HEADER */}
         <div className="flex items-center justify-between">
@@ -85,7 +85,7 @@ export function MobileCarta({
           <button
             type="button"
             onClick={onClose}
-            aria-label="Cerrar carta"
+            aria-label="Cerrar menú de navegación"
             className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#302E2A]/15 text-[#302E2A] transition-colors duration-200 hover:border-[#FF8A00] hover:bg-[#FF8A00]/5 active:bg-[#FF8A00]/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF8A00] motion-reduce:transition-none"
           >
             <X className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
@@ -107,9 +107,9 @@ export function MobileCarta({
                       href={item.href}
                       onClick={onClose}
                       aria-current={isActive ? "page" : undefined}
-                      className={`group flex min-h-16 items-center justify-between gap-5 rounded-xl px-5 py-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] motion-reduce:transition-none ${
+                      className={`group flex min-h-16 items-center justify-between gap-5 rounded-2xl px-5 py-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] motion-reduce:transition-none ${
                         isActive
-                          ? "bg-[#FF8A00] text-[#302E2A] hover:bg-[#F58200] active:bg-[#EB7C00]"
+                          ? "bg-[#FF8A00]/15 text-[#A65300] hover:bg-[#FF8A00]/20 active:bg-[#FF8A00]/25"
                           : "text-[#302E2A] hover:bg-[#302E2A]/5 active:bg-[#302E2A]/10"
                       }`}
                     >
