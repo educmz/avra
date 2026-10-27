@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 
 const slides = [
   { id: "products", desktop: "/images/home/banners/home-products-desktop.webp", mobile: "/images/home/banners/home-products-mobile.webp", alt: "Hecho para disfrutar: antojos, bebidas y momentos para compartir" },
-  { id: "machines", desktop: "/images/home/banners/home-events-desktop.webp", mobile: "/images/home/banners/home-events-mobile.webp", alt: "Opciones de alimentación Avra" },
   { id: "drinks", desktop: "/images/home/banners/home-drinks-desktop.webp", mobile: "/images/home/banners/home-drinks-mobile.webp", alt: "Bebidas Avra para disfrutar en cada momento" },
 ] as const;
 
