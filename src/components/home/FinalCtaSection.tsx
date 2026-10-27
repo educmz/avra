@@ -17,22 +17,22 @@ const actions = [
     image: "/images/home/cta/cta-carta-products.webp",
   },
   {
-    id: "events",
-    href: "/eventos",
-    label: "Ver eventos",
-    description: "Haz especial tu próxima celebración.",
-    image: "/images/home/cta/cta-eventos-carts.webp",
+    id: "machines",
+    href: "/maquinas",
+    label: "Máquinas saludables",
+    description: "Opciones prácticas para tus espacios.",
+    image: "/images/home/vending-machine/avra-vending-machine.png",
   },
 ] as const;
 
 
 export function FinalCtaSection() {
   const [activePanel, setActivePanel] = useState<string | null>(null);
-  const columns = activePanel === "carta" ? "1.25fr .75fr" : activePanel === "events" ? ".75fr 1.25fr" : "1fr 1fr";
+  const columns = activePanel === "carta" ? "1.25fr .75fr" : activePanel === "machines" ? ".75fr 1.25fr" : "1fr 1fr";
   return (
     <section aria-labelledby="final-cta-title" className={`${styles.section} ${styles.finalSection}`}>
       <Container className="text-center">
-        <HomeHeading id="final-cta-title" eyebrow="¿Y ahora?">Elige cómo quieres disfrutar Avra</HomeHeading>
+        <HomeHeading id="final-cta-title" eyebrow="¿Y ahora?">Aliméntate bien, estés donde estés</HomeHeading>
       </Container>
       <Container className={styles.panels} style={{ "--cta-columns": columns } as CSSProperties} onMouseLeave={() => setActivePanel(null)}>
         {actions.map((action) => (
