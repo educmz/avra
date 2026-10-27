@@ -107,9 +107,9 @@ export function MobileCarta({
                       href={item.href}
                       onClick={onClose}
                       aria-current={isActive ? "page" : undefined}
-                      className={`group flex min-h-14 items-center justify-between gap-5 rounded-2xl px-5 py-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] motion-reduce:transition-none ${
+                      className={`group flex min-h-14 items-center justify-between gap-5 rounded-xl px-5 py-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] motion-reduce:transition-none ${
                         isActive
-                          ? "bg-[#FFF0D7] text-[#3D2A15] hover:bg-[#FFE3B4] active:bg-[#FFD89C]"
+                          ? "bg-[#E8F1E2] text-[#202D24] hover:bg-[#DCEBD3] active:bg-[#D0E5C5]"
                           : "text-[#302E2A] hover:bg-[#302E2A]/5 active:bg-[#302E2A]/10"
                       }`}
                     >
