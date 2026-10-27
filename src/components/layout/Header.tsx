@@ -7,7 +7,6 @@ import { Menu } from "lucide-react";
 
 import { MobileCarta } from "@/components/layout/MobileCarta";
 import { Navbar } from "@/components/layout/Navbar";
-import { Container } from "@/components/ui/Container";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,8 +14,8 @@ export function Header() {
 
   return (
     <header className="absolute inset-x-0 top-0 z-50 w-full pt-3 sm:pt-4">
-      <div>
-        <Container className="flex h-[68px] items-center justify-between gap-4 rounded-[24px] border border-white/10 bg-[#20502D]/95 px-4 shadow-[0_12px_36px_rgba(0,0,0,0.22)] backdrop-blur-xl sm:h-[72px] sm:px-6 lg:h-[76px]">
+      <div className="mx-4 max-w-[1180px] sm:mx-6 lg:mx-auto">
+        <div className="flex h-[64px] items-center justify-between gap-5 rounded-[18px] border border-white/10 bg-[#20502D] px-5 shadow-[0_8px_24px_rgba(25,59,31,0.16)] sm:h-[68px] sm:px-7 lg:h-[70px] lg:px-9">
           <Link href="/" aria-label="Avra, ir al inicio" className="relative z-10 flex shrink-0 items-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#B6D79B]">
             <Image
               src="/images/brand/avra-wordmark-black.png"
@@ -24,7 +23,7 @@ export function Header() {
               width={2172}
               height={724}
               priority
-              className="h-auto w-[106px] object-contain brightness-0 invert sm:w-[118px] xl:w-[126px]"
+              className="h-auto w-[102px] object-contain brightness-0 invert sm:w-[112px] xl:w-[116px]"
             />
           </Link>
 
@@ -40,7 +39,7 @@ export function Header() {
           >
             Menú <Menu size={19} strokeWidth={1.9} aria-hidden="true" />
           </button>
-        </Container>
+        </div>
       </div>
       <MobileCarta isOpen={isMenuOpen} onClose={closeMenu} />
     </header>
