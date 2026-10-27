@@ -27,14 +27,14 @@ export function HealthyProductsSection() {
   return (
     <section
       aria-labelledby="lifestyle-title"
-      className={styles.section}
+      className="bg-[#FFFDF0] py-16 sm:py-20 lg:py-24"
     >
       <Container>
         <HomeHeading
           id="lifestyle-title"
-          eyebrow="para sentirte bien"
+          eyebrow="Vive Avra"
         >
-          Bienestar en tu día a día
+          Momentos que se disfrutan
         </HomeHeading>
 
         <div className={styles.lifestyle}>
@@ -56,7 +56,7 @@ export function HealthyProductsSection() {
         <div className="mt-7 flex justify-end">
           <Link
             href="/carta"
-            className="group inline-flex items-center gap-3 rounded-full bg-[#228B22] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#1B711B]"
+            className="group inline-flex items-center gap-3 rounded-full bg-[#205C36] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#1B711B]"
           >
             Explora nuestra carta
 
