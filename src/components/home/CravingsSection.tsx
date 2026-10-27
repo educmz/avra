@@ -2,6 +2,7 @@
 import Link from "next/link";
 
 import { cartaCategories } from "@/data/carta/categories";
+import { ArrowUpRight } from "lucide-react";
 import type { CartaCategoryId } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { HomeHeading } from "./HomeHeading";
@@ -50,23 +51,26 @@ const visuals: Record<CartaCategoryId, { background: string; image: string; alt:
 };
 
 export function CravingsSection() {
+  const featured = cartaCategories.filter((category) => ["smoothies", "tes-helados", "sandwiches", "tostones"].includes(category.id));
+
   return (
-    <section aria-labelledby="cravings-title" className="bg-[#F5F5DC] py-16 sm:py-20 lg:py-24">
+    <section aria-labelledby="cravings-title" className="bg-[#FFFDF0] py-16 sm:py-20 lg:py-24">
       <Container>
-        <HomeHeading id="cravings-title" eyebrow="A tu gusto">
-          Elige opciones para tu día
+        <HomeHeading id="cravings-title" eyebrow="Encuentra tu favorito">
+          Sabores que alegran tu día
         </HomeHeading>
 
-        <div className="grid gap-5 lg:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] lg:gap-6">
-          <div className="grid grid-cols-2 gap-3 sm:gap-5 xl:grid-cols-4">
-            {[...cartaCategories].sort((a, b) => a.order - b.order).map((category) => {
+        <p className="mb-8 max-w-[60ch] text-base leading-7 text-[#4B664E]">Desde bebidas refrescantes hasta opciones para acompañar tu rutina. Mira lo que tenemos preparado.</p>
+        <div className="grid gap-5">
+          <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
+            {featured.map((category) => {
               const visual = visuals[category.id];
 
               return (
                 <Link
                   key={category.id}
                   href={`/carta#carta-${category.id}`}
-                  className="group flex aspect-[4/5] min-w-0 flex-col items-center overflow-hidden rounded-[24px] border border-[#24572E]/10 shadow-[0_2px_12px_rgba(0,0,0,.06)] px-3 pb-4 pt-5 text-[#203F2A] transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none sm:px-4 sm:pb-5 sm:pt-6"
+                  className="group flex aspect-[4/5] sm:aspect-[3/4] min-w-0 flex-col items-center overflow-hidden rounded-[24px] border border-[#24572E]/10 shadow-[0_2px_12px_rgba(0,0,0,.06)] px-3 pb-4 pt-5 text-[#203F2A] transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(18,62,28,.12)] motion-reduce:transform-none sm:px-4 sm:pb-5 sm:pt-6"
                   style={{ backgroundColor: visual.background }}
                 >
                   <h3 className="relative z-10 flex min-h-[2.3em] items-center justify-center text-center font-sans text-[clamp(1.15rem,2vw,1.75rem)] font-bold leading-[1.12]">
@@ -88,15 +92,8 @@ export function CravingsSection() {
             })}
           </div>
 
-          <Link href="/maquinas" className="group flex min-h-[360px] flex-col overflow-hidden rounded-[24px] border border-[#24572E]/10 bg-[#DCECBF] text-[#302E2A] transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none sm:min-h-[420px] lg:min-h-0">
-            <div className="relative min-h-[260px] flex-1 overflow-hidden">
-              <Image src="/images/home/vending-machine/avra-vending-machine.png" alt="Máquina expendedora Avra" fill sizes="(min-width: 1024px) 25vw, 100vw" className="object-contain object-center" />
-            </div>
-            <div className="flex items-center justify-center px-6 py-8 text-center lg:py-10">
-              <h3 className="font-sans text-3xl font-bold leading-none sm:text-5xl">Máquinas saludables</h3>
-            </div>
-          </Link>
         </div>
+        <div className="mt-8 flex justify-center"><Link href="/carta" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#205C36] px-7 py-3 text-sm font-bold text-white transition-colors hover:bg-[#16472A]">Ver toda la carta <ArrowUpRight size={18} aria-hidden="true" /></Link></div>
       </Container>
     </section>
   );
