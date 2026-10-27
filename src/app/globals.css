@@ -3,28 +3,28 @@
 @import "../styles/utilities.css";
 
 :root {
-  --background: #FBF4EF;
-  --foreground: #302e2a;
-  --primary: #ff8a00;
-  --secondary: #eadca8;
-  --accent: #f1b86b;
-  --surface: #f4f0e8;
-  --surface-strong: #e7dfd2;
-  --hero: #f3cc8f;
+  --background: #F5F5DC;
+  --foreground: #203F2A;
+  --primary: #228B22;
+  --secondary: #8B4513;
+  --accent: #87CEEB;
+  --surface: #EAF1DF;
+  --surface-strong: #DCE8CF;
+  --hero: #DDECCB;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-manrope), Arial, Helvetica, sans-serif;
+  --font-sans: system-ui, -apple-system, sans-serif;
   --font-heading: var(--font-heading);
   --font-accent: var(--font-accent);
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { min-width: 320px; overflow-x: clip; margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-manrope), Arial, Helvetica, sans-serif; text-rendering: optimizeLegibility; }
-h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading), sans-serif; font-weight: 800; }
+body { min-width: 320px; overflow-x: clip; margin: 0; background: var(--background); color: var(--foreground); font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-rendering: optimizeLegibility; }
+h1, h2, h3, h4, h5, h6 { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; }
 .font-heading { font-family: var(--font-heading), sans-serif; font-weight: 800; }
 /* Heredar familia/tamaño pero NO el peso, para que las utilidades
    font-* de Tailwind funcionen en botones e inputs. */
