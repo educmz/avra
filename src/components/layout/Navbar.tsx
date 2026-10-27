@@ -18,7 +18,7 @@ export function Navbar({ className }: { className?: string }) {
             href={item.href}
             aria-current={active ? "page" : undefined}
             className={cn(
-              "relative inline-flex min-h-10 shrink-0 items-center justify-center rounded-none px-3 text-[14px] font-medium tracking-[0.005em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B6D79B] xl:px-4 xl:text-[14px]",
+              "relative inline-flex min-h-10 shrink-0 items-center justify-center rounded-none px-3 text-[14px] font-semibold tracking-[0.005em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B6D79B] xl:px-4 xl:text-[14px]",
               active
                 ? "text-white"
                 : "text-white/85 hover:text-white"
