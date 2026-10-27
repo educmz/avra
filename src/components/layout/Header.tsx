@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useState } from "react";
-import { ArrowUpRight, Menu, Leaf } from "lucide-react";
+import { Menu } from "lucide-react";
 
 import { MobileCarta } from "@/components/layout/MobileCarta";
 import { Navbar } from "@/components/layout/Navbar";
@@ -28,17 +28,7 @@ export function Header() {
             />
           </Link>
 
-          <div className="ml-auto hidden min-w-0 items-center gap-3 lg:flex xl:gap-5">
-            <Navbar />
-            <Link
-              href="/maquinas"
-              className="group inline-flex min-h-10 shrink-0 items-center gap-2 rounded-full bg-[#FF8A00] px-5 py-2 text-[13px] font-bold text-[#21190F] transition-all duration-200 hover:bg-[#FFA31E] hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF8A00] xl:px-6"
-            >
-              <Leaf size={16} strokeWidth={2} aria-hidden="true" className="text-[#21190F]" />
-              Máquinas saludables
-              <ArrowUpRight size={17} strokeWidth={2} aria-hidden="true" className="transition-transform duration-200 group-hover:rotate-45 motion-reduce:transition-none" />
-            </Link>
-          </div>
+          <Navbar className="ml-auto" />
 
           <button
             type="button"
