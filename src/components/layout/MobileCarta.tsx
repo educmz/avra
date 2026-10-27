@@ -63,14 +63,14 @@ export function MobileCarta({
   if (!isOpen) return null;
 
   return (
-    <div id="mobile-navigation" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-[#20502D] text-white">
+    <div id="mobile-navigation" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-[#173E3A] text-white">
       <div className="flex min-h-full flex-col px-6 pb-[max(24px,env(safe-area-inset-bottom))] pt-[max(20px,env(safe-area-inset-top))] sm:px-8">
         {/* HEADER */}
         <div className="flex items-center justify-between">
           <Link
             href="/"
             onClick={onClose}
-            className="relative flex min-h-12 w-[120px] shrink-0 items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF8A00]"
+            className="relative flex min-h-12 w-[120px] shrink-0 items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D9EB31]"
           >
             <Image
               src="/images/brand/avra-wordmark-black.png"
@@ -86,7 +86,7 @@ export function MobileCarta({
             type="button"
             onClick={onClose}
             aria-label="Cerrar menú de navegación"
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#302E2A]/15 text-white transition-colors duration-200 hover:border-[#FF8A00] hover:bg-[#FF8A00]/5 active:bg-[#FF8A00]/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF8A00] motion-reduce:transition-none"
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#302E2A]/15 text-white transition-colors duration-200 hover:border-[#D9EB31] hover:bg-[#D9EB31]/5 active:bg-[#D9EB31]/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D9EB31] motion-reduce:transition-none"
           >
             <X className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
           </button>
@@ -107,9 +107,9 @@ export function MobileCarta({
                       href={item.href}
                       onClick={onClose}
                       aria-current={isActive ? "page" : undefined}
-                      className={`group flex min-h-14 items-center justify-between gap-5 rounded-xl px-5 py-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] motion-reduce:transition-none ${
+                      className={`group flex min-h-14 items-center justify-between gap-5 rounded-xl px-5 py-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D9EB31] motion-reduce:transition-none ${
                         isActive
-                          ? "bg-[#DCECBF] text-[#203F2A] hover:bg-[#C8E1AB] active:bg-[#BAD79A]"
+                          ? "bg-[#D9EB31] text-[#173E3A] hover:bg-[#E5F267] active:bg-[#C7DD28]"
                           : "text-white hover:bg-white/10 active:bg-white/15"
                       }`}
                     >
