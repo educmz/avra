@@ -9,33 +9,33 @@ import styles from "./Home.module.css";
 const vendingBenefits = [
   "Disponibilidad durante todo el día",
   "Instalación práctica y ordenada",
-  "Opciones para una alimentación más consciente",
+  "Una propuesta fresca y natural",
 ] as const;
 
 export function VendingSection() {
   return (
     <section
       aria-labelledby="vending-title"
-      className="bg-[#8CD5EE] py-16 sm:py-20 lg:py-24"
+      className={styles.section}
     >
       <Container>
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           {/* CONTENIDO */}
           <div>
             <HomeHeading
               id="vending-title"
-              eyebrow="Siempre cerca de ti"
+              eyebrow="máquinas avra"
             >
-              Lo saludable también puede ser práctico
+              Avra, donde la necesites
             </HomeHeading>
 
             <div className="space-y-3">
               {vendingBenefits.map((benefit) => (
                 <div
                   key={benefit}
-                  className="flex items-center gap-3 text-sm font-semibold text-[#253E3B] sm:text-base"
+                  className="flex items-center gap-3 text-sm font-semibold text-[#302E2A] sm:text-base"
                 >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#14A78F] text-white">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#FF8A00] text-white">
                     <Check
                       size={15}
                       strokeWidth={2.5}
@@ -51,9 +51,9 @@ export function VendingSection() {
             <div className="mt-8">
               <Link
                 href="/maquinas"
-                className="group inline-flex items-center gap-3 rounded-full bg-[#173E3A] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#10564F]"
+                className="group inline-flex items-center gap-3 rounded-full bg-[#302E2A] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#FF8A00]"
               >
-                Conoce nuestras máquinas
+                Quiero una máquina Avra
 
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition duration-300 group-hover:rotate-45 group-hover:bg-white group-hover:text-[#FF8A00]">
                   <ArrowUpRight
@@ -66,7 +66,7 @@ export function VendingSection() {
           </div>
 
           {/* IMAGEN */}
-          <div className="relative min-h-[430px] overflow-hidden rounded-[40px_96px_40px_96px] bg-[#DDF3F3] sm:min-h-[530px]">
+          <div className="relative min-h-[520px] sm:min-h-[620px]">
             <HomeImage
                 src="/images/home/vending-machine/avra-vending-machine.png"
                 alt="Máquina expendedora Avra"
