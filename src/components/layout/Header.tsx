@@ -31,10 +31,10 @@ export function Header() {
           <div className="ml-auto hidden min-w-0 items-center gap-5 lg:flex xl:gap-8">
             <Navbar />
             <Link
-              href="/contacto"
+              href="/carta"
               className="group inline-flex min-h-12 shrink-0 items-center gap-2 rounded-full bg-[#302E2A] px-5 py-3 text-[13px] font-bold text-white transition-colors duration-200 hover:bg-[#FF8A00] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF8A00] xl:px-6"
             >
-              Contáctanos
+              Ver carta
               <ArrowUpRight size={17} strokeWidth={2} aria-hidden="true" className="transition-transform duration-200 group-hover:rotate-45 motion-reduce:transition-none" />
             </Link>
           </div>
