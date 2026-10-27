@@ -1,46 +1,5 @@
-import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
-import { ChocolateCafeSection } from "@/components/events/ChocolateCafeSection";
-import { ImageHero } from "@/components/sections/ImageHero";
-import { FuenteChocolateSection } from "@/components/events/FuenteChocolateSection";
-import { SnacksSection } from "@/components/events/SnacksSection";
-import { Combos123Section } from "@/components/events/Combos123Section";
-import { PopcornAlgodonHotdogSection } from "@/components/events/PopcornAlgodonHotdogSection";
-import { AlgodonPopcornBurgersSection } from "@/components/events/AlgodonPopcornBurgersSection";
-import { PopcornPanchosManzanasSection } from "@/components/events/PopcornPanchosManzanasSection";
-import { MiniBurgersHotdogPopcornSection } from "@/components/events/MiniBurgersHotdogPopcornSection";
-import { PopcornManzanasSalchiNuggetsSection } from "@/components/events/PopcornManzanasSalchiNuggetsSection";
-import { WafflesSalchipapasChurrosSection } from "@/components/events/WafflesSalchipapasChurrosSection";
-import { PromocionLocuraSection } from "@/components/events/PromocionLocuraSection";
-import { HeladoSoftSection } from "@/components/events/HeladoSoftSection";
-import { CremoladasChilcanosSection } from "@/components/events/CremoladasChilcanosSection";
-
-export const metadata: Metadata = { title: "Eventos" };
-
-export default function EventsPage() {
-  return (
-    <div
-      className="bg-background pt-[88px] sm:pt-24 lg:pt-28"
-      style={{
-        fontFamily: "var(--font-carta), 'Montserrat', system-ui, sans-serif",
-      }}
-    >
-      <ImageHero image="/images/events/event-hero.webp" lines={["CELEBRAMOS", "CONTIGO"]} />
-      <div className="[&>section:nth-child(odd)]:bg-[#FFF8F3] [&>section:nth-child(even)]:bg-[#FFF0E6]">
-        <ChocolateCafeSection />
-        <FuenteChocolateSection />
-        <SnacksSection />
-        <Combos123Section />
-        <PopcornAlgodonHotdogSection />
-        <AlgodonPopcornBurgersSection />
-        <PopcornPanchosManzanasSection />
-        <MiniBurgersHotdogPopcornSection />
-        <PopcornManzanasSalchiNuggetsSection />
-        <WafflesSalchipapasChurrosSection />
-        <PromocionLocuraSection />
-        <HeladoSoftSection />
-        <CremoladasChilcanosSection />
-      </div>
-    </div>
-  );
+export default function LegacyEventsPage() {
+  redirect("/maquinas");
 }
