@@ -16,7 +16,7 @@ export function VendingSection() {
   return (
     <section
       aria-labelledby="vending-title"
-      className="bg-[#E6F0D8] py-16 sm:py-20 lg:py-24"
+      className="bg-[#8CD5EE] py-16 sm:py-20 lg:py-24"
     >
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
@@ -33,9 +33,9 @@ export function VendingSection() {
               {vendingBenefits.map((benefit) => (
                 <div
                   key={benefit}
-                  className="flex items-center gap-3 text-sm font-semibold text-[#203F2A] sm:text-base"
+                  className="flex items-center gap-3 text-sm font-semibold text-[#253E3B] sm:text-base"
                 >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#228B22] text-white">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#14A78F] text-white">
                     <Check
                       size={15}
                       strokeWidth={2.5}
@@ -51,7 +51,7 @@ export function VendingSection() {
             <div className="mt-8">
               <Link
                 href="/maquinas"
-                className="group inline-flex items-center gap-3 rounded-full bg-[#205C36] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#1B711B]"
+                className="group inline-flex items-center gap-3 rounded-full bg-[#173E3A] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#10564F]"
               >
                 Conoce nuestras máquinas
 
@@ -66,7 +66,7 @@ export function VendingSection() {
           </div>
 
           {/* IMAGEN */}
-          <div className="relative min-h-[430px] overflow-hidden rounded-[40px_96px_40px_96px] bg-[#D4E7C0] sm:min-h-[530px]">
+          <div className="relative min-h-[430px] overflow-hidden rounded-[40px_96px_40px_96px] bg-[#DDF3F3] sm:min-h-[530px]">
             <HomeImage
                 src="/images/home/vending-machine/avra-vending-machine.png"
                 alt="Máquina expendedora Avra"
