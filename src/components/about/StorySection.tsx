@@ -26,9 +26,6 @@ export function StorySection() {
     <section className="bg-background py-16 sm:py-20 lg:py-24">
       <Container>
         <AboutReveal className="mb-10 max-w-3xl sm:mb-12" amount={0.6}>
-          <AboutItem>
-            <p className="text-2xl text-[#FF8A00] sm:text-3xl" style={{ fontFamily: "var(--font-script), 'Pacifico', cursive" }}>Nuestra historia</p>
-          </AboutItem>
           <AnimatedTitle
             text={"Todo empieza con\nuna buena idea."}
             className="mt-4 text-4xl leading-[1.08] tracking-[0.01em] text-[#302E2A] sm:text-5xl lg:text-6xl font-extrabold uppercase"
