@@ -12,12 +12,8 @@ const groups = [
     button: "Ver bebidas",
     href: "/carta#carta-smoothies",
     background: "#DCEEF2",
-    products: [
-      { src: "/images/carta/naranja-fresa.webp", alt: "Smoothie Naranja Fresa", position: "left-[3%] bottom-[2%] w-[34%] h-[78%] rotate-[-6deg]" },
-      { src: "/images/carta/jamaica.webp", alt: "Té helado Jamaica", position: "left-[27%] bottom-[0%] w-[33%] h-[88%] rotate-[3deg]" },
-      { src: "/images/carta/mocaccino.webp", alt: "Frappé Mocaccino", position: "left-[50%] bottom-[0%] w-[33%] h-[88%] rotate-[-3deg]" },
-      { src: "/images/carta/chocolate-caliente.webp", alt: "Chocolate caliente", position: "right-[-2%] bottom-[2%] w-[31%] h-[70%] rotate-[4deg]" },
-    ],
+    image: "/images/home/cravings/para-beber.png",
+    alt: "Selección de bebidas de Avra",
   },
   {
     title: "Para comer",
@@ -25,11 +21,8 @@ const groups = [
     button: "Ver alimentos",
     href: "/carta#carta-waffles",
     background: "#F8E6BF",
-    products: [
-      { src: "/images/carta/waffle.webp", alt: "Waffle de Avra", position: "left-[0%] bottom-[-6%] w-[52%] h-[67%] rotate-[-7deg]" },
-      { src: "/images/carta/mixto.png", alt: "Sándwich mixto", position: "right-[1%] top-[3%] w-[52%] h-[59%] rotate-[5deg]" },
-      { src: "/images/carta/pizza-hawaiana.webp", alt: "Pizza de Avra", position: "right-[-3%] bottom-[-11%] w-[53%] h-[66%] rotate-[8deg]" },
-    ],
+    image: "/images/home/cravings/para-comer.png",
+    alt: "Selección de alimentos de Avra",
   },
 ];
 
@@ -48,12 +41,14 @@ export function CravingsSection() {
               style={{ backgroundColor: group.background }}
             >
               <div aria-hidden="true" className="absolute inset-0 z-[1] bg-gradient-to-r from-white/30 via-white/5 to-transparent" />
-              <div className="absolute bottom-[-7%] right-[-4%] top-[13%] w-[73%] sm:w-[71%]">
-                {group.products.map((product) => (
-                  <div key={product.src} className={`absolute ${product.position} transition-transform duration-500 ease-out group-hover:scale-[1.045] motion-reduce:transition-none`}>
-                    <Image src={product.src} alt={product.alt} fill sizes="(min-width: 1024px) 230px, (min-width: 768px) 190px, 45vw" className="object-contain drop-shadow-[0_15px_18px_rgba(48,46,42,.15)]" />
-                  </div>
-                ))}
+              <div className="absolute inset-0">
+                <Image
+                  src={group.image}
+                  alt={group.alt}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.025] motion-reduce:transition-none"
+                />
               </div>
               <div className="relative z-10 flex max-w-[53%] flex-col items-start px-5 pb-7 pt-7 sm:px-8 sm:pt-9 lg:px-9">
                 <span aria-hidden="true" className="mb-4 h-[3px] w-10 rounded-full bg-[#EA6F32]" />
