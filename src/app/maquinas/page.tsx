@@ -19,22 +19,15 @@ export default function MachinesPage() {
   return (
     <main className="bg-background pt-[88px] sm:pt-24 lg:pt-28">
       <section aria-label="Presentación de máquinas Avra" className="w-full pb-6 sm:pb-8 lg:pb-10">
-        <div className="relative isolate flex h-[clamp(190px,43vw,270px)] w-full items-center overflow-hidden bg-[#E5EBD8] md:h-[clamp(220px,26vw,360px)]">
-          <Image
-            src="/images/vending/banner-vending.webp"
-            alt="Máquinas vending saludables Avra"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-          <div className="relative z-10 w-3/5 pl-[max(24px,calc((100vw-1280px)/2+24px))] pr-3 md:w-1/2 md:pr-2 lg:pl-[max(40px,calc((100vw-1280px)/2+40px))]">
-            <h1 className="font-heading text-[clamp(28px,6.4vw,40px)] font-extrabold uppercase leading-[1.12] tracking-tight text-[#302E2A] md:text-[clamp(22px,4.8vw,76px)] md:leading-[1.08]">
-              <span className="block">VENDING</span>
-              <span className="block">SALUDABLES</span>
-            </h1>
-          </div>
-        </div>
+        <Image
+          src="/images/vending/banner-vending.webp"
+          alt="Nuestras máquinas de alimentación saludable Avra"
+          width={1920}
+          height={1080}
+          priority
+          sizes="100vw"
+          className="block h-auto w-full"
+        />
       </section>
       <section className="overflow-hidden py-14 sm:py-20 lg:py-24">
         <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
