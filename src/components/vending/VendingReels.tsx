@@ -50,7 +50,7 @@ export function VendingReels() {
   }
 
   return (
-    <section id="videos" aria-labelledby="vending-videos-title" className="overflow-hidden py-12 text-[#302E2A] sm:py-16" style={{ backgroundColor: "#EAF0E4" }}>
+    <section id="videos" aria-labelledby="vending-videos-title" className="overflow-hidden py-12 text-[#302E2A] sm:py-16" style={{ backgroundColor: "var(--background)" }}>
       <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="mb-8 text-center sm:mb-10">
           <p className="text-xs font-bold uppercase tracking-[.22em] text-[#295C50]">Videos y experiencias</p>
