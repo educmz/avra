@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Gem, Leaf, UsersRound } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
@@ -8,12 +8,6 @@ import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 const machines = [
   { name: "AVRA", description: "Bebidas naturales", image: "/images/vending/avra-home.png", href: "/maquinas#avra", bg: "#FBE5D7", accent: "#EA6F32", alt: "Máquina Avra de bebidas naturales" },
   { name: "NUNA", description: "Snacks y bebidas", image: "/images/vending/nuna-home.png", href: "/maquinas#nuna", bg: "#E4EDD9", accent: "#295C50", alt: "Máquina Nuna de snacks y bebidas" },
-] as const;
-
-const benefits = [
-  { Icon: Leaf, label: "Opciones saludables", bg: "#FBE3D7" },
-  { Icon: Gem, label: "Diseño moderno", bg: "#E5EDD9" },
-  { Icon: UsersRound, label: "Ideal para oficinas", bg: "#FBE3D7" },
 ] as const;
 
 export function VendingSection() {
@@ -27,16 +21,6 @@ export function VendingSection() {
             <p className="mt-6 max-w-[44ch] text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
               Bebidas y snacks deliciosos, siempre disponibles. Descubre una forma práctica y moderna de disfrutar opciones más saludables.
             </p>
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              {benefits.map(({ Icon, label, bg }) => (
-                <div key={label} className="flex min-w-0 items-center gap-3 text-left">
-                  <span className="grid size-9 shrink-0 place-items-center rounded-full text-[#295C50] sm:size-10" style={{ backgroundColor: bg }}>
-                    <Icon size={19} aria-hidden="true" />
-                  </span>
-                  <span className="text-xs font-medium leading-4 text-[#302E2A]/80 sm:text-sm sm:leading-5">{label}</span>
-                </div>
-              ))}
-            </div>
             <Link href="/maquinas" className="avra-cta mt-7">
               <span>Conoce nuestras máquinas</span>
               <ArrowRight aria-hidden="true" size={18} />
