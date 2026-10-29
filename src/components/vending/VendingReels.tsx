@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX } from "lucide-react";
 
@@ -53,8 +54,7 @@ export function VendingReels() {
     <section id="videos" aria-labelledby="vending-videos-title" className="overflow-hidden py-12 text-[#302E2A] sm:py-16" style={{ backgroundColor: "var(--background)" }}>
       <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="mb-8 text-center sm:mb-10">
-          <p className="text-xs font-bold uppercase tracking-[.22em] text-[#295C50]">Videos y experiencias</p>
-          <h2 id="vending-videos-title" className="mt-2 font-heading text-[28px] font-extrabold uppercase sm:text-[34px] lg:text-[40px]">Vending en acción</h2>
+          <AnimatedTitle id="vending-videos-title" text="Vending en acción" className="mt-2 font-heading text-[28px] font-extrabold uppercase sm:text-[34px] lg:text-[40px]" />
           <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-[#302E2A]/70 sm:text-base">Descubre nuestras máquinas a través de videos cortos.</p>
         </div>
 
