@@ -13,7 +13,7 @@ const benefits = [
 
 export function VendingSection() {
   return (
-    <section aria-labelledby="vending-title" className="bg-background py-12 sm:py-16">
+    <section aria-labelledby="vending-title" className="bg-[#FBF4EF] py-12 sm:py-16">
       <Container>
         <div className="relative isolate overflow-hidden rounded-[24px] bg-[#F2EFE4]">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#FBF7F0] via-[#FBF7F0]/55 to-[#F2EFE4]/75" />
