@@ -36,12 +36,12 @@ export function FeaturedFavoritesSection() {
     if (!track) return;
     const cards = Array.from(track.querySelectorAll<HTMLElement>("[data-favorite-card]"));
     if (!cards.length) return;
-    const center = track.scrollLeft + track.clientWidth / 2;
+    const left = track.scrollLeft;
     let closest = 0;
     let distance = Infinity;
     cards.forEach((card, index) => {
-      const cardCenter = card.offsetLeft - track.offsetLeft + card.offsetWidth / 2;
-      const diff = Math.abs(cardCenter - center);
+      const cardLeft = card.offsetLeft - track.offsetLeft;
+      const diff = Math.abs(cardLeft - left);
       if (diff < distance) { distance = diff; closest = index; }
     });
     setActive(closest);
@@ -57,11 +57,9 @@ export function FeaturedFavoritesSection() {
             <AnimatedTitle id="featured-favorites-title" text="Nuestros imperdibles" className="font-heading text-[28px] font-extrabold uppercase leading-tight sm:text-[34px] lg:text-[40px]" />
             <div className="mt-4 h-[3px] w-14 rounded-full bg-[#F9B444]" />
             <p className="mt-4 max-w-sm text-sm leading-7 text-white/80">Descubre algunos de los productos que todos quieren.</p>
-            <div className="mt-5 hidden items-center gap-2 lg:flex" aria-label="Progreso del carrusel">
-              {featured.map((product, i) => (
-                <button key={product.id} type="button" aria-label={`Ir al producto ${i + 1}: ${product.name}`} aria-current={active === i ? "true" : undefined} onClick={() => goTo(i)} className={`h-1.5 rounded-full transition-all duration-300 ${active === i ? "w-8 bg-[#F9B444]" : "w-3 bg-white/35 hover:bg-white/65"}`} />
-              ))}
-            </div>
+            <p className="mt-5 text-xs font-bold tracking-[0.18em] text-white/65" aria-label="Producto seleccionado">
+              {String(active + 1).padStart(2, "0")} / {String(featured.length).padStart(2, "0")}
+            </p>
           </div>
           <div className="min-w-0">
             <div className="mb-5 flex flex-wrap items-center justify-end gap-2.5 sm:gap-3">
@@ -71,14 +69,14 @@ export function FeaturedFavoritesSection() {
               <button type="button" onClick={() => goTo(active - 1)} aria-label="Ver producto anterior" className="grid size-11 shrink-0 place-items-center rounded-full border border-white/35 bg-white/10 text-white transition duration-200 hover:-translate-y-0.5 hover:bg-white hover:text-[#295C50] active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transform-none"><ArrowLeft size={20} /></button>
               <button type="button" onClick={() => goTo(active + 1)} aria-label="Ver producto siguiente" className="grid size-11 shrink-0 place-items-center rounded-full border border-white/35 bg-white/10 text-white transition duration-200 hover:-translate-y-0.5 hover:bg-white hover:text-[#295C50] active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transform-none"><ArrowRight size={20} /></button>
             </div>
-            <div ref={trackRef} onScroll={updateActive} className="relative flex min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto px-2 pb-7 pt-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <div ref={trackRef} onScroll={updateActive} className="relative flex min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto pb-5 pt-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {featured.map((product, index) => (
-                <motion.div key={product.id} data-favorite-card className="w-[175px] shrink-0 snap-start sm:w-[195px] lg:w-[185px] xl:w-[210px]"
-                  animate={reducedMotion ? undefined : { y: index === active ? -7 : 0, scale: index === active ? 1.035 : 0.965, opacity: index === active ? 1 : 0.82 }}
+                <motion.div key={product.id} data-favorite-card className="w-full shrink-0 snap-start sm:w-[calc((100%-16px)/2)] lg:w-[calc((100%-48px)/4)]"
+                  animate={reducedMotion ? undefined : { y: index === active ? -5 : 0 }}
                   transition={{ type: "spring", stiffness: 280, damping: 23 }}>
                   <Link href={`/carta#carta-${product.category}`} className="group flex min-h-[230px] flex-col overflow-hidden rounded-2xl bg-[#FFFDFC] p-4 text-center text-[#302E2A] shadow-[0_12px_28px_rgba(15,43,35,.18)] transition-shadow duration-300 hover:shadow-[0_20px_38px_rgba(15,43,35,.27)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F9B444] sm:min-h-[244px]">
                     <div className="relative mx-auto aspect-[4/3] w-full">
-                      <Image src={product.image} alt={product.name} fill sizes="(min-width:1024px) 210px, (min-width:640px) 195px, 175px" className="object-contain transition-transform duration-500 group-hover:scale-110 motion-reduce:transition-none" />
+                      <Image src={product.image} alt={product.name} fill sizes="(min-width:1024px) 220px, (min-width:640px) 45vw, 90vw" className="object-contain transition-transform duration-500 group-hover:scale-110 motion-reduce:transition-none" />
                     </div>
                     <h3 className="mt-3 font-heading text-sm font-extrabold uppercase leading-tight">{product.name}</h3>
                     <p className="mt-1 text-xs text-[#302E2A]/65">{product.category === "tes-helados" ? "Té helado" : product.category === "frappes" ? "Frappé" : product.category === "waffles" ? "Waffle" : product.category === "sandwiches" ? "Sándwich" : "Smoothie"}</p>
