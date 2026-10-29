@@ -139,6 +139,7 @@ export function CartaCatalog() {
         lines={["CARTA"]}
         kicker="Nuestra"
         subtitle="Sabores para disfrutar cada momento"
+        flourishColors={["#295C50", "#4E8C7A", "#7DB6A3"]}
       />
 
       <CartaCategoryNav
