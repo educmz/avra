@@ -2,17 +2,18 @@ import Image from "next/image";
 
 interface ImageHeroProps {
   image: string;
+  flushBottom?: boolean;
   lines: [string, ...string[]];
   kicker?: string;
   subtitle?: string;
   flourishColors?: [string, string, string];
 }
 
-export function ImageHero({ image, lines, kicker, subtitle, flourishColors = ["#F9B444", "#FFD074", "#EAA12F"] }: ImageHeroProps) {
+export function ImageHero({ image, lines, kicker, subtitle, flushBottom = false, flourishColors = ["#F9B444", "#FFD074", "#EAA12F"] }: ImageHeroProps) {
   const hasVendingStyle = Boolean(kicker && subtitle);
 
   return (
-    <div className="w-full pb-6 sm:pb-8 lg:pb-10">
+    <div className={flushBottom ? "w-full" : "w-full pb-6 sm:pb-8 lg:pb-10"}>
       <div className="relative isolate flex h-[220px] w-full items-center overflow-hidden sm:h-auto sm:aspect-[1530/380]">
         <Image
           src={image}
