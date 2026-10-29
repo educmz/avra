@@ -55,7 +55,7 @@ export function VendingReels() {
       <div className="mx-auto max-w-6xl px-4 sm:px-8">
         <div className="mb-8 text-center sm:mb-10">
           <AnimatedTitle id="vending-videos-title" text="Vending en acción" className="mt-2 font-heading text-[28px] font-extrabold uppercase sm:text-[34px] lg:text-[40px]" />
-          <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-[#302E2A]/70 sm:text-lg sm:leading-8">Descubre nuestras máquinas a través de videos cortos.</p>
+          <p className="mx-auto mt-6 max-w-xl text-justify text-base leading-7 text-[#302E2A]/70 sm:text-lg sm:leading-8">Descubre nuestras máquinas a través de videos cortos.</p>
         </div>
 
         <div className="relative mx-auto flex max-w-5xl items-center justify-center">
