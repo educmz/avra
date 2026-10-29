@@ -74,14 +74,48 @@ export default function MachinesPage() {
         </div>
       </section>
 
-      <section className="py-14 sm:py-20">
-        <Container className="mx-auto max-w-5xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[.22em] text-[#C76D00]">Una nueva forma de disfrutar</p>
-          <h2 className="mt-4 font-heading text-4xl font-extrabold uppercase leading-tight tracking-tight text-[#302E2A] sm:text-6xl">Dos máquinas, diferentes antojos.</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#302E2A]/75 sm:text-lg">Avra también llega a ti a través del vending: bebidas naturales por un lado, comidas y snacks por el otro. Descubre cada formato y cómo funciona.</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="#avra" className="rounded-full bg-[#EA6F32] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#C85623]">Máquina Avra</a>
-            <a href="#nuna" className="rounded-full bg-[#295C50] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#173E34]">Máquina Nuna</a>
+      <section aria-labelledby="vending-overview-title" className="bg-[#F4F3EA] py-9 sm:py-11 lg:py-12">
+        <Container>
+          <div className="grid items-center gap-7 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-10">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[.22em] text-[#C76D00]">Una nueva forma de disfrutar</p>
+              <h2 id="vending-overview-title" className="mt-2 font-heading text-3xl font-extrabold uppercase leading-[1.02] tracking-tight text-[#302E2A] sm:text-4xl xl:text-[2.75rem]">Dos máquinas, diferentes antojos.</h2>
+              <p className="mt-3 max-w-xl text-sm leading-6 text-[#302E2A]/75 sm:text-base">Avra también llega a ti a través del vending: bebidas naturales por un lado, comidas y snacks por el otro. Descubre cada formato y cómo funciona.</p>
+              <div className="mt-5 flex flex-wrap gap-2.5">
+                <a href="#avra" className="rounded-full bg-[#EA6F32] px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-[#C85623] sm:text-sm">Máquina Avra</a>
+                <a href="#nuna" className="rounded-full bg-[#295C50] px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-[#173E34] sm:text-sm">Máquina Nuna</a>
+              </div>
+            </div>
+            <div className="rounded-2xl bg-white/85 p-4 shadow-[0_8px_28px_rgba(48,46,42,.05)] sm:p-5">
+              <p className="text-[11px] font-bold uppercase tracking-[.18em] text-[#C76D00]">Simple y práctico</p>
+              <h3 className="mt-1 font-heading text-xl font-extrabold uppercase text-[#302E2A] sm:text-2xl">¿Cómo funciona?</h3>
+              <div className="mt-4 grid grid-cols-3 gap-2">
+                {[{Icon:MousePointerClick,title:"01. Elige",desc:"Explora las opciones del equipo y selecciona tu producto."},{Icon:CreditCard,title:"02. Paga",desc:"Sigue las instrucciones del sistema de pago disponible."},{Icon:PackageCheck,title:"03. Disfruta",desc:"Recoge tu producto y continúa con tu día."}].map(({Icon,title,desc})=>(
+                  <div key={title} className="min-w-0 rounded-xl bg-[#FFF5EC] p-2.5 sm:p-3">
+                    <Icon size={20} className="text-[#D86629]" aria-hidden="true" />
+                    <h4 className="mt-2 font-heading text-sm font-bold text-[#302E2A]">{title}</h4>
+                    <p className="mt-1 text-[11px] leading-[1.45] text-[#302E2A]/75 sm:text-xs">{desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-7 border-t border-[#295C50]/15 pt-6">
+            <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
+              <p className="text-[11px] font-bold uppercase tracking-[.18em] text-[#295C50]">Por qué elegir vending</p>
+              <h3 className="font-heading text-lg font-extrabold uppercase text-[#302E2A] sm:text-xl">Practicidad en cada momento</h3>
+            </div>
+            <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
+              {[{Icon:Clock3,title:"A tu ritmo",desc:"Accede a opciones de consumo según tu rutina y el horario del espacio."},{Icon:LayoutGrid,title:"Alternativas visibles",desc:"Explora los formatos de bebidas y alimentos de nuestras máquinas."},{Icon:Smartphone,title:"Autoservicio",desc:"Una experiencia directa de selección y compra."},{Icon:Leaf,title:"Una propuesta diferente",desc:"Acercamos la experiencia Avra mediante nuevos puntos de contacto."}].map(({Icon,title,desc})=>(
+                <article key={title} className="flex items-start gap-3 rounded-xl bg-white/90 p-3.5">
+                  <Icon size={21} className="mt-0.5 shrink-0 text-[#295C50]" aria-hidden="true" />
+                  <div className="min-w-0">
+                    <h4 className="font-heading text-sm font-bold text-[#302E2A]">{title}</h4>
+                    <p className="mt-1 text-xs leading-[1.45] text-[#302E2A]/70">{desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
@@ -120,22 +154,6 @@ export default function MachinesPage() {
         </section>
       ))}
       <VendingReels />
-      <section aria-labelledby="how-vending-works" className="bg-[#FBF7F0] py-16 sm:py-24">
-        <Container>
-          <div className="mb-12 text-center"><p className="text-xs font-bold uppercase tracking-[.22em] text-[#C76D00]">Simple y práctico</p><h2 id="how-vending-works" className="mt-4 font-heading text-4xl font-extrabold uppercase text-[#302E2A] sm:text-6xl">¿Cómo funciona?</h2></div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {[{Icon:MousePointerClick,title:"01. Elige",desc:"Explora las opciones del equipo y selecciona tu producto."},{Icon:CreditCard,title:"02. Paga",desc:"Sigue las instrucciones del sistema de pago disponible."},{Icon:PackageCheck,title:"03. Disfruta",desc:"Recoge tu producto y continúa con tu día."}].map(({Icon,title,desc})=><article key={title} className="rounded-[1.75rem] bg-white p-8 text-center shadow-[0_10px_35px_rgba(48,46,42,.06)]"><span className="mx-auto grid size-16 place-items-center rounded-full bg-[#FCE5D0] text-[#D86629]"><Icon size={29}/></span><h3 className="mt-5 font-heading text-2xl font-bold text-[#302E2A]">{title}</h3><p className="mt-3 text-sm leading-7 text-[#302E2A]/70">{desc}</p></article>)}
-          </div>
-        </Container>
-      </section>
-      <section aria-labelledby="beneficios-vending" className="bg-[#EAF0E4] py-16 sm:py-20">
-        <Container>
-          <div className="mx-auto mb-10 max-w-2xl text-center"><p className="text-xs font-bold uppercase tracking-[.22em] text-[#295C50]">Por qué elegir vending</p><h2 id="beneficios-vending" className="mt-4 font-heading text-4xl font-extrabold uppercase text-[#302E2A] sm:text-5xl">Practicidad en cada momento</h2></div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[{Icon:Clock3,title:"A tu ritmo",desc:"Accede a opciones de consumo según tu rutina y el horario del espacio."},{Icon:LayoutGrid,title:"Alternativas visibles",desc:"Explora los formatos de bebidas y alimentos de nuestras máquinas."},{Icon:Smartphone,title:"Autoservicio",desc:"Una experiencia directa de selección y compra."},{Icon:Leaf,title:"Una propuesta diferente",desc:"Acercamos la experiencia Avra mediante nuevos puntos de contacto."}].map(({Icon,title,desc})=><article key={title} className="rounded-2xl bg-white p-6"><Icon className="text-[#295C50]" size={26}/><h3 className="mt-5 font-heading text-xl font-bold">{title}</h3><p className="mt-3 text-sm leading-6 text-[#302E2A]/70">{desc}</p></article>)}
-          </div>
-        </Container>
-      </section>
     </main>
   );
 }
