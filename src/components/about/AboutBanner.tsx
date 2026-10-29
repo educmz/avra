@@ -5,7 +5,7 @@ export function AboutBanner() {
     <ImageHero
       image="/images/about/about-hero.png"
       lines={["HISTORIA"]}
-      kicker="Conoce nuestra"
+      kicker="Nuestra"
       subtitle="Momentos que nos inspiran a seguir creciendo"
       flourishColors={["#295C50", "#4E8C7A", "#7DB6A3"]}
     />
