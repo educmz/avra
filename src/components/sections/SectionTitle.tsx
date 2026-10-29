@@ -5,7 +5,7 @@ export function SectionTitle({ eyebrow, title, description, className }: { eyebr
   return (
     <header className={cn("max-w-2xl", className)}>
       <AnimatedTitle text={title} className="text-balance text-[28px] font-black uppercase tracking-[-0.04em] sm:text-[34px] lg:text-[40px]" />
-      {description && <p className="mt-4 text-pretty text-base leading-7 text-black/65 sm:text-lg sm:leading-8">{description}</p>}
+      {description && <p className="mt-4 text-justify text-base leading-7 text-black/65 sm:text-lg sm:leading-8">{description}</p>}
     </header>
   );
 }
