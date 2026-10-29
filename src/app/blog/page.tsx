@@ -23,7 +23,7 @@ export default function BlogPage() {
         <p className="mt-6 max-w-xl text-base leading-8 text-[#302E2A]/75 sm:text-lg">
           Estamos preparando un espacio para compartir novedades, ideas y contenidos sobre alimentación y bienestar.
         </p>
-        <Link href="/" className="mt-9 inline-flex min-h-12 items-center rounded-xl bg-[#295C50] px-6 font-[family-name:var(--font-header)] text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-[#1D453B]">
+        <Link href="/" className="avra-cta mt-9 inline-flex min-h-12 items-center rounded-xl bg-[#295C50] px-6 font-[family-name:var(--font-header)] text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-[#1D453B]">
           Volver al inicio
         </Link>
       </section>
