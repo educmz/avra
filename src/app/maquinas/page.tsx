@@ -20,16 +20,19 @@ export default function MachinesPage() {
     <main className="bg-background pt-[88px] sm:pt-24 lg:pt-28">
       <section aria-label="Presentación de máquinas Avra" className="w-full pb-6 sm:pb-8 lg:pb-10">
         <div className="relative isolate flex h-[clamp(190px,43vw,270px)] w-full items-center overflow-hidden bg-[#E5EBD8] md:h-[clamp(220px,26vw,360px)]">
-          <div aria-hidden="true" className="absolute -right-[10%] -top-[70%] h-[190%] w-[65%] rounded-full bg-[#C3D5A5] sm:-right-[5%]" />
-          <div aria-hidden="true" className="absolute right-[16%] bottom-[-65%] size-[65vw] max-h-[550px] max-w-[550px] rounded-full bg-[#F3CC8F]/70" />
+          <Image
+            src="/images/vending/banner-vending.webp"
+            alt="Máquinas vending saludables Avra"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
           <div className="relative z-10 w-3/5 pl-[max(24px,calc((100vw-1280px)/2+24px))] pr-3 md:w-1/2 md:pr-2 lg:pl-[max(40px,calc((100vw-1280px)/2+40px))]">
             <h1 className="font-heading text-[clamp(28px,6.4vw,40px)] font-extrabold uppercase leading-[1.12] tracking-tight text-[#302E2A] md:text-[clamp(22px,4.8vw,76px)] md:leading-[1.08]">
               <span className="block">VENDING</span>
               <span className="block">SALUDABLES</span>
             </h1>
-          </div>
-          <div className="absolute inset-y-0 right-[1%] w-[44%] sm:right-[5%] sm:w-[40%]">
-            <Image src="/images/home/vending-machine/avra-vending-machine.png" alt="Máquina expendedora Avra" fill priority sizes="(min-width: 768px) 40vw, 44vw" className="object-contain object-center" />
           </div>
         </div>
       </section>
