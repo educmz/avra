@@ -16,7 +16,6 @@ export function EssencePreviewSection() {
             sizes="(min-width:1280px) 1200px, 100vw"
             className="object-cover object-center"
           />
-          <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#F3F7EC]/85 via-[#F3F7EC]/40 via-[32%] to-transparent" />
           <div className="relative z-10 flex min-h-[420px] w-full max-w-[690px] flex-col justify-center px-6 py-9 sm:min-h-[450px] sm:px-10 lg:min-h-[460px] lg:px-12">
             <AnimatedTitle
               id="home-essence-title"
