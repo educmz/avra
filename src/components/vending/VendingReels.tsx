@@ -61,13 +61,16 @@ export function VendingReels() {
         <div className="relative mx-auto flex max-w-5xl items-center justify-center">
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[65%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E9DCCA]/45 blur-3xl" aria-hidden="true" />
           <button type="button" onClick={() => select(active - 1)} aria-label="Video anterior" className="relative z-20 mr-1 grid size-9 shrink-0 place-items-center rounded-full border border-[#295C50]/20 bg-white text-[#295C50] shadow-sm transition-colors hover:bg-[#EAF0E4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] sm:mr-5 sm:size-12"><ChevronLeft size={21} /></button>
-          <div className="relative z-10 grid min-w-0 flex-1 grid-cols-3 items-center gap-1.5 py-4 sm:gap-4 sm:py-7">
+          <div className="relative z-10 min-w-0 flex-1 aspect-[1.8] sm:aspect-[1.95]">
             {reels.map((reel, index) => {
               const selected = active === index;
+              const position = (index - active + reels.length) % reels.length;
+              const offset = position === 0 ? "translate(-50%, -50%) scale(1.08)" : position === 1 ? "translate(58%, -50%) scale(.88)" : "translate(-158%, -50%) scale(.88)";
               return (
                 <div
                   key={reel.src}
-                  className={`relative min-w-0 transform-gpu overflow-hidden rounded-xl border bg-[#17241F] shadow-lg transition-[transform,opacity,box-shadow,border-color] duration-500 ease-out motion-reduce:transition-none sm:rounded-[1.5rem] ${selected ? "z-10 scale-[1.06] border-[#EA6F32]/50 opacity-100 shadow-[0_18px_45px_rgba(48,46,42,.2)] sm:scale-[1.08]" : "z-0 scale-[.88] border-white/20 opacity-60 shadow-[0_8px_24px_rgba(48,46,42,.1)] hover:opacity-85"}`}
+                  style={{ transform: offset }}
+                  className={`absolute left-1/2 top-1/2 w-[31%] transform-gpu overflow-hidden rounded-xl border bg-[#17241F] shadow-lg transition-[transform,opacity,box-shadow,border-color] duration-500 ease-out motion-reduce:transition-none sm:rounded-[1.5rem] ${selected ? "z-10 border-[#EA6F32]/50 opacity-100 shadow-[0_18px_45px_rgba(48,46,42,.2)]" : "z-0 border-white/20 opacity-60 shadow-[0_8px_24px_rgba(48,46,42,.1)] hover:opacity-85"}`}
                 >
                   <video
                     ref={(el) => { videos.current[index] = el; }}
