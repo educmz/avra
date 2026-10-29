@@ -13,9 +13,9 @@ const benefits = [
 
 export function VendingSection() {
   return (
-    <section aria-labelledby="vending-title" className="bg-[#FAF7F2] py-12 sm:py-16">
+    <section aria-labelledby="vending-title" className="bg-white py-12 sm:py-16">
       <Container>
-        <div className="relative isolate overflow-hidden rounded-[24px] bg-[#F5F0EA]">
+        <div className="relative isolate overflow-hidden rounded-[24px] bg-[#EAF0E4]">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#FBF7F0] via-[#FBF7F0]/55 to-[#F2EFE4]/75" />
           <div className="relative grid min-h-[350px] items-center gap-5 p-6 sm:p-9 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)_minmax(0,.65fr)] lg:gap-4 lg:px-10 lg:py-8">
             <div className="relative z-10">
