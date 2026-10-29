@@ -53,7 +53,7 @@ export function CravingsSection() {
               <div className="relative z-10 flex max-w-[53%] flex-col items-start px-5 pb-7 pt-7 sm:px-8 sm:pt-9 lg:px-9">
                 <span aria-hidden="true" className="mb-4 h-[3px] w-10 rounded-full bg-[#EA6F32]" />
                 <h3 className="font-heading text-[23px] font-extrabold uppercase leading-[1.05] tracking-tight text-[#302E2A] sm:text-[28px]">{group.title}</h3>
-                <p className="mt-3 max-w-[24ch] text-base leading-7 text-[#302E2A]/80 sm:text-lg sm:leading-8">{group.description}</p>
+                <p className="mt-3 max-w-[24ch] text-justify text-base leading-7 text-[#302E2A]/80 sm:text-lg sm:leading-8">{group.description}</p>
                 <Link href={group.href} className="avra-cta mt-6 inline-flex min-h-10 items-center gap-2 rounded-full bg-[#295C50] px-4 text-[11px] font-bold uppercase tracking-[.04em] text-white transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-[#1D453B] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] motion-reduce:transform-none sm:px-5 sm:text-xs">
                   {group.button} <ArrowRight size={16} aria-hidden="true" />
                 </Link>
