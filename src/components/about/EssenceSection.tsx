@@ -2,133 +2,41 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { Container } from "@/components/ui/Container";
-import {
-  AboutItem,
-  AboutReveal,
-  aboutCardVariants,
-} from "@/components/about/AboutMotion";
 
-const essenceItems = [
-  {
-    id: "purpose",
-    label: "Propósito",
-    title: "Crear momentos para disfrutar",
-    background: "#E8DCEF",
-    image: "/images/about/essence/purpose-avra.webp",
-  },
-  {
-    id: "mission",
-    label: "Misión",
-    title: "Hacer especial lo cotidiano",
-    background: "#E2ECD4",
-    image: "/images/about/essence/mission-avra.webp",
-  },
-  {
-    id: "vision",
-    label: "Visión",
-    title: "Seguir creciendo contigo",
-    background: "#F4DFA2",
-    image: "/images/about/essence/vision-avra.webp",
-  },
+const items = [
+  { id: "purpose", label: "Propósito", title: "Crear momentos para disfrutar", description: "Acercar opciones deliciosas y prácticas que acompañen las pequeñas pausas y los buenos momentos de cada día.", image: "/images/about/essence/purpose-avra.webp", background: "#EAF0E4" },
+  { id: "mission", label: "Misión", title: "Hacer especial lo cotidiano", description: "Ofrecer sabores y experiencias accesibles, cuidando los detalles para que disfrutar de Avra sea fácil y agradable.", image: "/images/about/essence/mission-avra.webp", background: "#F5E9DC" },
+  { id: "vision", label: "Visión", title: "Seguir creciendo contigo", description: "Llegar a más personas y espacios con nuevas formas de disfrutar nuestros productos sin perder nuestra esencia cercana.", image: "/images/about/essence/vision-avra.webp", background: "#E7ECE3" },
 ];
 
 export function EssenceSection() {
   return (
-    <section className="bg-background py-16 sm:py-20 lg:py-24">
+    <section aria-labelledby="about-essence-title" className="bg-background py-12 sm:py-16 lg:py-20">
       <Container>
-        {/* CABECERA */}
-        <AboutReveal
-          className="mb-10 sm:mb-12 lg:mb-14"
-          amount={0.6}
-        >
-          <AnimatedTitle
-            text="Lo que nos mueve"
-            className="mt-4 text-[28px] font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-[34px] lg:text-[40px]"
-          />
-        </AboutReveal>
-
-        {/* BLOQUES */}
-        <AboutReveal
-          className="grid gap-4 md:grid-cols-3 lg:gap-5"
-          amount={0.2}
-          stagger={0.14}
-        >
-          {essenceItems.map((item) => (
-            <motion.article
-              key={item.id}
-              variants={aboutCardVariants}
-              whileHover={{ y: -10 }}
-              transition={{
-                type: "spring",
-                stiffness: 260,
-                damping: 24,
-              }}
-              className="
-                group
-                overflow-hidden
-                rounded-[1.6rem]
-                shadow-[0_10px_30px_-20px_rgba(48,46,42,0.25)]
-                transition-shadow
-                duration-500
-                hover:shadow-[0_36px_60px_-28px_rgba(48,46,42,0.45)]
-                lg:rounded-[2rem]
-              "
-              style={{
-                backgroundColor: item.background,
-              }}
-            >
-              {/* IMAGEN */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.label}
-                  fill
-                  sizes="(max-width: 767px) 100vw, 33vw"
-                  className="
-                    object-cover
-                    transition-transform
-                    duration-700
-                    ease-out
-                    group-hover:scale-105
-                  "
-                />
+        <div className="mx-auto mb-9 max-w-3xl text-center sm:mb-11">
+          <AnimatedTitle id="about-essence-title" text="LO QUE NOS MUEVE" className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
+          <div aria-hidden="true" className="mx-auto mt-5 h-[3px] w-14 rounded-full bg-[#EA6F32]" />
+          <p className="mt-5 text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
+            Estas ideas orientan lo que hacemos hoy y la forma en que queremos seguir creciendo.
+          </p>
+        </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          {items.map((item) => (
+            <motion.article key={item.id} whileHover={{ y: -4 }} transition={{ duration: .25 }}
+              className="overflow-hidden rounded-[24px] bg-[#FBF4EF] shadow-[0_10px_30px_rgba(48,46,42,.06)] motion-reduce:transform-none">
+              <div className="relative aspect-[5/3] overflow-hidden" style={{ backgroundColor: item.background }}>
+                <Image src={item.image} alt={item.label + " de Avra"} fill sizes="(min-width:768px) 33vw, 100vw" className="object-cover transition-transform duration-500 hover:scale-105 motion-reduce:transition-none" />
               </div>
-
-              {/* CONTENIDO */}
-              <div className="flex flex-col p-6 sm:p-7 md:min-h-[230px] md:justify-between lg:min-h-[250px] lg:p-8">
-                {/* LABEL */}
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#302E2A]/60">
-                    {item.label}
-                  </span>
-
-                  <span className="size-2 rounded-full bg-[#302E2A]/25 transition-transform duration-500 ease-out group-hover:scale-[3]" />
-                </div>
-
-                {/* FRASE */}
-                <h3
-                  className="
-                    mt-4 md:mt-8
-                    max-w-[300px]
-                    text-2xl
-                    font-extrabold
-                    uppercase
-                    leading-[1.08]
-                    tracking-[0.005em]
-                    text-[#302E2A]
-                    sm:text-[1.7rem]
-                    lg:text-[2rem]
-                  "
-                >
-                  {item.title}
-                </h3>
+              <div className="p-6 sm:p-7">
+                <p className="text-xs font-bold uppercase tracking-[.14em] text-[#295C50]">{item.label}</p>
+                <h3 className="mt-3 font-heading text-xl font-extrabold uppercase leading-tight text-[#302E2A] sm:text-2xl">{item.title}</h3>
+                <p className="mt-4 text-justify text-base leading-7 text-[#302E2A]/75">{item.description}</p>
               </div>
             </motion.article>
           ))}
-        </AboutReveal>
+        </div>
       </Container>
     </section>
   );
