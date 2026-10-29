@@ -8,17 +8,15 @@ export function EssencePreviewSection() {
   return (
     <section aria-labelledby="home-essence-title" className="bg-background py-12 sm:py-16 lg:py-20">
       <Container>
-        <div className="relative isolate min-h-[420px] overflow-hidden rounded-[24px] bg-[#E8F0DE] sm:min-h-[475px] sm:rounded-[28px] lg:min-h-[500px]">
+        <div className="relative isolate min-h-[420px] overflow-hidden rounded-[24px] bg-[#E8F0DE] sm:min-h-[450px] sm:rounded-[28px] lg:min-h-[460px]">
           <Image
-            src="/images/about/about-hero.webp"
-            alt="Ambiente de Avra"
+            src="/images/home/essence/essence-home.png"
+            alt="Waffle, sándwich y pizza de Avra sobre fondo verde claro"
             fill
             sizes="(min-width:1280px) 1200px, 100vw"
             className="object-cover object-center"
           />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#F2F6E9]/90 via-[#F2F6E9]/55 via-[34%] to-transparent lg:via-[43%]" />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#F2F6E9]/25 via-transparent to-transparent sm:hidden" />
-          <div className="relative z-10 flex min-h-[420px] w-full max-w-[690px] flex-col justify-center px-6 py-9 sm:min-h-[475px] sm:px-10 lg:min-h-[500px] lg:px-12">
+          <div className="relative z-10 flex min-h-[420px] w-full max-w-[690px] flex-col justify-center px-6 py-9 sm:min-h-[450px] sm:px-10 lg:min-h-[460px] lg:px-12">
             <AnimatedTitle
               id="home-essence-title"
               text="LA ESENCIA AVRA"
