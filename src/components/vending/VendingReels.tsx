@@ -31,7 +31,7 @@ export function VendingReels() {
   }
 
   return (
-    <section id="videos" aria-labelledby="vending-videos-title" className="overflow-hidden bg-[#EAF0E4] py-16 text-[#302E2A] sm:py-24">
+    <section id="videos" aria-labelledby="vending-videos-title" className="overflow-hidden bg-[#FBF7F0] py-16 text-[#302E2A] sm:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-10 text-center">
           <p className="text-xs font-bold uppercase tracking-[.24em] text-[#295C50]">Videos y experiencias</p>
