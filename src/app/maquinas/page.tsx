@@ -34,13 +34,13 @@ export default function MachinesPage() {
               <p className="font-[family-name:var(--font-header)] text-[clamp(7px,1.1vw,17px)] font-medium uppercase tracking-[0.3em]">
                 Nuestras
               </p>
-              <h1 className="mt-[0.5em] font-heading text-[clamp(19px,4.7vw,78px)] font-extrabold uppercase leading-[0.9] tracking-[-0.035em]">
+              <h1 className="mt-[0.12em] font-heading text-[clamp(19px,4.7vw,78px)] font-extrabold uppercase leading-[0.9] tracking-[-0.035em]">
                 Máquinas
               </h1>
               <p className="mt-[1em] max-w-[32ch] font-[family-name:var(--font-header)] text-[clamp(7px,1.05vw,16px)] font-medium uppercase leading-[1.55] tracking-[0.2em]">
                 Alimentación saludable,<br className="hidden sm:block" /> siempre disponible
               </p>
-              <svg aria-hidden="true" viewBox="0 0 180 22" fill="none" className="mt-[0.7em] block w-[35%] max-w-[170px] overflow-visible"><path d="M3 8 C 39 21, 98 16, 175 5" stroke="#F9B444" strokeWidth="4.5" strokeLinecap="round" /><path d="M16 12 C 66 20, 118 12, 167 7" stroke="#FFD074" strokeWidth="1.4" strokeLinecap="round" opacity="0.65" /></svg>
+              <svg aria-hidden="true" viewBox="0 0 200 36" fill="none" className="mt-[0.55em] block w-[39%] max-w-[185px] overflow-visible"><path d="M4 8 C 46 36, 117 32, 194 5" stroke="#F9B444" strokeWidth="5.5" strokeLinecap="round" /><path d="M14 13 C 61 34, 129 26, 187 9" stroke="#FFD074" strokeWidth="1.8" strokeLinecap="round" opacity="0.68" /><path d="M15 19 C 60 34, 114 32, 160 19" stroke="#EAA12F" strokeWidth="1.1" strokeLinecap="round" opacity="0.55" /></svg>
             </div>
           </div>
         </div>
