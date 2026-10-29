@@ -58,8 +58,8 @@ export function Footer() {
             </a>
           </div>
 
-          <Link href="/libro-de-reclamaciones" aria-label="Ir al Libro de Reclamaciones" className="mx-auto inline-flex w-fit items-center justify-center rounded-md bg-[#FBF4EF] p-1.5 transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white lg:mx-0 lg:justify-self-end">
-            <Image src="/images/legal/libro-reclamaciones.png" alt="Libro de Reclamaciones" width={100} height={100} className="size-[72px] object-contain" />
+          <Link href="/libro-de-reclamaciones" aria-label="Ir al Libro de Reclamaciones" className="mx-auto inline-flex w-fit items-center justify-center rounded-lg border border-white/25 bg-[#20483F] p-2 transition-colors hover:bg-[#173C33] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white lg:mx-0 lg:justify-self-end">
+            <Image src="/images/legal/libro-reclamaciones.png" alt="Libro de Reclamaciones" width={100} height={100} className="size-[100px] object-contain" />
           </Link>
         </div>
 
