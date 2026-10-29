@@ -23,12 +23,13 @@ export function Footer() {
   return (
     <footer className="bg-[#295C50] text-[#FBF4EF]">
       <Container className="pb-5 pt-8 sm:pt-9">
-        <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)_minmax(0,1fr)_auto] lg:items-center lg:gap-7">
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 xl:grid-cols-[1.15fr_1fr_1fr_1.15fr] xl:items-start xl:gap-x-8">
+          <div className="flex min-w-0 flex-col items-center text-center xl:items-center xl:text-center">
             <Link href="/" aria-label="Avra, ir al inicio" className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <Image src="/images/brand/avra-wordmark-black.png" alt="Avra" width={2172} height={724} className="h-auto w-[120px] brightness-0 invert" />
             </Link>
             <p className="mt-1.5 text-sm font-medium text-[#FBF4EF]/90">Activa lo natural</p>
+            <p className="mt-2 max-w-[25ch] text-sm leading-5 text-[#FBF4EF]/70">Sabores y opciones prácticas para cada momento del día.</p>
             <div className="mt-3 flex items-center gap-2" aria-label="Redes sociales de Avra">
               {socialLinks.map((social) => (
                 <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}
@@ -39,16 +40,16 @@ export function Footer() {
             </div>
           </div>
 
-          <nav aria-label="Navegación del pie de página" className="text-center">
+          <nav aria-label="Navegación del pie de página" className="flex min-w-0 flex-col items-center text-center">
             <h2 className="font-heading text-sm font-bold uppercase tracking-[.14em]">Descubre Avra</h2>
-            <div className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:gap-x-6">
+            <div className="mt-4 flex flex-col items-center gap-2.5">
               {navigation.map((item) => (
                 <Link key={item.href} href={item.href} className={linkClass}>{item.label}</Link>
               ))}
             </div>
           </nav>
 
-          <div className="flex flex-col items-center gap-2.5 text-center lg:items-end lg:text-right">
+          <div className="flex min-w-0 flex-col items-center gap-3 text-center">
             <h2 className="font-heading text-sm font-bold uppercase tracking-[.14em]">Contacto</h2>
             <a href="mailto:hola@avra.pe" className={`${linkClass} inline-flex items-center gap-2`}>
               <Mail size={16} aria-hidden="true" />hola@avra.pe
@@ -58,9 +59,12 @@ export function Footer() {
             </a>
           </div>
 
-          <Link href="/libro-de-reclamaciones" aria-label="Ir al Libro de Reclamaciones" className="mx-auto inline-flex w-fit items-center justify-center rounded-md transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white lg:mx-0 lg:justify-self-end">
-            <Image src="/images/legal/libro-reclamaciones.png" alt="Libro de Reclamaciones" width={240} height={240} className="size-[150px] object-contain sm:size-[170px] lg:size-[190px]" />
-          </Link>
+          <div className="flex min-w-0 flex-col items-center text-center">
+            <h2 className="font-heading text-sm font-bold uppercase tracking-[.10em]">Libro de Reclamaciones</h2>
+            <Link href="/libro-de-reclamaciones" aria-label="Ir al Libro de Reclamaciones" className="mt-2 inline-flex w-fit items-center justify-center rounded-md transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+              <Image src="/images/legal/libro-reclamaciones.png" alt="Aviso del Libro de Reclamaciones" width={240} height={240} className="size-[125px] object-contain sm:size-[140px] xl:size-[155px]" />
+            </Link>
+          </div>
         </div>
 
         <div className="mt-7 border-t border-[#FBF4EF]/20 pt-4 sm:mt-8">
