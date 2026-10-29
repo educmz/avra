@@ -43,14 +43,6 @@ const machines = [
   },
 ];
 
-const faqs = [
-  { q: "¿Qué ofrece la máquina Avra?", a: "Está enfocada en bebidas naturales. La selección concreta puede variar según la disponibilidad." },
-  { q: "¿Qué ofrece la máquina Nuna?", a: "Su formato permite exhibir comidas y snacks en envases individuales, además de bebidas. La oferta concreta dependerá de la operación." },
-  { q: "¿Cómo se utiliza una máquina?", a: "Elige un producto en la interfaz, sigue las indicaciones de pago del equipo y recógelo en el compartimento correspondiente." },
-  { q: "¿Se puede solicitar una máquina para un espacio?", a: "Puedes contactarnos para consultar las opciones y condiciones que Avra tenga disponibles." },
-  { q: "¿Cómo se realiza el abastecimiento?", a: "La frecuencia y las condiciones de reposición deben acordarse según el equipo, los productos y el espacio." },
-];
-
 export default function MachinesPage() {
   return (
     <main className="bg-[#FBF7F0] pt-[68px] sm:pt-[74px] lg:pt-[84px]">
@@ -111,7 +103,7 @@ export default function MachinesPage() {
                 <div className="mt-6 h-1 w-20 rounded-full" style={{ background: machine.accent }} />
                 <p className="mt-7 max-w-xl text-base leading-8 text-[#302E2A]/75">{machine.description}</p>
                 <div className="mt-7 flex flex-wrap gap-2">{machine.perks.map((perk) => <span key={perk} className="rounded-full border border-[#302E2A]/15 px-4 py-2 text-xs font-semibold text-[#302E2A]">{perk}</span>)}</div>
-                <a href="#contacto-vending" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#295C50] px-6 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-[#173E34]">Solicitar información <ArrowUpRight size={18} /></a>
+                <a href="/nosotros" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#295C50] px-6 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-[#173E34]">Conoce más de Avra <ArrowUpRight size={18} /></a>
               </div>
             </div>
             <div className="mt-16 sm:mt-20">
@@ -142,21 +134,6 @@ export default function MachinesPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[{Icon:Clock3,title:"A tu ritmo",desc:"Accede a opciones de consumo según tu rutina y el horario del espacio."},{Icon:LayoutGrid,title:"Alternativas visibles",desc:"Explora los formatos de bebidas y alimentos de nuestras máquinas."},{Icon:Smartphone,title:"Autoservicio",desc:"Una experiencia directa de selección y compra."},{Icon:Leaf,title:"Una propuesta diferente",desc:"Acercamos la experiencia Avra mediante nuevos puntos de contacto."}].map(({Icon,title,desc})=><article key={title} className="rounded-2xl bg-white p-6"><Icon className="text-[#295C50]" size={26}/><h3 className="mt-5 font-heading text-xl font-bold">{title}</h3><p className="mt-3 text-sm leading-6 text-[#302E2A]/70">{desc}</p></article>)}
           </div>
-        </Container>
-      </section>
-      <section aria-labelledby="faq-vending" className="py-16 sm:py-24">
-        <Container className="max-w-4xl">
-          <p className="text-center text-xs font-bold uppercase tracking-[.22em] text-[#C76D00]">Resolvemos tus dudas</p>
-          <h2 id="faq-vending" className="mt-4 mb-10 text-center font-heading text-4xl font-extrabold uppercase sm:text-5xl">Preguntas frecuentes</h2>
-          <div className="space-y-3">{faqs.map((faq)=><details key={faq.q} className="group rounded-2xl border border-[#302E2A]/10 bg-white p-5 sm:p-6"><summary className="cursor-pointer list-none pr-6 font-semibold text-[#302E2A] marker:hidden">{faq.q}<span className="float-right text-[#295C50] group-open:rotate-45">+</span></summary><p className="mt-4 max-w-2xl text-sm leading-7 text-[#302E2A]/75">{faq.a}</p></details>)}</div>
-        </Container>
-      </section>
-      <section id="contacto-vending" className="bg-[#295C50] py-16 text-white sm:py-20">
-        <Container className="max-w-4xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[.22em] text-[#F8B54F]">Hablemos de vending</p>
-          <h2 className="mt-4 font-heading text-4xl font-extrabold uppercase sm:text-6xl">Lleva la experiencia Avra a tu espacio</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/85">¿Te interesa conocer las opciones disponibles para tu empresa o establecimiento? Contáctanos y conversemos sobre tu espacio.</p>
-          <Link href="/nosotros" className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#F8B54F] px-7 py-3 text-sm font-bold uppercase text-[#243329] transition hover:bg-[#FFD076]">Conoce Avra <ArrowUpRight size={18}/></Link>
         </Container>
       </section>
     </main>
