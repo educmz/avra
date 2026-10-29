@@ -169,7 +169,7 @@ export function SocialSection() {
 
           <AnimatedTitle
             text="Momentos que compartimos"
-            className="mt-2 text-3xl font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-4xl"
+            className="mt-2 text-[28px] font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-[34px] lg:text-[40px]"
           />
         </AboutReveal>
 
