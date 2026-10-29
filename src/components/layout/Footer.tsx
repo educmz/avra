@@ -23,7 +23,7 @@ export function Footer() {
   return (
     <footer className="bg-[#295C50] text-[#FBF4EF]">
       <Container className="pb-5 pt-8 sm:pt-9">
-        <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)_minmax(0,1fr)_auto] lg:items-center lg:gap-7">
+        <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:items-center lg:gap-7">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <Link href="/" aria-label="Avra, ir al inicio" className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <Image src="/images/brand/avra-wordmark-black.png" alt="Avra" width={2172} height={724} className="h-auto w-[120px] brightness-0 invert" />
@@ -39,7 +39,7 @@ export function Footer() {
             </div>
           </div>
 
-          <nav aria-label="Navegación del pie de página" className="text-center">
+          <nav aria-label="Navegación del pie de página" className="text-center lg:justify-self-center">
             <h2 className="font-heading text-sm font-bold uppercase tracking-[.14em]">Descubre Avra</h2>
             <div className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:gap-x-6">
               {navigation.map((item) => (
@@ -48,19 +48,21 @@ export function Footer() {
             </div>
           </nav>
 
-          <div className="flex flex-col items-center gap-2.5 text-center lg:items-end lg:text-right">
-            <h2 className="font-heading text-sm font-bold uppercase tracking-[.14em]">Contacto</h2>
-            <a href="mailto:hola@avra.pe" className={`${linkClass} inline-flex items-center gap-2`}>
-              <Mail size={16} aria-hidden="true" />hola@avra.pe
-            </a>
-            <a href="https://wa.me/51948742332" target="_blank" rel="noopener noreferrer" className={`${linkClass} inline-flex items-center gap-2`}>
-              <MessageCircle size={16} aria-hidden="true" />+51 948 742 332
-            </a>
-          </div>
+          <div className="flex flex-col items-center gap-5 lg:items-end 2xl:flex-row 2xl:items-center 2xl:justify-self-end 2xl:gap-6">
+            <div className="flex flex-col items-center gap-2.5 text-center lg:items-end lg:text-right">
+              <h2 className="font-heading text-sm font-bold uppercase tracking-[.14em]">Contacto</h2>
+              <a href="mailto:hola@avra.pe" className={`${linkClass} inline-flex items-center gap-2`}>
+                <Mail size={16} aria-hidden="true" />hola@avra.pe
+              </a>
+              <a href="https://wa.me/51948742332" target="_blank" rel="noopener noreferrer" className={`${linkClass} inline-flex items-center gap-2`}>
+                <MessageCircle size={16} aria-hidden="true" />+51 948 742 332
+              </a>
+            </div>
 
-          <Link href="/libro-de-reclamaciones" aria-label="Ir al Libro de Reclamaciones" className="mx-auto inline-flex w-fit items-center justify-center rounded-md transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white lg:mx-0 lg:justify-self-end">
-            <Image src="/images/legal/libro-reclamaciones.png" alt="Libro de Reclamaciones" width={240} height={240} className="size-[150px] object-contain sm:size-[170px] lg:size-[190px]" />
-          </Link>
+            <Link href="/libro-de-reclamaciones" aria-label="Ir al Libro de Reclamaciones" className="inline-flex w-fit items-center justify-center rounded-md transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+              <Image src="/images/legal/libro-reclamaciones.png" alt="Libro de Reclamaciones" width={240} height={240} className="size-[150px] object-contain sm:size-[170px] lg:size-[190px]" />
+            </Link>
+          </div>
         </div>
 
         <div className="mt-7 border-t border-[#FBF4EF]/20 pt-4 sm:mt-8">
