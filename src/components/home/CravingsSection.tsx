@@ -54,7 +54,7 @@ export function CravingsSection() {
                 <span aria-hidden="true" className="mb-4 h-[3px] w-10 rounded-full bg-[#EA6F32]" />
                 <h3 className="font-heading text-[23px] font-extrabold uppercase leading-[1.05] tracking-tight text-[#302E2A] sm:text-[28px]">{group.title}</h3>
                 <p className="mt-3 max-w-[20ch] text-xs leading-5 text-[#302E2A]/80 sm:text-sm sm:leading-6">{group.description}</p>
-                <Link href={group.href} className="mt-6 inline-flex min-h-10 items-center gap-2 rounded-full bg-[#295C50] px-4 text-[11px] font-bold uppercase tracking-[.04em] text-white transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-[#1D453B] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] motion-reduce:transform-none sm:px-5 sm:text-xs">
+                <Link href={group.href} className="avra-cta mt-6 inline-flex min-h-10 items-center gap-2 rounded-full bg-[#295C50] px-4 text-[11px] font-bold uppercase tracking-[.04em] text-white transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-[#1D453B] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] motion-reduce:transform-none sm:px-5 sm:text-xs">
                   {group.button} <ArrowRight size={16} aria-hidden="true" />
                 </Link>
               </div>
