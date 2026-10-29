@@ -15,7 +15,7 @@ export default function BlogPage() {
         lines={["BLOG"]}
         kicker="Nuestro"
         subtitle="Ideas, novedades y momentos para disfrutar"
-        flourishColors={["#295C50", "#4E8C7A", "#7DB6A3"]}
+        flourishColors={["#EA6F32", "#F49A64", "#C95828"]}
       />
       <section className="mx-auto flex min-h-[40vh] max-w-5xl flex-col items-start justify-center px-6 py-20 sm:px-10">
         <p className="mb-4 font-[family-name:var(--font-header)] text-sm font-semibold uppercase tracking-[0.2em] text-[#295C50]">Avra · Blog</p>
