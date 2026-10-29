@@ -10,7 +10,7 @@ import {
 
 export function TeamSection() {
   return (
-    <section className="bg-background py-16 sm:py-20 lg:py-24">
+    <section className="bg-[#F4F0E8] py-16 sm:py-20 lg:py-24">
       <Container>
         <div className="flex flex-col items-center gap-10 sm:flex-row sm:items-start sm:gap-12 lg:gap-16">
           {/* TEXTO */}
