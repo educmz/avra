@@ -5,11 +5,11 @@ import { Container } from "@/components/ui/Container";
 
 export function EssencePreviewSection() {
   return (
-    <section aria-labelledby="home-essence-title" className="bg-[#F4F0E8] py-10 sm:py-14">
+    <section aria-labelledby="home-essence-title" className="bg-[#F5F0EA] py-10 sm:py-14">
       <Container>
-        <div className="relative isolate min-h-[340px] overflow-hidden rounded-2xl bg-[#F4F0E8] sm:min-h-[360px]">
+        <div className="relative isolate min-h-[340px] overflow-hidden rounded-2xl bg-[#F5F0EA] sm:min-h-[360px]">
           <Image src="/images/about/about-hero.webp" alt="Ambiente de Avra" fill sizes="(min-width:1280px) 1200px,100vw" className="object-cover object-center" />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#F4F0E8] via-[#F4F0E8]/95 via-[45%] to-transparent" />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#F5F0EA] via-[#F5F0EA]/95 via-[45%] to-transparent" />
           <div className="relative z-10 flex min-h-[340px] max-w-[600px] flex-col justify-center p-6 sm:min-h-[360px] sm:p-10">
             <p className="font-[family-name:var(--font-script)] text-[27px] text-[#EA6F32]">Más que algo rico</p>
             <h2 id="home-essence-title" className="mt-1 font-heading text-[28px] font-extrabold uppercase leading-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]">La esencia Avra</h2>
