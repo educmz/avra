@@ -74,7 +74,7 @@ export default function MachinesPage() {
         </div>
       </section>
 
-      <section aria-labelledby="vending-overview-title" className="bg-[#FBF4EF] py-10 sm:py-12 lg:py-14">
+      <section aria-labelledby="vending-overview-title" className="bg-[#F4F0E8] py-10 sm:py-12 lg:py-14">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[11px] font-bold uppercase tracking-[.2em] text-[#B96220]">Por qué elegir vending saludable</p>
