@@ -1,53 +1,51 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Heart, Leaf, UsersRound } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
-import { HomeHeading } from "./HomeHeading";
+import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 
-const benefits = [
-  { Icon: Leaf, text: "Opciones naturales", color: "#E1EBD7" },
-  { Icon: Heart, text: "Prácticas y deliciosas", color: "#F8E2D7" },
-  { Icon: UsersRound, text: "Ideales para cada espacio", color: "#E1EBD7" },
-];
+const machines = [
+  { name: "AVRA", description: "Bebidas naturales", image: "/images/vending/avra-home.png", href: "/maquinas#avra", bg: "#FBE5D7", accent: "#EA6F32", alt: "Máquina Avra de bebidas naturales" },
+  { name: "NUNA", description: "Snacks y bebidas", image: "/images/vending/nuna-home.png", href: "/maquinas#nuna", bg: "#E4EDD9", accent: "#295C50", alt: "Máquina Nuna de snacks y bebidas" },
+] as const;
 
 export function VendingSection() {
   return (
-    <section aria-labelledby="vending-title" className="bg-background py-12 sm:py-16">
+    <section aria-labelledby="vending-title" className="bg-background py-12 sm:py-16 lg:py-20">
       <Container>
-        <div className="relative isolate overflow-hidden rounded-[24px] bg-[#EAF0E4]">
-          <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#FBF7F0] via-[#FBF7F0]/55 to-[#F2EFE4]/75" />
-          <div className="relative grid min-h-[350px] items-center gap-5 p-6 sm:p-9 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)_minmax(0,.65fr)] lg:gap-4 lg:px-10 lg:py-8">
-            <div className="relative z-10">
-              <HomeHeading id="vending-title" eyebrow="Avra también llega a ti">
-                Vending saludable
-              </HomeHeading>
-              <div className="-mt-2 mb-5 h-[3px] w-12 rounded-full bg-[#EA6F32]" />
-              <p className="max-w-sm text-sm leading-6 text-[#302E2A]/80">
-                Bebidas y snacks naturales, siempre a tu alcance. Nuestras máquinas Avra y Nuna llevan opciones deliciosas y saludables a más personas.
-              </p>
-              <Link href="/maquinas" className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#295C50] px-5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1D453B] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50]">
-                Conoce nuestras máquinas <ArrowUpRight size={17} aria-hidden="true" />
-              </Link>
-            </div>
-            <div className="relative mx-auto flex h-[260px] w-full max-w-[460px] items-center justify-center gap-2 sm:h-[335px] lg:h-[360px]">
-              <div className="relative h-full w-1/2">
-                <Image src="/images/vending/avra-equipo.jpg" alt="Máquina Avra de bebidas naturales" fill sizes="(min-width:1024px) 250px, 45vw" className="object-contain mix-blend-multiply" />
-              </div>
-              <div className="relative h-full w-1/2">
-                <Image src="/images/vending/nuna-equipo.jpg" alt="Máquina Nuna de alimentos y snacks" fill sizes="(min-width:1024px) 250px, 45vw" className="object-contain mix-blend-multiply" />
-              </div>
-            </div>
-            <div className="grid grid-cols-3 gap-3 lg:grid-cols-1 lg:gap-6">
-              {benefits.map(({ Icon, text, color }) => (
-                <div key={text} className="flex flex-col items-center gap-2 text-center lg:flex-row lg:text-left">
-                  <span className="grid size-10 shrink-0 place-items-center rounded-full text-[#295C50]" style={{ backgroundColor: color }}>
-                    <Icon size={20} aria-hidden="true" />
-                  </span>
-                  <span className="text-[11px] font-medium leading-4 text-[#302E2A] sm:text-xs">{text}</span>
-                </div>
+        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,.87fr)_minmax(0,1.6fr)] lg:gap-10 xl:gap-14">
+          <div className="min-w-0">
+            <AnimatedTitle id="vending-title" text="LO NATURAL, MÁS CERCA DE TI" className="max-w-[500px] font-heading text-[28px] font-extrabold uppercase leading-[1.07] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
+            <span aria-hidden="true" className="mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
+            <p className="mt-6 max-w-[44ch] text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
+              Bebidas y snacks deliciosos, siempre disponibles. Descubre una forma práctica y moderna de disfrutar opciones más saludables.
+            </p>
+            <Link href="/maquinas" className="avra-cta mt-7">
+              <span>Conoce nuestras máquinas</span>
+              <ArrowRight aria-hidden="true" size={18} />
+            </Link>
+          </div>
+          <div className="min-w-0">
+            <div className="grid grid-cols-2 gap-3 sm:gap-5">
+              {machines.map((machine) => (
+                <Link key={machine.name} href={machine.href} className="group min-w-0 overflow-hidden rounded-[24px] bg-white shadow-[0_12px_30px_rgba(48,46,42,.055)] transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] motion-reduce:transform-none sm:rounded-[30px]">
+                  <div className="relative aspect-[.95] overflow-hidden sm:aspect-[1.05]" style={{ backgroundColor: machine.bg }}>
+                    <Image src={machine.image} alt={machine.alt} fill sizes="(min-width:1024px) 25vw, 48vw" className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.025] motion-reduce:transition-none" />
+                  </div>
+                  <div className="flex items-center justify-between gap-2 bg-[#FBF4EF] px-3 py-3 sm:px-5 sm:py-4">
+                    <div className="min-w-0">
+                      <h3 className="font-heading text-lg font-extrabold leading-tight text-[#302E2A] sm:text-2xl">{machine.name}</h3>
+                      <p className="mt-1 text-sm leading-5 text-[#302E2A]/70 sm:text-base">{machine.description}</p>
+                    </div>
+                    <span className="grid size-9 shrink-0 place-items-center rounded-full transition-transform duration-300 group-hover:translate-x-1 sm:size-10" style={{ backgroundColor: machine.bg, color: machine.accent }}>
+                      <ArrowRight size={19} aria-hidden="true" />
+                    </span>
+                  </div>
+                </Link>
               ))}
             </div>
+
           </div>
         </div>
       </Container>

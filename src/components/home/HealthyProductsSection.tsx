@@ -56,11 +56,11 @@ export function HealthyProductsSection() {
         <div className="mt-7 flex justify-end">
           <Link
             href="/carta"
-            className="group inline-flex items-center gap-3 rounded-full bg-[#302E2A] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#FF8A00]"
+            className="avra-cta group inline-flex items-center gap-3 rounded-full bg-[#302E2A] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#FF8A00]"
           >
             Explora nuestra carta
 
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition duration-300 group-hover:rotate-45 group-hover:bg-white group-hover:text-[#FF8A00]">
+            <span className="hidden">
               <ArrowUpRight
                 size={17}
                 aria-hidden="true"
