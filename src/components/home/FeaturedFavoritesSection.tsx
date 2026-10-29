@@ -47,7 +47,7 @@ export function FeaturedFavoritesSection() {
               key={product.id}
               data-favorite-card
               href={`/carta#carta-${product.category}`}
-              className="group flex w-[48%] shrink-0 snap-start flex-col overflow-hidden rounded-xl bg-white/90 p-3 text-center shadow-[0_5px_20px_rgba(48,46,42,.05)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(48,46,42,.12)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] motion-reduce:transform-none sm:w-[30%] lg:w-[calc((100%-56px)/5)]"
+              className="group flex w-[48%] shrink-0 snap-start flex-col overflow-hidden rounded-xl bg-white/90 p-3 text-center shadow-[0_5px_20px_rgba(48,46,42,.05)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(48,46,42,.12)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] motion-reduce:transform-none sm:w-[30%] lg:w-[calc(20%-12px)]"
             >
               <div className="relative mx-auto aspect-[4/3] w-full">
                 <Image src={product.image} alt={product.name} fill sizes="(min-width:1024px) 190px, (min-width:640px) 30vw, 45vw" className="object-contain transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none" />
