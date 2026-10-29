@@ -193,7 +193,7 @@ function HeroBlock() {
 
         <AnimatedTitle
           text={"Creamos momentos\npara disfrutar."}
-          className="mt-4 font-heading text-4xl font-normal leading-[1.08] tracking-[-0.02em] text-[#302E2A] sm:text-5xl lg:text-[3.4rem]"
+          className="mt-4 font-heading text-[28px] font-extrabold leading-[1.08] tracking-[-0.02em] text-[#302E2A] sm:text-[34px] lg:text-[40px]"
         />
 
         <AboutItem className="mt-5">
