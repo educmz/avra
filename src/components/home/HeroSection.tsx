@@ -4,7 +4,7 @@ import { getImageProps } from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-const SLIDE_DURATION = 6000;
+const SLIDE_DURATION = 5500;
 const slides = [
   { id: "slide-01", src: "/images/home/carousel/slide-01.png", alt: "Avra: imagen 1 del carrusel principal" },
   { id: "slide-02", src: "/images/home/carousel/slide-02.png", alt: "Avra: imagen 2 del carrusel principal" },
@@ -17,7 +17,7 @@ const slides = [
 
 export function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const [interaction, setInteraction] = useState(0);
   const [hidden, setHidden] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const touchStart = useRef<{ x: number; y: number } | null>(null);
@@ -38,15 +38,21 @@ export function HeroSection() {
   }, []);
 
   useEffect(() => {
-    if (paused || hidden || reducedMotion) return;
+    if (hidden) return;
     const timeout = window.setTimeout(() => {
       setActiveSlide((current) => (current + 1) % slides.length);
     }, SLIDE_DURATION);
     return () => window.clearTimeout(timeout);
-  }, [paused, hidden, reducedMotion, activeSlide]);
+  }, [hidden, activeSlide, interaction]);
 
   function changeSlide(direction: number) {
+    setInteraction((current) => current + 1);
     setActiveSlide((current) => (current + direction + slides.length) % slides.length);
+  }
+
+  function goToSlide(index: number) {
+    setInteraction((current) => current + 1);
+    setActiveSlide(index);
   }
 
   return (
@@ -54,12 +60,6 @@ export function HeroSection() {
       aria-label="Carrusel principal"
       aria-roledescription="carrusel"
       className="w-full bg-background pb-6 pt-[68px] sm:pt-[74px] lg:pb-12 lg:pt-[84px]"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocusCapture={() => setPaused(true)}
-      onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false);
-      }}
       onKeyDown={(event) => {
         if (event.target instanceof HTMLElement && event.target.closest("button")) return;
         if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
@@ -134,41 +134,25 @@ export function HeroSection() {
           <ArrowRight size={21} strokeWidth={1.8} aria-hidden="true" />
         </button>
 
-        <div className="absolute inset-x-0 bottom-4 z-30 flex justify-center px-4 sm:bottom-6 lg:bottom-7">
-          <div className="flex items-center gap-3 rounded-full border border-white/25 bg-[#20483F]/55 px-4 py-2.5 shadow-lg backdrop-blur-md sm:gap-4 sm:px-5">
-            <span className="hidden text-[11px] font-semibold tabular-nums tracking-wide text-white sm:block">
-              {String(activeSlide + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
-            </span>
-            <div className="flex items-center gap-1.5 sm:gap-2" aria-label="Elegir diapositiva">
-              {slides.map((slide, index) => (
-                <button
-                  key={slide.id}
-                  type="button"
-                  onClick={() => setActiveSlide(index)}
-                  aria-label={`Ir a la diapositiva ${index + 1}`}
-                  aria-current={index === activeSlide ? "true" : undefined}
-                  className="flex h-7 w-7 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-9"
-                >
-                  <span className="relative block h-[3px] w-full overflow-hidden rounded-full bg-white/35">
-                    {index === activeSlide && (
-                      <span
-                        key={slide.id}
-                        className="absolute inset-y-0 left-0 block w-full origin-left rounded-full bg-white"
-                        style={{
-                          animation: reducedMotion ? "none" : `avra-hero-progress ${SLIDE_DURATION}ms linear both`,
-                          animationPlayState: paused || hidden ? "paused" : "running",
-                          transform: reducedMotion ? "scaleX(1)" : undefined,
-                        }}
-                      />
-                    )}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
+        {/* Indicadores discretos, sin contador ni fondo sobre el banner. */}
+        <div className="absolute inset-x-0 bottom-4 z-30 flex items-center justify-center gap-2.5 sm:bottom-6">
+          {slides.map((slide, index) => (
+            <button
+              key={slide.id}
+              type="button"
+              onClick={() => goToSlide(index)}
+              aria-label={`Ir a la diapositiva ${index + 1}`}
+              aria-current={index === activeSlide ? "true" : undefined}
+              className="grid size-8 place-items-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              <span
+                aria-hidden="true"
+                className={`block h-1.5 rounded-full shadow-[0_1px_5px_rgba(0,0,0,.25)] transition-[width,background-color] duration-300 motion-reduce:transition-none ${index === activeSlide ? "w-6 bg-white" : "w-1.5 bg-white/65 hover:bg-white"}`}
+              />
+            </button>
+          ))}
         </div>
       </div>
-      <style jsx>{`@keyframes avra-hero-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }`}</style>
     </section>
   );
 }
