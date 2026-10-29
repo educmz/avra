@@ -3,13 +3,13 @@
 @import "../styles/utilities.css";
 
 :root {
-  --background: #FAF7F2;
+  --background: #FFFFFF;
   --foreground: #302e2a;
   --primary: #ff8a00;
   --secondary: #eadca8;
   --accent: #f1b86b;
-  --surface: #F5F0EA;
-  --section-background: #F5F0EA;
+  --surface: #EAF0E4;
+  --section-background: #EAF0E4;
   --surface-strong: #e7dfd2;
   --hero: #f3cc8f;
 }
