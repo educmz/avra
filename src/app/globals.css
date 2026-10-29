@@ -138,3 +138,12 @@ button, input, select, textarea { font-family: inherit; font-size: 100%; line-he
   .avra-cta:hover, .avra-cta:active { transform: none; }
   .avra-cta:hover::before { transform: translateX(-110%); }
 }
+
+/* Variante de contraste sobre la sección de favoritos verde. */
+.avra-cta.avra-cta--light {
+  background-color: #FBF4EF !important;
+  color: #295C50 !important;
+}
+.avra-cta.avra-cta--light:hover {
+  background-color: #fff !important;
+}
