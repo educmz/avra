@@ -45,7 +45,7 @@ const machines = [
 
 export default function MachinesPage() {
   return (
-    <main className="bg-[#FAF7F2] pt-[68px] sm:pt-[74px] lg:pt-[84px]">
+    <main className="bg-white pt-[68px] sm:pt-[74px] lg:pt-[84px]">
       <section aria-label="Presentación de máquinas Avra" className="w-full pb-6 sm:pb-8 lg:pb-10">
         <div className="relative isolate h-[220px] w-full overflow-hidden sm:h-auto sm:aspect-[1530/380]">
           <Image
@@ -74,7 +74,7 @@ export default function MachinesPage() {
         </div>
       </section>
 
-      <section aria-labelledby="vending-overview-title" className="bg-[#F5F0EA] py-10 sm:py-12 lg:py-14">
+      <section aria-labelledby="vending-overview-title" className="bg-[#EAF0E4] py-10 sm:py-12 lg:py-14">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[11px] font-bold uppercase tracking-[.2em] text-[#B96220]">Por qué elegir vending saludable</p>
@@ -110,7 +110,7 @@ export default function MachinesPage() {
         </Container>
       </section>
       {machines.map((machine, index) => (
-        <section key={machine.id} id={machine.id} aria-labelledby={`${machine.id}-title`} className={"bg-[#FAF7F2] py-10 sm:py-14"}>
+        <section key={machine.id} id={machine.id} aria-labelledby={`${machine.id}-title`} className={"bg-white py-10 sm:py-14"}>
           <Container>
             <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,.85fr)_minmax(0,1.15fr)] lg:gap-10">
               <div className={`min-w-0 ${index === 1 ? "lg:order-2" : ""}`}>
