@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 
 export function EssencePreviewSection() {
   return (
-    <section aria-labelledby="home-essence-title" className="bg-background py-10 sm:py-14">
+    <section aria-labelledby="home-essence-title" className="bg-[#F0EDF4] py-10 sm:py-14">
       <Container>
         <div className="relative isolate min-h-[340px] overflow-hidden rounded-2xl bg-[#E9F0E3] sm:min-h-[360px]">
           <Image src="/images/about/about-hero.webp" alt="Ambiente de Avra" fill sizes="(min-width:1280px) 1200px,100vw" className="object-cover object-center" />
