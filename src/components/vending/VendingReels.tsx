@@ -17,43 +17,97 @@ export function VendingReels() {
 
   function select(index: number) {
     const next = (index + reels.length) % reels.length;
-    videos.current.forEach((video) => { if (video) { video.pause(); video.currentTime = 0; } });
+    if (next === active) return;
+    videos.current.forEach((video) => {
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
     setPlaying(null);
     setActive(next);
   }
 
   async function toggle(index: number) {
+    if (index !== active) {
+      select(index);
+      return;
+    }
     const video = videos.current[index];
     if (!video) return;
-    if (playing === index) { video.pause(); setPlaying(null); return; }
+    if (playing === index) {
+      video.pause();
+      setPlaying(null);
+      return;
+    }
     videos.current.forEach((other, i) => { if (i !== index) other?.pause(); });
-    try { await video.play(); setPlaying(index); } catch { setPlaying(null); }
+    try {
+      await video.play();
+      setPlaying(index);
+    } catch {
+      setPlaying(null);
+    }
   }
 
   return (
-    <section id="videos" aria-labelledby="vending-videos-title" className="overflow-hidden py-16 text-[#302E2A] sm:py-24" style={{ backgroundColor: "#FBF7F0" }}>
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="mb-10 text-center">
-          <p className="text-xs font-bold uppercase tracking-[.24em] text-[#295C50]">Videos y experiencias</p>
-          <h2 id="vending-videos-title" className="mt-3 font-heading text-[28px] font-extrabold uppercase sm:text-[34px] lg:text-[40px]">Vending en acción</h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#302E2A]/70 sm:text-base">Descubre nuestras máquinas a través de videos cortos.</p>
+    <section id="videos" aria-labelledby="vending-videos-title" className="overflow-hidden py-12 text-[#302E2A] sm:py-16" style={{ backgroundColor: "#FBF7F0" }}>
+      <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="mb-8 text-center sm:mb-10">
+          <p className="text-xs font-bold uppercase tracking-[.22em] text-[#295C50]">Videos y experiencias</p>
+          <h2 id="vending-videos-title" className="mt-2 font-heading text-[28px] font-extrabold uppercase sm:text-[34px] lg:text-[40px]">Vending en acción</h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#302E2A]/70 sm:text-base">Descubre nuestras máquinas a través de videos cortos.</p>
         </div>
-        <div className="flex items-center justify-center gap-2 sm:gap-5">
-          <button onClick={() => select(active - 1)} aria-label="Video anterior" className="grid size-10 shrink-0 place-items-center rounded-full border border-[#295C50]/30 text-[#295C50] transition hover:bg-white/60 sm:size-12"><ChevronLeft /></button>
-          <div className="grid min-w-0 flex-1 grid-cols-3 items-center gap-2 sm:gap-5 lg:max-w-5xl">
-            {reels.map((reel, index) => (
-              <div key={reel.src} className={`relative min-w-0 overflow-hidden rounded-[1.25rem] border border-white/15 bg-black transition-all duration-300 sm:rounded-[1.75rem] ${active === index ? "scale-100 opacity-100 shadow-[0_20px_60px_rgba(0,0,0,.4)]" : "scale-[.92] opacity-45"}`}>
-                <video ref={(el) => { videos.current[index] = el; }} src={reel.src} className="aspect-[9/16] w-full object-cover" preload="metadata" playsInline muted={muted} loop onEnded={() => setPlaying(null)} aria-label={reel.label} />
-                <button type="button" aria-label={playing === index ? "Pausar video" : "Reproducir video"} className="absolute inset-0 grid place-items-center" onClick={() => { if (active !== index) select(index); else void toggle(index); }}>
-                  <span className={`grid size-9 place-items-center rounded-full bg-white/85 text-[#173A2E] shadow-lg sm:size-16 ${playing === index ? "opacity-0 transition-opacity hover:opacity-100 focus:opacity-100" : ""}`}>{playing === index ? <Pause className="size-4 sm:size-7" /> : <Play className="size-4 sm:size-7" fill="currentColor" />}</span>
-                </button>
-                {active === index && <button onClick={() => setMuted(!muted)} aria-label={muted ? "Activar sonido" : "Silenciar"} className="absolute bottom-3 right-3 z-10 rounded-full bg-black/70 p-2 text-white">{muted ? <VolumeX size={17}/> : <Volume2 size={17}/>}</button>}
-              </div>
-            ))}
+
+        <div className="relative mx-auto flex max-w-5xl items-center justify-center">
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[65%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E9DCCA]/45 blur-3xl" aria-hidden="true" />
+          <button type="button" onClick={() => select(active - 1)} aria-label="Video anterior" className="relative z-20 mr-1 grid size-9 shrink-0 place-items-center rounded-full border border-[#295C50]/20 bg-white text-[#295C50] shadow-sm transition-colors hover:bg-[#EAF0E4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] sm:mr-5 sm:size-12"><ChevronLeft size={21} /></button>
+          <div className="relative z-10 grid min-w-0 flex-1 grid-cols-3 items-center gap-1.5 py-4 sm:gap-4 sm:py-7">
+            {reels.map((reel, index) => {
+              const selected = active === index;
+              return (
+                <div
+                  key={reel.src}
+                  className={`relative min-w-0 transform-gpu overflow-hidden rounded-xl border bg-[#17241F] shadow-lg transition-[transform,opacity,box-shadow,border-color] duration-500 ease-out motion-reduce:transition-none sm:rounded-[1.5rem] ${selected ? "z-10 scale-[1.06] border-[#EA6F32]/50 opacity-100 shadow-[0_18px_45px_rgba(48,46,42,.2)] sm:scale-[1.08]" : "z-0 scale-[.88] border-white/20 opacity-60 shadow-[0_8px_24px_rgba(48,46,42,.1)] hover:opacity-85"}`}
+                >
+                  <video
+                    ref={(el) => { videos.current[index] = el; }}
+                    src={reel.src}
+                    className="aspect-[9/16] w-full object-cover"
+                    preload="metadata"
+                    playsInline
+                    muted={muted}
+                    loop
+                    onPause={() => setPlaying((current) => current === index ? null : current)}
+                    onEnded={() => setPlaying(null)}
+                    aria-label={reel.label}
+                  />
+                  <button
+                    type="button"
+                    aria-label={selected ? (playing === index ? "Pausar video" : "Reproducir video") : `Seleccionar ${reel.label}`}
+                    aria-pressed={selected}
+                    className="absolute inset-0 z-10 grid place-items-center focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-white"
+                    onClick={() => void toggle(index)}
+                  >
+                    <span className={`grid size-8 place-items-center rounded-full bg-white/90 text-[#295C50] shadow-lg transition-[transform,opacity] duration-300 sm:size-14 ${selected ? "scale-100" : "scale-75"} ${selected && playing === index ? "opacity-0 hover:opacity-100 focus:opacity-100" : "opacity-100"}`}>
+                      {playing === index ? <Pause className="size-4 sm:size-6" /> : <Play className="size-4 sm:size-6" fill="currentColor" />}
+                    </span>
+                  </button>
+                  {selected && (
+                    <button type="button" onClick={() => setMuted(!muted)} aria-label={muted ? "Activar sonido" : "Silenciar"} className="absolute bottom-2 right-2 z-20 rounded-full bg-black/65 p-1.5 text-white transition-colors hover:bg-black/85 sm:bottom-3 sm:right-3 sm:p-2">
+                      {muted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+                    </button>
+                  )}
+                </div>
+              );
+            })}
           </div>
-          <button onClick={() => select(active + 1)} aria-label="Video siguiente" className="grid size-10 shrink-0 place-items-center rounded-full border border-[#295C50]/30 text-[#295C50] transition hover:bg-white/60 sm:size-12"><ChevronRight /></button>
+          <button type="button" onClick={() => select(active + 1)} aria-label="Video siguiente" className="relative z-20 ml-1 grid size-9 shrink-0 place-items-center rounded-full border border-[#295C50]/20 bg-white text-[#295C50] shadow-sm transition-colors hover:bg-[#EAF0E4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] sm:ml-5 sm:size-12"><ChevronRight size={21} /></button>
         </div>
-        <p className="mt-7 text-center text-xs text-[#302E2A]/55">Selecciona un video para reproducirlo. Los videos se cargan desde Avra.</p>
+        <div className="mt-5 flex justify-center gap-2" role="group" aria-label="Seleccionar video">
+          {reels.map((reel, index) => (
+            <button key={reel.src} type="button" onClick={() => select(index)} aria-label={`Mostrar ${reel.label}`} aria-current={active === index ? "true" : undefined} className={`h-2 rounded-full transition-[width,background-color] duration-300 motion-reduce:transition-none ${active === index ? "w-8 bg-[#EA6F32]" : "w-2 bg-[#295C50]/25 hover:bg-[#295C50]/50"}`} />
+          ))}
+        </div>
       </div>
     </section>
   );
