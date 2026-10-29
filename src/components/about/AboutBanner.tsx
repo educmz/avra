@@ -4,9 +4,9 @@ export function AboutBanner() {
   return (
     <ImageHero
       image="/images/about/about-hero.png"
-      lines={["MÁS QUE", "ALGO RICO"]}
-      kicker="Nuestra historia"
-      subtitle="Creamos momentos para disfrutar y compartir"
+      lines={["AVRA"]}
+      kicker="Somos"
+      subtitle="Disfruta cada momento"
       flourishColors={["#295C50", "#4E8C7A", "#7DB6A3"]}
     />
   );
