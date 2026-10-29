@@ -14,7 +14,7 @@ export function Header() {
   const closeCarta = useCallback(() => setIsCartaOpen(false), []);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50 w-full bg-[#FBF7F0]">
+    <header className="absolute inset-x-0 top-0 z-50 w-full bg-[#F6F7F2]">
       <Container className="flex h-[68px] items-center justify-between gap-4 sm:h-[74px] lg:h-[84px]">
         <Link href="/" aria-label="Avra, inicio" className="group relative z-10 shrink-0 rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#295C50]">
           <Image
