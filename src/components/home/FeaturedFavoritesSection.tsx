@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { cartaProducts } from "@/data/carta/products";
 import { Container } from "@/components/ui/Container";
+import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 
 const featured = cartaProducts.filter((product) => product.featured === true && product.available);
 
@@ -28,8 +29,7 @@ export function FeaturedFavoritesSection() {
       <Container>
         <div className="grid gap-6 lg:grid-cols-[minmax(0,300px)_minmax(0,1fr)] lg:items-center lg:gap-8">
           <div>
-            <p className="font-[family-name:var(--font-script)] text-[25px] leading-8 text-[#EA6F32]">Favoritos</p>
-            <h2 id="featured-favorites-title" className="mt-1 font-heading text-[28px] font-extrabold uppercase leading-tight sm:text-[34px] lg:text-[40px]">Nuestros imperdibles</h2>
+            <AnimatedTitle id="featured-favorites-title" text="Nuestros imperdibles" className="mt-1 font-heading text-[28px] font-extrabold uppercase leading-tight sm:text-[34px] lg:text-[40px]" />
             <div className="mt-3 h-[3px] w-12 rounded-full bg-[#EA6F32]" />
             <p className="mt-3 max-w-sm text-sm leading-6 text-[#302E2A]/75">Descubre algunos de los productos que todos quieren.</p>
           </div>
