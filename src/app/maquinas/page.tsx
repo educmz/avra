@@ -136,10 +136,6 @@ export default function MachinesPage() {
                 {machine.details.map((detail) => <article key={detail.title} className="rounded-2xl border border-[#302E2A]/10 bg-white/80 p-6 shadow-[0_6px_22px_rgba(48,46,42,.04)]"><CheckCircle2 size={23} style={{color:machine.accent}} /><h4 className="mt-5 font-heading text-lg font-bold text-[#302E2A]">{detail.title}</h4><p className="mt-3 text-sm leading-6 text-[#302E2A]/70">{detail.desc}</p></article>)}
               </div>
             </div>
-            <div className="mt-10 rounded-[2rem] bg-[#213E34] px-7 py-8 text-white sm:px-10">
-              <p className="text-xs font-semibold uppercase tracking-[.2em] text-[#F8B54F]">Lo que hace especial a {machine.name}</p>
-              <div className="mt-5 grid gap-5 sm:grid-cols-3">{machine.perks.map(perk=><div key={perk} className="flex items-center gap-3"><Leaf size={22} className="shrink-0 text-[#F8B54F]" /><span className="text-sm font-semibold">{perk}</span></div>)}</div>
-            </div>
           </Container>
         </section>
       ))}
