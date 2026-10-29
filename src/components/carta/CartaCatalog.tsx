@@ -136,6 +136,7 @@ export function CartaCatalog() {
     >
       <ImageHero
         image="/images/carta/carta-hero.png"
+        flushBottom
         lines={["CARTA"]}
         kicker="Nuestra"
         subtitle="Sabores para disfrutar cada momento"
