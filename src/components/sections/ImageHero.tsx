@@ -2,7 +2,7 @@ import Image from "next/image";
 
 interface ImageHeroProps {
   image: string;
-  lines: [string, string];
+  lines: [string, ...string[]];
   kicker?: string;
   subtitle?: string;
 }
