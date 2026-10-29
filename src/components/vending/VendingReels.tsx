@@ -31,15 +31,15 @@ export function VendingReels() {
   }
 
   return (
-    <section id="videos" aria-labelledby="vending-videos-title" className="overflow-hidden bg-[#10251F] py-16 text-white sm:py-24">
+    <section id="videos" aria-labelledby="vending-videos-title" className="overflow-hidden bg-[#EAF0E4] py-16 text-[#302E2A] sm:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-10 text-center">
-          <p className="text-xs font-bold uppercase tracking-[.24em] text-[#F8B54F]">Videos y experiencias</p>
+          <p className="text-xs font-bold uppercase tracking-[.24em] text-[#295C50]">Videos y experiencias</p>
           <h2 id="vending-videos-title" className="mt-3 font-heading text-[28px] font-extrabold uppercase sm:text-[34px] lg:text-[40px]">Vending en acción</h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/70 sm:text-base">Descubre nuestras máquinas a través de videos cortos.</p>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#302E2A]/70 sm:text-base">Descubre nuestras máquinas a través de videos cortos.</p>
         </div>
         <div className="flex items-center justify-center gap-2 sm:gap-5">
-          <button onClick={() => select(active - 1)} aria-label="Video anterior" className="grid size-10 shrink-0 place-items-center rounded-full border border-white/30 transition hover:bg-white/10 sm:size-12"><ChevronLeft /></button>
+          <button onClick={() => select(active - 1)} aria-label="Video anterior" className="grid size-10 shrink-0 place-items-center rounded-full border border-[#295C50]/30 text-[#295C50] transition hover:bg-white/60 sm:size-12"><ChevronLeft /></button>
           <div className="grid min-w-0 flex-1 grid-cols-3 items-center gap-2 sm:gap-5 lg:max-w-5xl">
             {reels.map((reel, index) => (
               <div key={reel.src} className={`relative min-w-0 overflow-hidden rounded-[1.25rem] border border-white/15 bg-black transition-all duration-300 sm:rounded-[1.75rem] ${active === index ? "scale-100 opacity-100 shadow-[0_20px_60px_rgba(0,0,0,.4)]" : "scale-[.92] opacity-45"}`}>
@@ -51,9 +51,9 @@ export function VendingReels() {
               </div>
             ))}
           </div>
-          <button onClick={() => select(active + 1)} aria-label="Video siguiente" className="grid size-10 shrink-0 place-items-center rounded-full border border-white/30 transition hover:bg-white/10 sm:size-12"><ChevronRight /></button>
+          <button onClick={() => select(active + 1)} aria-label="Video siguiente" className="grid size-10 shrink-0 place-items-center rounded-full border border-[#295C50]/30 text-[#295C50] transition hover:bg-white/60 sm:size-12"><ChevronRight /></button>
         </div>
-        <p className="mt-7 text-center text-xs text-white/55">Selecciona un video para reproducirlo. Los videos se cargan desde Avra.</p>
+        <p className="mt-7 text-center text-xs text-[#302E2A]/55">Selecciona un video para reproducirlo. Los videos se cargan desde Avra.</p>
       </div>
     </section>
   );
