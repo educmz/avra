@@ -24,8 +24,8 @@ const cartaItems = [
     href: "/nosotros",
   },
   {
-    label: "LOCALES",
-    href: "/locales",
+    label: "BLOG",
+    href: "/blog",
   },
 ];
 

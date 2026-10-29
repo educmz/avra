@@ -31,7 +31,7 @@ export function TeamSection() {
 
             <AnimatedTitle
               text={"Un equipo que\ndisfruta lo que hace"}
-              className="mt-4 text-4xl font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-5xl lg:text-6xl"
+              className="mt-4 text-[28px] font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-[34px] lg:text-[40px]"
             />
           </AboutReveal>
 

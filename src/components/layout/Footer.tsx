@@ -36,13 +36,6 @@ export function Footer() {
             </Link>
 
             <Link
-              href="/locales"
-              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#FF6A00] md:self-center"
-            >
-              Locales
-            </Link>
-
-            <Link
               href="/nosotros"
               className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#FF6A00] md:self-end"
             >

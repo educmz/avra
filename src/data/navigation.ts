@@ -8,5 +8,5 @@ export const navigationItems: NavigationItem[] = [
   { label: "Carta", href: "/carta" },
   { label: "Vending saludable", href: "/maquinas" },
   { label: "Nosotros", href: "/nosotros" },
-  { label: "Locales", href: "/locales" },
+  { label: "Blog", href: "/blog" },
 ];

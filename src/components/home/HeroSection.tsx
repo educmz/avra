@@ -40,10 +40,10 @@ export function HeroSection() {
       className="
         w-full
         bg-background
-        pt-[88px]
+        pt-[68px]
         pb-6
-        sm:pt-24
-        lg:pt-28
+        sm:pt-[74px]
+        lg:pt-[84px]
         lg:pb-12
       "
       onMouseEnter={() => setPaused(true)}
