@@ -38,7 +38,7 @@ export function CartaCategoryNav({
 
   return (
     <div
-      className="sticky top-0 z-30 min-w-0 max-w-full border-b border-[#E7DDD1] bg-[#EAF0E4]/95 shadow-[0_4px_14px_rgba(48,46,42,.04)] backdrop-blur-md"
+      className="sticky top-0 z-30 min-w-0 max-w-full border-b border-[#E7DDD1] bg-[#FBF4EF]/95 shadow-[0_4px_14px_rgba(48,46,42,.04)] backdrop-blur-md"
       style={{ fontFamily: "var(--font-carta), 'Montserrat', system-ui, sans-serif" }}
     >
       <nav
