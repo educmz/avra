@@ -78,7 +78,7 @@ export default function MachinesPage() {
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[11px] font-bold uppercase tracking-[.2em] text-[#B96220]">Por qué elegir vending saludable</p>
-            <h2 id="vending-overview-title" className="mt-2 font-heading text-2xl font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-3xl lg:text-4xl">Más opciones para disfrutar tu día</h2>
+            <h2 id="vending-overview-title" className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]">Más opciones para disfrutar tu día</h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#302E2A]/70">Bebidas naturales, comidas y snacks en una experiencia de autoservicio práctica, pensada para adaptarse a distintos momentos y espacios.</p>
           </div>
           <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -93,7 +93,7 @@ export default function MachinesPage() {
           <div className="mt-9 border-t border-[#295C50]/15 pt-7 sm:mt-10 sm:pt-8">
             <div className="mb-5 text-center">
               <p className="text-[11px] font-bold uppercase tracking-[.2em] text-[#B96220]">Simple y práctico</p>
-              <h3 className="mt-1 font-heading text-2xl font-extrabold uppercase text-[#302E2A] sm:text-3xl">¿Cómo funciona?</h3>
+              <h3 className="mt-1 font-heading text-[28px] font-extrabold uppercase text-[#302E2A] sm:text-[34px] lg:text-[40px]">¿Cómo funciona?</h3>
             </div>
             <div className="grid gap-3 md:grid-cols-3">
               {[{Icon:MousePointerClick,title:"01. Elige",desc:"Explora las opciones del equipo y selecciona tu producto."},{Icon:CreditCard,title:"02. Paga",desc:"Sigue las instrucciones del sistema de pago disponible."},{Icon:PackageCheck,title:"03. Disfruta",desc:"Recoge tu producto y continúa con tu día."}].map(({Icon,title,desc})=>(
@@ -123,7 +123,7 @@ export default function MachinesPage() {
               </div>
               <div className={index === 1 ? "lg:order-1" : ""}>
                 <p className="text-xs font-bold uppercase tracking-[.22em]" style={{ color: machine.accent }}>{machine.kicker}</p>
-                <h2 id={`${machine.id}-title`} className="mt-4 font-heading text-[clamp(2.6rem,4.6vw,4.8rem)] font-extrabold uppercase leading-[.98] tracking-tight text-[#302E2A]">{machine.title}</h2>
+                <h2 id={`${machine.id}-title`} className="mt-4 font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-extrabold uppercase leading-[.98] tracking-tight text-[#302E2A]">{machine.title}</h2>
                 <div className="mt-6 h-1 w-20 rounded-full" style={{ background: machine.accent }} />
                 <p className="mt-7 max-w-xl text-base leading-8 text-[#302E2A]/75">{machine.description}</p>
                 <div className="mt-7 flex flex-wrap gap-2">{machine.perks.map((perk) => <span key={perk} className="rounded-full border border-[#302E2A]/15 px-4 py-2 text-xs font-semibold text-[#302E2A]">{perk}</span>)}</div>
