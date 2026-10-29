@@ -17,7 +17,7 @@ const machines = [
     description: "La máquina naranja Avra está pensada para acercar una experiencia de bebidas naturales a diferentes momentos del día. Su diseño distintivo y su sistema de autoservicio hacen que elegir una bebida resulte práctico.",
     image: "/images/vending/avra-equipo.jpg",
     alt: "Máquina naranja Avra con dos ventanas y dispensador de bebidas",
-    accent: "#EA6F32", bg: "#FFF0E3",
+    accent: "#EA6F32", bg: "#FFFFFF",
     details: [
       { title: "Especializada en bebidas", desc: "Una propuesta centrada en la experiencia de bebidas naturales." },
       { title: "Dispensación directa", desc: "Espacio frontal dedicado a recibir la bebida seleccionada." },
@@ -32,7 +32,7 @@ const machines = [
     description: "El formato Nuna muestra alimentos en envases individuales y una selección de bebidas. Su vitrina facilita ver las opciones disponibles y su pantalla permite interactuar con el equipo. La fotografía del equipo Nuna se presenta como referencia.",
     image: "/images/vending/nuna-equipo.jpg",
     alt: "Máquina Nuna negra y verde con vitrina de comidas envasadas y bebidas",
-    accent: "#428C42", bg: "#EEF3E7",
+    accent: "#428C42", bg: "#FFFFFF",
     details: [
       { title: "Vitrina de productos", desc: "Los alimentos y bebidas quedan visibles antes de elegir." },
       { title: "Variedad de formatos", desc: "Espacios para envases individuales y bebidas embotelladas." },
@@ -74,7 +74,7 @@ export default function MachinesPage() {
         </div>
       </section>
 
-      <section aria-labelledby="vending-overview-title" className="bg-[#F6F5EE] py-10 sm:py-12 lg:py-14">
+      <section aria-labelledby="vending-overview-title" className="bg-[#FBF7F0] py-10 sm:py-12 lg:py-14">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[11px] font-bold uppercase tracking-[.2em] text-[#B96220]">Por qué elegir vending saludable</p>
@@ -97,8 +97,8 @@ export default function MachinesPage() {
             </div>
             <div className="grid gap-3 md:grid-cols-3">
               {[{Icon:MousePointerClick,title:"01. Elige",desc:"Explora las opciones del equipo y selecciona tu producto."},{Icon:CreditCard,title:"02. Paga",desc:"Sigue las instrucciones del sistema de pago disponible."},{Icon:PackageCheck,title:"03. Disfruta",desc:"Recoge tu producto y continúa con tu día."}].map(({Icon,title,desc})=>(
-                <article key={title} className="flex h-full items-start gap-3 rounded-2xl border border-[#EBCBB7] bg-[#FFF8F2] p-4 shadow-[0_4px_16px_rgba(48,46,42,.03)] sm:p-5">
-                  <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#FCE6D4] text-[#D86629]"><Icon size={21} aria-hidden="true" /></span>
+                <article key={title} className="flex h-full items-start gap-3 rounded-2xl border border-[#295C50]/10 bg-white p-4 shadow-[0_4px_16px_rgba(48,46,42,.03)] sm:p-5">
+                  <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#EAF0E4] text-[#D86629]"><Icon size={21} aria-hidden="true" /></span>
                   <div className="min-w-0">
                     <h4 className="font-heading text-base font-bold text-[#302E2A]">{title}</h4>
                     <p className="mt-1.5 text-[13px] leading-5 text-[#302E2A]/70">{desc}</p>
@@ -110,7 +110,7 @@ export default function MachinesPage() {
         </Container>
       </section>
       {machines.map((machine, index) => (
-        <section key={machine.id} id={machine.id} aria-labelledby={`${machine.id}-title`} className={index === 0 ? "bg-[#FFF9F4] py-10 sm:py-14" : "bg-[#F1F5ED] py-10 sm:py-14"}>
+        <section key={machine.id} id={machine.id} aria-labelledby={`${machine.id}-title`} className={index === 0 ? "bg-[#EAF0E4] py-10 sm:py-14" : "bg-[#FBF7F0] py-10 sm:py-14"}>
           <Container>
             <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,.85fr)_minmax(0,1.15fr)] lg:gap-10">
               <div className={`min-w-0 ${index === 1 ? "lg:order-2" : ""}`}>
