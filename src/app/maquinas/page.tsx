@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, CreditCard, HandPointer, PackageCheck, Leaf, Clock3, LayoutGrid, Smartphone } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, CreditCard, MousePointerClick, PackageCheck, Leaf, Clock3, LayoutGrid, Smartphone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { VendingReels } from "@/components/vending/VendingReels";
 
@@ -132,7 +132,7 @@ export default function MachinesPage() {
         <Container>
           <div className="mb-12 text-center"><p className="text-xs font-bold uppercase tracking-[.22em] text-[#C76D00]">Simple y práctico</p><h2 id="how-vending-works" className="mt-4 font-heading text-4xl font-extrabold uppercase text-[#302E2A] sm:text-6xl">¿Cómo funciona?</h2></div>
           <div className="grid gap-5 md:grid-cols-3">
-            {[{Icon:HandPointer,title:"01. Elige",desc:"Explora las opciones del equipo y selecciona tu producto."},{Icon:CreditCard,title:"02. Paga",desc:"Sigue las instrucciones del sistema de pago disponible."},{Icon:PackageCheck,title:"03. Disfruta",desc:"Recoge tu producto y continúa con tu día."}].map(({Icon,title,desc})=><article key={title} className="rounded-[1.75rem] bg-white p-8 text-center shadow-[0_10px_35px_rgba(48,46,42,.06)]"><span className="mx-auto grid size-16 place-items-center rounded-full bg-[#FCE5D0] text-[#D86629]"><Icon size={29}/></span><h3 className="mt-5 font-heading text-2xl font-bold text-[#302E2A]">{title}</h3><p className="mt-3 text-sm leading-7 text-[#302E2A]/70">{desc}</p></article>)}
+            {[{Icon:MousePointerClick,title:"01. Elige",desc:"Explora las opciones del equipo y selecciona tu producto."},{Icon:CreditCard,title:"02. Paga",desc:"Sigue las instrucciones del sistema de pago disponible."},{Icon:PackageCheck,title:"03. Disfruta",desc:"Recoge tu producto y continúa con tu día."}].map(({Icon,title,desc})=><article key={title} className="rounded-[1.75rem] bg-white p-8 text-center shadow-[0_10px_35px_rgba(48,46,42,.06)]"><span className="mx-auto grid size-16 place-items-center rounded-full bg-[#FCE5D0] text-[#D86629]"><Icon size={29}/></span><h3 className="mt-5 font-heading text-2xl font-bold text-[#302E2A]">{title}</h3><p className="mt-3 text-sm leading-7 text-[#302E2A]/70">{desc}</p></article>)}
           </div>
         </Container>
       </section>
