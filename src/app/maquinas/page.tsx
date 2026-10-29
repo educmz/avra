@@ -20,7 +20,7 @@ export default function MachinesPage() {
     <main className="bg-background pt-[88px] sm:pt-24 lg:pt-28">
       <section aria-label="Presentación de máquinas Avra" className="w-full pb-6 sm:pb-8 lg:pb-10">
         <Image
-          src="/images/vending/banner-vending.webp"
+          src="/images/vending/banner-vending.png"
           alt="Nuestras máquinas de alimentación saludable Avra"
           width={1920}
           height={1080}
