@@ -55,7 +55,7 @@ export function VendingReels() {
         <div className="mb-8 text-center sm:mb-10">
           <p className="text-xs font-bold uppercase tracking-[.22em] text-[#295C50]">Videos y experiencias</p>
           <h2 id="vending-videos-title" className="mt-2 font-heading text-[28px] font-extrabold uppercase sm:text-[34px] lg:text-[40px]">Vending en acción</h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#302E2A]/70 sm:text-base">Descubre nuestras máquinas a través de videos cortos.</p>
+          <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-[#302E2A]/70 sm:text-base">Descubre nuestras máquinas a través de videos cortos.</p>
         </div>
 
         <div className="relative mx-auto flex max-w-5xl items-center justify-center">
@@ -106,11 +106,7 @@ export function VendingReels() {
           </div>
           <button type="button" onClick={() => select(active + 1)} aria-label="Video siguiente" className="relative z-20 ml-1 grid size-9 shrink-0 place-items-center rounded-full border border-[#295C50]/20 bg-white text-[#295C50] shadow-sm transition-colors hover:bg-[#EAF0E4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] sm:ml-5 sm:size-12"><ChevronRight size={21} /></button>
         </div>
-        <div className="mt-5 flex justify-center gap-2" role="group" aria-label="Seleccionar video">
-          {reels.map((reel, index) => (
-            <button key={reel.src} type="button" onClick={() => select(index)} aria-label={`Mostrar ${reel.label}`} aria-current={active === index ? "true" : undefined} className={`h-2 rounded-full transition-[width,background-color] duration-300 motion-reduce:transition-none ${active === index ? "w-8 bg-[#EA6F32]" : "w-2 bg-[#295C50]/25 hover:bg-[#295C50]/50"}`} />
-          ))}
-        </div>
+
       </div>
     </section>
   );
