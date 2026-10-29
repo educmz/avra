@@ -1,179 +1,75 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-
+import { Mail, MessageCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { socialLinks } from "./socialLinks";
 
-const legalLinks = [
-  {
-    label: "Política de privacidad",
-    href: "/politica-de-privacidad",
-  },
-  {
-    label: "Política de cookies",
-    href: "/politica-de-cookies",
-  }
+const navigation = [
+  { label: "Inicio", href: "/" },
+  { label: "Carta", href: "/carta" },
+  { label: "Vending saludable", href: "/maquinas" },
+  { label: "Nosotros", href: "/nosotros" },
+  { label: "Blog", href: "/blog" },
 ];
+
+const legalLinks = [
+  { label: "Política de privacidad", href: "/politica-de-privacidad" },
+  { label: "Política de cookies", href: "/politica-de-cookies" },
+];
+
+const linkClass = "text-sm text-[#FBF4EF]/85 transition-colors hover:text-white focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white">
-      <Container className="py-11 lg:py-12">
-        {/* PARTE SUPERIOR */}
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:items-start lg:gap-16 xl:gap-20">
-          {/* COLUMNA 1 */}
-          <nav
-            aria-label="Navegación principal del pie de página"
-            className="flex flex-col items-start gap-6 md:grid md:h-[165px] md:grid-rows-3 md:gap-0"
-          >
-            <Link
-              href="/carta"
-              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#FF6A00]"
-            >
-              Carta
+    <footer className="bg-[#295C50] text-[#FBF4EF]">
+      <Container className="pb-5 pt-8 sm:pt-9">
+        <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)_minmax(0,1fr)_auto] lg:items-center lg:gap-7">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+            <Link href="/" aria-label="Avra, ir al inicio" className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+              <Image src="/images/brand/avra-wordmark-black.png" alt="Avra" width={2172} height={724} className="h-auto w-[120px] brightness-0 invert" />
             </Link>
-
-            <Link
-              href="/nosotros"
-              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#FF6A00] md:self-end"
-            >
-              Nosotros
-            </Link>
-          </nav>
-
-          {/* COLUMNA 2 */}
-          <nav
-            aria-label="Información adicional"
-            className="flex flex-col items-start gap-6 md:grid md:h-[165px] md:grid-rows-3 md:gap-0"
-          >
-            <Link
-              href="/"
-              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#FF6A00]"
-            >
-              Inicio
-            </Link>
-
-            <Link
-              href="/maquinas"
-              className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em] transition-colors hover:text-[#FF6A00] md:self-center"
-            >
-              Máquinas
-            </Link>
-          </nav>
-
-          {/* COLUMNA 3 */}
-          <div className="flex flex-col items-start">
-            <h3 className="font-heading text-[1.55rem] uppercase leading-none tracking-[0.01em]">
-              Atención al cliente
-            </h3>
-
-            <div className="mt-5 space-y-2 text-sm font-semibold uppercase leading-6 text-white">
-              <a
-                href="tel:+51999999999"
-                className="block transition-colors hover:text-[#FF6A00]"
-              >
-                +51 999 999 999
-              </a>
-
-              <a
-                href="mailto:hola@avra.pe"
-                className="block transition-colors hover:text-[#FF6A00]"
-              >
-                hola@avra.pe
-              </a>
-            </div>
-
-            <div className="mt-5">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white/70">
-                Síguenos
-              </p>
-
-              <div className="flex items-center gap-3">
-                {socialLinks.map((social) => (
-                  <Link
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={social.label}
-                    className="
-                      grid
-                      size-10
-                      place-items-center
-                      rounded-full
-                      border
-                      border-white/35
-                      text-white
-                      transition-all
-                      hover:border-[#FF6A00]
-                      hover:text-[#FF6A00]
-                    "
-                  >
-                    {social.icon}
-                  </Link>
-                ))}
-              </div>
+            <p className="mt-1.5 text-sm font-medium text-[#FBF4EF]/90">Activa lo natural</p>
+            <div className="mt-3 flex items-center gap-2" aria-label="Redes sociales de Avra">
+              {socialLinks.map((social) => (
+                <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}
+                  className="grid size-8 place-items-center rounded-full border border-[#FBF4EF]/35 text-[#FBF4EF] transition-colors hover:border-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* COLUMNA 4 */}
-          <div className="flex justify-start lg:justify-end">
-            <Link
-              href="/libro-de-reclamaciones"
-              aria-label="Ir al Libro de Reclamaciones"
-              className="
-                flex
-                h-[165px]
-                w-[220px]
-                items-center
-                justify-center
-                overflow-hidden
-                rounded-md
-                border
-                border-white/80
-                transition-colors
-                hover:border-[#FF6A00]
-              "
-            >
-              <Image
-                src="/images/legal/libro-reclamaciones.png"
-                alt="Libro de Reclamaciones"
-                width={1254}
-                height={1254}
-                className="h-[190px] w-[190px] -translate-y-2 object-contain"
-              />
-            </Link>
+          <nav aria-label="Navegación del pie de página" className="text-center">
+            <h2 className="font-heading text-sm font-bold uppercase tracking-[.14em]">Descubre Avra</h2>
+            <div className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:gap-x-6">
+              {navigation.map((item) => (
+                <Link key={item.href} href={item.href} className={linkClass}>{item.label}</Link>
+              ))}
+            </div>
+          </nav>
+
+          <div className="flex flex-col items-center gap-2.5 text-center lg:items-end lg:text-right">
+            <h2 className="font-heading text-sm font-bold uppercase tracking-[.14em]">Contacto</h2>
+            <a href="mailto:hola@avra.pe" className={`${linkClass} inline-flex items-center gap-2`}>
+              <Mail size={16} aria-hidden="true" />hola@avra.pe
+            </a>
+            <a href="https://wa.me/51948742332" target="_blank" rel="noopener noreferrer" className={`${linkClass} inline-flex items-center gap-2`}>
+              <MessageCircle size={16} aria-hidden="true" />+51 948 742 332
+            </a>
           </div>
+
+          <Link href="/libro-de-reclamaciones" aria-label="Ir al Libro de Reclamaciones" className="mx-auto inline-flex w-fit items-center justify-center rounded-md transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white lg:mx-0 lg:justify-self-end">
+            <Image src="/images/legal/libro-reclamaciones.png" alt="Libro de Reclamaciones" width={240} height={240} className="size-[150px] object-contain sm:size-[170px] lg:size-[190px]" />
+          </Link>
         </div>
 
-        {/* PARTE INFERIOR */}
-        <div className="mt-8 border-t border-white/20 pt-4">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            {/* DERECHOS */}
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-white">
-              <p>© {new Date().getFullYear()} Avra</p>
-              <p>Todos los derechos reservados.</p>
-            </div>
-
-            {/* LEGALES */}
-            <nav
-              aria-label="Información legal"
-              className="flex flex-wrap items-center gap-x-8 gap-y-3"
-            >
+        <div className="mt-7 border-t border-[#FBF4EF]/20 pt-4 sm:mt-8">
+          <div className="flex flex-col items-center gap-3 text-center text-xs text-[#FBF4EF]/75 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-5 lg:text-sm">
+            <p className="lg:justify-self-start">Desarrollado por <span className="font-semibold text-[#FBF4EF]">educmz</span></p>
+            <p>© {new Date().getFullYear()} Avra. Todos los derechos reservados</p>
+            <nav aria-label="Información legal" className="flex flex-wrap justify-center gap-x-4 gap-y-1 lg:justify-self-end">
               {legalLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="
-                    text-sm
-                    text-white
-                    transition-colors
-                    duration-200
-                    hover:text-[#FF6A00]
-                  "
-                >
+                <Link key={item.href} href={item.href} className="whitespace-nowrap transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                   {item.label}
                 </Link>
               ))}

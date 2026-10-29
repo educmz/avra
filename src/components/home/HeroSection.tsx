@@ -5,8 +5,13 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const slides = [
-  { id: "products", desktop: "/images/home/banners/home-products-desktop.webp", mobile: "/images/home/banners/home-products-mobile.webp", alt: "Hecho para disfrutar: antojos, bebidas y momentos para compartir" },
-  { id: "drinks", desktop: "/images/home/banners/home-drinks-desktop.webp", mobile: "/images/home/banners/home-drinks-mobile.webp", alt: "Bebidas Avra para disfrutar en cada momento" },
+  { id: "slide-01", desktop: "/images/home/carousel/slide-01.png", mobile: "/images/home/carousel/slide-01.png", alt: "Avra: imagen 1 del carrusel principal" },
+  { id: "slide-02", desktop: "/images/home/carousel/slide-02.png", mobile: "/images/home/carousel/slide-02.png", alt: "Avra: imagen 2 del carrusel principal" },
+  { id: "slide-03", desktop: "/images/home/carousel/slide-03.png", mobile: "/images/home/carousel/slide-03.png", alt: "Avra: imagen 3 del carrusel principal" },
+  { id: "slide-04", desktop: "/images/home/carousel/slide-04.png", mobile: "/images/home/carousel/slide-04.png", alt: "Avra: imagen 4 del carrusel principal" },
+  { id: "slide-05", desktop: "/images/home/carousel/slide-05.png", mobile: "/images/home/carousel/slide-05.png", alt: "Avra: imagen 5 del carrusel principal" },
+  { id: "slide-06", desktop: "/images/home/carousel/slide-06.png", mobile: "/images/home/carousel/slide-06.png", alt: "Avra: imagen 6 del carrusel principal" },
+  { id: "slide-07", desktop: "/images/home/carousel/slide-07.png", mobile: "/images/home/carousel/slide-07.png", alt: "Avra: imagen 7 del carrusel principal" },
 ] as const;
 
 export function HeroSection() {
