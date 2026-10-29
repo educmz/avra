@@ -42,7 +42,7 @@ export function Footer() {
 
           <nav aria-label="Navegación del pie de página" className="text-center sm:text-left xl:justify-self-center xl:text-center">
             <h2 className="font-heading text-sm font-bold uppercase tracking-[.14em]">Descubre Avra</h2>
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2.5 sm:justify-start xl:justify-center">
+            <div className="mt-4 flex flex-col items-center gap-2.5 sm:items-start xl:items-center">
               {navigation.map((item) => (
                 <Link key={item.href} href={item.href} className={linkClass}>{item.label}</Link>
               ))}
