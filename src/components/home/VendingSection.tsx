@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
-import { HomeImage } from "./HomeImage";
+import { VendingMachine3D } from "./VendingMachine3D";
 import { HomeHeading } from "./HomeHeading";
 import styles from "./Home.module.css";
 
@@ -65,15 +65,9 @@ export function VendingSection() {
             </div>
           </div>
 
-          {/* IMAGEN */}
-          <div className="relative min-h-[520px] sm:min-h-[620px]">
-            <HomeImage
-                src="/images/home/vending-machine/avra-vending-machine.png"
-                alt="Máquina expendedora Avra"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-contain object-center lg:object-right"
-            />
+          {/* MODELO 3D INTERACTIVO */}
+          <div className="relative h-[440px] sm:h-[540px] lg:h-[620px]">
+            <VendingMachine3D />
           </div>
         </div>
       </Container>
