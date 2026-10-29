@@ -23,6 +23,10 @@ const cartaItems = [
     label: "NOSOTROS",
     href: "/nosotros",
   },
+  {
+    label: "BLOG",
+    href: "/blog",
+  },
 ];
 
 interface MobileCartaProps {

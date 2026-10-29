@@ -17,7 +17,7 @@ const benefits = [
 
 export default function MachinesPage() {
   return (
-    <main className="bg-background pt-[76px] sm:pt-[82px] lg:pt-24">
+    <main className="bg-background pt-[68px] sm:pt-[74px] lg:pt-[84px]">
       <section aria-label="Presentación de máquinas Avra" className="w-full pb-6 sm:pb-8 lg:pb-10">
         <Image
           src="/images/vending/banner-vending.png"
