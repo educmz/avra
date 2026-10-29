@@ -6,27 +6,12 @@ import { ArrowUpRight, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-const cartaItems = [
-  {
-    label: "INICIO",
-    href: "/",
-  },
-  {
-    label: "CARTA",
-    href: "/carta",
-  },
-  {
-    label: "VENDING SALUDABLE",
-    href: "/maquinas",
-  },
-  {
-    label: "NOSOTROS",
-    href: "/nosotros",
-  },
-  {
-    label: "BLOG",
-    href: "/blog",
-  },
+const menuItems = [
+  { label: "Inicio", href: "/" },
+  { label: "Carta", href: "/carta" },
+  { label: "Vending saludable", href: "/maquinas" },
+  { label: "Nosotros", href: "/nosotros" },
+  { label: "Blog", href: "/blog" },
 ];
 
 interface MobileCartaProps {
@@ -34,16 +19,14 @@ interface MobileCartaProps {
   onClose: () => void;
 }
 
-export function MobileCarta({
-  isOpen,
-  onClose,
-}: MobileCartaProps) {
+export function MobileCarta({ isOpen, onClose }: MobileCartaProps) {
   const pathname = usePathname();
 
   useEffect(() => {
     if (!isOpen) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") onClose();
     };
@@ -51,6 +34,7 @@ export function MobileCarta({
     const handleResize = () => {
       if (desktop.matches) onClose();
     };
+
     window.addEventListener("keydown", handleKeyDown);
     desktop.addEventListener("change", handleResize);
     return () => {
@@ -63,71 +47,43 @@ export function MobileCarta({
   if (!isOpen) return null;
 
   return (
-    <div id="mobile-navigation" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-[#FFF8F3] text-[#302E2A]">
-      <div className="flex min-h-full flex-col px-6 pb-[max(24px,env(safe-area-inset-bottom))] pt-[max(20px,env(safe-area-inset-top))] sm:px-8">
-        {/* HEADER */}
-        <div className="flex items-center justify-between">
-          <Link
-            href="/"
-            onClick={onClose}
-            className="relative flex min-h-12 w-[120px] shrink-0 items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF8A00]"
-          >
-            <Image
-              src="/images/brand/avra-wordmark-black.png"
-              alt="Avra"
-              width={400}
-              height={160}
-              priority
-              className="h-auto w-full object-contain"
-            />
+    <div id="mobile-navigation" role="dialog" aria-modal="true" aria-label="Menú de navegación" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-[#FBF4EF] text-[#302E2A]">
+      <div className="mx-auto flex min-h-full w-full max-w-2xl flex-col px-5 pb-[max(24px,env(safe-area-inset-bottom))] pt-[max(16px,env(safe-area-inset-top))] sm:px-9">
+        <div className="flex min-h-[58px] items-center justify-between">
+          <Link href="/" onClick={onClose} aria-label="Avra, ir al inicio" className="flex w-[116px] items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#295C50] sm:w-[130px]">
+            <Image src="/images/brand/avra-wordmark-black.png" alt="Avra" width={2172} height={724} priority className="h-auto w-full object-contain" />
           </Link>
-
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Cerrar carta"
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#302E2A]/15 text-[#302E2A] transition-colors duration-200 hover:border-[#FF8A00] hover:bg-[#FF8A00]/5 active:bg-[#FF8A00]/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF8A00] motion-reduce:transition-none"
-          >
-            <X className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
+          <button type="button" onClick={onClose} aria-label="Cerrar menú" className="grid size-11 place-items-center rounded-xl border border-[#295C50]/20 bg-white/50 text-[#295C50] transition-colors hover:bg-[#E2EAE1] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#295C50]">
+            <X size={21} aria-hidden="true" />
           </button>
         </div>
 
-        <div className="mt-9 border-t border-[#302E2A]/10 pt-6 sm:mt-12">
-          <nav aria-label="Navegación principal">
-            <ul className="space-y-2">
-              {cartaItems.map((item) => {
-                const isActive =
-                  item.href === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(item.href);
+        <div className="mt-5 h-[2px] w-full bg-gradient-to-r from-[#D7DFCF] via-[#8AAE9A] to-[#D7DFCF]" aria-hidden="true" />
 
-                return (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      onClick={onClose}
-                      aria-current={isActive ? "page" : undefined}
-                      className={`group flex min-h-16 items-center justify-between gap-5 rounded-xl px-5 py-4 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8A00] motion-reduce:transition-none ${
-                        isActive
-                          ? "bg-[#FF8A00] text-[#302E2A] hover:bg-[#F58200] active:bg-[#EB7C00]"
-                          : "text-[#302E2A] hover:bg-[#302E2A]/5 active:bg-[#302E2A]/10"
-                      }`}
-                    >
-                      <span className="font-[family-name:var(--font-header)] text-lg font-bold uppercase leading-tight tracking-[0.05em] sm:text-2xl">
-                        {item.label}
-                      </span>
+        <nav aria-label="Navegación principal" className="mt-7">
+          <p className="mb-3 px-3 font-[family-name:var(--font-header)] text-[11px] font-bold uppercase tracking-[.17em] text-[#295C50]/70">Explora Avra</p>
+          <ul className="space-y-1.5">
+            {menuItems.map((item) => {
+              const isActive = item.href === "/" ? pathname === "/" : pathname === item.href || pathname.startsWith(`${item.href}/`);
+              return (
+                <li key={item.href}>
+                  <Link href={item.href} onClick={onClose} aria-current={isActive ? "page" : undefined}
+                    className={`group relative flex min-h-[56px] items-center justify-between gap-4 rounded-xl px-4 py-3 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] ${isActive ? "bg-[#E2EAE1] text-[#205247]" : "text-[#35443E] hover:bg-[#EBEEE7] hover:text-[#205247]"}`}>
+                    <span className="font-[family-name:var(--font-header)] text-[15px] font-semibold uppercase leading-snug tracking-[.095em] sm:text-[17px]">{item.label}</span>
+                    <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" className={isActive ? "text-[#295C50]" : "text-[#295C50]/50 transition-colors group-hover:text-[#295C50]"} />
+                    {isActive && <span aria-hidden="true" className="absolute inset-x-4 bottom-1.5 h-[2px] origin-left rounded-full bg-[#295C50] animate-[avra-nav-underline_650ms_cubic-bezier(0.22,1,0.36,1)_both] motion-reduce:animate-none" />}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
 
-                      <ArrowUpRight
-                        aria-hidden="true"
-                        className={`h-5 w-5 shrink-0 ${isActive ? "text-[#302E2A]" : "text-[#918A82] group-hover:text-[#302E2A]"}`}
-                        strokeWidth={1.5}
-                      />
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+        <div className="mt-auto pt-9">
+          <Link href="/carta" onClick={onClose} className="avra-cta w-full">
+            <span>Explorar carta</span>
+          </Link>
+          <p className="mt-5 text-center text-xs tracking-wide text-[#295C50]/65">AVRA · ACTIVA LO NATURAL</p>
         </div>
       </div>
     </div>
