@@ -37,7 +37,7 @@ export function VendingSection() {
               {machines.map((machine) => (
                 <Link key={machine.name} href={machine.href} className="group min-w-0 overflow-hidden rounded-[24px] bg-white shadow-[0_12px_30px_rgba(48,46,42,.055)] transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] motion-reduce:transform-none sm:rounded-[30px]">
                   <div className="relative aspect-[.95] overflow-hidden sm:aspect-[1.05]" style={{ backgroundColor: machine.bg }}>
-                    <Image src={machine.image} alt={machine.alt} fill sizes="(min-width:1024px) 25vw, 48vw" className={`object-center transition-transform duration-500 group-hover:scale-[1.025] motion-reduce:transition-none ${machine.name === "AVRA" ? "object-contain" : "object-cover"}`} />
+                    <Image src={machine.image} alt={machine.alt} fill sizes="(min-width:1024px) 25vw, 48vw" className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.025] motion-reduce:transition-none" />
                   </div>
                   <div className="flex items-center justify-between gap-2 bg-[#FBF4EF] px-3 py-3 sm:px-5 sm:py-4">
                     <div className="min-w-0">
