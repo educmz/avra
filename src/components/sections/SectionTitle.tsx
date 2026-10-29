@@ -1,10 +1,10 @@
 import { cn } from "@/lib/utils";
+import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 
 export function SectionTitle({ eyebrow, title, description, className }: { eyebrow?: string; title: string; description?: string; className?: string }) {
   return (
     <header className={cn("max-w-2xl", className)}>
-      {eyebrow && <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-[var(--primary)]">{eyebrow}</p>}
-      <h2 className="text-balance text-[28px] font-black tracking-[-0.04em] sm:text-[34px] lg:text-[40px]">{title}</h2>
+      <AnimatedTitle text={title} className="text-balance text-[28px] font-black uppercase tracking-[-0.04em] sm:text-[34px] lg:text-[40px]" />
       {description && <p className="mt-4 text-pretty leading-7 text-black/65">{description}</p>}
     </header>
   );
