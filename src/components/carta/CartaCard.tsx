@@ -28,7 +28,7 @@ export function CartaCard({
   const [imageFailed, setImageFailed] = useState(false);
 
   const buttonClass =
-    "group/btn relative flex min-h-11 w-full items-center justify-center overflow-hidden bg-[#302E2A] px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-[background-color,translate,scale] duration-200 hover:-translate-y-0.5 hover:bg-[#FF8A00] active:translate-y-0 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:min-h-11 sm:px-4 sm:text-[13px] sm:tracking-[0.12em] motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+    "group/btn relative flex min-h-11 w-full items-center justify-center overflow-hidden bg-[#295C50] px-2 py-2 text-[10px] font-bold uppercase tracking-[0.04em] text-white transition-[background-color,translate,scale] duration-200 hover:-translate-y-0.5 hover:bg-[#295C50] active:translate-y-0 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:min-h-11 sm:px-4 sm:text-[13px] sm:tracking-[0.12em] motion-reduce:transition-none motion-reduce:hover:translate-y-0";
 
   return (
     <motion.article
@@ -68,7 +68,7 @@ export function CartaCard({
               (max-width: 1279px) 33vw,
               25vw
             "
-            className="object-contain object-center sm:object-cover"
+            className="object-contain object-center p-2 sm:p-3"
             style={
               item.imageScale
                 ? {
