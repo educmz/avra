@@ -145,10 +145,10 @@ button, input, select, textarea { font-family: inherit; font-size: 100%; line-he
   color: #295C50 !important;
 }
 .avra-cta.avra-cta--light:hover {
-  background-color: #fff !important;
+  background-color: #FBF4EF !important;
 }
 
-/* El barrido del CTA crema usa contraste verde y se coloca sobre la base,
+/* El barrido blanco del CTA crema conserva el color base,
    mientras el texto y la flecha quedan delante del brillo. */
 .avra-cta.avra-cta--light::before {
   background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
