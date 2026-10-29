@@ -25,7 +25,7 @@ export function VendingSection() {
           <div className="min-w-0">
             <AnimatedTitle id="vending-title" text="LO NATURAL, MÁS CERCA DE TI" className="max-w-[500px] font-heading text-[28px] font-extrabold uppercase leading-[1.07] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
             <span aria-hidden="true" className="mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
-            <p className="mt-6 max-w-[44ch] text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
+            <p className="mt-6 max-w-[44ch] text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
               Bebidas y snacks deliciosos, siempre disponibles. Descubre una forma práctica y moderna de disfrutar opciones más saludables.
             </p>
             <Link href="/maquinas" className="avra-cta mt-7">
