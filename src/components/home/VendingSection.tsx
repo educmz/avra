@@ -26,7 +26,7 @@ export function VendingSection() {
               <p className="max-w-sm text-sm leading-6 text-[#302E2A]/80">
                 Bebidas y snacks naturales, siempre a tu alcance. Nuestras máquinas Avra y Nuna llevan opciones deliciosas y saludables a más personas.
               </p>
-              <Link href="/maquinas" className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#295C50] px-5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1D453B] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50]">
+              <Link href="/maquinas" className="avra-cta mt-6 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#295C50] px-5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1D453B] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50]">
                 Conoce nuestras máquinas <ArrowUpRight size={17} aria-hidden="true" />
               </Link>
             </div>
