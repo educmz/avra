@@ -1,61 +1,20 @@
-"use client";
-
-import { motion } from "motion/react";
-
-import { AboutItem, AboutReveal } from "@/components/about/AboutMotion";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { Container } from "@/components/ui/Container";
 
 export function AboutIntroSection() {
   return (
-    <section className="bg-background py-16 sm:py-20 lg:py-24">
+    <section aria-labelledby="about-intro-title" className="bg-background py-12 sm:py-16 lg:py-20">
       <Container>
-        {/* CABECERA */}
-        <AboutReveal
-          className="mb-10 text-center sm:mb-12 lg:mb-14"
-          amount={0.5}
-        >
-          <AnimatedTitle
-            text="Más que algo rico"
-            className="mt-4 text-[28px] font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-[34px] lg:text-[40px]"
-          />
-        </AboutReveal>
-
-        {/* CARD */}
-        <AboutReveal amount={0.25}>
-          <AboutItem>
-            <motion.div
-              whileHover={{ y: -10 }}
-              transition={{ type: "spring", stiffness: 260, damping: 24 }}
-              className="
-                rounded-[1.5rem]
-                bg-white
-                px-7
-                py-9
-                shadow-[0_12px_35px_-22px_rgba(48,46,42,0.25)]
-                transition-shadow
-                duration-500
-                hover:shadow-[0_32px_60px_-30px_rgba(48,46,42,0.4)]
-                sm:px-10
-                sm:py-11
-                lg:px-16
-                lg:py-14
-              "
-            >
-              <p style={{ textAlign: "justify" }} className="text-base leading-8 text-[#4B4844] sm:text-lg sm:leading-9 lg:text-[1.2rem] lg:leading-10">
-                Avra nace con la idea de crear un espacio donde disfrutar
-                algo rico también signifique disfrutar el momento. Creemos en
-                esas pequeñas pausas que hacen bien: compartir una comida,
-                conversar sin apuro, celebrar algo especial o simplemente
-                regalarse un momento para uno mismo. Por eso buscamos combinar
-                sabor, cercanía y una experiencia agradable en cada detalle.
-                Más que ofrecer productos, queremos formar parte de esos
-                momentos cotidianos que terminan convirtiéndose en buenos
-                recuerdos.
-              </p>
-            </motion.div>
-          </AboutItem>
-        </AboutReveal>
+        <div className="mx-auto max-w-4xl text-center">
+          <AnimatedTitle id="about-intro-title" text="MÁS QUE ALGO RICO" className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
+          <div aria-hidden="true" className="mx-auto mt-5 h-[3px] w-14 rounded-full bg-[#EA6F32]" />
+          <p className="mt-6 text-justify text-base leading-7 text-[#302E2A]/80 sm:text-lg sm:leading-8">
+            Avra nace de una idea sencilla: hacer que disfrutar algo rico sea también una oportunidad para disfrutar el momento. Creemos en esas pequeñas pausas que hacen bien, desde compartir una comida y conversar sin apuro hasta regalarse un instante para uno mismo.
+          </p>
+          <p className="mt-4 text-justify text-base leading-7 text-[#302E2A]/80 sm:text-lg sm:leading-8">
+            Por eso reunimos sabores, opciones prácticas y experiencias cercanas. Queremos acompañarte en tu día a día, tanto a través de nuestra carta como de nuevas formas de llevar Avra a distintos espacios.
+          </p>
+        </div>
       </Container>
     </section>
   );
