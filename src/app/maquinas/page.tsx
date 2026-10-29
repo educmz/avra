@@ -19,15 +19,31 @@ export default function MachinesPage() {
   return (
     <main className="bg-background pt-[68px] sm:pt-[74px] lg:pt-[84px]">
       <section aria-label="Presentación de máquinas Avra" className="w-full pb-6 sm:pb-8 lg:pb-10">
-        <Image
-          src="/images/vending/banner-vending.png"
-          alt="Nuestras máquinas de alimentación saludable Avra"
-          width={1920}
-          height={1080}
-          priority
-          sizes="100vw"
-          className="block h-auto w-full"
-        />
+        <div className="relative isolate w-full overflow-hidden">
+          <Image
+            src="/images/vending/banner-vending.png"
+            alt="Máquinas expendedoras Avra y Nuna"
+            width={1920}
+            height={1080}
+            priority
+            sizes="100vw"
+            className="block h-auto w-full"
+          />
+          <div className="absolute inset-y-0 left-0 z-10 flex w-[49%] items-center pl-[5%] sm:pl-[7%]">
+            <div className="max-w-[540px] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.22)]">
+              <p className="font-[family-name:var(--font-header)] text-[clamp(7px,1.1vw,17px)] font-medium uppercase tracking-[0.3em]">
+                Nuestras
+              </p>
+              <h1 className="mt-[0.5em] font-heading text-[clamp(19px,4.7vw,78px)] font-extrabold uppercase leading-[0.9] tracking-[-0.035em]">
+                Máquinas
+              </h1>
+              <p className="mt-[1em] max-w-[32ch] font-[family-name:var(--font-header)] text-[clamp(7px,1.05vw,16px)] font-medium uppercase leading-[1.55] tracking-[0.2em]">
+                Alimentación saludable,<br className="hidden sm:block" /> siempre disponible
+              </p>
+              <span aria-hidden="true" className="mt-[1.1em] block h-[2px] w-[32%] max-w-[145px] rounded-full bg-[#F9B444] sm:h-[3px]" />
+            </div>
+          </div>
+        </div>
       </section>
       <section className="overflow-hidden py-14 sm:py-20 lg:py-24">
         <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
