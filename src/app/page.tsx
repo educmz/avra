@@ -1,3 +1,4 @@
+import { FeaturedFavoritesSection } from "@/components/home/FeaturedFavoritesSection";
 import { CravingsSection } from "@/components/home/CravingsSection";
 import { FinalCtaSection } from "@/components/home/FinalCtaSection";
 import { HealthyProductsSection } from "@/components/home/HealthyProductsSection";
@@ -9,6 +10,7 @@ export default function Home() {
     <main>
       <HeroSection />
       <CravingsSection />
+      <FeaturedFavoritesSection />
       <VendingSection />
       <HealthyProductsSection />
       <FinalCtaSection />
