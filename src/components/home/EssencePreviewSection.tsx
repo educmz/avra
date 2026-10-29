@@ -6,16 +6,32 @@ import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 
 export function EssencePreviewSection() {
   return (
-    <section aria-labelledby="home-essence-title" className="bg-background py-10 sm:py-14">
+    <section aria-labelledby="home-essence-title" className="bg-background py-12 sm:py-16 lg:py-20">
       <Container>
-        <div className="relative isolate min-h-[340px] overflow-hidden rounded-2xl bg-[#EAF0E4] sm:min-h-[360px]">
-          <Image src="/images/about/about-hero.webp" alt="Ambiente de Avra" fill sizes="(min-width:1280px) 1200px,100vw" className="object-cover object-center" />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#EAF0E4] via-[#EAF0E4]/95 via-[45%] to-transparent" />
-          <div className="relative z-10 flex min-h-[340px] max-w-[600px] flex-col justify-center p-6 sm:min-h-[360px] sm:p-10">
-            <AnimatedTitle id="home-essence-title" text="La esencia Avra" className="mt-1 font-heading text-[28px] font-extrabold uppercase leading-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
-            <span aria-hidden="true" className="mt-3 h-[3px] w-12 rounded-full bg-[#EA6F32]" />
-            <p className="mt-4 max-w-[44ch] text-justify text-base leading-7 text-[#302E2A]/80 sm:text-lg sm:leading-8">Creemos en los pequeños momentos que hacen la vida mejor. Productos naturales, experiencias auténticas y un compromiso con tu bienestar.</p>
-            <Link href="/nosotros" className="avra-cta mt-6 inline-flex min-h-11 w-fit items-center gap-3 rounded-full bg-[#295C50] px-6 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1D453B]">Conoce Avra <ArrowRight size={17} aria-hidden="true" /></Link>
+        <div className="relative isolate min-h-[420px] overflow-hidden rounded-[24px] bg-[#E8F0DE] sm:min-h-[475px] sm:rounded-[28px] lg:min-h-[500px]">
+          <Image
+            src="/images/home/cravings/para-comer.png"
+            alt="Selección de alimentos Avra"
+            fill
+            sizes="(min-width:1280px) 1200px, 100vw"
+            className="object-cover object-[60%_center] sm:object-[center_center]"
+          />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#F2F6E9] via-[#F2F6E9]/95 via-[34%] to-[#F2F6E9]/0 lg:via-[43%]" />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#F2F6E9]/65 via-transparent to-transparent sm:hidden" />
+          <div className="relative z-10 flex min-h-[420px] w-full max-w-[690px] flex-col justify-center px-6 py-9 sm:min-h-[475px] sm:px-10 lg:min-h-[500px] lg:px-12">
+            <AnimatedTitle
+              id="home-essence-title"
+              text="LA ESENCIA AVRA"
+              className="font-heading text-[28px] font-extrabold uppercase leading-[1.07] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]"
+            />
+            <span aria-hidden="true" className="mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
+            <p className="mt-6 max-w-[47ch] text-justify text-base leading-7 text-[#302E2A]/85 sm:text-lg sm:leading-8">
+              Creemos que disfrutar de lo natural debe ser fácil. Por eso acercamos opciones deliciosas y prácticas a cada momento de tu día.
+            </p>
+            <Link href="/nosotros" className="avra-cta mt-8 w-fit">
+              <span>Conoce Avra</span>
+              <ArrowRight size={18} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </Container>
