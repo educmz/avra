@@ -35,7 +35,7 @@ export function FeaturedFavoritesSection() {
           </div>
           <div className="min-w-0">
             <div className="mb-4 flex items-center justify-end gap-3">
-              <Link href="/carta" className="mr-auto inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-[#295C50] hover:underline sm:mr-2 sm:ml-auto">
+              <Link href="/carta" className="avra-cta mr-auto sm:mr-2 sm:ml-auto">
                 Ver toda la carta <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <button type="button" onClick={() => navigate(-1)} aria-label="Ver productos anteriores" className="grid size-10 shrink-0 place-items-center rounded-full bg-white text-[#295C50] shadow-sm transition hover:bg-[#F8FCF4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50]"><ArrowLeft size={20} /></button>
