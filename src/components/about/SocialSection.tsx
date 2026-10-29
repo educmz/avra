@@ -155,18 +155,6 @@ export function SocialSection() {
           className="mb-6 sm:mb-7"
           amount={0.5}
         >
-          <AboutItem>
-            <p
-              className="text-xl text-[#FF8A00] sm:text-2xl"
-              style={{
-                fontFamily:
-                  "var(--font-script), 'Pacifico', cursive",
-              }}
-            >
-              Síguenos de cerca
-            </p>
-          </AboutItem>
-
           <AnimatedTitle
             text="Momentos que compartimos"
             className="mt-2 text-[28px] font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-[34px] lg:text-[40px]"
