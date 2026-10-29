@@ -225,11 +225,11 @@ export function EventsPreviewSection() {
         <div className={styles.eventFooter}>
           <Link
             href="/eventos"
-            className={styles.eventLink}
+            className={`avra-cta ${styles.eventLink}`}
           >
             Conoce nuestros eventos
 
-            <span className={styles.eventLinkIcon}>
+            <span className="hidden">
               <ArrowUpRight
                 size={17}
                 aria-hidden="true"
