@@ -15,7 +15,6 @@ const navigation = [
 const legalLinks = [
   { label: "Política de privacidad", href: "/politica-de-privacidad" },
   { label: "Política de cookies", href: "/politica-de-cookies" },
-  { label: "Libro de Reclamaciones", href: "/libro-de-reclamaciones" },
 ];
 
 const linkClass = "text-sm text-[#FBF4EF]/85 transition-colors hover:text-white focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
@@ -24,7 +23,7 @@ export function Footer() {
   return (
     <footer className="bg-[#295C50] text-[#FBF4EF]">
       <Container className="pb-5 pt-8 sm:pt-9">
-        <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.8fr)_minmax(0,1fr)] lg:items-center lg:gap-8">
+        <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)_minmax(0,1fr)_auto] lg:items-center lg:gap-7">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <Link href="/" aria-label="Avra, ir al inicio" className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <Image src="/images/brand/avra-wordmark-black.png" alt="Avra" width={2172} height={724} className="h-auto w-[120px] brightness-0 invert" />
@@ -58,12 +57,16 @@ export function Footer() {
               <MessageCircle size={16} aria-hidden="true" />+51 948 742 332
             </a>
           </div>
+
+          <Link href="/libro-de-reclamaciones" aria-label="Ir al Libro de Reclamaciones" className="mx-auto inline-flex w-fit items-center justify-center rounded-md bg-[#FBF4EF] p-1.5 transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white lg:mx-0 lg:justify-self-end">
+            <Image src="/images/legal/libro-reclamaciones.png" alt="Libro de Reclamaciones" width={100} height={100} className="size-[72px] object-contain" />
+          </Link>
         </div>
 
         <div className="mt-7 border-t border-[#FBF4EF]/20 pt-4 sm:mt-8">
           <div className="flex flex-col items-center gap-3 text-center text-xs text-[#FBF4EF]/75 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-5 lg:text-sm">
             <p className="lg:justify-self-start">Desarrollado por <span className="font-semibold text-[#FBF4EF]">educmz</span></p>
-            <p>© {new Date().getFullYear()} Avra · Todos los derechos reservados</p>
+            <p>© {new Date().getFullYear()} Avra. Todos los derechos reservados</p>
             <nav aria-label="Información legal" className="flex flex-wrap justify-center gap-x-4 gap-y-1 lg:justify-self-end">
               {legalLinks.map((item) => (
                 <Link key={item.href} href={item.href} className="whitespace-nowrap transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
