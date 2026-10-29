@@ -56,10 +56,7 @@ export function FeaturedFavoritesSection() {
           <div>
             <AnimatedTitle id="featured-favorites-title" text="Nuestros imperdibles" className="font-heading text-[28px] font-extrabold uppercase leading-tight sm:text-[34px] lg:text-[40px]" />
             <div className="mt-4 h-[3px] w-14 rounded-full bg-[#F9B444]" />
-            <p className="mt-4 max-w-sm text-sm leading-7 text-white/80">Descubre algunos de los productos que todos quieren.</p>
-            <p className="mt-5 text-xs font-bold tracking-[0.18em] text-white/65" aria-label="Producto seleccionado">
-              {String(active + 1).padStart(2, "0")} / {String(featured.length).padStart(2, "0")}
-            </p>
+            <p className="mt-4 max-w-sm text-base leading-7 text-white/85 sm:text-lg sm:leading-8">Sabores que enamoran desde el primer bocado y el primer sorbo.</p>
           </div>
           <div className="min-w-0">
             <div className="mb-5 flex flex-wrap items-center justify-end gap-2.5 sm:gap-3">
@@ -74,7 +71,7 @@ export function FeaturedFavoritesSection() {
                 <motion.div key={product.id} data-favorite-card className="w-full shrink-0 snap-start sm:w-[calc((100%-16px)/2)] lg:w-[calc((100%-48px)/4)]"
                   animate={reducedMotion ? undefined : { y: index === active ? -5 : 0 }}
                   transition={{ type: "spring", stiffness: 280, damping: 23 }}>
-                  <Link href={`/carta#carta-${product.category}`} className="group flex min-h-[230px] flex-col overflow-hidden rounded-2xl bg-[#FFFDFC] p-4 text-center text-[#302E2A] shadow-[0_12px_28px_rgba(15,43,35,.18)] transition-shadow duration-300 hover:shadow-[0_20px_38px_rgba(15,43,35,.27)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F9B444] sm:min-h-[244px]">
+                  <Link href={`/carta#carta-${product.category}`} className="group flex min-h-[230px] flex-col overflow-hidden rounded-2xl bg-[#FBF4EF] p-4 text-center text-[#302E2A] shadow-[0_12px_28px_rgba(15,43,35,.18)] transition-shadow duration-300 hover:shadow-[0_20px_38px_rgba(15,43,35,.27)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F9B444] sm:min-h-[244px]">
                     <div className="relative mx-auto aspect-[4/3] w-full">
                       <Image src={product.image} alt={product.name} fill sizes="(min-width:1024px) 220px, (min-width:640px) 45vw, 90vw" className="object-contain transition-transform duration-500 group-hover:scale-110 motion-reduce:transition-none" />
                     </div>
