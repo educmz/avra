@@ -55,7 +55,7 @@ export function CartaCategoryNav({
               onClick={() => onChange(category.id)}
               aria-current={active ? "true" : undefined}
               data-active={active ? "true" : undefined}
-              className={`shrink-0 whitespace-nowrap rounded-full px-4 py-2.5 text-xs font-extrabold uppercase tracking-[0.02em] transition-[background-color,color,box-shadow,transform] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] motion-reduce:transition-none sm:px-5 sm:text-sm ${active ? "bg-[#EA6F32] text-white shadow-[0_4px_12px_rgba(234,111,50,.19)]" : "text-[#62594E] hover:-translate-y-0.5 hover:bg-[#F6E6D8] hover:text-[#302E2A]"}`}
+              className={`shrink-0 whitespace-nowrap rounded-full px-4 py-2.5 text-xs font-extrabold uppercase tracking-[0.02em] transition-[background-color,color,box-shadow,transform] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] motion-reduce:transition-none sm:px-5 sm:text-sm ${active ? "bg-[#295C50]/90 text-white shadow-[0_4px_12px_rgba(41,92,80,.13)]" : "text-[#62594E] hover:-translate-y-0.5 hover:bg-[#295C50]/10 hover:text-[#295C50]"}`}
             >
               {category.name}
             </button>
