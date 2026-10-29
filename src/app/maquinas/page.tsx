@@ -74,34 +74,34 @@ export default function MachinesPage() {
         </div>
       </section>
 
-      <section aria-labelledby="vending-overview-title" className="bg-[#F6F5EE] py-16 sm:py-20 lg:py-24">
+      <section aria-labelledby="vending-overview-title" className="bg-[#F6F5EE] py-10 sm:py-12 lg:py-14">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-bold uppercase tracking-[.22em] text-[#C76D00]">Por qué elegir vending saludable</p>
-            <h2 id="vending-overview-title" className="mt-3 font-heading text-3xl font-extrabold uppercase leading-tight tracking-tight text-[#302E2A] sm:text-5xl">Más opciones para disfrutar tu día</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#302E2A]/70 sm:text-base">Bebidas naturales, comidas y snacks en una experiencia de autoservicio práctica, pensada para adaptarse a distintos momentos y espacios.</p>
+            <p className="text-[11px] font-bold uppercase tracking-[.2em] text-[#B96220]">Por qué elegir vending saludable</p>
+            <h2 id="vending-overview-title" className="mt-2 font-heading text-2xl font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-3xl lg:text-4xl">Más opciones para disfrutar tu día</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#302E2A]/70">Bebidas naturales, comidas y snacks en una experiencia de autoservicio práctica, pensada para adaptarse a distintos momentos y espacios.</p>
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[{Icon:Clock3,title:"A tu ritmo",desc:"Accede a opciones de consumo según tu rutina y el horario del espacio."},{Icon:LayoutGrid,title:"Alternativas visibles",desc:"Explora los formatos de bebidas y alimentos de nuestras máquinas."},{Icon:Smartphone,title:"Autoservicio",desc:"Una experiencia directa de selección y compra."},{Icon:Leaf,title:"Una propuesta diferente",desc:"Acercamos la experiencia Avra mediante nuevos puntos de contacto."}].map(({Icon,title,desc})=>(
-              <article key={title} className="rounded-2xl border border-[#295C50]/10 bg-white px-5 py-6 sm:px-6 sm:py-7">
-                <span className="grid size-11 place-items-center rounded-xl bg-[#EAF0E4] text-[#295C50]"><Icon size={23} aria-hidden="true" /></span>
-                <h3 className="mt-5 font-heading text-lg font-bold text-[#302E2A]">{title}</h3>
-                <p className="mt-2 text-sm leading-6 text-[#302E2A]/70">{desc}</p>
+              <article key={title} className="flex h-full flex-col rounded-2xl border border-[#295C50]/10 bg-white p-4 shadow-[0_5px_20px_rgba(48,46,42,.035)] sm:p-5">
+                <span className="grid size-10 place-items-center rounded-xl bg-[#EAF0E4] text-[#295C50]"><Icon size={20} aria-hidden="true" /></span>
+                <h3 className="mt-3 font-heading text-base font-bold leading-snug text-[#302E2A]">{title}</h3>
+                <p className="mt-1.5 text-[13px] leading-5 text-[#302E2A]/70">{desc}</p>
               </article>
             ))}
           </div>
-          <div className="mx-auto mt-14 max-w-5xl border-t border-[#295C50]/15 pt-11 sm:mt-16 sm:pt-12">
-            <div className="mb-8 text-center">
-              <p className="text-xs font-bold uppercase tracking-[.22em] text-[#C76D00]">Simple y práctico</p>
-              <h3 className="mt-2 font-heading text-3xl font-extrabold uppercase text-[#302E2A] sm:text-4xl">¿Cómo funciona?</h3>
+          <div className="mt-9 border-t border-[#295C50]/15 pt-7 sm:mt-10 sm:pt-8">
+            <div className="mb-5 text-center">
+              <p className="text-[11px] font-bold uppercase tracking-[.2em] text-[#B96220]">Simple y práctico</p>
+              <h3 className="mt-1 font-heading text-2xl font-extrabold uppercase text-[#302E2A] sm:text-3xl">¿Cómo funciona?</h3>
             </div>
-            <div className="grid gap-4 md:grid-cols-3 md:gap-6">
+            <div className="grid gap-3 md:grid-cols-3">
               {[{Icon:MousePointerClick,title:"01. Elige",desc:"Explora las opciones del equipo y selecciona tu producto."},{Icon:CreditCard,title:"02. Paga",desc:"Sigue las instrucciones del sistema de pago disponible."},{Icon:PackageCheck,title:"03. Disfruta",desc:"Recoge tu producto y continúa con tu día."}].map(({Icon,title,desc})=>(
-                <article key={title} className="flex items-start gap-4 rounded-2xl bg-[#EEEFE7] p-5 sm:p-6">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-[#D86629]"><Icon size={23} aria-hidden="true" /></span>
-                  <div>
-                    <h4 className="font-heading text-lg font-bold text-[#302E2A]">{title}</h4>
-                    <p className="mt-2 text-sm leading-6 text-[#302E2A]/70">{desc}</p>
+                <article key={title} className="flex h-full items-start gap-3 rounded-2xl border border-[#EBCBB7] bg-[#FFF8F2] p-4 shadow-[0_4px_16px_rgba(48,46,42,.03)] sm:p-5">
+                  <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#FCE6D4] text-[#D86629]"><Icon size={21} aria-hidden="true" /></span>
+                  <div className="min-w-0">
+                    <h4 className="font-heading text-base font-bold text-[#302E2A]">{title}</h4>
+                    <p className="mt-1.5 text-[13px] leading-5 text-[#302E2A]/70">{desc}</p>
                   </div>
                 </article>
               ))}
