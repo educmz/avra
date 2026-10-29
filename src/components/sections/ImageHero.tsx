@@ -38,7 +38,7 @@ export function ImageHero({ image, lines, kicker, subtitle, flushBottom = false,
                 <p className="mt-[1em] max-w-[32ch] font-[family-name:var(--font-header)] text-[clamp(7px,1.05vw,16px)] font-medium uppercase leading-[1.55] tracking-[0.2em]">
                   {subtitle}
                 </p>
-                <svg aria-hidden="true" viewBox="0 0 200 36" fill="none" className="mt-[0.65em] block w-[42%] max-w-[220px] overflow-visible">
+                <svg aria-hidden="true" viewBox="0 0 200 36" fill="none" className="mt-[0.65em] block w-[62%] max-w-[320px] overflow-visible">
                   <path d="M4 8 C 46 36, 117 32, 194 5" stroke={flourishColors[0]} strokeWidth="5.5" strokeLinecap="round" />
                   <path d="M14 13 C 61 34, 129 26, 187 9" stroke={flourishColors[1]} strokeWidth="1.8" strokeLinecap="round" opacity="0.68" />
                   <path d="M15 19 C 60 34, 114 32, 160 19" stroke={flourishColors[2]} strokeWidth="1.1" strokeLinecap="round" opacity="0.55" />

@@ -1,79 +1,53 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, Heart, Leaf, UsersRound } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
-import { HomeImage } from "./HomeImage";
 import { HomeHeading } from "./HomeHeading";
-import styles from "./Home.module.css";
 
-const vendingBenefits = [
-  "Disponibilidad durante todo el día",
-  "Instalación práctica y ordenada",
-  "Una propuesta fresca y natural",
-] as const;
+const benefits = [
+  { Icon: Leaf, text: "Opciones naturales", color: "#E1EBD7" },
+  { Icon: Heart, text: "Prácticas y deliciosas", color: "#F8E2D7" },
+  { Icon: UsersRound, text: "Ideales para cada espacio", color: "#E1EBD7" },
+];
 
 export function VendingSection() {
   return (
-    <section
-      aria-labelledby="vending-title"
-      className={styles.section}
-    >
+    <section aria-labelledby="vending-title" className="bg-background py-12 sm:py-16">
       <Container>
-        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          {/* CONTENIDO */}
-          <div>
-            <HomeHeading
-              id="vending-title"
-              eyebrow="máquinas avra"
-            >
-              Avra, donde la necesites
-            </HomeHeading>
-
-            <div className="space-y-3">
-              {vendingBenefits.map((benefit) => (
-                <div
-                  key={benefit}
-                  className="flex items-center gap-3 text-sm font-semibold text-[#302E2A] sm:text-base"
-                >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#FF8A00] text-white">
-                    <Check
-                      size={15}
-                      strokeWidth={2.5}
-                      aria-hidden="true"
-                    />
+        <div className="relative isolate overflow-hidden rounded-[24px] bg-[#EAF0E4]">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#FBF7F0] via-[#FBF7F0]/55 to-[#F2EFE4]/75" />
+          <div className="relative grid min-h-[350px] items-center gap-5 p-6 sm:p-9 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)_minmax(0,.65fr)] lg:gap-4 lg:px-10 lg:py-8">
+            <div className="relative z-10">
+              <HomeHeading id="vending-title" eyebrow="Avra también llega a ti">
+                Vending saludable
+              </HomeHeading>
+              <div className="-mt-2 mb-5 h-[3px] w-12 rounded-full bg-[#EA6F32]" />
+              <p className="max-w-sm text-sm leading-6 text-[#302E2A]/80">
+                Bebidas y snacks naturales, siempre a tu alcance. Nuestras máquinas Avra y Nuna llevan opciones deliciosas y saludables a más personas.
+              </p>
+              <Link href="/maquinas" className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#295C50] px-5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1D453B] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50]">
+                Conoce nuestras máquinas <ArrowUpRight size={17} aria-hidden="true" />
+              </Link>
+            </div>
+            <div className="relative mx-auto flex h-[260px] w-full max-w-[460px] items-center justify-center gap-2 sm:h-[335px] lg:h-[360px]">
+              <div className="relative h-full w-1/2">
+                <Image src="/images/vending/avra-equipo.jpg" alt="Máquina Avra de bebidas naturales" fill sizes="(min-width:1024px) 250px, 45vw" className="object-contain mix-blend-multiply" />
+              </div>
+              <div className="relative h-full w-1/2">
+                <Image src="/images/vending/nuna-equipo.jpg" alt="Máquina Nuna de alimentos y snacks" fill sizes="(min-width:1024px) 250px, 45vw" className="object-contain mix-blend-multiply" />
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-3 lg:grid-cols-1 lg:gap-6">
+              {benefits.map(({ Icon, text, color }) => (
+                <div key={text} className="flex flex-col items-center gap-2 text-center lg:flex-row lg:text-left">
+                  <span className="grid size-10 shrink-0 place-items-center rounded-full text-[#295C50]" style={{ backgroundColor: color }}>
+                    <Icon size={20} aria-hidden="true" />
                   </span>
-
-                  <span>{benefit}</span>
+                  <span className="text-[11px] font-medium leading-4 text-[#302E2A] sm:text-xs">{text}</span>
                 </div>
               ))}
             </div>
-
-            <div className="mt-8">
-              <Link
-                href="/maquinas"
-                className="group inline-flex items-center gap-3 rounded-full bg-[#302E2A] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#FF8A00]"
-              >
-                Quiero una máquina Avra
-
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition duration-300 group-hover:rotate-45 group-hover:bg-white group-hover:text-[#FF8A00]">
-                  <ArrowUpRight
-                    size={17}
-                    aria-hidden="true"
-                  />
-                </span>
-              </Link>
-            </div>
-          </div>
-
-          {/* IMAGEN */}
-          <div className="relative min-h-[520px] sm:min-h-[620px]">
-            <HomeImage
-                src="/images/home/vending-machine/avra-vending-machine.png"
-                alt="Máquina expendedora Avra"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-contain object-center lg:object-right"
-            />
           </div>
         </div>
       </Container>

@@ -15,17 +15,6 @@ export function AboutIntroSection() {
           className="mb-10 text-center sm:mb-12 lg:mb-14"
           amount={0.5}
         >
-          <AboutItem>
-            <p
-              className="text-2xl text-[#FF8A00] sm:text-3xl"
-              style={{
-                fontFamily: "var(--font-script), 'Pacifico', cursive",
-              }}
-            >
-              Conoce Avra
-            </p>
-          </AboutItem>
-
           <AnimatedTitle
             text="Más que algo rico"
             className="mt-4 text-[28px] font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-[34px] lg:text-[40px]"

@@ -15,8 +15,8 @@ export const cartaProducts: CartaProduct[] = [
     category: "smoothies",
     image: "/images/carta/matcha.webp",
     available: true,
-    featured: true,
-    sourcePage: 1,
+    featured: false,
+        sourcePage: 1,
   },
 
   {
@@ -30,7 +30,7 @@ export const cartaProducts: CartaProduct[] = [
     image: "/images/carta/naranja-fresa.webp",
     available: true,
     featured: true,
-    sourcePage: 1,
+        sourcePage: 1,
   },
 
   {
@@ -43,6 +43,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "smoothies",
     image: "/images/carta/chocolate.webp",
     available: true,
+    featured: false,
     sourcePage: 1,
   },
 
@@ -56,6 +57,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "smoothies",
     image: "/images/carta/dulce-de-leche.webp",
     available: true,
+    featured: false,
     sourcePage: 1,
   },
 
@@ -69,6 +71,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "smoothies",
     image: "/images/carta/frutos-rojos.webp",
     available: true,
+    featured: false,
     sourcePage: 1,
   },
 
@@ -86,6 +89,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "tes-helados",
     image: "/images/carta/frutado.webp",
     available: true,
+    featured: false,
     sourcePage: 1,
   },
 
@@ -99,6 +103,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "tes-helados",
     image: "/images/carta/chai.webp",
     available: true,
+    featured: false,
     sourcePage: 1,
   },
 
@@ -112,6 +117,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "tes-helados",
     image: "/images/carta/jamaica.webp",
     available: true,
+    featured: true,
     sourcePage: 1,
   },
 
@@ -129,6 +135,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "bebidas-calientes",
     image: "/images/carta/te-aromatico.webp",
     available: true,
+    featured: false,
     sourcePage: 1,
   },
 
@@ -142,6 +149,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "bebidas-calientes",
     image: "/images/carta/chocolate-caliente.webp",
     available: true,
+    featured: false,
     sourcePage: 1,
   },
 
@@ -159,6 +167,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "frappes",
     image: "/images/carta/capuccino.webp",
     available: true,
+    featured: false,
     sourcePage: 1,
   },
 
@@ -172,6 +181,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "frappes",
     image: "/images/carta/mocaccino.webp",
     available: true,
+    featured: true,
     sourcePage: 1,
   },
 
@@ -185,6 +195,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "frappes",
     image: "/images/carta/algarrobina.webp",
     available: true,
+    featured: false,
     sourcePage: 1,
   },
 
@@ -203,7 +214,7 @@ export const cartaProducts: CartaProduct[] = [
     image: "/images/carta/waffle.webp",
     available: true,
     featured: true,
-    sourcePage: 2,
+        sourcePage: 2,
 
     customizations: [
       {
@@ -306,6 +317,7 @@ export const cartaProducts: CartaProduct[] = [
     image: "/images/carta/acevichado.webp",
     imageScale: 0.82,
     available: true,
+    featured: false,
     sourcePage: 2,
   },
 
@@ -320,6 +332,7 @@ export const cartaProducts: CartaProduct[] = [
     image: "/images/carta/mixto.png",
     imageScale: 0.82,
     available: true,
+    featured: true,
     sourcePage: 2,
   },
 
@@ -338,6 +351,7 @@ export const cartaProducts: CartaProduct[] = [
     image: "/images/carta/bruschetta-trucha.png",
     imageScale: 0.82,
     available: true,
+    featured: false,
     sourcePage: 2,
   },
 
@@ -352,6 +366,7 @@ export const cartaProducts: CartaProduct[] = [
     image: "/images/carta/toston-quinua.png",
     imageScale: 0.82,
     available: true,
+    featured: false,
     sourcePage: 2,
   },
 
@@ -365,6 +380,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "tostones",
     image: "/images/carta/toston-benedictino.webp",
     available: true,
+    featured: false,
     sourcePage: 2,
   },
 
@@ -382,6 +398,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "pizzas",
     image: "/images/carta/pizza-ninfit.webp",
     available: true,
+    featured: false,
     sourcePage: 2,
   },
 
@@ -395,6 +412,7 @@ export const cartaProducts: CartaProduct[] = [
     category: "pizzas",
     image: "/images/carta/pizza-hawaiana.webp",
     available: true,
+    featured: false,
     sourcePage: 2,
   },
 ];

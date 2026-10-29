@@ -1,101 +1,65 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-import { cartaCategories } from "@/data/carta/categories";
-import type { CartaCategoryId } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { HomeHeading } from "./HomeHeading";
 
-const visuals: Record<CartaCategoryId, { background: string; image: string; alt: string }> = {
-  smoothies: {
+const groups = [
+  {
+    title: "Para tomar",
+    description: "Smoothies, tés helados, frappés y bebidas calientes.",
+    button: "Ver bebidas",
+    href: "/carta#carta-smoothies",
     background: "#DCEEF2",
-    image: "/images/carta/naranja-fresa.webp",
-    alt: "Naranja Fresa de Avra",
+    image: "/images/home/cravings/para-beber.png",
+    alt: "Selección de bebidas de Avra",
   },
-  "tes-helados": {
-    background: "#F6E9B8",
-    image: "/images/carta/jamaica.webp",
-    alt: "Té helado Jamaica de Avra",
+  {
+    title: "Para comer",
+    description: "Waffles, sándwiches, tostones y pizzas.",
+    button: "Ver alimentos",
+    href: "/carta#carta-waffles",
+    background: "#F8E6BF",
+    image: "/images/home/cravings/para-comer.png",
+    alt: "Selección de alimentos de Avra",
   },
-  "bebidas-calientes": {
-    background: "#F5D6C2",
-    image: "/images/carta/chocolate-caliente.webp",
-    alt: "Chocolate Caliente de Avra",
-  },
-  frappes: {
-    background: "#E6E1F0",
-    image: "/images/carta/mocaccino.webp",
-    alt: "Frappé Mocaccino de Avra",
-  },
-  waffles: {
-    background: "#F6E9B8",
-    image: "/images/carta/waffle.webp",
-    alt: "Waffle de Avra",
-  },
-  sandwiches: {
-    background: "#DFEACF",
-    image: "/images/carta/mixto.png",
-    alt: "Sándwich Mixto Ninfit de Avra",
-  },
-  tostones: {
-    background: "#F5D6C2",
-    image: "/images/carta/toston-benedictino.webp",
-    alt: "Tostón Benedictino de Avra",
-  },
-  pizzas: {
-    background: "#DCEEF2",
-    image: "/images/carta/pizza-hawaiana.webp",
-    alt: "Pizza Hawaiana de Avra",
-  },
-};
+];
 
 export function CravingsSection() {
   return (
-    <section aria-labelledby="cravings-title" className="bg-background pb-12 sm:pb-16 lg:pb-20">
+    <section aria-labelledby="cravings-title" className="bg-background pt-12 pb-12 sm:pb-16 lg:pb-20">
       <Container>
         <HomeHeading id="cravings-title" eyebrow="A tu gusto">
-          ¿Qué se te antoja?
+          ¿Qué se te antoja hoy?
         </HomeHeading>
-
-        <div className="grid gap-5 lg:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] lg:gap-6">
-          <div className="grid grid-cols-2 gap-3 sm:gap-5 xl:grid-cols-4">
-            {[...cartaCategories].sort((a, b) => a.order - b.order).map((category) => {
-              const visual = visuals[category.id];
-
-              return (
-                <Link
-                  key={category.id}
-                  href={`/carta#carta-${category.id}`}
-                  className="group flex aspect-[4/5] min-w-0 flex-col items-center overflow-hidden rounded-lg px-3 pb-4 pt-5 text-[#302E2A] transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none sm:px-4 sm:pb-5 sm:pt-6"
-                  style={{ backgroundColor: visual.background }}
-                >
-                  <h3 className="relative z-10 flex min-h-[2.3em] items-center justify-center text-center font-heading text-[clamp(1.35rem,2.1vw,2rem)] uppercase leading-[1.12]">
-                    {category.name}
-                  </h3>
-                  <div className="relative mt-3 flex min-h-0 w-full flex-1 items-center justify-center">
-                    <div className="relative h-[72%] w-[72%]">
-                      <Image
-                        src={visual.image}
-                        alt={visual.alt}
-                        fill
-                        sizes="(min-width: 1280px) 180px, (min-width: 1024px) 26vw, 34vw"
-                        className="object-contain"
-                      />
-                    </div>
-                  </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:gap-5">
+          {groups.map((group) => (
+            <article
+              key={group.title}
+              className="group relative isolate min-h-[305px] overflow-hidden rounded-2xl sm:min-h-[350px] lg:min-h-[365px]"
+              style={{ backgroundColor: group.background }}
+            >
+              <div aria-hidden="true" className="absolute inset-0 z-[1] bg-gradient-to-r from-white/30 via-white/5 to-transparent" />
+              <div className="absolute inset-0">
+                <Image
+                  src={group.image}
+                  alt={group.alt}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.025] motion-reduce:transition-none"
+                />
+              </div>
+              <div className="relative z-10 flex max-w-[53%] flex-col items-start px-5 pb-7 pt-7 sm:px-8 sm:pt-9 lg:px-9">
+                <span aria-hidden="true" className="mb-4 h-[3px] w-10 rounded-full bg-[#EA6F32]" />
+                <h3 className="font-heading text-[23px] font-extrabold uppercase leading-[1.05] tracking-tight text-[#302E2A] sm:text-[28px]">{group.title}</h3>
+                <p className="mt-3 max-w-[20ch] text-xs leading-5 text-[#302E2A]/80 sm:text-sm sm:leading-6">{group.description}</p>
+                <Link href={group.href} className="mt-6 inline-flex min-h-10 items-center gap-2 rounded-full bg-[#295C50] px-4 text-[11px] font-bold uppercase tracking-[.04em] text-white transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-[#1D453B] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] motion-reduce:transform-none sm:px-5 sm:text-xs">
+                  {group.button} <ArrowRight size={16} aria-hidden="true" />
                 </Link>
-              );
-            })}
-          </div>
-
-          <Link href="/maquinas" className="group flex min-h-[360px] flex-col overflow-hidden rounded-lg bg-[#E5EBD8] text-[#302E2A] transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none sm:min-h-[420px] lg:min-h-0">
-            <div className="relative min-h-[260px] flex-1 overflow-hidden">
-              <Image src="/images/home/vending-machine/avra-vending-machine.png" alt="Máquina expendedora Avra" fill sizes="(min-width: 1024px) 25vw, 100vw" className="object-contain object-center" />
-            </div>
-            <div className="flex items-center justify-center px-6 py-8 text-center lg:py-10">
-              <h3 className="font-heading text-4xl uppercase leading-none sm:text-5xl">Máquinas</h3>
-            </div>
-          </Link>
+              </div>
+            </article>
+          ))}
         </div>
       </Container>
     </section>

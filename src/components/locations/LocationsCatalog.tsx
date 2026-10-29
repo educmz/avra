@@ -18,7 +18,6 @@ export function LocationsCatalog() {
 
       <Container className="pb-28 pt-10 sm:pb-36 sm:pt-14">
         <div className="mb-10 sm:mb-12">
-          <p className="mb-3 font-[family-name:var(--font-script)] text-2xl font-normal lowercase leading-relaxed tracking-normal text-[#FF8A00] sm:text-3xl">Encuéntranos</p>
           <AnimatedTitle
             text="Nuestros locales"
             className="text-4xl font-extrabold uppercase leading-[1.08] text-[#302E2A] sm:text-5xl lg:text-6xl"

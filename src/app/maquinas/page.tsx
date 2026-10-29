@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CheckCircle2, CreditCard, MousePointerClick, PackageCheck, Leaf, Clock3, LayoutGrid, Smartphone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { VendingReels } from "@/components/vending/VendingReels";
 
 export const metadata: Metadata = {
@@ -45,7 +46,7 @@ const machines = [
 
 export default function MachinesPage() {
   return (
-    <main className="bg-[#FBF7F0] pt-[68px] sm:pt-[74px] lg:pt-[84px]">
+    <main className="bg-background pt-[68px] sm:pt-[74px] lg:pt-[84px]">
       <section aria-label="Presentación de máquinas Avra" className="w-full pb-6 sm:pb-8 lg:pb-10">
         <div className="relative isolate h-[220px] w-full overflow-hidden sm:h-auto sm:aspect-[1530/380]">
           <Image
@@ -68,17 +69,16 @@ export default function MachinesPage() {
               <p className="mt-[1em] max-w-[32ch] font-[family-name:var(--font-header)] text-[clamp(7px,1.05vw,16px)] font-medium uppercase leading-[1.55] tracking-[0.2em]">
                 Alimentación saludable,<br className="hidden sm:block" /> siempre disponible
               </p>
-              <svg aria-hidden="true" viewBox="0 0 200 36" fill="none" className="mt-[0.65em] block w-[42%] max-w-[220px] overflow-visible"><path d="M4 8 C 46 36, 117 32, 194 5" stroke="#F9B444" strokeWidth="5.5" strokeLinecap="round" /><path d="M14 13 C 61 34, 129 26, 187 9" stroke="#FFD074" strokeWidth="1.8" strokeLinecap="round" opacity="0.68" /><path d="M15 19 C 60 34, 114 32, 160 19" stroke="#EAA12F" strokeWidth="1.1" strokeLinecap="round" opacity="0.55" /></svg>
+              <svg aria-hidden="true" viewBox="0 0 200 36" fill="none" className="mt-[0.65em] block w-[62%] max-w-[320px] overflow-visible"><path d="M4 8 C 46 36, 117 32, 194 5" stroke="#EA6F32" strokeWidth="5.5" strokeLinecap="round" /><path d="M14 13 C 61 34, 129 26, 187 9" stroke="#F49A64" strokeWidth="1.8" strokeLinecap="round" opacity="0.68" /><path d="M15 19 C 60 34, 114 32, 160 19" stroke="#C95828" strokeWidth="1.1" strokeLinecap="round" opacity="0.55" /></svg>
             </div>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="vending-overview-title" className="bg-[#FBF7F0] py-10 sm:py-12 lg:py-14">
+      <section aria-labelledby="vending-overview-title" className="bg-background py-10 sm:py-12 lg:py-14">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] font-bold uppercase tracking-[.2em] text-[#B96220]">Por qué elegir vending saludable</p>
-            <h2 id="vending-overview-title" className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]">Más opciones para disfrutar tu día</h2>
+            <AnimatedTitle id="vending-overview-title" text="Más opciones para disfrutar tu día" className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#302E2A]/70">Bebidas naturales, comidas y snacks en una experiencia de autoservicio práctica, pensada para adaptarse a distintos momentos y espacios.</p>
           </div>
           <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -92,8 +92,7 @@ export default function MachinesPage() {
           </div>
           <div className="mt-9 border-t border-[#295C50]/15 pt-7 sm:mt-10 sm:pt-8">
             <div className="mb-5 text-center">
-              <p className="text-[11px] font-bold uppercase tracking-[.2em] text-[#B96220]">Simple y práctico</p>
-              <h3 className="mt-1 font-heading text-[28px] font-extrabold uppercase text-[#302E2A] sm:text-[34px] lg:text-[40px]">¿Cómo funciona?</h3>
+                <AnimatedTitle as="h3" text="¿Cómo funciona?" className="mt-1 font-heading text-[28px] font-extrabold uppercase text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
             </div>
             <div className="grid gap-3 md:grid-cols-3">
               {[{Icon:MousePointerClick,title:"01. Elige",desc:"Explora las opciones del equipo y selecciona tu producto."},{Icon:CreditCard,title:"02. Paga",desc:"Sigue las instrucciones del sistema de pago disponible."},{Icon:PackageCheck,title:"03. Disfruta",desc:"Recoge tu producto y continúa con tu día."}].map(({Icon,title,desc})=>(
@@ -110,7 +109,7 @@ export default function MachinesPage() {
         </Container>
       </section>
       {machines.map((machine, index) => (
-        <section key={machine.id} id={machine.id} aria-labelledby={`${machine.id}-title`} className={"bg-[#FBF7F0] py-10 sm:py-14"}>
+        <section key={machine.id} id={machine.id} aria-labelledby={`${machine.id}-title`} className={"bg-background py-10 sm:py-14"}>
           <Container>
             <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,.85fr)_minmax(0,1.15fr)] lg:gap-10">
               <div className={`min-w-0 ${index === 1 ? "lg:order-2" : ""}`}>
@@ -121,8 +120,7 @@ export default function MachinesPage() {
                 </div>
               </div>
               <div className={`min-w-0 ${index === 1 ? "lg:order-1" : ""}`}>
-                <p className="text-xs font-bold uppercase tracking-[.22em]" style={{ color: machine.accent }}>{machine.kicker}</p>
-                <h2 id={`${machine.id}-title`} className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.06] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]">{machine.title}</h2>
+                <AnimatedTitle id={`${machine.id}-title`} text={machine.title} className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.06] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
                 <div className="mt-3 h-[3px] w-14 rounded-full" style={{ background: machine.accent }} />
                 <p className="mt-4 max-w-2xl text-sm leading-6 text-[#302E2A]/75 sm:text-base sm:leading-7">{machine.description}</p>
                 <h3 className="mt-6 font-heading text-base font-extrabold uppercase tracking-wide text-[#302E2A]">Características del equipo</h3>
