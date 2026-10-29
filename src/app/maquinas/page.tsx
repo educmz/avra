@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, CreditCard, HandPointer, PackageCheck, Leaf, Clock3, LayoutGrid, Smartphone, Coffee, UtensilsCrossed } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, CreditCard, HandPointer, PackageCheck, Leaf, Clock3, LayoutGrid, Smartphone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { VendingReels } from "@/components/vending/VendingReels";
 
@@ -156,7 +156,7 @@ export default function MachinesPage() {
           <p className="text-xs font-semibold uppercase tracking-[.22em] text-[#F8B54F]">Hablemos de vending</p>
           <h2 className="mt-4 font-heading text-4xl font-extrabold uppercase sm:text-6xl">Lleva la experiencia Avra a tu espacio</h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/85">¿Te interesa conocer las opciones disponibles para tu empresa o establecimiento? Contáctanos y conversemos sobre tu espacio.</p>
-          <Link href="/nosotros#contacto" className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#F8B54F] px-7 py-3 text-sm font-bold uppercase text-[#243329] transition hover:bg-[#FFD076]">Conoce Avra <ArrowUpRight size={18}/></Link>
+          <Link href="/nosotros" className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#F8B54F] px-7 py-3 text-sm font-bold uppercase text-[#243329] transition hover:bg-[#FFD076]">Conoce Avra <ArrowUpRight size={18}/></Link>
         </Container>
       </section>
     </main>
