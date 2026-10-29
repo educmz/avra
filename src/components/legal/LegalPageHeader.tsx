@@ -17,7 +17,7 @@ export function LegalPageHeader({ eyebrow, title, description, children }: Legal
         >
           {eyebrow}
         </p>
-        <h1 className="mt-3 text-balance text-3xl font-extrabold uppercase leading-[1.08] text-[#302E2A] sm:text-4xl">
+        <h1 className="mt-3 text-balance text-[28px] font-extrabold uppercase leading-[1.08] text-[#302E2A] sm:text-[34px] lg:text-[40px]">
           {title}
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-[#77736D] sm:text-base">
