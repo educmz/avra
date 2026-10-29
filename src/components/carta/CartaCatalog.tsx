@@ -155,7 +155,7 @@ export function CartaCatalog() {
           >
             <AnimatedTitle
               text={category.name}
-              className="break-words text-center text-2xl font-extrabold uppercase tracking-[0.01em] text-[color:var(--carta-ink)] min-[400px]:text-3xl sm:text-5xl lg:text-6xl"
+              className="break-words text-center text-[28px] font-extrabold uppercase tracking-[0.01em] text-[color:var(--carta-ink)] sm:text-[34px] lg:text-[40px]"
             />
 
             <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-3 sm:mt-8 sm:gap-x-6 sm:gap-y-5 min-[900px]:grid-cols-3 lg:mt-14 lg:gap-x-7 lg:gap-y-6 xl:grid-cols-4">
