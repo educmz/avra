@@ -27,6 +27,16 @@ export function VendingSection() {
             <p className="mt-6 max-w-[44ch] text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
               Bebidas y snacks deliciosos, siempre disponibles. Descubre una forma práctica y moderna de disfrutar opciones más saludables.
             </p>
+            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1">
+              {benefits.map(({ Icon, label, bg }) => (
+                <div key={label} className="flex min-w-0 items-center gap-3 text-left">
+                  <span className="grid size-9 shrink-0 place-items-center rounded-full text-[#295C50] sm:size-10" style={{ backgroundColor: bg }}>
+                    <Icon size={19} aria-hidden="true" />
+                  </span>
+                  <span className="text-xs font-medium leading-4 text-[#302E2A]/80 sm:text-sm sm:leading-5">{label}</span>
+                </div>
+              ))}
+            </div>
             <Link href="/maquinas" className="avra-cta mt-7">
               <span>Conoce nuestras máquinas</span>
               <ArrowRight aria-hidden="true" size={18} />
@@ -51,16 +61,7 @@ export function VendingSection() {
                 </Link>
               ))}
             </div>
-            <div className="mt-5 grid grid-cols-3 gap-2 sm:mt-6 sm:gap-4">
-              {benefits.map(({ Icon, label, bg }) => (
-                <div key={label} className="flex min-w-0 flex-col items-center gap-2 text-center sm:flex-row sm:text-left">
-                  <span className="grid size-9 shrink-0 place-items-center rounded-full text-[#295C50] sm:size-10" style={{ backgroundColor: bg }}>
-                    <Icon size={19} aria-hidden="true" />
-                  </span>
-                  <span className="text-xs font-medium leading-4 text-[#302E2A]/80 sm:text-sm sm:leading-5">{label}</span>
-                </div>
-              ))}
-            </div>
+
           </div>
         </div>
       </Container>
