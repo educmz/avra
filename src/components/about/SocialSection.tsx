@@ -148,7 +148,7 @@ export function SocialSection() {
   const [tiktokLiked, setTiktokLiked] = useState(false);
 
   return (
-    <section className={`${styles.section} !bg-[#F4F0E8]`}>
+    <section className={`${styles.section} !bg-[#F5F0EA]`}>
       <Container>
         {/* CABECERA */}
         <AboutReveal
