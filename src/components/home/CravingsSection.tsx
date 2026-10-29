@@ -28,7 +28,7 @@ const groups = [
 
 export function CravingsSection() {
   return (
-    <section aria-labelledby="cravings-title" className="bg-background pb-12 sm:pb-16 lg:pb-20">
+    <section aria-labelledby="cravings-title" className="bg-[#FBF4EF] pt-12 pb-12 sm:pb-16 lg:pb-20">
       <Container>
         <HomeHeading id="cravings-title" eyebrow="A tu gusto">
           ¿Qué se te antoja hoy?
