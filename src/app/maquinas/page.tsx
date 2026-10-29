@@ -110,30 +110,34 @@ export default function MachinesPage() {
         </Container>
       </section>
       {machines.map((machine, index) => (
-        <section key={machine.id} id={machine.id} aria-labelledby={`${machine.id}-title`} className={index === 0 ? "bg-[#FFF9F4] py-16 sm:py-24" : "bg-[#F1F5ED] py-16 sm:py-24"}>
+        <section key={machine.id} id={machine.id} aria-labelledby={`${machine.id}-title`} className={index === 0 ? "bg-[#FFF9F4] py-10 sm:py-14" : "bg-[#F1F5ED] py-10 sm:py-14"}>
           <Container>
-            <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,.85fr)_minmax(0,1.15fr)] lg:gap-10">
               <div className={`min-w-0 ${index === 1 ? "lg:order-2" : ""}`}>
-                <div className="rounded-[2rem] p-5 sm:p-8" style={{ background: machine.bg }}>
-                  <div className="relative mx-auto h-[360px] max-w-[430px] sm:h-[500px]">
+                <div className="rounded-[1.75rem] p-4 sm:p-5" style={{ background: machine.bg }}>
+                  <div className="relative mx-auto h-[290px] max-w-[400px] sm:h-[380px] lg:h-[430px]">
                     <Image src={machine.image} alt={machine.alt} fill sizes="(min-width:1024px) 42vw, 90vw" className="object-contain" />
                   </div>
                 </div>
-                <p className="mt-3 text-center text-xs text-[#302E2A]/55">{machine.name === "Nuna" ? "Fotografía del equipo Nuna de referencia" : "Fotografía de la máquina Avra"}</p>
               </div>
-              <div className={index === 1 ? "lg:order-1" : ""}>
+              <div className={`min-w-0 ${index === 1 ? "lg:order-1" : ""}`}>
                 <p className="text-xs font-bold uppercase tracking-[.22em]" style={{ color: machine.accent }}>{machine.kicker}</p>
-                <h2 id={`${machine.id}-title`} className="mt-4 font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-extrabold uppercase leading-[.98] tracking-tight text-[#302E2A]">{machine.title}</h2>
-                <div className="mt-6 h-1 w-20 rounded-full" style={{ background: machine.accent }} />
-                <p className="mt-7 max-w-xl text-base leading-8 text-[#302E2A]/75">{machine.description}</p>
-                <div className="mt-7 flex flex-wrap gap-2">{machine.perks.map((perk) => <span key={perk} className="rounded-full border border-[#302E2A]/15 px-4 py-2 text-xs font-semibold text-[#302E2A]">{perk}</span>)}</div>
-                <a href="/nosotros" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#295C50] px-6 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-[#173E34]">Conoce más de Avra <ArrowUpRight size={18} /></a>
-              </div>
-            </div>
-            <div className="mt-16 sm:mt-20">
-              <div className="mb-7 flex items-center gap-4"><span className="h-8 w-1 rounded-full" style={{background:machine.accent}} /><h3 className="font-heading text-2xl font-extrabold uppercase text-[#302E2A] sm:text-3xl">Características del equipo</h3></div>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {machine.details.map((detail) => <article key={detail.title} className="rounded-2xl border border-[#302E2A]/10 bg-white/80 p-6 shadow-[0_6px_22px_rgba(48,46,42,.04)]"><CheckCircle2 size={23} style={{color:machine.accent}} /><h4 className="mt-5 font-heading text-lg font-bold text-[#302E2A]">{detail.title}</h4><p className="mt-3 text-sm leading-6 text-[#302E2A]/70">{detail.desc}</p></article>)}
+                <h2 id={`${machine.id}-title`} className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.06] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]">{machine.title}</h2>
+                <div className="mt-3 h-[3px] w-14 rounded-full" style={{ background: machine.accent }} />
+                <p className="mt-4 max-w-2xl text-sm leading-6 text-[#302E2A]/75 sm:text-base sm:leading-7">{machine.description}</p>
+                <h3 className="mt-6 font-heading text-base font-extrabold uppercase tracking-wide text-[#302E2A]">Características del equipo</h3>
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                  {machine.details.map((detail) => (
+                    <article key={detail.title} className="rounded-xl border border-[#302E2A]/10 bg-white/80 p-3.5 sm:p-4">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 size={18} className="shrink-0" style={{ color: machine.accent }} aria-hidden="true" />
+                        <h4 className="font-heading text-sm font-bold leading-snug text-[#302E2A]">{detail.title}</h4>
+                      </div>
+                      <p className="mt-1.5 text-xs leading-5 text-[#302E2A]/70">{detail.desc}</p>
+                    </article>
+                  ))}
+                </div>
+                <a href="/nosotros" className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#295C50] px-5 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-[#173E34]">Conoce más de Avra <ArrowUpRight size={17} /></a>
               </div>
             </div>
           </Container>
