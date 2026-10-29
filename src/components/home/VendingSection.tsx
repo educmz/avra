@@ -5,10 +5,9 @@ import { ArrowRight, Gem, Leaf, UsersRound } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 
-// Sustituye estas rutas por las nuevas imágenes cuando estén listas.
 const machines = [
-  { name: "AVRA", description: "Bebidas naturales", image: "/images/vending/avra-equipo.jpg", href: "/maquinas#avra", bg: "#FBE5D7", accent: "#EA6F32", alt: "Máquina Avra de bebidas naturales" },
-  { name: "NUNA", description: "Snacks y bebidas", image: "/images/vending/nuna-equipo.jpg", href: "/maquinas#nuna", bg: "#E4EDD9", accent: "#295C50", alt: "Máquina Nuna de snacks y bebidas" },
+  { name: "AVRA", description: "Bebidas naturales", image: "/images/vending/avra-home.png", href: "/maquinas#avra", bg: "#FBE5D7", accent: "#EA6F32", alt: "Máquina Avra de bebidas naturales" },
+  { name: "NUNA", description: "Snacks y bebidas", image: "/images/vending/nuna-home.png", href: "/maquinas#nuna", bg: "#E4EDD9", accent: "#295C50", alt: "Máquina Nuna de snacks y bebidas" },
 ] as const;
 
 const benefits = [
@@ -38,7 +37,7 @@ export function VendingSection() {
               {machines.map((machine) => (
                 <Link key={machine.name} href={machine.href} className="group min-w-0 overflow-hidden rounded-[24px] bg-white shadow-[0_12px_30px_rgba(48,46,42,.055)] transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] motion-reduce:transform-none sm:rounded-[30px]">
                   <div className="relative aspect-[.95] overflow-hidden sm:aspect-[1.05]" style={{ backgroundColor: machine.bg }}>
-                    <Image src={machine.image} alt={machine.alt} fill sizes="(min-width:1024px) 25vw, 48vw" className="object-contain p-3 transition-transform duration-500 group-hover:scale-[1.045] motion-reduce:transition-none sm:p-4" />
+                    <Image src={machine.image} alt={machine.alt} fill sizes="(min-width:1024px) 25vw, 48vw" className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.045] motion-reduce:transition-none" />
                   </div>
                   <div className="flex items-center justify-between gap-2 bg-[#FBF4EF] px-3 py-3 sm:px-5 sm:py-4">
                     <div className="min-w-0">
