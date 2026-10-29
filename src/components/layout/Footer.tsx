@@ -23,8 +23,8 @@ export function Footer() {
   return (
     <footer className="bg-[#295C50] text-[#FBF4EF]">
       <Container className="pb-5 pt-8 sm:pt-9">
-        <div className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 xl:grid-cols-[minmax(0,1.05fr)_minmax(0,1.8fr)_minmax(0,1fr)_minmax(0,.95fr)] xl:items-start xl:gap-x-9">
-          <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 xl:grid-cols-[1.15fr_1fr_1fr_1.15fr] xl:items-start xl:gap-x-8">
+          <div className="flex min-w-0 flex-col items-center text-center xl:items-center xl:text-center">
             <Link href="/" aria-label="Avra, ir al inicio" className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <Image src="/images/brand/avra-wordmark-black.png" alt="Avra" width={2172} height={724} className="h-auto w-[120px] brightness-0 invert" />
             </Link>
@@ -40,16 +40,16 @@ export function Footer() {
             </div>
           </div>
 
-          <nav aria-label="Navegación del pie de página" className="text-center sm:text-left xl:justify-self-center xl:text-center">
+          <nav aria-label="Navegación del pie de página" className="flex min-w-0 flex-col items-center text-center">
             <h2 className="font-heading text-sm font-bold uppercase tracking-[.14em]">Descubre Avra</h2>
-            <div className="mt-4 flex flex-col items-center gap-2.5 sm:items-start xl:items-center">
+            <div className="mt-4 flex flex-col items-center gap-2.5">
               {navigation.map((item) => (
                 <Link key={item.href} href={item.href} className={linkClass}>{item.label}</Link>
               ))}
             </div>
           </nav>
 
-          <div className="flex flex-col items-center gap-3 text-center sm:items-start sm:text-left xl:justify-self-end">
+          <div className="flex min-w-0 flex-col items-center gap-3 text-center">
             <h2 className="font-heading text-sm font-bold uppercase tracking-[.14em]">Contacto</h2>
             <a href="mailto:hola@avra.pe" className={`${linkClass} inline-flex items-center gap-2`}>
               <Mail size={16} aria-hidden="true" />hola@avra.pe
@@ -59,7 +59,7 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="flex flex-col items-center text-center sm:items-start sm:text-left xl:justify-self-end">
+          <div className="flex min-w-0 flex-col items-center text-center">
             <h2 className="font-heading text-sm font-bold uppercase tracking-[.10em]">Libro de Reclamaciones</h2>
             <Link href="/libro-de-reclamaciones" aria-label="Ir al Libro de Reclamaciones" className="mt-2 inline-flex w-fit items-center justify-center rounded-md transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
               <Image src="/images/legal/libro-reclamaciones.png" alt="Aviso del Libro de Reclamaciones" width={240} height={240} className="size-[125px] object-contain sm:size-[140px] xl:size-[155px]" />
