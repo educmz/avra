@@ -35,7 +35,7 @@ export function VendingReels() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-10 text-center">
           <p className="text-xs font-bold uppercase tracking-[.24em] text-[#F8B54F]">Videos y experiencias</p>
-          <h2 id="vending-videos-title" className="mt-3 font-heading text-4xl font-extrabold uppercase sm:text-6xl">Vending en acción</h2>
+          <h2 id="vending-videos-title" className="mt-3 font-heading text-[28px] font-extrabold uppercase sm:text-[34px] lg:text-[40px]">Vending en acción</h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/70 sm:text-base">Descubre nuestras máquinas a través de videos cortos.</p>
         </div>
         <div className="flex items-center justify-center gap-2 sm:gap-5">
