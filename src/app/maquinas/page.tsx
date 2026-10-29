@@ -40,7 +40,7 @@ export default function MachinesPage() {
               <p className="mt-[1em] max-w-[32ch] font-[family-name:var(--font-header)] text-[clamp(7px,1.05vw,16px)] font-medium uppercase leading-[1.55] tracking-[0.2em]">
                 Alimentación saludable,<br className="hidden sm:block" /> siempre disponible
               </p>
-              <svg aria-hidden="true" viewBox="0 0 200 36" fill="none" className="mt-[0.65em] block w-[25%] max-w-[125px] overflow-visible"><path d="M4 8 C 46 36, 117 32, 194 5" stroke="#F9B444" strokeWidth="5.5" strokeLinecap="round" /><path d="M14 13 C 61 34, 129 26, 187 9" stroke="#FFD074" strokeWidth="1.8" strokeLinecap="round" opacity="0.68" /><path d="M15 19 C 60 34, 114 32, 160 19" stroke="#EAA12F" strokeWidth="1.1" strokeLinecap="round" opacity="0.55" /></svg>
+              <svg aria-hidden="true" viewBox="0 0 200 36" fill="none" className="mt-[0.65em] block w-[32%] max-w-[165px] overflow-visible"><path d="M4 8 C 46 36, 117 32, 194 5" stroke="#F9B444" strokeWidth="5.5" strokeLinecap="round" /><path d="M14 13 C 61 34, 129 26, 187 9" stroke="#FFD074" strokeWidth="1.8" strokeLinecap="round" opacity="0.68" /><path d="M15 19 C 60 34, 114 32, 160 19" stroke="#EAA12F" strokeWidth="1.1" strokeLinecap="round" opacity="0.55" /></svg>
             </div>
           </div>
         </div>
