@@ -29,7 +29,7 @@ export default function MachinesPage() {
             sizes="100vw"
             className="block h-auto w-full"
           />
-          <div className="absolute inset-y-0 left-0 z-10 flex w-[49%] items-center pl-[5%] sm:pl-[7%]">
+          <div className="absolute inset-y-0 left-0 z-10 flex w-[49%] items-center pl-[8%] sm:pl-[10%]">
             <div className="max-w-[540px] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.22)]">
               <p className="font-[family-name:var(--font-header)] text-[clamp(7px,1.1vw,17px)] font-medium uppercase tracking-[0.3em]">
                 Nuestras
@@ -40,7 +40,7 @@ export default function MachinesPage() {
               <p className="mt-[1em] max-w-[32ch] font-[family-name:var(--font-header)] text-[clamp(7px,1.05vw,16px)] font-medium uppercase leading-[1.55] tracking-[0.2em]">
                 Alimentación saludable,<br className="hidden sm:block" /> siempre disponible
               </p>
-              <span aria-hidden="true" className="mt-[1.1em] block h-[2px] w-[32%] max-w-[145px] rounded-full bg-[#F9B444] sm:h-[3px]" />
+              <svg aria-hidden="true" viewBox="0 0 180 22" fill="none" className="mt-[0.7em] block w-[35%] max-w-[170px] overflow-visible"><path d="M3 8 C 39 21, 98 16, 175 5" stroke="#F9B444" strokeWidth="4.5" strokeLinecap="round" /><path d="M16 12 C 66 20, 118 12, 167 7" stroke="#FFD074" strokeWidth="1.4" strokeLinecap="round" opacity="0.65" /></svg>
             </div>
           </div>
         </div>
