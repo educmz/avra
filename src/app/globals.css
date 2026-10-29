@@ -147,3 +147,11 @@ button, input, select, textarea { font-family: inherit; font-size: 100%; line-he
 .avra-cta.avra-cta--light:hover {
   background-color: #fff !important;
 }
+
+/* El barrido del CTA crema usa contraste verde y se coloca sobre la base,
+   mientras el texto y la flecha quedan delante del brillo. */
+.avra-cta.avra-cta--light::before {
+  background: linear-gradient(90deg, transparent, rgba(41,92,80,.22), transparent);
+}
+.avra-cta > span { position: relative; z-index: 1; }
+.avra-cta::after { position: relative; z-index: 1; }
