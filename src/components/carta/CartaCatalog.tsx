@@ -135,7 +135,7 @@ export function CartaCatalog() {
       } as CSSProperties}
     >
       <ImageHero
-        image="/images/carta/carta-hero.webp"
+        image="/images/carta/carta-hero.png"
         lines={["ELIGE TU", "FAVORITO"]}
       />
 
