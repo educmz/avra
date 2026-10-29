@@ -24,7 +24,7 @@ export function FeaturedFavoritesSection() {
   if (featured.length === 0) return null;
 
   return (
-    <section aria-labelledby="featured-favorites-title" className="bg-[#F4F0E8] py-12 text-[#302E2A] sm:py-16">
+    <section aria-labelledby="featured-favorites-title" className="bg-[#F5F0EA] py-12 text-[#302E2A] sm:py-16">
       <Container>
         <div className="grid gap-6 lg:grid-cols-[minmax(0,300px)_minmax(0,1fr)] lg:items-center lg:gap-8">
           <div>
