@@ -18,17 +18,6 @@ export function TeamSection() {
             className="w-full sm:w-[44%] lg:w-[42%]"
             amount={0.5}
           >
-            <AboutItem>
-              <p
-                className="text-2xl text-[#FF8A00] sm:text-3xl"
-                style={{
-                  fontFamily: "var(--font-script), 'Pacifico', cursive",
-                }}
-              >
-                Las personas detrás
-              </p>
-            </AboutItem>
-
             <AnimatedTitle
               text={"Un equipo que\ndisfruta lo que hace"}
               className="mt-4 text-[28px] font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-[34px] lg:text-[40px]"
