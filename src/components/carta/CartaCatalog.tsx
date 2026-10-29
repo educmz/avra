@@ -137,6 +137,8 @@ export function CartaCatalog() {
       <ImageHero
         image="/images/carta/carta-hero.png"
         lines={["ELIGE TU", "FAVORITO"]}
+        kicker="Nuestra carta"
+        subtitle="Sabores para disfrutar cada momento"
       />
 
       <CartaCategoryNav
