@@ -10,14 +10,14 @@ export function EssencePreviewSection() {
       <Container>
         <div className="relative isolate min-h-[420px] overflow-hidden rounded-[24px] bg-[#E8F0DE] sm:min-h-[475px] sm:rounded-[28px] lg:min-h-[500px]">
           <Image
-            src="/images/home/cravings/para-comer.png"
-            alt="Selección de alimentos Avra"
+            src="/images/about/about-hero.webp"
+            alt="Ambiente de Avra"
             fill
             sizes="(min-width:1280px) 1200px, 100vw"
-            className="object-cover object-[60%_center] sm:object-[center_center]"
+            className="object-cover object-center"
           />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#F2F6E9] via-[#F2F6E9]/95 via-[34%] to-[#F2F6E9]/0 lg:via-[43%]" />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#F2F6E9]/65 via-transparent to-transparent sm:hidden" />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#F2F6E9]/90 via-[#F2F6E9]/55 via-[34%] to-transparent lg:via-[43%]" />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#F2F6E9]/25 via-transparent to-transparent sm:hidden" />
           <div className="relative z-10 flex min-h-[420px] w-full max-w-[690px] flex-col justify-center px-6 py-9 sm:min-h-[475px] sm:px-10 lg:min-h-[500px] lg:px-12">
             <AnimatedTitle
               id="home-essence-title"
