@@ -5,6 +5,7 @@ import { ArrowUpRight, CheckCircle2, Leaf, Clock3, LayoutGrid, Smartphone } from
 import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { VendingReels } from "@/components/vending/VendingReels";
+import { VendingContactSection } from "@/components/vending/VendingContactSection";
 
 export const metadata: Metadata = {
   title: "Vending saludable",
@@ -126,6 +127,7 @@ export default function MachinesPage() {
         </section>
       ))}
       <VendingReels />
+      <VendingContactSection />
     </main>
   );
 }
