@@ -9,10 +9,10 @@ const exploreLinks = [
   { label: "Carta", href: "/carta" },
   { label: "Vending saludable", href: "/maquinas" },
   { label: "Blog", href: "/blog" },
+  { label: "Nosotros", href: "/nosotros" },
 ];
 
-const companyLinks = [
-  { label: "Nosotros", href: "/nosotros" },
+const legalLinks = [
   { label: "Política de privacidad", href: "/politica-de-privacidad" },
   { label: "Política de cookies", href: "/politica-de-cookies" },
 ];
@@ -51,7 +51,7 @@ export function Footer() {
       </svg>
 
       <Container className="relative z-10 pb-4 pt-9 sm:pt-10 lg:pt-11">
-        <div className="grid grid-cols-2 gap-x-7 gap-y-8 sm:gap-x-12 lg:grid-cols-[1.25fr_1fr_1fr_1.04fr] lg:gap-x-9 xl:gap-x-14">
+        <div className="grid grid-cols-2 gap-x-7 gap-y-8 sm:gap-x-12 lg:grid-cols-[1.2fr_.9fr_1.12fr_1.08fr] lg:gap-x-9 xl:gap-x-14">
           <div className="col-span-2 flex min-w-0 flex-col items-start lg:col-span-1">
             <Link
               href="/"
@@ -68,10 +68,6 @@ export function Footer() {
             </Link>
             <p className="mt-1 text-[14px] font-medium">Activa lo natural.</p>
 
-            <address className="mt-4 flex flex-col gap-0.5 not-italic text-[14px] leading-[1.45] text-[#FBF4EF]/90">
-              <span>Lima, Perú</span>
-            </address>
-
             <div className="mt-4 flex items-center gap-2.5" aria-label="Redes sociales de Avra">
               {socialLinks.map((social) => (
                 <a
@@ -80,7 +76,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="grid size-9 place-items-center rounded-lg bg-[#FF8A00] text-[#224E43] transition-all hover:-translate-y-0.5 hover:bg-[#FBF4EF] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+                  className="grid size-9 place-items-center rounded-lg bg-[#FBF4EF] text-[#295C50] transition-all hover:-translate-y-0.5 hover:bg-[#EADFCF] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
                 >
                   {social.icon}
                 </a>
@@ -99,18 +95,7 @@ export function Footer() {
             </div>
           </nav>
 
-          <nav aria-label="Empresa e información legal" className="flex min-w-0 flex-col items-start">
-            <h2 className="font-[family-name:var(--font-header)] text-[16px] font-semibold">Empresa</h2>
-            <div className="mt-4 flex flex-col items-start gap-2.5">
-              {companyLinks.map((item) => (
-                <Link key={item.href} href={item.href} className={linkClass}>
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </nav>
-
-          <div className="col-span-2 flex min-w-0 flex-col items-start lg:col-span-1">
+          <div className="flex min-w-0 flex-col items-start">
             <h2 className="font-[family-name:var(--font-header)] text-[16px] font-semibold">Contacto</h2>
             <div className="mt-4 flex flex-col items-start gap-3">
               <a
@@ -134,18 +119,33 @@ export function Footer() {
               </a>
             </div>
 
+          </div>
+
+          <nav aria-label="Información legal" className="col-span-2 flex min-w-0 flex-col items-start sm:col-span-1">
+            <h2 className="font-[family-name:var(--font-header)] text-[16px] font-semibold">Legal</h2>
+            <div className="mt-4 flex flex-col items-start gap-2.5">
+              <Link href={legalLinks[0].href} className={linkClass}>
+                {legalLinks[0].label}
+              </Link>
+              <span className="text-[14px] leading-[1.45] text-[#FBF4EF]/65" title="Página de términos y condiciones pendiente">
+                Términos y condiciones
+              </span>
+              <Link href={legalLinks[1].href} className={linkClass}>
+                {legalLinks[1].label}
+              </Link>
+            </div>
             <Link
               href="/libro-de-reclamaciones"
               aria-label="Ir al Libro de Reclamaciones de Avra"
-              className="group mt-5 inline-flex min-h-[78px] w-[198px] max-w-full items-center justify-center gap-2.5 rounded-xl border border-[#FBF4EF]/45 bg-white/[.025] px-3.5 py-3 text-center transition-colors hover:border-[#FBF4EF]/80 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="group mt-4 inline-flex min-h-[69px] w-[190px] max-w-full items-center justify-center gap-2 rounded-xl border border-[#FBF4EF]/45 bg-white/[.025] px-3 py-2 text-center transition-colors hover:border-[#FBF4EF]/80 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
-              <BookOpenText size={24} strokeWidth={1.6} aria-hidden="true" className="shrink-0" />
+              <BookOpenText size={22} strokeWidth={1.6} aria-hidden="true" className="shrink-0" />
               <span className="font-[family-name:var(--font-header)] text-[13px] font-semibold leading-tight">
                 Libro de<br />Reclamaciones
               </span>
-              <ArrowUpRight size={16} aria-hidden="true" className="self-start opacity-65 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <ArrowUpRight size={14} aria-hidden="true" className="self-start opacity-65 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </Link>
-          </div>
+          </nav>
         </div>
 
         <div className="mt-8 border-t border-[#FBF4EF]/25 pt-4 sm:mt-9">
