@@ -59,7 +59,11 @@
       fill.position.set(3, 3, -5);
       scene.add(fill);
 
-      const gltf = await new GLTFLoader().loadAsync("/models/maquina_expendedora_color.glb");
+      // La máquina Avra usa el GLB subido; el visor original del inicio conserva su ruta.
+      const modelPath = new URLSearchParams(window.location.search).get("model") === "avra"
+        ? "/models/avra-maquina-vending.glb"
+        : "/models/maquina_expendedora_color.glb";
+      const gltf = await new GLTFLoader().loadAsync(modelPath);
       const machine = gltf.scene;
       const bounds = new THREE.Box3().setFromObject(machine);
       const size = bounds.getSize(new THREE.Vector3());
