@@ -26,7 +26,7 @@ const machine = {
 
 export function NunaMachineSection() {
   return (
-    <section id="nuna" aria-labelledby="nuna-title" className="bg-background py-10 sm:py-14">
+    <section id="nuna" aria-labelledby="nuna-title" className="bg-background pt-10 pb-16 sm:pt-14 sm:pb-24 lg:pb-28">
       <Container>
         <div className="grid items-center gap-7 lg:grid-cols-2 lg:gap-10">
           <div className="min-w-0">
