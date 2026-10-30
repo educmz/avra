@@ -60,8 +60,7 @@ export function MobileCarta({ isOpen, onClose }: MobileCartaProps) {
 
         <div className="mt-5 h-[2px] w-full bg-gradient-to-r from-[#D7DFCF] via-[#8AAE9A] to-[#D7DFCF]" aria-hidden="true" />
 
-        <nav aria-label="Navegación principal" className="mt-7">
-          <p className="mb-3 px-3 font-[family-name:var(--font-header)] text-[11px] font-bold uppercase tracking-[.17em] text-[#295C50]/70">Explora Avra</p>
+        <nav aria-label="Navegación principal" className="mt-6">
           <ul className="space-y-1.5">
             {menuItems.map((item) => {
               const isActive = item.href === "/" ? pathname === "/" : pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -79,12 +78,6 @@ export function MobileCarta({ isOpen, onClose }: MobileCartaProps) {
           </ul>
         </nav>
 
-        <div className="mt-auto pt-9">
-          <Link href="/carta" onClick={onClose} className="avra-cta w-full">
-            <span>Explorar carta</span>
-          </Link>
-          <p className="mt-5 text-center text-xs tracking-wide text-[#295C50]/65">AVRA · ACTIVA LO NATURAL</p>
-        </div>
       </div>
     </div>
   );
