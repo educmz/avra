@@ -58,7 +58,7 @@ export function VendingBenefitsSection() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.55, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <article className="group relative flex h-full min-h-[96px] items-center gap-3 overflow-hidden rounded-[18px] border border-[#295C50]/15 border-t-[3px] border-t-[#EA6F32] bg-white px-3 py-3 shadow-[0_10px_28px_rgba(35,65,55,0.07)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(35,65,55,0.12)] motion-reduce:transform-none motion-reduce:transition-none md:min-h-[225px] md:flex-col md:items-start md:gap-0 md:rounded-[24px] md:border-t-[4px] md:px-7 md:py-7">
+              <article className="group relative flex h-full min-h-[96px] items-center gap-3 overflow-hidden rounded-[18px] border border-[#295C50]/15 border-t-[3px] border-t-[#EA6F32] bg-[#FFFFFF] px-3 py-3 shadow-[0_10px_28px_rgba(35,65,55,0.07)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(35,65,55,0.12)] motion-reduce:transform-none motion-reduce:transition-none md:min-h-[225px] md:flex-col md:items-start md:gap-0 md:rounded-[24px] md:border-t-[4px] md:px-7 md:py-7">
                 <span className="grid size-11 shrink-0 place-items-center rounded-[14px] bg-[#E9F0EA] text-[#295C50] transition-[background-color,color,transform] duration-300 ease-out group-hover:-rotate-6 group-hover:bg-[#295C50] group-hover:text-white motion-reduce:transform-none motion-reduce:transition-none md:size-14 md:rounded-[16px]">
                   <Icon size={30} strokeWidth={2} aria-hidden="true" className="size-6 md:size-[30px]" />
                 </span>
