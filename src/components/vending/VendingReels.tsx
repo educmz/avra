@@ -149,7 +149,7 @@ export function VendingReels() {
             }
           }}
           onTouchCancel={() => { touchStart.current = null; }}
-          className="relative h-[510px] touch-pan-y outline-none focus-visible:rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:h-[625px] lg:h-[665px] [--reel-step:86vw] sm:[--reel-step:390px] lg:[--reel-step:clamp(400px,36vw,480px)]"
+          className="relative h-[490px] touch-pan-y outline-none focus-visible:rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:h-[595px] lg:h-[640px] [--reel-step:86vw] sm:[--reel-step:390px] lg:[--reel-step:clamp(400px,36vw,480px)]"
         >
           {reels.map((reel, index) => {
             const relative = (index - active + reels.length) % reels.length;
@@ -171,7 +171,7 @@ export function VendingReels() {
                 style={{
                   transform: `translate3d(${horizontal}, -50%, 0) scale(${selected ? 1 : 0.91})`,
                 }}
-                className={`absolute left-1/2 top-1/2 aspect-[0.63] w-[min(78vw,330px)] overflow-hidden rounded-[21px] bg-[#142820] text-[#302E2A] shadow-[0_18px_52px_rgba(4,24,21,0.25)] transition-[transform,opacity,filter,box-shadow] duration-500 ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none sm:w-[clamp(330px,30vw,390px)] lg:w-[400px] ${selected
+                className={`absolute left-1/2 top-1/2 aspect-[0.63] w-[min(75vw,315px)] overflow-hidden rounded-[21px] bg-[#142820] text-[#302E2A] shadow-[0_18px_52px_rgba(4,24,21,0.25)] transition-[transform,opacity,filter,box-shadow] duration-500 ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none sm:w-[clamp(315px,29vw,370px)] lg:w-[380px] ${selected
                   ? "z-20 opacity-100 shadow-[0_26px_60px_rgba(3,28,23,0.4)]"
                   : "z-10 opacity-50 brightness-[0.8]"}`}
               >
