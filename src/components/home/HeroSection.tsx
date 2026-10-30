@@ -134,20 +134,24 @@ export function HeroSection() {
           <ArrowRight size={21} strokeWidth={1.8} aria-hidden="true" />
         </button>
 
-        {/* Indicadores discretos, sin contador ni fondo sobre el banner. */}
-        <div className="absolute inset-x-0 bottom-4 z-30 flex items-center justify-center gap-2.5 sm:bottom-6">
+        {/* Indicadores con fondo translúcido para mantener el contraste en todas las fotos. */}
+        <div
+          role="group"
+          aria-label="Seleccionar diapositiva"
+          className="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 items-center gap-0.5 rounded-full border border-white/30 bg-[#295C50]/55 px-2.5 py-1 shadow-[0_6px_20px_rgba(16,40,34,.2)] backdrop-blur-md sm:bottom-7 sm:gap-1 sm:px-3 sm:py-1.5"
+        >
           {slides.map((slide, index) => (
             <button
               key={slide.id}
               type="button"
               onClick={() => goToSlide(index)}
-              aria-label={`Ir a la diapositiva ${index + 1}`}
+              aria-label={`Ir a la diapositiva ${index + 1} de ${slides.length}`}
               aria-current={index === activeSlide ? "true" : undefined}
-              className="grid size-8 place-items-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="group/dot grid size-8 shrink-0 place-items-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               <span
                 aria-hidden="true"
-                className={`block h-1.5 rounded-full shadow-[0_1px_5px_rgba(0,0,0,.25)] transition-[width,background-color] duration-300 motion-reduce:transition-none ${index === activeSlide ? "w-6 bg-white" : "w-1.5 bg-white/65 hover:bg-white"}`}
+                className={`block h-2 rounded-full shadow-[0_1px_5px_rgba(0,0,0,.15)] transition-[width,background-color] duration-300 motion-reduce:transition-none ${index === activeSlide ? "w-6 bg-white" : "w-2 bg-white/65 group-hover/dot:bg-white/95"}`}
               />
             </button>
           ))}
