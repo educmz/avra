@@ -48,34 +48,34 @@ export function VendingBenefitsSection() {
           </p>
         </div>
 
-        <div className="mx-auto mt-7 flex max-w-[1180px] snap-x snap-mandatory gap-3 overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-10 sm:gap-4 md:grid md:grid-cols-3 md:overflow-visible md:pb-0 lg:gap-5">
+        <div className="mx-auto mt-7 grid max-w-[1180px] grid-cols-1 gap-3 sm:mt-10 md:grid-cols-3 md:gap-4 lg:gap-5">
           {benefits.map(({ Icon, title, description }, index) => (
             <motion.div
               key={title}
-              className="h-full w-[83%] shrink-0 snap-start sm:w-[47%] md:w-auto md:shrink"
+              className="h-full min-w-0"
               initial={reducedMotion ? false : { opacity: 0, y: 20 }}
               whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.55, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <article className="group relative flex h-full min-h-[188px] flex-col items-start overflow-hidden rounded-[24px] border border-[#295C50]/15 border-t-[4px] border-t-[#EA6F32] bg-white px-4 py-4 shadow-[0_10px_28px_rgba(35,65,55,0.07)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(35,65,55,0.12)] motion-reduce:transform-none motion-reduce:transition-none sm:min-h-[225px] sm:px-7 sm:py-7">
-                <div className="flex w-full items-start justify-between gap-4">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-[14px] bg-[#E9F0EA] sm:size-14 sm:rounded-[16px] text-[#295C50] transition-[background-color,color,transform] duration-300 ease-out group-hover:-rotate-6 group-hover:bg-[#295C50] group-hover:text-white motion-reduce:transform-none motion-reduce:transition-none">
-                    <Icon size={30} strokeWidth={2} aria-hidden="true" className="size-6 sm:size-[30px]" />
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="font-heading text-[34px] font-extrabold leading-none sm:text-[44px] tracking-tight text-[#EA6F32]/30 transition-[color,transform] duration-300 group-hover:scale-110 group-hover:text-[#EA6F32]/75 motion-reduce:transform-none motion-reduce:transition-none"
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+              <article className="group relative flex h-full min-h-[96px] items-center gap-3 overflow-hidden rounded-[18px] border border-[#295C50]/15 border-t-[3px] border-t-[#EA6F32] bg-white px-3 py-3 shadow-[0_10px_28px_rgba(35,65,55,0.07)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(35,65,55,0.12)] motion-reduce:transform-none motion-reduce:transition-none md:min-h-[225px] md:flex-col md:items-start md:gap-0 md:rounded-[24px] md:border-t-[4px] md:px-7 md:py-7">
+                <span className="grid size-11 shrink-0 place-items-center rounded-[14px] bg-[#E9F0EA] text-[#295C50] transition-[background-color,color,transform] duration-300 ease-out group-hover:-rotate-6 group-hover:bg-[#295C50] group-hover:text-white motion-reduce:transform-none motion-reduce:transition-none md:size-14 md:rounded-[16px]">
+                  <Icon size={30} strokeWidth={2} aria-hidden="true" className="size-6 md:size-[30px]" />
+                </span>
+                <div className="min-w-0 flex-1 md:flex-none">
+                  <h3 className="font-heading text-[16px] font-extrabold uppercase leading-[1.15] tracking-tight text-[#295C50] md:mt-5 md:text-[24px]">
+                    {title}
+                  </h3>
+                  <p className="mt-1 max-w-[300px] text-[13px] leading-[1.45] text-[#302E2A]/75 md:mt-2 md:text-base md:leading-6">
+                    {description}
+                  </p>
                 </div>
-                <h3 className="mt-3 font-heading text-[18px] font-extrabold uppercase leading-[1.1] tracking-tight text-[#295C50] sm:mt-5 sm:text-[24px]">
-                  {title}
-                </h3>
-                <p className="mt-2 max-w-[300px] text-sm leading-5 text-[#302E2A]/75 sm:text-base sm:leading-6">
-                  {description}
-                </p>
+                <span
+                  aria-hidden="true"
+                  className="self-start font-heading text-[25px] font-extrabold leading-none tracking-tight text-[#EA6F32]/30 transition-[color,transform] duration-300 group-hover:scale-110 group-hover:text-[#EA6F32]/75 motion-reduce:transform-none motion-reduce:transition-none md:absolute md:right-7 md:top-7 md:text-[44px]"
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
               </article>
             </motion.div>
           ))}
