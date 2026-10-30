@@ -63,7 +63,7 @@ export function VendingSpacesSection() {
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.55, delay: (index % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
               >
-                <article className="group relative flex h-full min-h-[126px] flex-col items-start overflow-hidden rounded-[18px] border border-[#295C50]/15 border-t-[3px] border-t-[#EA6F32] bg-white px-3 py-3 shadow-[0_10px_28px_rgba(35,65,55,0.07)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(35,65,55,0.12)] motion-reduce:transform-none motion-reduce:transition-none sm:min-h-[140px] sm:rounded-[24px] sm:border-t-[4px] sm:px-6 sm:py-5">
+                <article className="group relative flex h-full min-h-[110px] flex-col items-center justify-center overflow-hidden rounded-[18px] border border-[#295C50]/15 border-t-[3px] border-t-[#EA6F32] bg-white px-3 py-2.5 text-center shadow-[0_10px_28px_rgba(35,65,55,0.07)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(35,65,55,0.12)] motion-reduce:transform-none motion-reduce:transition-none sm:min-h-[140px] sm:items-start sm:justify-start sm:rounded-[24px] sm:border-t-[4px] sm:px-6 sm:py-5 sm:text-left">
                   <span className="grid size-10 shrink-0 place-items-center rounded-[12px] bg-[#E9F0EA] sm:size-12 sm:rounded-[14px] text-[#295C50] transition-[background-color,color,transform] duration-300 ease-out group-hover:-rotate-6 group-hover:bg-[#295C50] group-hover:text-white motion-reduce:transform-none motion-reduce:transition-none">
                     <Icon size={25} strokeWidth={1.8} aria-hidden="true" className="size-5 sm:size-[25px]" />
                   </span>
