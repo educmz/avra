@@ -1,25 +1,25 @@
 import Image from "next/image";
-import { CheckCircle2 } from "lucide-react";
+import { CreditCard, GlassWater, HandHelping, MousePointerClick } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 
 const whatsappUrl = `https://wa.me/51948742332?text=${encodeURIComponent(
-  "Hola, me gustaría recibir más información sobre la máquina Avra de bebidas naturales y cómo instalarla en mi espacio."
+  "Hola, me gustaría recibir información sobre el equipo de bebidas naturales de Avra y cómo instalarlo en mi espacio."
 )}`;
 
 // Los datos y el diseño de esta máquina se mantienen independientes de la otra.
 const machine = {
     id: "avra", name: "Avra", kicker: "01 / Bebidas naturales",
     title: "Bebidas naturales, a tu alcance",
-    description: "Haz que disfrutar una bebida natural sea parte de cada pausa. La máquina Avra acerca esta opción a tu espacio con una experiencia de autoservicio sencilla, cómoda y sin complicaciones.",
+    description: "Con Avra, disfrutar bebidas naturales es más fácil. Una experiencia de autoservicio práctica y cómoda, pensada para acompañar cada pausa en tu espacio.",
     image: "/images/vending/maquina-avra.png",
-    alt: "Máquina naranja Avra instalada en una zona de descanso de oficina",
+    alt: "Equipo dispensador naranja de Avra en una zona de descanso de oficina",
     accent: "#EA6F32", bg: "#FFFFFF",
     details: [
-      "Bebidas naturales",
-      "Selección en pantalla",
-      "Pago en la máquina",
-      "Retiro directo de tu bebida",
+      { label: "Bebidas naturales", Icon: GlassWater },
+      { label: "Selección en pantalla", Icon: MousePointerClick },
+      { label: "Pago en la máquina", Icon: CreditCard },
+      { label: "Retiro directo de tu bebida", Icon: HandHelping },
     ],
     perks: ["Una experiencia diferente", "Diseño reconocible", "Practicidad cotidiana"],
   };
@@ -48,14 +48,14 @@ export function AvraMachineSection() {
             <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
               {machine.details.map((detail) => (
                 <li
-                  key={detail}
+                  key={detail.label}
                   className="group flex min-h-[58px] items-center gap-3 rounded-[14px] border border-[#295C50]/10 bg-white/85 px-3 py-2.5 shadow-[0_4px_14px_rgba(41,92,80,0.035)] transition-[border-color,background-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-[#EA6F32]/35 hover:bg-white hover:shadow-[0_8px_22px_rgba(41,92,80,0.08)] motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   <span className="grid size-8 shrink-0 place-items-center rounded-[10px] bg-[#FFF0E5] text-[#EA6F32] transition-[background-color,color,transform] duration-300 group-hover:scale-105 group-hover:bg-[#EA6F32] group-hover:text-white motion-reduce:transform-none motion-reduce:transition-none">
-                    <CheckCircle2 size={18} strokeWidth={2} aria-hidden="true" />
+                    <detail.Icon size={18} strokeWidth={1.9} aria-hidden="true" />
                   </span>
                   <span className="text-[14px] font-semibold leading-snug text-[#295C50] sm:text-[15px]">
-                    {detail}
+                    {detail.label}
                   </span>
                 </li>
               ))}
