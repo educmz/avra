@@ -29,7 +29,7 @@ export function AvraMachineSection() {
     <section id="avra" aria-labelledby="avra-title" className="bg-background pt-10 pb-16 sm:pt-14 sm:pb-24 lg:pb-28">
       <Container>
         <div className="grid items-center gap-7 lg:grid-cols-2 lg:gap-10">
-          <div className="min-w-0 lg:order-2">
+          <div className="order-2 min-w-0 lg:order-2">
             <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[1.75rem] border border-[#302E2A]/10 bg-white shadow-[0_12px_30px_rgba(48,46,42,.09)] lg:aspect-[5/4]">
               <Image
                 src={machine.image}
@@ -40,10 +40,13 @@ export function AvraMachineSection() {
               />
             </div>
           </div>
-          <div className="min-w-0 lg:order-1">
-            <AnimatedTitle id={`${machine.id}-title`} text={machine.title} className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.06] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
+          <div className="contents lg:order-1 lg:block">
+            <div className="order-1 min-w-0">
+              <AnimatedTitle id={`${machine.id}-title`} text={machine.title} className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.06] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
             <div className="mt-3 h-[4px] w-[96px] shrink-0 rounded-full" style={{ background: machine.accent }} />
             <p className="mt-4 max-w-2xl text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">{machine.description}</p>
+            </div>
+            <div className="order-3 min-w-0">
             <h3 className="mt-6 font-heading text-base font-extrabold uppercase tracking-wide text-[#302E2A]">Características del equipo</h3>
             <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
               {machine.details.map((detail) => (
@@ -60,9 +63,12 @@ export function AvraMachineSection() {
                 </li>
               ))}
             </ul>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="avra-cta mt-5 w-fit">
-              <span>Solicitar información</span>
-            </a>
+            <div className="mt-5 flex justify-center lg:justify-start">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="avra-cta w-fit">
+                <span>Solicitar información</span>
+              </a>
+            </div>
+            </div>
           </div>
         </div>
       </Container>
