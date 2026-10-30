@@ -1,23 +1,27 @@
 import Image from "next/image";
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { Eye, HandHelping, MousePointerClick, UtensilsCrossed } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
+
+const whatsappUrl = `https://wa.me/51948742332?text=${encodeURIComponent(
+  "Hola, me gustaría recibir información sobre el equipo Nuna de comidas, snacks y bebidas y cómo instalarlo en mi espacio."
+)}`;
 
 // Los datos y el diseño de esta máquina se mantienen independientes de la otra.
 const machine = {
     id: "nuna", name: "Nuna", kicker: "02 / Comidas y snacks",
-    title: "Comidas y snacks para tu día.",
-    description: "El formato Nuna muestra alimentos en envases individuales y una selección de bebidas. Su vitrina facilita ver las opciones disponibles y su pantalla permite interactuar con el equipo. La fotografía del equipo Nuna se presenta como referencia.",
+    title: "Comidas y snacks para tu día",
+    description: "Con Nuna, tus pausas tienen más opciones. Encuentra comidas, snacks y bebidas en un solo lugar y elige lo que más te provoque con la comodidad del autoservicio.",
     image: "/images/vending/maquina-nuna.png",
-    alt: "Máquina Nuna negra y verde instalada en un espacio de coworking",
+    alt: "Equipo dispensador Nuna negro y verde en un espacio de coworking",
     accent: "#428C42", bg: "#FFFFFF",
     details: [
-      { title: "Vitrina de productos", desc: "Los alimentos y bebidas quedan visibles antes de elegir." },
-      { title: "Variedad de formatos", desc: "Espacios para envases individuales y bebidas embotelladas." },
-      { title: "Pantalla de selección", desc: "Interfaz para consultar y seleccionar productos." },
-      { title: "Recogida accesible", desc: "Compartimento frontal para retirar la compra." },
+      { label: "Comidas, snacks y bebidas", Icon: UtensilsCrossed },
+      { label: "Productos a la vista", Icon: Eye },
+      { label: "Selección en pantalla", Icon: MousePointerClick },
+      { label: "Retiro directo de tu compra", Icon: HandHelping },
     ],
-    perks: ["Opciones listas para elegir", "Productos a la vista", "Autoservicio práctico"],
+    perks: ["Comidas y snacks", "Productos a la vista", "Autoservicio práctico"],
   };
 
 export function NunaMachineSection() {
@@ -41,18 +45,24 @@ export function NunaMachineSection() {
             <div className="mt-3 h-[3px] w-14 rounded-full" style={{ background: machine.accent }} />
             <p className="mt-4 max-w-2xl text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">{machine.description}</p>
             <h3 className="mt-6 font-heading text-base font-extrabold uppercase tracking-wide text-[#302E2A]">Características del equipo</h3>
-            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
               {machine.details.map((detail) => (
-                <article key={detail.title} className="rounded-xl border border-[#302E2A]/10 bg-white/80 p-3.5 sm:p-4">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 size={18} className="shrink-0" style={{ color: machine.accent }} aria-hidden="true" />
-                    <h4 className="font-heading text-sm font-bold leading-snug text-[#302E2A]">{detail.title}</h4>
-                  </div>
-                  <p className="mt-1.5 text-justify text-base leading-7 text-[#302E2A]/70 sm:text-lg sm:leading-8">{detail.desc}</p>
-                </article>
+                <li
+                  key={detail.label}
+                  className="group flex min-h-[58px] items-center gap-3 rounded-[14px] border border-[#295C50]/10 bg-white/85 px-3 py-2.5 shadow-[0_4px_14px_rgba(41,92,80,0.035)] transition-[border-color,background-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-[#428C42]/35 hover:bg-white hover:shadow-[0_8px_22px_rgba(41,92,80,0.08)] motion-reduce:transform-none motion-reduce:transition-none"
+                >
+                  <span className="grid size-8 shrink-0 place-items-center rounded-[10px] bg-[#EAF5E9] text-[#428C42] transition-[background-color,color,transform] duration-300 group-hover:scale-105 group-hover:bg-[#428C42] group-hover:text-white motion-reduce:transform-none motion-reduce:transition-none">
+                    <detail.Icon size={18} strokeWidth={1.9} aria-hidden="true" />
+                  </span>
+                  <span className="text-[14px] font-semibold leading-snug text-[#295C50] sm:text-[15px]">
+                    {detail.label}
+                  </span>
+                </li>
               ))}
-            </div>
-            <a href="/nosotros" className="avra-cta mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#295C50] px-5 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-[#173E34]">Conoce más de Avra <ArrowUpRight size={17} /></a>
+            </ul>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Solicitar información sobre Nuna por WhatsApp" className="avra-cta mt-5 w-fit">
+              <span>Solicitar información</span>
+            </a>
           </div>
         </div>
       </Container>
