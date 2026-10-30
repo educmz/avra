@@ -8,8 +8,8 @@ const machine = {
     id: "nuna", name: "Nuna", kicker: "02 / Comidas y snacks",
     title: "Comidas y snacks para tu día.",
     description: "El formato Nuna muestra alimentos en envases individuales y una selección de bebidas. Su vitrina facilita ver las opciones disponibles y su pantalla permite interactuar con el equipo. La fotografía del equipo Nuna se presenta como referencia.",
-    image: "/images/vending/nuna-equipo.jpg",
-    alt: "Máquina Nuna negra y verde con vitrina de comidas envasadas y bebidas",
+    image: "/images/vending/maquina-nuna.png",
+    alt: "Máquina Nuna negra y verde instalada en un espacio de coworking",
     accent: "#428C42", bg: "#FFFFFF",
     details: [
       { title: "Vitrina de productos", desc: "Los alimentos y bebidas quedan visibles antes de elegir." },
@@ -24,15 +24,19 @@ export function NunaMachineSection() {
   return (
     <section id="nuna" aria-labelledby="nuna-title" className="bg-background py-10 sm:py-14">
       <Container>
-        <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,.85fr)_minmax(0,1.15fr)] lg:gap-10">
-          <div className="min-w-0 lg:order-2">
-            <div className="rounded-[1.75rem] p-4 sm:p-5" style={{ background: machine.bg }}>
-              <div className="relative mx-auto h-[290px] max-w-[400px] sm:h-[380px] lg:h-[430px]">
-                <Image src={machine.image} alt={machine.alt} fill sizes="(min-width:1024px) 42vw, 90vw" className="object-contain" />
-              </div>
+        <div className="grid items-center gap-7 lg:grid-cols-2 lg:gap-10">
+          <div className="min-w-0">
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[1.75rem] border border-[#302E2A]/10 bg-white shadow-[0_12px_30px_rgba(48,46,42,.09)] lg:aspect-[5/4]">
+              <Image
+                src={machine.image}
+                alt={machine.alt}
+                fill
+                sizes="(min-width: 1024px) 48vw, (min-width: 640px) 90vw, 100vw"
+                className="object-cover object-left"
+              />
             </div>
           </div>
-          <div className="min-w-0 lg:order-1">
+          <div className="min-w-0">
             <AnimatedTitle id={`${machine.id}-title`} text={machine.title} className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.06] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
             <div className="mt-3 h-[3px] w-14 rounded-full" style={{ background: machine.accent }} />
             <p className="mt-4 max-w-2xl text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">{machine.description}</p>
