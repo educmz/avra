@@ -121,7 +121,7 @@ export function HeroSection() {
           type="button"
           onClick={() => changeSlide(-1)}
           aria-label="Diapositiva anterior"
-          className="absolute left-3 top-1/2 z-30 grid size-10 -translate-y-1/2 place-items-center rounded-full border border-white/65 bg-white/75 text-[#295C50] shadow-[0_5px_24px_rgba(24,54,47,.12)] backdrop-blur-lg transition-[background-color,transform,opacity] duration-300 hover:scale-105 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] sm:left-5 sm:size-12 lg:left-8 lg:opacity-0 lg:group-hover:opacity-100 lg:group-focus-within:opacity-100 motion-reduce:transition-none"
+          className="absolute left-3 top-1/2 z-30 grid size-10 -translate-y-1/2 place-items-center rounded-full border border-white/35 bg-black/25 text-white shadow-[0_4px_16px_rgba(0,0,0,.15)] backdrop-blur-md transition-[background-color,transform,opacity] duration-300 hover:scale-105 hover:bg-black/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:left-5 sm:size-12 lg:left-8 lg:opacity-0 lg:group-hover:opacity-100 lg:group-focus-within:opacity-100 motion-reduce:transition-none"
         >
           <ArrowLeft size={21} strokeWidth={1.8} aria-hidden="true" />
         </button>
@@ -129,7 +129,7 @@ export function HeroSection() {
           type="button"
           onClick={() => changeSlide(1)}
           aria-label="Siguiente diapositiva"
-          className="absolute right-3 top-1/2 z-30 grid size-10 -translate-y-1/2 place-items-center rounded-full border border-white/65 bg-white/75 text-[#295C50] shadow-[0_5px_24px_rgba(24,54,47,.12)] backdrop-blur-lg transition-[background-color,transform,opacity] duration-300 hover:scale-105 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] sm:right-5 sm:size-12 lg:right-8 lg:opacity-0 lg:group-hover:opacity-100 lg:group-focus-within:opacity-100 motion-reduce:transition-none"
+          className="absolute right-3 top-1/2 z-30 grid size-10 -translate-y-1/2 place-items-center rounded-full border border-white/35 bg-black/25 text-white shadow-[0_4px_16px_rgba(0,0,0,.15)] backdrop-blur-md transition-[background-color,transform,opacity] duration-300 hover:scale-105 hover:bg-black/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:right-5 sm:size-12 lg:right-8 lg:opacity-0 lg:group-hover:opacity-100 lg:group-focus-within:opacity-100 motion-reduce:transition-none"
         >
           <ArrowRight size={21} strokeWidth={1.8} aria-hidden="true" />
         </button>
@@ -138,7 +138,7 @@ export function HeroSection() {
         <div
           role="group"
           aria-label="Seleccionar diapositiva"
-          className="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 items-center gap-0.5 rounded-full border border-white/30 bg-black/25 px-2.5 py-1 shadow-[0_6px_20px_rgba(16,40,34,.2)] backdrop-blur-md sm:bottom-7 sm:gap-1 sm:px-3 sm:py-1.5"
+          className="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 items-center gap-0.5 rounded-full border border-white/15 bg-black/15 px-2 py-0.5 shadow-[0_4px_14px_rgba(0,0,0,.12)] backdrop-blur-md sm:bottom-7 sm:gap-1 sm:px-2.5 sm:py-0.5"
         >
           {slides.map((slide, index) => (
             <button
@@ -147,11 +147,11 @@ export function HeroSection() {
               onClick={() => goToSlide(index)}
               aria-label={`Ir a la diapositiva ${index + 1} de ${slides.length}`}
               aria-current={index === activeSlide ? "true" : undefined}
-              className="group/dot grid size-8 shrink-0 place-items-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="group/dot grid size-7 shrink-0 place-items-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               <span
                 aria-hidden="true"
-                className={`block h-2 rounded-full shadow-[0_1px_5px_rgba(0,0,0,.15)] transition-[width,background-color] duration-300 motion-reduce:transition-none ${index === activeSlide ? "w-6 bg-white" : "w-2 bg-white/65 group-hover/dot:bg-white/95"}`}
+                className={`block h-1.5 rounded-full shadow-[0_1px_4px_rgba(0,0,0,.13)] transition-[width,background-color] duration-300 motion-reduce:transition-none ${index === activeSlide ? "w-5 bg-white/90" : "w-1.5 bg-white/50 group-hover/dot:bg-white/85"}`}
               />
             </button>
           ))}
