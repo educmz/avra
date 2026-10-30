@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { AboutBanner } from "@/components/about/AboutBanner";
 import { EssenceSection } from "@/components/about/EssenceSection";
-import { AboutIntroSection } from "@/components/about/AboutIntroSection";
 import { SocialSection } from "@/components/about/SocialSection";
 
 export const metadata: Metadata = {
@@ -13,7 +12,6 @@ export default function AboutPage() {
   return (
     <main className="bg-background pt-[68px] sm:pt-[74px] lg:pt-[84px]">
       <AboutBanner />
-      <AboutIntroSection />
       <EssenceSection />
       <SocialSection />
     </main>
