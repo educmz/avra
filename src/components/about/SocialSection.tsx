@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -14,6 +14,7 @@ import {
   MessageCircle,
   MoreHorizontal,
   Play,
+  Pause,
   Send,
   Share2,
   ThumbsUp,
@@ -127,7 +128,7 @@ function SocialButton({
       scroll={false}
       target={href ? "_blank" : undefined}
       rel={href ? "noreferrer" : undefined}
-      className="flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transform-none"
+      className="mx-auto flex min-h-10 w-fit max-w-full items-center justify-center gap-2 rounded-full px-6 text-[13px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none"
       style={{ backgroundColor: background }}
     >
       {icon}
@@ -146,24 +147,42 @@ export function SocialSection() {
   const [instagramLiked, setInstagramLiked] = useState(false);
   const [facebookLiked, setFacebookLiked] = useState(false);
   const [tiktokLiked, setTiktokLiked] = useState(false);
+  const [tiktokPlaying, setTiktokPlaying] = useState(false);
+  const [tiktokMuted, setTiktokMuted] = useState(true);
+  const tiktokVideoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleTiktokPlayback = () => {
+    const video = tiktokVideoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      void video.play().catch(() => setTiktokPlaying(false));
+    } else {
+      video.pause();
+    }
+  };
 
   return (
     <section className={`${styles.section} !bg-background`}>
       <Container>
         {/* CABECERA */}
         <AboutReveal
-          className="mb-6 sm:mb-7"
+          className="mb-8 text-center sm:mb-9"
           amount={0.5}
         >
           <AnimatedTitle
             text="Momentos que compartimos"
-            className="mt-2 text-[28px] font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-[34px] lg:text-[40px]"
+            className="mt-2 text-center text-[28px] font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-[34px] lg:text-[40px]"
           />
+          <span aria-hidden="true" className="mx-auto mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
+          <p className="mx-auto mt-5 max-w-full text-center text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8 lg:whitespace-nowrap">
+            Descubre los sabores, las experiencias y los momentos que compartimos en nuestras redes sociales.
+          </p>
         </AboutReveal>
 
         {/* REDES */}
         <AboutReveal
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          className="mx-auto grid w-full max-w-[1120px] gap-7 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 xl:gap-12"
           amount={0.2}
           stagger={0.12}
         >
@@ -173,7 +192,7 @@ export function SocialSection() {
 
           <motion.div
             variants={aboutCardVariants}
-            className="flex min-w-0 flex-col gap-3"
+            className="mx-auto flex w-full max-w-[305px] min-w-0 flex-col gap-2.5"
           >
             <motion.article
               whileHover={{ y: -6 }}
@@ -185,7 +204,7 @@ export function SocialSection() {
               className={`${styles.card} border border-[#302E2A]/10 bg-white`}
             >
               {/* HEADER */}
-              <div className="flex h-16 shrink-0 items-center justify-between px-4">
+              <div className="flex h-14 shrink-0 items-center justify-between px-4">
                 <div className="flex items-center gap-3">
                   <div className="flex size-9 items-center justify-center rounded-full bg-gradient-to-br from-[#FEDA75] via-[#FA7E1E] to-[#D62976] p-[2px]">
                     <div className="flex size-full items-center justify-center rounded-full bg-white">
@@ -219,7 +238,7 @@ export function SocialSection() {
               {/* IMAGEN */}
               <div className={styles.media}>
                 <Image
-                  src="/images/about/social/instagram.webp"
+                  src="/images/about/social/instagram.png"
                   alt="Publicación de Instagram de Avra"
                   fill
                   sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 72px) / 2), calc(100vw - 48px)"
@@ -299,7 +318,7 @@ export function SocialSection() {
 
           <motion.div
             variants={aboutCardVariants}
-            className="flex min-w-0 flex-col gap-3"
+            className="mx-auto flex w-full max-w-[305px] min-w-0 flex-col gap-2.5"
           >
             <motion.article
               whileHover={{ y: -6 }}
@@ -311,16 +330,23 @@ export function SocialSection() {
               className={styles.card}
               style={{ backgroundColor: "#111" }}
             >
-<div className={styles.media}>
-                <Image
-                  src="/images/about/social/tiktok.webp"
-                  alt="Publicación de TikTok de Avra"
-                  fill
-                  sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 72px) / 2), calc(100vw - 48px)"
-                  className="object-cover"
+              <div className={styles.media}>
+                <video
+                  ref={tiktokVideoRef}
+                  src="/images/about/social/tiktok.mp4"
+                  className="absolute inset-0 h-full w-full cursor-pointer object-cover"
+                  onClick={toggleTiktokPlayback}
+                  autoPlay={!reducedMotion}
+                  muted={tiktokMuted}
+                  loop
+                  playsInline
+                  preload="metadata"
+                  onPlay={() => setTiktokPlaying(true)}
+                  onPause={() => setTiktokPlaying(false)}
+                  aria-label="Video de TikTok de Avra"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
 
                 {/* SUPERIOR */}
                 <div className="absolute left-4 top-4 flex items-center gap-2 text-white">
@@ -331,19 +357,31 @@ export function SocialSection() {
                   </span>
                 </div>
 
-                {/* PLAY */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.button whileTap={reducedMotion ? undefined : { scale: 0.9 }}
+                {/* CONTROLES DE VIDEO */}
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                  <motion.button
+                    whileTap={reducedMotion ? undefined : { scale: 0.9 }}
                     type="button"
-                    aria-label="Reproducir video"
-                    className="flex size-14 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-transform duration-300 hover:scale-110"
+                    onClick={toggleTiktokPlayback}
+                    aria-label={tiktokPlaying ? "Pausar video" : "Reproducir video"}
+                    className="pointer-events-auto flex size-12 items-center justify-center rounded-full bg-black/50 text-white opacity-85 shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:opacity-100 focus-visible:opacity-100"
                   >
-                    <Play
-                      className="ml-1 size-5"
-                      fill="currentColor"
-                    />
+                    {tiktokPlaying ? (
+                      <Pause className="size-5" fill="currentColor" />
+                    ) : (
+                      <Play className="ml-1 size-5" fill="currentColor" />
+                    )}
                   </motion.button>
                 </div>
+
+                <button
+                  type="button"
+                  onClick={() => setTiktokMuted((value) => !value)}
+                  aria-label={tiktokMuted ? "Activar sonido del video" : "Silenciar video"}
+                  className="absolute right-4 top-4 z-10 rounded-full bg-black/40 px-3 py-2 text-xs font-semibold text-white backdrop-blur-sm"
+                >
+                  {tiktokMuted ? "Activar sonido" : "Silenciar"}
+                </button>
 
                 {/* ACCIONES */}
                 <div className="absolute bottom-6 right-4 flex flex-col items-center gap-5 text-white">
@@ -403,7 +441,7 @@ export function SocialSection() {
 
           <motion.div
             variants={aboutCardVariants}
-            className="flex min-w-0 flex-col gap-3"
+            className="mx-auto flex w-full max-w-[305px] min-w-0 flex-col gap-2.5"
           >
             <motion.article
               whileHover={{ y: -6 }}
@@ -440,16 +478,10 @@ export function SocialSection() {
                 />
               </div>
 
-              {/* TEXTO */}
-              <p className="shrink-0 px-4 pb-3 text-sm leading-6 text-[#050505]">
-                Una pausa, algo rico y una buena conversación. A veces no hace
-                falta más.
-              </p>
-
               {/* IMAGEN */}
               <div className={styles.media}>
                 <Image
-                  src="/images/about/social/facebook.webp"
+                  src="/images/about/social/facebook.png"
                   alt="Publicación de Facebook de Avra"
                   fill
                   sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 72px) / 2), calc(100vw - 48px)"

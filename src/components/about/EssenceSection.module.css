@@ -1,0 +1,52 @@
+.section {
+  position: relative;
+  background: #fbf4ef;
+}
+
+.card {
+  overflow: hidden;
+  border: 1px solid rgba(129, 104, 82, 0.045);
+  border-radius: 30px;
+  background: #fffdfb;
+  box-shadow: 0 14px 32px rgba(60, 46, 32, 0.065);
+}
+
+/* Curva orgánica, espejada según el lado de la imagen */
+.photoLeft,
+.photoRight {
+  position: relative;
+}
+
+.photoLeft::after,
+.photoRight::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  width: 96px;
+  z-index: 2;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 500' preserveAspectRatio='none'%3E%3Cpath fill='%23fffdfb' d='M0 0H26C18 54 29 103 58 150C83 190 84 243 63 287C40 335 20 399 28 500H0V0Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+.photoRight::after {
+  left: -1px;
+}
+
+.photoLeft::after {
+  right: -1px;
+  transform: scaleX(-1);
+}
+
+@media (max-width: 1023px) {
+  .photoLeft::after,
+  .photoRight::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card img {
+    transition: none !important;
+  }
+}

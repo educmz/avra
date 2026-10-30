@@ -1,54 +1,25 @@
 import Image from "next/image";
-
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { Container } from "@/components/ui/Container";
-import {
-  AboutImage,
-  AboutItem,
-  AboutReveal,
-} from "@/components/about/AboutMotion";
 
 export function TeamSection() {
   return (
-    <section className="bg-background py-16 sm:py-20 lg:py-24">
+    <section aria-labelledby="about-team-title" className="bg-background py-12 sm:py-16 lg:py-20">
       <Container>
-        <div className="flex flex-col items-center gap-10 sm:flex-row sm:items-start sm:gap-12 lg:gap-16">
-          {/* TEXTO */}
-          <AboutReveal
-            className="w-full sm:w-[44%] lg:w-[42%]"
-            amount={0.5}
-          >
-            <AnimatedTitle
-              text={"Un equipo que\ndisfruta lo que hace"}
-              className="mt-4 text-[28px] font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-[34px] lg:text-[40px]"
-            />
-          </AboutReveal>
-
-          {/* IMAGEN */}
-          <AboutReveal
-            className="relative w-full sm:w-[56%] lg:w-[58%]"
-            amount={0.25}
-          >
-            {/* Decoración trasera */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -bottom-7 -left-7 z-0 hidden h-28 w-40 rounded-2xl bg-[#F6C9AC] sm:block"
-            />
-
-            <AboutImage
-              hover
-              className="relative z-10 aspect-[4/3] w-full overflow-hidden rounded-2xl bg-[#F3EADF] shadow-[0_30px_70px_-32px_rgba(48,46,42,0.35)] sm:rounded-3xl"
-            >
-              <Image
-                src="/images/about/equipo-avra.webp"
-                alt="Equipo de Avra"
-                fill
-                priority
-                sizes="(max-width: 639px) 100vw, 58vw"
-                className="object-cover object-center"
-              />
-            </AboutImage>
-          </AboutReveal>
+        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,.95fr)_minmax(0,1.05fr)] lg:gap-12">
+          <div>
+            <AnimatedTitle id="about-team-title" text="UN EQUIPO QUE DISFRUTA LO QUE HACE" className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
+            <div aria-hidden="true" className="mt-5 h-[3px] w-14 rounded-full bg-[#EA6F32]" />
+            <p className="mt-6 max-w-[54ch] text-justify text-base leading-7 text-[#302E2A]/80 sm:text-lg sm:leading-8">
+              Detrás de Avra hay personas que creen en los detalles: en elegir con cuidado, preparar con dedicación y buscar maneras más sencillas de compartir lo que nos gusta.
+            </p>
+            <p className="mt-4 max-w-[54ch] text-justify text-base leading-7 text-[#302E2A]/80 sm:text-lg sm:leading-8">
+              Seguimos aprendiendo y construyendo juntos una propuesta que combina sabor, cercanía y practicidad, con ganas de mejorar cada experiencia.
+            </p>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] bg-[#E8F0DE] sm:rounded-[28px]">
+            <Image src="/images/about/equipo-avra.png" alt="Equipo de Avra" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover object-center" />
+          </div>
         </div>
       </Container>
     </section>
