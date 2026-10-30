@@ -1,4 +1,4 @@
-import { AvraMachine3D } from "@/components/vending/AvraMachine3D";
+import Image from "next/image";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
@@ -8,8 +8,8 @@ const machine = {
     id: "avra", name: "Avra", kicker: "01 / Bebidas naturales",
     title: "Bebidas naturales, a tu alcance.",
     description: "La máquina naranja Avra está pensada para acercar una experiencia de bebidas naturales a diferentes momentos del día. Su diseño distintivo y su sistema de autoservicio hacen que elegir una bebida resulte práctico.",
-    image: "/images/vending/avra-equipo.jpg",
-    alt: "Máquina naranja Avra con dos ventanas y dispensador de bebidas",
+    image: "/images/vending/maquina-avra.png",
+    alt: "Máquina naranja Avra instalada en una zona de descanso de oficina",
     accent: "#EA6F32", bg: "#FFFFFF",
     details: [
       { title: "Especializada en bebidas", desc: "Una propuesta centrada en la experiencia de bebidas naturales." },
@@ -24,15 +24,19 @@ export function AvraMachineSection() {
   return (
     <section id="avra" aria-labelledby="avra-title" className="bg-background py-10 sm:py-14">
       <Container>
-        <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,.85fr)_minmax(0,1.15fr)] lg:gap-10">
-          <div className="min-w-0">
-            <div className="rounded-[1.75rem] p-4 sm:p-5" style={{ background: machine.bg }}>
-              <div className="relative mx-auto h-[290px] max-w-[400px] sm:h-[380px] lg:h-[430px]">
-                <AvraMachine3D fallbackSrc={machine.image} fallbackAlt={machine.alt} />
-              </div>
+        <div className="grid items-center gap-7 lg:grid-cols-2 lg:gap-10">
+          <div className="min-w-0 lg:order-2">
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[1.75rem] border border-[#302E2A]/10 bg-white shadow-[0_12px_30px_rgba(48,46,42,.09)] lg:aspect-[5/4]">
+              <Image
+                src={machine.image}
+                alt={machine.alt}
+                fill
+                sizes="(min-width: 1024px) 48vw, (min-width: 640px) 90vw, 100vw"
+                className="object-cover object-right"
+              />
             </div>
           </div>
-          <div className="min-w-0">
+          <div className="min-w-0 lg:order-1">
             <AnimatedTitle id={`${machine.id}-title`} text={machine.title} className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.06] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
             <div className="mt-3 h-[3px] w-14 rounded-full" style={{ background: machine.accent }} />
             <p className="mt-4 max-w-2xl text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">{machine.description}</p>
