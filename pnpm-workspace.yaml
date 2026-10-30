@@ -1,6 +1,0 @@
-# Use physical package directories so deployment copies do not depend on pnpm symlinks.
-nodeLinker: hoisted
-
-allowBuilds:
-  sharp: false
-  unrs-resolver: false
