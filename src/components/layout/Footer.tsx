@@ -120,7 +120,9 @@ export function Footer() {
                 <span>+51 948 742 332</span>
               </a>
             </div>
-
+            <p className="mt-5 max-w-[29ch] text-[13px] leading-relaxed text-[#FBF4EF]/75">
+              ¿Tienes consultas sobre nuestros productos o máquinas vending? Escríbenos.
+            </p>
           </div>
 
           <nav aria-label="Información legal" className="col-span-2 flex min-w-0 flex-col items-start sm:col-span-1">
@@ -151,9 +153,9 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t border-[#FBF4EF]/25 pt-4 sm:mt-9">
-          <div className="flex flex-col gap-2 text-[12px] text-[#FBF4EF]/85 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} Avra. Todos los derechos reservados.</p>
-            <p>Diseño y desarrollo <span className="font-semibold text-[#FBF4EF]">educmz</span></p>
+          <div className="flex flex-col gap-2 text-[12px] text-[#FBF4EF]/85 sm:flex-row sm:items-center sm:justify-between lg:grid lg:grid-cols-[1.2fr_.9fr_1.12fr_1.08fr] lg:items-start lg:gap-x-9 xl:gap-x-14">
+            <p className="lg:col-span-3">© {new Date().getFullYear()} Avra. Todos los derechos reservados.</p>
+            <p className="lg:col-start-4">Diseño y desarrollo <span className="font-semibold text-[#FBF4EF]">educmz</span></p>
           </div>
         </div>
       </Container>
