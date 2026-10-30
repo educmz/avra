@@ -72,16 +72,16 @@ function EssenceCard({
     <motion.article
       whileHover={{ y: -4 }}
       transition={{ duration: 0.25 }}
-      className={`${styles.card} group flex min-w-0 flex-col lg:flex-row ${featured ? "lg:min-h-[345px] xl:min-h-[375px]" : "lg:min-h-[330px] xl:min-h-[355px]"}`}
+      className={`${styles.card} group flex min-w-0 flex-col lg:flex-row ${featured ? "lg:min-h-[270px] xl:min-h-[280px]" : "lg:min-h-[275px] xl:min-h-[285px]"}`}
     >
       <div
-        className={`relative order-1 h-[230px] w-full shrink-0 overflow-hidden bg-[#EDE4DA] sm:h-[290px] lg:h-auto lg:w-[47%] ${photoRight ? `lg:order-2 ${styles.photoRight}` : "lg:order-1"}`}
+        className={`relative order-1 h-[185px] w-full shrink-0 overflow-hidden bg-[#EDE4DA] sm:h-[220px] lg:h-auto lg:w-[42%] ${photoRight ? `lg:order-2 ${styles.photoRight}` : "lg:order-1"}`}
       >
         <EssencePhoto item={item} />
       </div>
 
       <div
-        className={`order-2 flex min-w-0 flex-1 flex-col justify-center px-6 py-7 sm:px-8 lg:px-7 lg:py-8 xl:px-9 ${photoRight ? "lg:order-1" : "lg:order-2"}`}
+        className={`order-2 flex min-w-0 flex-1 flex-col justify-center px-5 py-5 sm:px-6 lg:px-5 lg:py-5 xl:px-7 ${photoRight ? "lg:order-1" : "lg:order-2"}`}
       >
         <p className="text-xs font-bold uppercase tracking-[.14em] text-[#295C50]">
           {item.label}
@@ -89,10 +89,10 @@ function EssenceCard({
         <h3 className="mt-3 font-heading text-xl font-extrabold uppercase leading-tight text-[#302E2A] sm:text-2xl">
           {item.title}
         </h3>
-        <p className="mt-4 text-base leading-7 text-[#302E2A]/75">
+        <p className="mt-3 text-[15px] leading-6 text-[#302E2A]/75 sm:text-base sm:leading-7">
           {item.description}
         </p>
-        <span aria-hidden="true" className="mt-6 block h-[3px] w-[60px] rounded-full bg-[#EA6F32]" />
+        <span aria-hidden="true" className="mt-4 block h-[3px] w-[60px] rounded-full bg-[#EA6F32]" />
       </div>
     </motion.article>
   );
@@ -102,10 +102,10 @@ export function EssenceSection() {
   return (
     <section
       aria-labelledby="about-essence-title"
-      className={`${styles.section} py-12 sm:py-16 lg:py-20`}
+      className={`${styles.section} py-10 sm:py-12 lg:py-14`
     >
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-6">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
           {/* Encabezado: misma tipografía y jerarquía que las demás secciones */}
           <div className="flex min-w-0 flex-col items-center justify-center px-2 py-7 text-center sm:py-10 lg:col-span-5 lg:items-start lg:py-8 lg:pl-6 lg:text-left xl:pl-[70px]">
             <AnimatedTitle
