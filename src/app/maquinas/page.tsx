@@ -47,13 +47,6 @@ export default function MachinesPage() {
 
       <AvraMachineSection />
       <NunaMachineSection />
-                </div>
-                <a href="/nosotros" className="avra-cta mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#295C50] px-5 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-[#173E34]">Conoce más de Avra <ArrowUpRight size={17} /></a>
-              </div>
-            </div>
-          </Container>
-        </section>
-      ))}
       <VendingReels />
       <section aria-labelledby="vending-overview-title" className="bg-background py-10 sm:py-12 lg:py-14">
         <Container>
