@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, CreditCard, MousePointerClick, PackageCheck, Leaf, Clock3, LayoutGrid, Smartphone } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Leaf, Clock3, LayoutGrid, Smartphone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { VendingReels } from "@/components/vending/VendingReels";
@@ -89,22 +89,6 @@ export default function MachinesPage() {
                 <p className="mt-1.5 text-justify text-base leading-7 text-[#302E2A]/70 sm:text-lg sm:leading-8">{desc}</p>
               </article>
             ))}
-          </div>
-          <div className="mt-9 border-t border-[#295C50]/15 pt-7 sm:mt-10 sm:pt-8">
-            <div className="mb-5 text-center">
-                <AnimatedTitle as="h3" text="¿Cómo funciona?" className="mt-1 font-heading text-[28px] font-extrabold uppercase text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
-            </div>
-            <div className="grid gap-3 md:grid-cols-3">
-              {[{Icon:MousePointerClick,title:"01. Elige",desc:"Explora las opciones del equipo y selecciona tu producto."},{Icon:CreditCard,title:"02. Paga",desc:"Sigue las instrucciones del sistema de pago disponible."},{Icon:PackageCheck,title:"03. Disfruta",desc:"Recoge tu producto y continúa con tu día."}].map(({Icon,title,desc})=>(
-                <article key={title} className="flex h-full items-start gap-3 rounded-2xl border border-[#295C50]/10 bg-white p-4 shadow-[0_4px_16px_rgba(48,46,42,.03)] sm:p-5">
-                  <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#EAF0E4] text-[#D86629]"><Icon size={21} aria-hidden="true" /></span>
-                  <div className="min-w-0">
-                    <h4 className="font-heading text-base font-bold text-[#302E2A]">{title}</h4>
-                    <p className="mt-1.5 text-justify text-base leading-7 text-[#302E2A]/70 sm:text-lg sm:leading-8">{desc}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
           </div>
         </Container>
       </section>
