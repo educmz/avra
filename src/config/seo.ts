@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 export const siteUrl = "https://avra.pe";
 export const indexablePaths = ["/", "/carta", "/maquinas", "/nosotros"] as const;
 
-// Keep the original, concise browser-tab labels without losing page-specific
-// descriptions, canonical URLs or richer titles for social previews.
+// Keep the Avra branding and descriptive browser-tab titles without losing
+// page-specific descriptions, canonical URLs or social previews.
 const browserTitles: Record<string, string> = {
   "/": "Avra | Activa lo natural",
-  "/carta": "Avra | Carta",
-  "/maquinas": "Avra | Vending saludable",
+  "/carta": "Avra | Carta de Alimentos y Bebidas",
+  "/maquinas": "Avra | Máquinas Vending Saludables",
   "/nosotros": "Avra | Nosotros",
   "/blog": "Avra | Blog",
   "/libro-de-reclamaciones": "Avra | Libro de reclamaciones",
