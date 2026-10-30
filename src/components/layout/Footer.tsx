@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, BookOpenText, Mail } from "lucide-react";
+import { BookOpenText, Mail } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { socialLinks } from "./socialLinks";
 
@@ -141,13 +141,12 @@ export function Footer() {
             <Link
               href="/libro-de-reclamaciones"
               aria-label="Ir al Libro de Reclamaciones de Avra"
-              className="group mt-4 inline-flex min-h-[69px] w-[190px] max-w-full items-center justify-center gap-2 rounded-xl border border-[#FBF4EF]/45 bg-white/[.025] px-3 py-2 text-center transition-colors hover:border-[#FBF4EF]/80 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="group mt-4 inline-flex min-h-[69px] w-[190px] max-w-full items-center justify-center gap-3.5 rounded-xl border border-[#FBF4EF]/45 bg-white/[.025] px-3 py-2 text-center transition-colors hover:border-[#FBF4EF]/80 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               <BookOpenText size={22} strokeWidth={1.6} aria-hidden="true" className="shrink-0" />
-              <span className="font-[family-name:var(--font-header)] text-[13px] font-semibold leading-tight">
+              <span className="ml-1 font-[family-name:var(--font-header)] text-[13px] font-semibold leading-tight">
                 Libro de<br />Reclamaciones
               </span>
-              <ArrowUpRight size={14} aria-hidden="true" className="self-start opacity-65 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </Link>
           </nav>
         </div>
