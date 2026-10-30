@@ -1,6 +1,6 @@
 "use client";
 
- import Image from "next/image";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
