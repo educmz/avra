@@ -75,7 +75,7 @@ function EssenceCard({
       className={`${styles.card} group flex min-w-0 flex-col lg:flex-row ${featured ? "lg:min-h-[270px] xl:min-h-[280px]" : "lg:min-h-[275px] xl:min-h-[285px]"}`}
     >
       <div
-        className={`relative order-1 h-[185px] w-full shrink-0 overflow-hidden bg-[#EDE4DA] sm:h-[220px] lg:h-auto lg:w-[42%] ${photoRight ? `lg:order-2 ${styles.photoRight}` : "lg:order-1"}`}
+        className={`relative order-1 h-[185px] w-full shrink-0 overflow-hidden bg-[#EDE4DA] sm:h-[220px] lg:h-auto lg:w-[42%] ${photoRight ? `lg:order-2 ${styles.photoRight}` : `lg:order-1 ${styles.photoLeft}`}`}
       >
         <EssencePhoto item={item} />
       </div>
