@@ -68,7 +68,7 @@ export function VendingReels() {
             className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-white sm:text-[34px] lg:text-[40px]"
           />
           <span aria-hidden="true" className="mx-auto mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
-          <p className="mx-auto mt-5 text-center text-base leading-7 text-white/80 md:whitespace-nowrap md:text-lg md:leading-8">
+          <p className="mx-auto mt-5 text-center text-base leading-7 text-white/80 lg:whitespace-nowrap sm:text-lg sm:leading-8">
             Conoce nuestras máquinas y descubre la experiencia Avra a través de videos reales.
           </p>
         </div>
