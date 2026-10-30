@@ -123,7 +123,7 @@ export function VendingReels() {
                 <article
                   key={reel.src}
                   style={{ transform }}
-                  className={`group/video absolute left-1/2 top-1/2 aspect-[9/16] w-[min(65vw,245px)] overflow-hidden rounded-[22px] bg-[#17241F] shadow-[0_16px_38px_rgba(9,31,26,.24)] will-change-transform transition-[transform,opacity,filter,box-shadow] duration-[700ms] ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none sm:w-[clamp(195px,24vw,280px)] sm:rounded-[26px] ${selected
+                  className={`group/video absolute left-1/2 top-1/2 aspect-[9/16] w-[min(67vw,250px)] overflow-hidden rounded-[22px] bg-[#17241F] shadow-[0_16px_38px_rgba(9,31,26,.24)] will-change-transform transition-[transform,opacity,filter,box-shadow] duration-[700ms] ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none sm:w-[clamp(205px,25vw,290px)] sm:rounded-[26px] ${selected
                     ? "z-20 opacity-100 shadow-[0_25px_55px_rgba(6,29,24,.4)]"
                     : "pointer-events-none z-10 opacity-0 brightness-75 sm:pointer-events-auto sm:cursor-pointer sm:opacity-75 sm:hover:opacity-95 sm:hover:brightness-100"}`}
                 >
@@ -157,9 +157,6 @@ export function VendingReels() {
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 px-4 pb-5 pt-12 text-left sm:px-5 sm:pb-6">
                     <p className="font-heading text-base font-extrabold uppercase leading-tight text-white sm:text-lg">
                       {reel.title}
-                    </p>
-                    <p className={`mt-1 text-xs text-white/75 transition-opacity duration-300 ${selected ? "opacity-100" : "opacity-0"}`}>
-                      Avra · Vending saludable
                     </p>
                   </div>
 
