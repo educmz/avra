@@ -1,48 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, CreditCard, MousePointerClick, PackageCheck, Leaf, Clock3, LayoutGrid, Smartphone } from "lucide-react";
+import { Leaf, Clock3, LayoutGrid, Smartphone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { VendingReels } from "@/components/vending/VendingReels";
+import { AvraMachineSection } from "@/components/vending/AvraMachineSection";
+import { NunaMachineSection } from "@/components/vending/NunaMachineSection";
+import { VendingContactSection } from "@/components/vending/VendingContactSection";
 
 export const metadata: Metadata = {
   title: "Vending saludable",
   description: "Conoce las máquinas Avra y Nuna, sus productos y su funcionamiento. Bebidas naturales y comidas prácticas en un formato de autoservicio.",
 };
 
-const machines = [
-  {
-    id: "avra", name: "Avra", kicker: "01 / Bebidas naturales",
-    title: "Bebidas naturales, a tu alcance.",
-    description: "La máquina naranja Avra está pensada para acercar una experiencia de bebidas naturales a diferentes momentos del día. Su diseño distintivo y su sistema de autoservicio hacen que elegir una bebida resulte práctico.",
-    image: "/images/vending/avra-equipo.jpg",
-    alt: "Máquina naranja Avra con dos ventanas y dispensador de bebidas",
-    accent: "#EA6F32", bg: "#FFFFFF",
-    details: [
-      { title: "Especializada en bebidas", desc: "Una propuesta centrada en la experiencia de bebidas naturales." },
-      { title: "Dispensación directa", desc: "Espacio frontal dedicado a recibir la bebida seleccionada." },
-      { title: "Identidad Avra", desc: "Diseño naranja, distintivo y fácil de reconocer." },
-      { title: "Uso intuitivo", desc: "Interfaz de selección y área de pago integradas en el equipo." },
-    ],
-    perks: ["Una experiencia diferente", "Diseño reconocible", "Practicidad cotidiana"],
-  },
-  {
-    id: "nuna", name: "Nuna", kicker: "02 / Comidas y snacks",
-    title: "Comidas y snacks para tu día.",
-    description: "El formato Nuna muestra alimentos en envases individuales y una selección de bebidas. Su vitrina facilita ver las opciones disponibles y su pantalla permite interactuar con el equipo. La fotografía del equipo Nuna se presenta como referencia.",
-    image: "/images/vending/nuna-equipo.jpg",
-    alt: "Máquina Nuna negra y verde con vitrina de comidas envasadas y bebidas",
-    accent: "#428C42", bg: "#FFFFFF",
-    details: [
-      { title: "Vitrina de productos", desc: "Los alimentos y bebidas quedan visibles antes de elegir." },
-      { title: "Variedad de formatos", desc: "Espacios para envases individuales y bebidas embotelladas." },
-      { title: "Pantalla de selección", desc: "Interfaz para consultar y seleccionar productos." },
-      { title: "Recogida accesible", desc: "Compartimento frontal para retirar la compra." },
-    ],
-    perks: ["Opciones listas para elegir", "Productos a la vista", "Autoservicio práctico"],
-  },
-];
 
 export default function MachinesPage() {
   return (
@@ -75,6 +45,9 @@ export default function MachinesPage() {
         </div>
       </section>
 
+      <AvraMachineSection />
+      <NunaMachineSection />
+      <VendingReels />
       <section aria-labelledby="vending-overview-title" className="bg-background py-10 sm:py-12 lg:py-14">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
@@ -90,58 +63,9 @@ export default function MachinesPage() {
               </article>
             ))}
           </div>
-          <div className="mt-9 border-t border-[#295C50]/15 pt-7 sm:mt-10 sm:pt-8">
-            <div className="mb-5 text-center">
-                <AnimatedTitle as="h3" text="¿Cómo funciona?" className="mt-1 font-heading text-[28px] font-extrabold uppercase text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
-            </div>
-            <div className="grid gap-3 md:grid-cols-3">
-              {[{Icon:MousePointerClick,title:"01. Elige",desc:"Explora las opciones del equipo y selecciona tu producto."},{Icon:CreditCard,title:"02. Paga",desc:"Sigue las instrucciones del sistema de pago disponible."},{Icon:PackageCheck,title:"03. Disfruta",desc:"Recoge tu producto y continúa con tu día."}].map(({Icon,title,desc})=>(
-                <article key={title} className="flex h-full items-start gap-3 rounded-2xl border border-[#295C50]/10 bg-white p-4 shadow-[0_4px_16px_rgba(48,46,42,.03)] sm:p-5">
-                  <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#EAF0E4] text-[#D86629]"><Icon size={21} aria-hidden="true" /></span>
-                  <div className="min-w-0">
-                    <h4 className="font-heading text-base font-bold text-[#302E2A]">{title}</h4>
-                    <p className="mt-1.5 text-justify text-base leading-7 text-[#302E2A]/70 sm:text-lg sm:leading-8">{desc}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
         </Container>
       </section>
-      {machines.map((machine, index) => (
-        <section key={machine.id} id={machine.id} aria-labelledby={`${machine.id}-title`} className={"bg-background py-10 sm:py-14"}>
-          <Container>
-            <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,.85fr)_minmax(0,1.15fr)] lg:gap-10">
-              <div className={`min-w-0 ${index === 1 ? "lg:order-2" : ""}`}>
-                <div className="rounded-[1.75rem] p-4 sm:p-5" style={{ background: machine.bg }}>
-                  <div className="relative mx-auto h-[290px] max-w-[400px] sm:h-[380px] lg:h-[430px]">
-                    <Image src={machine.image} alt={machine.alt} fill sizes="(min-width:1024px) 42vw, 90vw" className="object-contain" />
-                  </div>
-                </div>
-              </div>
-              <div className={`min-w-0 ${index === 1 ? "lg:order-1" : ""}`}>
-                <AnimatedTitle id={`${machine.id}-title`} text={machine.title} className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.06] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
-                <div className="mt-3 h-[3px] w-14 rounded-full" style={{ background: machine.accent }} />
-                <p className="mt-4 max-w-2xl text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">{machine.description}</p>
-                <h3 className="mt-6 font-heading text-base font-extrabold uppercase tracking-wide text-[#302E2A]">Características del equipo</h3>
-                <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                  {machine.details.map((detail) => (
-                    <article key={detail.title} className="rounded-xl border border-[#302E2A]/10 bg-white/80 p-3.5 sm:p-4">
-                      <div className="flex items-center gap-2">
-                        <CheckCircle2 size={18} className="shrink-0" style={{ color: machine.accent }} aria-hidden="true" />
-                        <h4 className="font-heading text-sm font-bold leading-snug text-[#302E2A]">{detail.title}</h4>
-                      </div>
-                      <p className="mt-1.5 text-justify text-base leading-7 text-[#302E2A]/70 sm:text-lg sm:leading-8">{detail.desc}</p>
-                    </article>
-                  ))}
-                </div>
-                <a href="/nosotros" className="avra-cta mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#295C50] px-5 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-[#173E34]">Conoce más de Avra <ArrowUpRight size={17} /></a>
-              </div>
-            </div>
-          </Container>
-        </section>
-      ))}
-      <VendingReels />
+      <VendingContactSection />
     </main>
   );
 }
