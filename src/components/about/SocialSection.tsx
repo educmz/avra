@@ -181,7 +181,7 @@ export function SocialSection() {
 
         {/* REDES */}
         <AboutReveal
-          className="mx-auto grid w-full max-w-[1120px] gap-7 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 xl:gap-12"
+          className="mx-auto grid w-full max-w-[1120px] gap-x-7 gap-y-12 sm:gap-y-7 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 xl:gap-12"
           amount={0.2}
           stagger={0.12}
         >
