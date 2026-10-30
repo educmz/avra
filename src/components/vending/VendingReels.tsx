@@ -149,7 +149,7 @@ export function VendingReels() {
             }
           }}
           onTouchCancel={() => { touchStart.current = null; }}
-          className="relative h-[565px] touch-pan-y outline-none focus-visible:rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:h-[650px] lg:h-[705px] [--reel-step:86vw] sm:[--reel-step:390px] lg:[--reel-step:clamp(400px,36vw,480px)]"
+          className="relative h-[510px] touch-pan-y outline-none focus-visible:rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:h-[625px] lg:h-[665px] [--reel-step:86vw] sm:[--reel-step:390px] lg:[--reel-step:clamp(400px,36vw,480px)]"
         >
           {reels.map((reel, index) => {
             const relative = (index - active + reels.length) % reels.length;
@@ -171,7 +171,7 @@ export function VendingReels() {
                 style={{
                   transform: `translate3d(${horizontal}, -50%, 0) scale(${selected ? 1 : 0.91})`,
                 }}
-                className={`absolute left-1/2 top-1/2 aspect-[0.59] w-[min(78vw,330px)] overflow-hidden rounded-[21px] bg-white text-[#302E2A] shadow-[0_18px_52px_rgba(4,24,21,0.25)] transition-[transform,opacity,filter,box-shadow] duration-500 ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none sm:w-[clamp(330px,30vw,390px)] lg:w-[400px] ${selected
+                className={`absolute left-1/2 top-1/2 aspect-[0.63] w-[min(78vw,330px)] overflow-hidden rounded-[21px] bg-[#142820] text-[#302E2A] shadow-[0_18px_52px_rgba(4,24,21,0.25)] transition-[transform,opacity,filter,box-shadow] duration-500 ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none sm:w-[clamp(330px,30vw,390px)] lg:w-[400px] ${selected
                   ? "z-20 opacity-100 shadow-[0_26px_60px_rgba(3,28,23,0.4)]"
                   : "z-10 opacity-50 brightness-[0.8]"}`}
               >
@@ -198,25 +198,6 @@ export function VendingReels() {
                   </>
                 ) : (
                   <div className="flex h-full flex-col">
-                    <div className="flex h-[57px] shrink-0 items-center justify-between gap-3 border-b border-[#E9E7E3] px-4">
-                      <div className="flex min-w-0 items-center gap-2.5">
-                        <span className="grid size-8 shrink-0 place-items-center rounded-full bg-[#295C50] text-white">
-                          <Play size={14} fill="currentColor" strokeWidth={1.5} aria-hidden="true" />
-                        </span>
-                        <div className="min-w-0">
-                          <span className="block truncate font-heading text-xs font-extrabold leading-tight text-[#302E2A]">
-                            Nuestras máquinas
-                          </span>
-                          <span className="block text-[11px] leading-tight text-[#302E2A]/60">
-                            Video original
-                          </span>
-                        </div>
-                      </div>
-                      <span className="shrink-0 rounded-md bg-[#EBF1EB] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[#295C50]">
-                        Vending
-                      </span>
-                    </div>
-
                     <div className="group/video relative min-h-0 flex-1 overflow-hidden bg-[#142820]">
                       <video
                         ref={(node) => { videoRefs.current[index] = node; }}
