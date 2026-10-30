@@ -53,39 +53,41 @@ export function Footer() {
       <Container className="relative z-10 pb-4 pt-9 sm:pt-10 lg:pt-11">
         <div className="grid grid-cols-2 gap-x-7 gap-y-8 sm:gap-x-12 lg:grid-cols-[1.2fr_.9fr_1.12fr_1.08fr] lg:gap-x-9 xl:gap-x-14">
           <div className="col-span-2 flex min-w-0 flex-col items-start lg:col-span-1">
-            <Link
-              href="/"
-              aria-label="Avra, ir al inicio"
-              className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-            >
-              <Image
-                src="/images/brand/avra-wordmark-black.png"
-                alt="Avra"
-                width={2172}
-                height={724}
-                className="h-auto w-[148px] brightness-0 invert lg:w-[158px]"
-              />
-            </Link>
-            <p className="mt-1 text-[14px] font-medium">Activa lo natural.</p>
+            <div className="flex w-[148px] flex-col items-center text-center lg:w-[158px]">
+              <Link
+                href="/"
+                aria-label="Avra, ir al inicio"
+                className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              >
+                <Image
+                  src="/images/brand/avra-wordmark-black.png"
+                  alt="Avra"
+                  width={2172}
+                  height={724}
+                  className="h-auto w-[148px] brightness-0 invert lg:w-[158px]"
+                />
+              </Link>
+              <p className="mt-1 text-[14px] font-medium">Activa lo natural.</p>
 
-            <div className="mt-4 flex items-center gap-2.5" aria-label="Redes sociales de Avra">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="grid size-9 place-items-center rounded-lg bg-[#FBF4EF] text-[#295C50] transition-all hover:-translate-y-0.5 hover:bg-[#EADFCF] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
-                >
-                  {social.icon}
-                </a>
-              ))}
+              <div className="mt-4 flex items-center justify-center gap-2.5" aria-label="Redes sociales de Avra">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="grid size-9 place-items-center rounded-lg bg-[#FBF4EF] text-[#295C50] transition-all hover:-translate-y-0.5 hover:bg-[#EADFCF] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
           <nav aria-label="Explora Avra" className="flex min-w-0 flex-col items-start">
-            <h2 className="font-[family-name:var(--font-header)] text-[16px] font-semibold">Explora</h2>
+            <h2 className="font-[family-name:var(--font-manrope)] text-[15px] font-semibold tracking-normal">Explora</h2>
             <div className="mt-4 flex flex-col items-start gap-2.5">
               {exploreLinks.map((item) => (
                 <Link key={item.href} href={item.href} className={linkClass}>
@@ -96,7 +98,7 @@ export function Footer() {
           </nav>
 
           <div className="flex min-w-0 flex-col items-start">
-            <h2 className="font-[family-name:var(--font-header)] text-[16px] font-semibold">Contacto</h2>
+            <h2 className="font-[family-name:var(--font-manrope)] text-[15px] font-semibold tracking-normal">Contacto</h2>
             <div className="mt-4 flex flex-col items-start gap-3">
               <a
                 href="mailto:hola@avra.pe"
@@ -122,7 +124,7 @@ export function Footer() {
           </div>
 
           <nav aria-label="Información legal" className="col-span-2 flex min-w-0 flex-col items-start sm:col-span-1">
-            <h2 className="font-[family-name:var(--font-header)] text-[16px] font-semibold">Legal</h2>
+            <h2 className="font-[family-name:var(--font-manrope)] text-[15px] font-semibold tracking-normal">Legal</h2>
             <div className="mt-4 flex flex-col items-start gap-2.5">
               <Link href={legalLinks[0].href} className={linkClass}>
                 {legalLinks[0].label}
