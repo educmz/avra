@@ -123,7 +123,7 @@ export function VendingReels() {
                 <article
                   key={reel.src}
                   style={{ transform }}
-                  className={`group/video absolute left-1/2 top-1/2 aspect-[9/16] w-[min(67vw,250px)] overflow-hidden rounded-[22px] bg-[#17241F] shadow-[0_16px_38px_rgba(9,31,26,.24)] will-change-transform transition-[transform,opacity,filter,box-shadow] duration-[700ms] ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none sm:w-[clamp(205px,25vw,290px)] sm:rounded-[26px] ${selected
+                  className={`group/video absolute left-1/2 top-1/2 aspect-[9/16] w-[min(68vw,252px)] overflow-hidden rounded-[22px] bg-[#17241F] shadow-[0_16px_38px_rgba(9,31,26,.24)] will-change-transform transition-[transform,opacity,filter,box-shadow] duration-[700ms] ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none sm:w-[clamp(215px,26vw,300px)] sm:rounded-[26px] ${selected
                     ? "z-20 opacity-100 shadow-[0_25px_55px_rgba(6,29,24,.4)]"
                     : "pointer-events-none z-10 opacity-0 brightness-75 sm:pointer-events-auto sm:cursor-pointer sm:opacity-75 sm:hover:opacity-95 sm:hover:brightness-100"}`}
                 >
