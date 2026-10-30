@@ -75,7 +75,7 @@ export function VendingReels() {
 
         <div className="relative mx-auto mt-7 w-full max-w-[1000px] sm:mt-9">
           <div
-            className="relative mx-auto h-[410px] w-full max-w-[890px] [--reel-step:38vw] sm:h-[450px] sm:[--reel-step:clamp(185px,26vw,275px)] lg:h-[500px]"
+            className="relative mx-auto h-[450px] w-full max-w-[890px] [--reel-step:40vw] sm:h-[480px] sm:[--reel-step:clamp(200px,28vw,305px)] lg:h-[540px]"
           >
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-[16%] inset-y-[15%] rounded-full bg-white/[.045] blur-3xl" />
 
@@ -96,7 +96,7 @@ export function VendingReels() {
                 <article
                   key={reel.src}
                   style={{ transform }}
-                  className={`group/video absolute left-1/2 top-1/2 aspect-[9/16] w-[min(60vw,225px)] overflow-hidden rounded-[22px] border bg-[#17241F] shadow-[0_16px_38px_rgba(9,31,26,.24)] will-change-transform transition-[transform,opacity,filter,border-color,box-shadow] duration-[700ms] ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none sm:w-[clamp(180px,22vw,255px)] sm:rounded-[26px] ${selected
+                  className={`group/video absolute left-1/2 top-1/2 aspect-[9/16] w-[min(65vw,245px)] overflow-hidden rounded-[22px] border bg-[#17241F] shadow-[0_16px_38px_rgba(9,31,26,.24)] will-change-transform transition-[transform,opacity,filter,border-color,box-shadow] duration-[700ms] ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none sm:w-[clamp(195px,24vw,280px)] sm:rounded-[26px] ${selected
                     ? "z-20 border-white/55 opacity-100 shadow-[0_25px_55px_rgba(6,29,24,.4)]"
                     : "pointer-events-none z-10 border-white/15 opacity-0 brightness-75 sm:pointer-events-auto sm:opacity-75 sm:hover:border-white/40 sm:hover:opacity-95 sm:hover:brightness-100"}`}
                 >
