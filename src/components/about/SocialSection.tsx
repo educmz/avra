@@ -24,7 +24,6 @@ import { motion } from "motion/react";
 import { socialConfig } from "@/config/socials";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import {
-  AboutItem,
   AboutReveal,
   aboutCardVariants,
 } from "@/components/about/AboutMotion";
