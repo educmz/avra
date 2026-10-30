@@ -1,54 +1,68 @@
 import Image from "next/image";
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { CreditCard, GlassWater, HandHelping, MousePointerClick } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
+
+const whatsappUrl = `https://wa.me/51948742332?text=${encodeURIComponent(
+  "Hola, me gustaría recibir información sobre el equipo de bebidas naturales de Avra y cómo instalarlo en mi espacio."
+)}`;
 
 // Los datos y el diseño de esta máquina se mantienen independientes de la otra.
 const machine = {
     id: "avra", name: "Avra", kicker: "01 / Bebidas naturales",
-    title: "Bebidas naturales, a tu alcance.",
-    description: "La máquina naranja Avra está pensada para acercar una experiencia de bebidas naturales a diferentes momentos del día. Su diseño distintivo y su sistema de autoservicio hacen que elegir una bebida resulte práctico.",
-    image: "/images/vending/avra-equipo.jpg",
-    alt: "Máquina naranja Avra con dos ventanas y dispensador de bebidas",
+    title: "Bebidas naturales, a tu alcance",
+    description: "Con Avra, disfrutar bebidas naturales es más fácil. Una experiencia de autoservicio práctica y cómoda, pensada para acompañar cada pausa en tu espacio.",
+    image: "/images/vending/maquina-avra.png",
+    alt: "Equipo dispensador naranja de Avra en una zona de descanso de oficina",
     accent: "#EA6F32", bg: "#FFFFFF",
     details: [
-      { title: "Especializada en bebidas", desc: "Una propuesta centrada en la experiencia de bebidas naturales." },
-      { title: "Dispensación directa", desc: "Espacio frontal dedicado a recibir la bebida seleccionada." },
-      { title: "Identidad Avra", desc: "Diseño naranja, distintivo y fácil de reconocer." },
-      { title: "Uso intuitivo", desc: "Interfaz de selección y área de pago integradas en el equipo." },
+      { label: "Bebidas naturales", Icon: GlassWater },
+      { label: "Selección en pantalla", Icon: MousePointerClick },
+      { label: "Pago en la máquina", Icon: CreditCard },
+      { label: "Retiro directo de tu bebida", Icon: HandHelping },
     ],
     perks: ["Una experiencia diferente", "Diseño reconocible", "Practicidad cotidiana"],
   };
 
 export function AvraMachineSection() {
   return (
-    <section id="avra" aria-labelledby="avra-title" className="bg-background py-10 sm:py-14">
+    <section id="avra" aria-labelledby="avra-title" className="bg-background pt-10 pb-16 sm:pt-14 sm:pb-24 lg:pb-28">
       <Container>
-        <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,.85fr)_minmax(0,1.15fr)] lg:gap-10">
-          <div className="min-w-0">
-            <div className="rounded-[1.75rem] p-4 sm:p-5" style={{ background: machine.bg }}>
-              <div className="relative mx-auto h-[290px] max-w-[400px] sm:h-[380px] lg:h-[430px]">
-                <Image src={machine.image} alt={machine.alt} fill sizes="(min-width:1024px) 42vw, 90vw" className="object-contain" />
-              </div>
+        <div className="grid items-center gap-7 lg:grid-cols-2 lg:gap-10">
+          <div className="min-w-0 lg:order-2">
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[1.75rem] border border-[#302E2A]/10 bg-white shadow-[0_12px_30px_rgba(48,46,42,.09)] lg:aspect-[5/4]">
+              <Image
+                src={machine.image}
+                alt={machine.alt}
+                fill
+                sizes="(min-width: 1024px) 48vw, (min-width: 640px) 90vw, 100vw"
+                className="object-cover object-right"
+              />
             </div>
           </div>
-          <div className="min-w-0">
+          <div className="min-w-0 lg:order-1">
             <AnimatedTitle id={`${machine.id}-title`} text={machine.title} className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.06] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
-            <div className="mt-3 h-[3px] w-14 rounded-full" style={{ background: machine.accent }} />
+            <div className="mt-3 h-[4px] w-[96px] shrink-0 rounded-full" style={{ background: machine.accent }} />
             <p className="mt-4 max-w-2xl text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">{machine.description}</p>
             <h3 className="mt-6 font-heading text-base font-extrabold uppercase tracking-wide text-[#302E2A]">Características del equipo</h3>
-            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
               {machine.details.map((detail) => (
-                <article key={detail.title} className="rounded-xl border border-[#302E2A]/10 bg-white/80 p-3.5 sm:p-4">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 size={18} className="shrink-0" style={{ color: machine.accent }} aria-hidden="true" />
-                    <h4 className="font-heading text-sm font-bold leading-snug text-[#302E2A]">{detail.title}</h4>
-                  </div>
-                  <p className="mt-1.5 text-justify text-base leading-7 text-[#302E2A]/70 sm:text-lg sm:leading-8">{detail.desc}</p>
-                </article>
+                <li
+                  key={detail.label}
+                  className="group flex min-h-[58px] items-center gap-3 rounded-[14px] border border-[#295C50]/10 bg-white/85 px-3 py-2.5 shadow-[0_4px_14px_rgba(41,92,80,0.035)] transition-[border-color,background-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-[#EA6F32]/35 hover:bg-white hover:shadow-[0_8px_22px_rgba(41,92,80,0.08)] motion-reduce:transform-none motion-reduce:transition-none"
+                >
+                  <span className="grid size-8 shrink-0 place-items-center rounded-[10px] bg-[#FFF0E5] text-[#EA6F32] transition-[background-color,color,transform] duration-300 group-hover:scale-105 group-hover:bg-[#EA6F32] group-hover:text-white motion-reduce:transform-none motion-reduce:transition-none">
+                    <detail.Icon size={18} strokeWidth={1.9} aria-hidden="true" />
+                  </span>
+                  <span className="text-[14px] font-semibold leading-snug text-[#295C50] sm:text-[15px]">
+                    {detail.label}
+                  </span>
+                </li>
               ))}
-            </div>
-            <a href="/nosotros" className="avra-cta mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#295C50] px-5 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-[#173E34]">Conoce más de Avra <ArrowUpRight size={17} /></a>
+            </ul>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="avra-cta mt-5 w-fit">
+              <span>Solicitar información</span>
+            </a>
           </div>
         </div>
       </Container>

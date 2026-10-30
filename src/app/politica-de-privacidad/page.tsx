@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 
-import { PrivacyPolicy } from "../../components/legal/PrivacyPolicy";
+import { ComingSoonLegalPage } from "@/components/legal/ComingSoonLegalPage";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidad",
-  description:
-    "Conoce de forma clara cómo Avra trata la información relacionada con el uso de su sitio web.",
+  title: "Política de privacidad | Avra",
+  description: "Sección de política de privacidad de Avra en preparación.",
 };
 
 export default function PrivacyPolicyPage() {
-  return <PrivacyPolicy />;
+  return <ComingSoonLegalPage title="Política de privacidad" />;
 }

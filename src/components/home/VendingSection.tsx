@@ -17,7 +17,7 @@ export function VendingSection() {
         <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,.87fr)_minmax(0,1.6fr)] lg:gap-10 xl:gap-14">
           <div className="min-w-0">
             <AnimatedTitle id="vending-title" text="LO NATURAL, MÁS CERCA DE TI" className="max-w-[500px] font-heading text-[28px] font-extrabold uppercase leading-[1.07] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
-            <span aria-hidden="true" className="mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
+            <span aria-hidden="true" className="mt-5 block h-[4px] w-[96px] rounded-full bg-[#EA6F32]" />
             <p className="mt-6 max-w-[44ch] text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
               Bebidas y snacks deliciosos, siempre disponibles. Descubre una forma práctica y moderna de disfrutar opciones más saludables.
             </p>
@@ -35,8 +35,7 @@ export function VendingSection() {
                   </div>
                   <div className="flex items-center justify-between gap-2 bg-[#FBF4EF] px-3 py-3 sm:px-5 sm:py-4">
                     <div className="min-w-0">
-                      <h3 className="font-heading text-lg font-extrabold leading-tight text-[#302E2A] sm:text-2xl">{machine.name}</h3>
-                      <p className="mt-1 text-sm leading-5 text-[#302E2A]/70 sm:text-base">{machine.description}</p>
+                      <p className="text-sm leading-5 text-[#302E2A]/70 sm:text-base">{machine.description}</p>
                     </div>
                     <span className="grid size-9 shrink-0 place-items-center rounded-full transition-transform duration-300 group-hover:translate-x-1 sm:size-10" style={{ backgroundColor: machine.bg, color: machine.accent }}>
                       <ArrowRight size={19} aria-hidden="true" />

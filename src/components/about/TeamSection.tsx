@@ -9,7 +9,7 @@ export function TeamSection() {
         <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,.95fr)_minmax(0,1.05fr)] lg:gap-12">
           <div>
             <AnimatedTitle id="about-team-title" text="UN EQUIPO QUE DISFRUTA LO QUE HACE" className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
-            <div aria-hidden="true" className="mt-5 h-[3px] w-14 rounded-full bg-[#EA6F32]" />
+            <div aria-hidden="true" className="mt-5 h-[4px] w-[96px] rounded-full bg-[#EA6F32]" />
             <p className="mt-6 max-w-[54ch] text-justify text-base leading-7 text-[#302E2A]/80 sm:text-lg sm:leading-8">
               Detrás de Avra hay personas que creen en los detalles: en elegir con cuidado, preparar con dedicación y buscar maneras más sencillas de compartir lo que nos gusta.
             </p>
