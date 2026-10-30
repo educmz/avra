@@ -69,7 +69,7 @@ export function VendingSpacesSection() {
                   </span>
                   <h3
                     className="mt-3 max-w-[260px] text-[15px] leading-[1.4] tracking-normal text-[#295C50] sm:text-base"
-                    style={{ fontFamily: "var(--font-manrope), Arial, sans-serif", fontWeight: 500 }}
+                    style={{ fontFamily: "var(--font-manrope), Arial, sans-serif", fontWeight: 650 }}
                   >
                     {label}
                   </h3>
