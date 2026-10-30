@@ -75,7 +75,7 @@ export function HeroSection() {
       }}
       onTouchCancel={() => { touchStart.current = null; }}
     >
-      <div data-home-hero className="group relative aspect-[870/863] w-full overflow-hidden bg-[#E8EFE7] md:aspect-auto md:h-[clamp(340px,34.6vw,650px)]">
+      <div data-home-hero className="group relative aspect-[870/863] w-full overflow-hidden bg-[#E8EFE7] md:aspect-[3/1]">
         {slides.map((slide, index) => {
           const isActive = index === activeSlide;
           const imageOptions = {
