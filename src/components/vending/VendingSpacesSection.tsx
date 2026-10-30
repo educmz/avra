@@ -1,56 +1,70 @@
-import Image from "next/image";
+import { Clock3, Leaf, Store } from "lucide-react";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { Container } from "@/components/ui/Container";
-
-// Imagen temporal: sustituir este archivo por la fotografía definitiva que aporte el cliente.
-// Se muestra una imagen existente distinta de la del CTA final hasta contar con la fotografía definitiva.
-const spaceImage = "/images/vending/avra-home.png";
 
 const whatsappUrl = `https://wa.me/51948742332?text=${encodeURIComponent(
   "Hola, me gustaría recibir información sobre las máquinas expendedoras Avra para mi establecimiento."
 )}`;
 
+const reasons = [
+  {
+    Icon: Leaf,
+    title: "Opciones saludables",
+    description: "Alimentos y bebidas pensados para acompañar el día de quienes visitan tu espacio.",
+  },
+  {
+    Icon: Clock3,
+    title: "Practicidad",
+    description: "Una experiencia de autoservicio cómoda, rápida y fácil de incorporar a la rutina.",
+  },
+  {
+    Icon: Store,
+    title: "Valor para tu espacio",
+    description: "Una propuesta moderna que suma una nueva opción para tus colaboradores o visitantes.",
+  },
+];
+
 export function VendingSpacesSection() {
   return (
-    <section aria-labelledby="vending-spaces-title" className="bg-background py-10 sm:py-14 lg:py-20">
+    <section aria-labelledby="vending-spaces-title" className="bg-background py-12 sm:py-16 lg:py-20">
       <Container>
-        <div className="isolate overflow-hidden rounded-[26px] border border-[#302E2A]/[0.06] bg-[#F8EEE5] shadow-[0_14px_45px_rgba(48,46,42,0.06)] sm:rounded-[32px]">
-          <div className="grid lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)]">
-            <div className="flex min-w-0 flex-col justify-center px-6 py-10 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
-              <p className="font-heading text-xs font-extrabold uppercase tracking-[0.2em] text-[#EA6F32] sm:text-sm">
-                Avra en tu espacio
-              </p>
-              <AnimatedTitle
-                id="vending-spaces-title"
-                text="Haz que tu espacio ofrezca algo más."
-                className="mt-5 max-w-[16ch] font-heading text-[30px] font-extrabold uppercase leading-[1.08] tracking-[-0.03em] text-[#302E2A] sm:text-[38px] lg:text-[42px]"
-              />
-              <span aria-hidden="true" className="mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
-              <p className="mt-6 max-w-[51ch] text-base leading-7 text-[#302E2A]/80 sm:text-lg sm:leading-8">
-                ¿Te gustaría contar con una máquina expendedora Avra en tu establecimiento?
-                Cuéntanos sobre tu espacio y conversemos sobre las opciones disponibles.
-              </p>
-              <div className="mt-7 flex flex-wrap items-center gap-4">
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="avra-cta">
-                  <span>Solicitar información</span>
-                </a>
-              </div>
-              <p className="mt-4 max-w-[49ch] text-sm leading-6 text-[#302E2A]/65">
-                Cada espacio es diferente. Conversemos sobre el tuyo.
-              </p>
-            </div>
+        <div className="mx-auto max-w-[820px] text-center">
+          <AnimatedTitle
+            id="vending-spaces-title"
+            text="¿POR QUÉ ELEGIR AVRA?"
+            className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]"
+          />
+          <span aria-hidden="true" className="mx-auto mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
+          <p className="mx-auto mt-6 max-w-[740px] text-center text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
+            Creemos que comer mejor debería ser fácil, práctico y accesible. Por eso,
+            llevamos opciones de alimentación saludable directamente a los espacios
+            donde las personas pasan su día.
+          </p>
+        </div>
 
-            <div className="relative min-h-[280px] overflow-hidden bg-[#E9DED2] sm:min-h-[370px] lg:min-h-[470px]">
-              <Image
-                src={spaceImage}
-                alt="Ambiente cálido y natural, como referencia de los espacios que podrían contar con Avra"
-                fill
-                sizes="(min-width: 1024px) 45vw, (min-width: 640px) 90vw, 100vw"
-                className="object-cover object-[right_center]"
-              />
-              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#173E34]/10 via-transparent to-transparent" />
+        <div className="mx-auto mt-11 grid max-w-[1120px] gap-10 text-center sm:grid-cols-3 sm:gap-7 lg:mt-14 lg:gap-14">
+          {reasons.map(({ Icon, title, description }) => (
+            <div key={title} className="flex flex-col items-center">
+              <Icon className="size-8 text-[#295C50] sm:size-9" strokeWidth={1.7} aria-hidden="true" />
+              <h3 className="mt-5 font-heading text-lg font-extrabold leading-snug text-[#302E2A]">
+                {title}
+              </h3>
+              <p className="mt-3 max-w-[32ch] text-center text-base leading-7 text-[#302E2A]/70">
+                {description}
+              </p>
             </div>
-          </div>
+          ))}
+        </div>
+
+        <div className="mt-11 flex justify-center lg:mt-14">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="avra-cta"
+          >
+            <span>Quiero una máquina AVRA</span>
+          </a>
         </div>
       </Container>
     </section>
