@@ -8,15 +8,16 @@ export function EssencePreviewSection() {
   return (
     <section aria-labelledby="home-essence-title" className="bg-background py-12 sm:py-16 lg:py-20">
       <Container>
-        <div className="relative isolate overflow-hidden rounded-[24px] bg-[#E8F0DE] sm:min-h-[450px] sm:rounded-[28px] lg:min-h-[460px]">
+        <div className="relative isolate min-h-[420px] overflow-hidden rounded-[24px] bg-[#E8F0DE] sm:min-h-[450px] sm:rounded-[28px] lg:min-h-[460px]">
           <Image
             src="/images/home/cta/essence-home.png"
             alt="Waffle, sándwich y pizza de Avra sobre fondo verde claro"
             fill
             sizes="(min-width:1280px) 1200px, 100vw"
-            className="hidden object-cover object-center sm:block"
+            className="object-cover object-center"
           />
-          <div className="relative z-10 flex w-full max-w-[690px] flex-col justify-center px-6 py-8 sm:min-h-[450px] sm:px-10 sm:py-9 lg:min-h-[460px] lg:px-12">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-white/95 via-white/90 to-white/70 sm:hidden" />
+          <div className="relative z-10 flex min-h-[420px] w-full max-w-[690px] flex-col justify-center px-6 py-9 sm:min-h-[450px] sm:px-10 lg:min-h-[460px] lg:px-12">
             <AnimatedTitle
               id="home-essence-title"
               text="LA ESENCIA AVRA"
@@ -30,15 +31,6 @@ export function EssencePreviewSection() {
               <span>Conoce Avra</span>
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
-          </div>
-          <div className="relative h-[170px] w-full sm:hidden" aria-hidden="true">
-            <Image
-              src="/images/home/cta/essence-home.png"
-              alt=""
-              fill
-              sizes="100vw"
-              className="object-cover object-right"
-            />
           </div>
         </div>
       </Container>
