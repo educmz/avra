@@ -43,26 +43,26 @@ export function NunaMachineSection() {
           <div className="contents lg:order-2 lg:block">
             <div className="order-1 min-w-0">
               <AnimatedTitle id={`${machine.id}-title`} text={machine.title} className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.06] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
-            <div className="mt-3 h-[4px] w-[96px] shrink-0 rounded-full" style={{ background: machine.accent }} />
-            <p className="mt-4 max-w-2xl text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">{machine.description}</p>
+              <div className="mt-3 h-[4px] w-[96px] shrink-0 rounded-full" style={{ background: machine.accent }} />
+              <p className="mt-4 max-w-2xl text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">{machine.description}</p>
             </div>
             <div className="order-3 min-w-0">
               <h3 className="font-heading text-base font-extrabold uppercase tracking-wide text-[#302E2A] lg:mt-6">Características del equipo</h3>
-            <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
-              {machine.details.map((detail) => (
-                <li
-                  key={detail.label}
-                  className="group flex min-h-[58px] items-center gap-3 rounded-[14px] border border-[#295C50]/10 bg-white/85 px-3 py-2.5 shadow-[0_4px_14px_rgba(41,92,80,0.035)] transition-[border-color,background-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-[#428C42]/35 hover:bg-white hover:shadow-[0_8px_22px_rgba(41,92,80,0.08)] motion-reduce:transform-none motion-reduce:transition-none"
-                >
-                  <span className="grid size-8 shrink-0 place-items-center rounded-[10px] bg-[#EAF5E9] text-[#428C42] transition-[background-color,color,transform] duration-300 group-hover:scale-105 group-hover:bg-[#428C42] group-hover:text-white motion-reduce:transform-none motion-reduce:transition-none">
-                    <detail.Icon size={18} strokeWidth={1.9} aria-hidden="true" />
-                  </span>
-                  <span className="text-[14px] font-semibold leading-snug text-[#295C50] sm:text-[15px]">
-                    {detail.label}
-                  </span>
-                </li>
-              ))}
-            </ul>
+              <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
+                {machine.details.map((detail) => (
+                  <li
+                    key={detail.label}
+                    className="group flex min-h-[58px] items-center gap-3 rounded-[14px] border border-[#295C50]/10 bg-white/85 px-3 py-2.5 shadow-[0_4px_14px_rgba(41,92,80,0.035)] transition-[border-color,background-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-[#428C42]/35 hover:bg-white hover:shadow-[0_8px_22px_rgba(41,92,80,0.08)] motion-reduce:transform-none motion-reduce:transition-none"
+                  >
+                    <span className="grid size-8 shrink-0 place-items-center rounded-[10px] bg-[#EAF5E9] text-[#428C42] transition-[background-color,color,transform] duration-300 group-hover:scale-105 group-hover:bg-[#428C42] group-hover:text-white motion-reduce:transform-none motion-reduce:transition-none">
+                      <detail.Icon size={18} strokeWidth={1.9} aria-hidden="true" />
+                    </span>
+                    <span className="text-[14px] font-semibold leading-snug text-[#295C50] sm:text-[15px]">
+                      {detail.label}
+                    </span>
+                  </li>
+                ))}
+              </ul>
               <div className="mt-5 flex justify-center lg:justify-start">
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Solicitar información sobre Nuna por WhatsApp" className="avra-cta w-fit">
                   <span>Solicitar información</span>
