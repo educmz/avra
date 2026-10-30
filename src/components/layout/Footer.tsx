@@ -87,7 +87,7 @@ export function Footer() {
           </div>
 
           <nav aria-label="Explora Avra" className="flex min-w-0 flex-col items-start">
-            <h2 className="font-[family-name:var(--font-manrope)] text-[15px] font-semibold tracking-normal">Explora</h2>
+            <h2 className="text-[16px] leading-tight tracking-[0.01em]" style={{ fontFamily: "var(--font-header), sans-serif", fontWeight: 500 }}>Explora</h2>
             <div className="mt-4 flex flex-col items-start gap-2.5">
               {exploreLinks.map((item) => (
                 <Link key={item.href} href={item.href} className={linkClass}>
@@ -98,7 +98,7 @@ export function Footer() {
           </nav>
 
           <div className="flex min-w-0 flex-col items-start">
-            <h2 className="font-[family-name:var(--font-manrope)] text-[15px] font-semibold tracking-normal">Contacto</h2>
+            <h2 className="text-[16px] leading-tight tracking-[0.01em]" style={{ fontFamily: "var(--font-header), sans-serif", fontWeight: 500 }}>Contacto</h2>
             <div className="mt-4 flex flex-col items-start gap-3">
               <a
                 href="mailto:hola@avra.pe"
@@ -124,7 +124,7 @@ export function Footer() {
           </div>
 
           <nav aria-label="Información legal" className="col-span-2 flex min-w-0 flex-col items-start sm:col-span-1">
-            <h2 className="font-[family-name:var(--font-manrope)] text-[15px] font-semibold tracking-normal">Legal</h2>
+            <h2 className="text-[16px] leading-tight tracking-[0.01em]" style={{ fontFamily: "var(--font-header), sans-serif", fontWeight: 500 }}>Legal</h2>
             <div className="mt-4 flex flex-col items-start gap-2.5">
               <Link href={legalLinks[0].href} className={linkClass}>
                 {legalLinks[0].label}
