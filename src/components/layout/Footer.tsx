@@ -155,7 +155,7 @@ export function Footer() {
         </div>
 
         <div className="mt-6 border-t border-[#FBF4EF]/25 pt-4 sm:mt-9">
-          <div className="flex flex-col gap-1.5 text-[11px] text-[#FBF4EF]/85 sm:flex-row sm:gap-2 sm:text-[12px] sm:items-center sm:justify-between lg:grid lg:grid-cols-[1.2fr_.9fr_1.12fr_1.08fr] lg:items-start lg:gap-x-9 xl:gap-x-14">
+          <div className="flex flex-col gap-1.5 text-center text-[11px] text-[#FBF4EF]/85 sm:flex-row sm:text-left sm:gap-2 sm:text-[12px] sm:items-center sm:justify-between lg:grid lg:grid-cols-[1.2fr_.9fr_1.12fr_1.08fr] lg:items-start lg:gap-x-9 xl:gap-x-14">
             <p className="lg:col-span-3">© {new Date().getFullYear()} Avra. Todos los derechos reservados.</p>
             <p className="lg:col-start-4">Desarrollado por <span className="font-semibold text-[#FBF4EF]">educmz</span></p>
           </div>
