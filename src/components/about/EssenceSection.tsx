@@ -105,9 +105,9 @@ export function EssenceSection() {
       className={`${styles.section} py-10 sm:py-12 lg:py-14`}
     >
       <Container className="relative z-10">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
+        <div className="mx-auto grid max-w-[1260px] grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
           {/* Encabezado: misma tipografía y jerarquía que las demás secciones */}
-          <div className="flex min-w-0 flex-col items-center justify-center px-2 py-7 text-center sm:py-10 lg:col-span-5 lg:items-start lg:py-8 lg:pl-6 lg:text-left xl:pl-[70px]">
+          <div className="flex min-w-0 flex-col items-center justify-center px-2 py-7 text-center sm:py-10 lg:col-span-5 lg:items-start lg:py-8 lg:px-0 lg:text-left">
             <AnimatedTitle
               id="about-essence-title"
               text="LO QUE NOS MUEVE"
