@@ -76,3 +76,37 @@
   height: clamp(14px, 5cqw, 18px);
   flex-shrink: 0;
 }
+
+/* Barrido luminoso como en los CTA de AVRA, sin elevar los botones sociales. */
+.socialSweep {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.socialSweep::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transform: translateX(-110%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .25), transparent);
+  transition: transform 650ms ease-out;
+}
+
+.socialSweep:hover::before,
+.socialSweep:focus-visible::before {
+  transform: translateX(110%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .socialSweep::before {
+    transition: none;
+  }
+
+  .socialSweep:hover::before,
+  .socialSweep:focus-visible::before {
+    transform: translateX(-110%);
+  }
+}
