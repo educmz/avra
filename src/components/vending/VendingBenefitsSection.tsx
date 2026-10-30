@@ -1,6 +1,6 @@
 "use client";
 
-import { Clock3, CupSoda, MapPin } from "lucide-react";
+import { ArrowDownRight, Clock3, CupSoda, MapPin } from "lucide-react";
 import { motion } from "motion/react";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { Container } from "@/components/ui/Container";
@@ -8,25 +8,19 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const benefits = [
   {
-    number: "01",
     Icon: CupSoda,
-    title: "Algo rico para cada momento",
-    description:
-      "Bebidas naturales, comidas y snacks para que siempre tengas más opciones al momento de elegir.",
+    title: "MÁS VARIEDAD",
+    description: "Bebidas naturales, comidas y snacks para elegir.",
   },
   {
-    number: "02",
     Icon: Clock3,
-    title: "Tu pausa, sin complicaciones",
-    description:
-      "Elige y compra directamente en la máquina, a tu ritmo y de una forma sencilla.",
+    title: "FÁCIL Y PRÁCTICO",
+    description: "Elige y compra directamente en la máquina.",
   },
   {
-    number: "03",
     Icon: MapPin,
-    title: "Más cerca de tu rutina",
-    description:
-      "Acercamos una alternativa práctica a los espacios donde trabajas, estudias o entrenas.",
+    title: "MÁS CERCA DE TI",
+    description: "Una opción para tus espacios de cada día.",
   },
 ];
 
@@ -42,64 +36,48 @@ export function VendingBenefitsSection() {
         <div className="mx-auto max-w-[820px] text-center">
           <AnimatedTitle
             id="vending-overview-title"
-            text="Elige fácil, disfruta más"
+            text="TODO LO QUE NECESITAS, MÁS CERCA"
             className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]"
           />
           <span
             aria-hidden="true"
             className="mx-auto mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]"
           />
-          <p className="mx-auto mt-5 max-w-[660px] text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
-            Queremos que encontrar algo rico sea parte fácil de tu día. Por eso
-            acercamos variedad, comodidad y una experiencia pensada para cada pausa.
+          <p className="mx-auto mt-5 max-w-[600px] text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
+            Más opciones para tus pausas, de manera simple y a tu ritmo.
           </p>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-[1180px] gap-5 md:grid-cols-3 sm:mt-12 lg:gap-6">
-          {benefits.map(({ number, Icon, title, description }, index) => (
+        <div className="mx-auto mt-8 grid max-w-[1180px] gap-4 sm:mt-10 md:grid-cols-3 lg:gap-5">
+          {benefits.map(({ Icon, title, description }, index) => (
             <motion.div
-              key={number}
+              key={title}
               className="h-full"
-              initial={reducedMotion ? false : { opacity: 0, y: 26 }}
+              initial={reducedMotion ? false : { opacity: 0, y: 20 }}
               whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.55, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <article className="group relative flex h-full min-h-[315px] flex-col overflow-hidden rounded-[26px] border border-[#295C50]/15 bg-white px-6 pb-8 pt-7 shadow-[0_12px_30px_rgba(35,65,55,0.085)] transition-[transform,box-shadow,border-color] duration-500 ease-out hover:-translate-y-1.5 hover:border-[#EA6F32]/45 hover:shadow-[0_24px_46px_rgba(35,65,55,0.16)] motion-reduce:transform-none motion-reduce:transition-none sm:px-7">
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#EA6F32] via-[#EF9A67] to-[#295C50]"
-                />
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -right-10 -top-10 size-36 rounded-full border-[18px] border-[#295C50]/[0.035] transition-transform duration-500 group-hover:scale-125 motion-reduce:transition-none"
-                />
-
-                <div className="relative flex items-start justify-between gap-4">
-                  <span className="grid size-14 shrink-0 place-items-center rounded-[18px] bg-[#E9F0EA] text-[#295C50] ring-1 ring-[#295C50]/10 transition-[background-color,color,transform] duration-300 group-hover:-rotate-6 group-hover:bg-[#295C50] group-hover:text-white motion-reduce:transform-none motion-reduce:transition-none">
-                    <Icon size={27} strokeWidth={1.8} aria-hidden="true" />
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="font-heading text-[44px] font-extrabold leading-none tracking-tight text-[#EA6F32]/30 transition-colors duration-300 group-hover:text-[#EA6F32]/65"
-                  >
-                    {number}
-                  </span>
-                </div>
-
-                <span
-                  aria-hidden="true"
-                  className="mt-7 block h-[3px] w-10 rounded-full bg-[#EA6F32] transition-[width] duration-500 group-hover:w-16 motion-reduce:transition-none"
-                />
-                <h3 className="mt-5 max-w-[300px] font-heading text-[21px] font-extrabold leading-[1.2] tracking-tight text-[#295C50] sm:text-[22px]">
+              <article className="group relative flex h-full min-h-[210px] flex-col items-start overflow-hidden rounded-[24px] border border-[#295C50]/15 border-t-[4px] border-t-[#EA6F32] bg-white px-6 py-6 shadow-[0_10px_28px_rgba(35,65,55,0.07)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(35,65,55,0.12)] motion-reduce:transform-none motion-reduce:transition-none sm:min-h-[225px] sm:px-7 sm:py-7">
+                <span className="grid size-14 shrink-0 place-items-center rounded-[16px] bg-[#E9F0EA] text-[#295C50]">
+                  <Icon size={30} strokeWidth={2} aria-hidden="true" />
+                </span>
+                <h3 className="mt-5 font-heading text-[22px] font-extrabold uppercase leading-[1.1] tracking-tight text-[#295C50] sm:text-[24px]">
                   {title}
                 </h3>
-                <p className="mt-3 max-w-[340px] text-base leading-7 text-[#302E2A]/75">
+                <p className="mt-2 max-w-[300px] text-base leading-6 text-[#302E2A]/75">
                   {description}
                 </p>
               </article>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-8 flex justify-center sm:mt-10">
+          <a href="#avra" className="avra-cta inline-flex min-h-11 items-center gap-2">
+            <span>Conoce nuestras máquinas</span>
+            <ArrowDownRight size={18} aria-hidden="true" />
+          </a>
         </div>
       </Container>
     </section>
