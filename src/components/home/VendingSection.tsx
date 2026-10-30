@@ -35,7 +35,7 @@ export function VendingSection() {
                   </div>
                   <div className="flex items-center justify-between gap-2 bg-[#FBF4EF] px-3 py-3 sm:px-5 sm:py-4">
                     <div className="min-w-0">
-                      <h3 className="font-heading text-base font-extrabold leading-snug text-[#302E2A] sm:text-xl">{machine.description}</h3>
+                      <p className="text-sm leading-5 text-[#302E2A]/70 sm:text-base">{machine.description}</p>
                     </div>
                     <span className="grid size-9 shrink-0 place-items-center rounded-full transition-transform duration-300 group-hover:translate-x-1 sm:size-10" style={{ backgroundColor: machine.bg, color: machine.accent }}>
                       <ArrowRight size={19} aria-hidden="true" />
