@@ -18,7 +18,7 @@ export function TeamSection() {
             </p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] bg-[#E8F0DE] sm:rounded-[28px]">
-            <Image src="/images/about/equipo-avra.webp" alt="Equipo de Avra" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover object-center" />
+            <Image src="/images/about/equipo-avra.png" alt="Equipo de Avra" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover object-center" />
           </div>
         </div>
       </Container>

@@ -17,7 +17,7 @@ export function AboutIntroSection() {
           <div className="relative mx-auto w-full max-w-[420px] px-2 pb-2 lg:ml-auto lg:mr-0">
             <div aria-hidden="true" className="absolute bottom-0 right-0 h-[72%] w-[78%] rounded-[28px] bg-[#DDE9D9]" />
             <div className="relative aspect-[5/4] overflow-hidden rounded-[24px] shadow-[0_16px_38px_rgba(41,92,80,.13)] sm:rounded-[28px]">
-              <Image src="/images/about/equipo-avra.webp" alt="Equipo de Avra" fill sizes="(min-width:1024px) 480px, 100vw" className="object-cover object-center" />
+              <Image src="/images/about/equipo-avra.png" alt="Equipo de Avra" fill sizes="(min-width:1024px) 480px, 100vw" className="object-cover object-center" />
             </div>
           </div>
         </div>
