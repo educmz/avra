@@ -3,8 +3,8 @@ import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { Container } from "@/components/ui/Container";
 
 // Imagen temporal: sustituir este archivo por la fotografía definitiva que aporte el cliente.
-// Se reutiliza el recurso existente para evitar imágenes rotas mientras llega la nueva.
-const spaceImage = "/images/vending/cta-vending.png";
+// Se muestra una imagen existente distinta de la del CTA final hasta contar con la fotografía definitiva.
+const spaceImage = "/images/vending/avra-home.png";
 
 const whatsappUrl = `https://wa.me/51948742332?text=${encodeURIComponent(
   "Hola, me gustaría recibir información sobre las máquinas expendedoras Avra para mi establecimiento."
