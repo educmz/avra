@@ -6,16 +6,16 @@ import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 // Los datos y el diseño de esta máquina se mantienen independientes de la otra.
 const machine = {
     id: "avra", name: "Avra", kicker: "01 / Bebidas naturales",
-    title: "Bebidas naturales, a tu alcance.",
+    title: "Bebidas naturales, a tu alcance",
     description: "La máquina naranja Avra está pensada para acercar una experiencia de bebidas naturales a diferentes momentos del día. Su diseño distintivo y su sistema de autoservicio hacen que elegir una bebida resulte práctico.",
     image: "/images/vending/maquina-avra.png",
     alt: "Máquina naranja Avra instalada en una zona de descanso de oficina",
     accent: "#EA6F32", bg: "#FFFFFF",
     details: [
-      { title: "Especializada en bebidas", desc: "Una propuesta centrada en la experiencia de bebidas naturales." },
-      { title: "Dispensación directa", desc: "Espacio frontal dedicado a recibir la bebida seleccionada." },
-      { title: "Identidad Avra", desc: "Diseño naranja, distintivo y fácil de reconocer." },
-      { title: "Uso intuitivo", desc: "Interfaz de selección y área de pago integradas en el equipo." },
+      "Bebidas naturales",
+      "Selección en pantalla",
+      "Pago en la máquina",
+      "Retiro directo de tu bebida",
     ],
     perks: ["Una experiencia diferente", "Diseño reconocible", "Practicidad cotidiana"],
   };
@@ -41,17 +41,14 @@ export function AvraMachineSection() {
             <div className="mt-3 h-[3px] w-14 rounded-full" style={{ background: machine.accent }} />
             <p className="mt-4 max-w-2xl text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">{machine.description}</p>
             <h3 className="mt-6 font-heading text-base font-extrabold uppercase tracking-wide text-[#302E2A]">Características del equipo</h3>
-            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <ul className="mt-3 grid gap-2 sm:grid-cols-2">
               {machine.details.map((detail) => (
-                <article key={detail.title} className="rounded-xl border border-[#302E2A]/10 bg-white/80 p-3.5 sm:p-4">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 size={18} className="shrink-0" style={{ color: machine.accent }} aria-hidden="true" />
-                    <h4 className="font-heading text-sm font-bold leading-snug text-[#302E2A]">{detail.title}</h4>
-                  </div>
-                  <p className="mt-1.5 text-justify text-base leading-7 text-[#302E2A]/70 sm:text-lg sm:leading-8">{detail.desc}</p>
-                </article>
+                <li key={detail} className="flex min-h-[54px] items-center gap-2.5 rounded-xl border border-[#302E2A]/10 bg-white/75 px-3.5 py-2.5">
+                  <CheckCircle2 size={19} className="shrink-0" style={{ color: machine.accent }} aria-hidden="true" />
+                  <span className="text-sm font-semibold leading-snug text-[#302E2A]">{detail}</span>
+                </li>
               ))}
-            </div>
+            </ul>
             <a href="/nosotros" className="avra-cta mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#295C50] px-5 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-[#173E34]">Conoce más de Avra <ArrowUpRight size={17} /></a>
           </div>
         </div>
