@@ -129,9 +129,9 @@ export function Footer() {
               <Link href={legalLinks[0].href} className={linkClass}>
                 {legalLinks[0].label}
               </Link>
-              <span className="text-[14px] leading-[1.45] text-[#FBF4EF]/65" title="Página de términos y condiciones pendiente">
+              <Link href="/terminos-y-condiciones" className={linkClass}>
                 Términos y condiciones
-              </span>
+              </Link>
               <Link href={legalLinks[1].href} className={linkClass}>
                 {legalLinks[1].label}
               </Link>
