@@ -32,7 +32,7 @@ export function VendingSpacesSection() {
   return (
     <section
       aria-labelledby="vending-spaces-title"
-      className="bg-[#FBF4EF] py-10 sm:py-16 lg:py-20"
+      className="bg-[#FBF4EF] pt-10 pb-4 sm:py-16 lg:py-20"
     >
       <Container>
         <div className="mx-auto max-w-[1200px]">
