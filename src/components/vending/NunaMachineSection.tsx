@@ -14,7 +14,7 @@ const machine = {
     description: "Con Nuna, tus pausas tienen más opciones. Encuentra comidas, snacks y bebidas en un solo lugar y elige lo que más te provoque con la comodidad del autoservicio.",
     image: "/images/vending/maquina-nuna.png",
     alt: "Equipo dispensador Nuna negro y verde en un espacio de coworking",
-    accent: "#428C42", bg: "#FFFFFF",
+    accent: "#EA6F32", bg: "#FFFFFF",
     details: [
       { label: "Comidas, snacks y bebidas", Icon: UtensilsCrossed },
       { label: "Productos a la vista", Icon: Eye },
@@ -42,7 +42,7 @@ export function NunaMachineSection() {
           </div>
           <div className="min-w-0">
             <AnimatedTitle id={`${machine.id}-title`} text={machine.title} className="mt-2 font-heading text-[28px] font-extrabold uppercase leading-[1.06] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]" />
-            <div className="mt-3 h-[3px] w-[72px] rounded-full bg-[#EA6F32]" />
+            <div className="mt-3 h-[4px] w-[72px] shrink-0 rounded-full" style={{ background: machine.accent }} />
             <p className="mt-4 max-w-2xl text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">{machine.description}</p>
             <h3 className="mt-6 font-heading text-base font-extrabold uppercase tracking-wide text-[#302E2A]">Características del equipo</h3>
             <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
