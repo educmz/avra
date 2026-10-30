@@ -42,7 +42,7 @@ export function VendingSpacesSection() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="avra-cta mt-8 inline-flex min-h-12 items-center justify-center px-8 sm:mt-10"
+              className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-[#EA6F32] px-9 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#D95D27] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:mt-10"
             >
               <span>Conversemos</span>
             </a>
