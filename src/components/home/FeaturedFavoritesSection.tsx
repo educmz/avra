@@ -81,14 +81,14 @@ export function FeaturedFavoritesSection() {
             </div>
             <div ref={trackRef} onScroll={updateActive} className="relative flex min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto pb-5 pt-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {featured.map((product, index) => (
-                <motion.div key={product.id} data-favorite-card className="w-full shrink-0 snap-start sm:w-[calc((100%-16px)/2)] lg:w-[calc((100%-48px)/4)]"
+                <motion.div key={product.id} data-favorite-card className="w-[calc((100%-16px)/2)] shrink-0 snap-start lg:w-[calc((100%-48px)/4)]"
                   animate={reducedMotion ? undefined : { y: index === active ? -5 : 0 }}
                   transition={{ type: "spring", stiffness: 280, damping: 23 }}>
-                  <Link href={`/carta#carta-${product.category}`} className="group flex min-h-[230px] flex-col items-center justify-center overflow-hidden rounded-2xl bg-[#FBF4EF] p-4 text-center text-[#302E2A] shadow-[0_12px_28px_rgba(15,43,35,.18)] transition-shadow duration-300 hover:shadow-[0_20px_38px_rgba(15,43,35,.27)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F9B444] sm:min-h-[244px]">
-                    <div className="relative mx-auto h-[145px] w-full max-w-[180px] sm:h-[155px]">
-                      <Image src={product.image} alt={product.name} fill sizes="(min-width:1024px) 220px, (min-width:640px) 45vw, 90vw" className="object-contain transition-transform duration-500 group-hover:scale-110 motion-reduce:transition-none" />
+                  <Link href={`/carta#carta-${product.category}`} className="group flex min-h-[210px] flex-col items-center justify-center overflow-hidden rounded-2xl bg-[#FBF4EF] p-3 text-center text-[#302E2A] shadow-[0_12px_28px_rgba(15,43,35,.18)] transition-shadow duration-300 hover:shadow-[0_20px_38px_rgba(15,43,35,.27)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F9B444] sm:min-h-[244px] sm:p-4">
+                    <div className="relative mx-auto h-[125px] w-full max-w-[180px] sm:h-[155px]">
+                      <Image src={product.image} alt={product.name} fill sizes="(min-width:1024px) 220px, (min-width:640px) 45vw, 42vw" className="object-contain transition-transform duration-500 group-hover:scale-110 motion-reduce:transition-none" />
                     </div>
-                    <h3 className="mt-3 w-full text-center font-heading text-sm font-extrabold uppercase leading-tight">{product.name}</h3>
+                    <h3 className="mt-3 w-full text-center font-heading text-xs font-extrabold uppercase leading-tight sm:text-sm">{product.name}</h3>
                     <p className="mt-1 w-full text-center text-xs text-[#302E2A]/65">{product.category === "tes-helados" ? "Té helado" : product.category === "frappes" ? "Frappé" : product.category === "waffles" ? "Waffle" : product.category === "sandwiches" ? "Sándwich" : "Smoothie"}</p>
                   </Link>
                 </motion.div>
