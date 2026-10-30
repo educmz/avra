@@ -175,7 +175,7 @@ export function SocialSection() {
             className="mt-2 text-center text-[28px] font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-[34px] lg:text-[40px]"
           />
           <span aria-hidden="true" className="mx-auto mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
-          <p className="mx-auto mt-5 max-w-[68ch] text-center text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
+          <p className="mx-auto mt-5 max-w-full text-center text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8 lg:whitespace-nowrap">
             Descubre los sabores, las experiencias y los momentos que compartimos en nuestras redes sociales.
           </p>
         </AboutReveal>
