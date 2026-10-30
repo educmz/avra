@@ -9,7 +9,7 @@ const groups = [
   {
     title: "Para tomar",
     description: "Smoothies, tés helados, frappés y bebidas calientes.",
-    button: "Explorar bebidas",
+    button: "Elige tu sabor",
     href: "/carta#carta-smoothies",
     background: "#DCEEF2",
     image: "/images/home/cravings/para-beber.png",
@@ -18,7 +18,7 @@ const groups = [
   {
     title: "Para comer",
     description: "Waffles, sándwiches, tostones y pizzas.",
-    button: "Explorar comidas",
+    button: "Nutre tu día",
     href: "/carta#carta-waffles",
     background: "#F8E6BF",
     image: "/images/home/cravings/para-comer.png",
