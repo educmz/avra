@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Pause, Play, Volume2, VolumeX } from "lucide-react";
+import { Pause, Play, Volume2, VolumeX } from "lucide-react";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { Container } from "@/components/ui/Container";
 
@@ -16,6 +16,7 @@ export function VendingReels() {
   const [playing, setPlaying] = useState<number | null>(null);
   const [muted, setMuted] = useState(true);
   const videos = useRef<(HTMLVideoElement | null)[]>([]);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
 
   function select(index: number) {
     const next = (index + reels.length) % reels.length;
@@ -75,7 +76,33 @@ export function VendingReels() {
 
         <div className="relative mx-auto mt-7 w-full max-w-[1000px] sm:mt-9">
           <div
-            className="relative mx-auto h-[450px] w-full max-w-[890px] [--reel-step:40vw] sm:h-[480px] sm:[--reel-step:clamp(200px,28vw,305px)] lg:h-[540px]"
+            role="group"
+            aria-label="Carrusel de videos. Usa las flechas del teclado o desliza para cambiar de video."
+            tabIndex={0}
+            onKeyDown={(event) => {
+              if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+                event.preventDefault();
+                select(active + (event.key === "ArrowRight" ? 1 : -1));
+              }
+            }}
+            onTouchStart={(event) => {
+              const touch = event.touches[0];
+              if (touch) touchStart.current = { x: touch.clientX, y: touch.clientY };
+            }}
+            onTouchEnd={(event) => {
+              const start = touchStart.current;
+              touchStart.current = null;
+              const touch = event.changedTouches[0];
+              if (!start || !touch) return;
+              const dx = touch.clientX - start.x;
+              const dy = touch.clientY - start.y;
+              if (Math.abs(dx) >= 50 && Math.abs(dx) > Math.abs(dy) * 1.25) {
+                event.preventDefault();
+                select(active + (dx < 0 ? 1 : -1));
+              }
+            }}
+            onTouchCancel={() => { touchStart.current = null; }}
+            className="relative mx-auto h-[450px] w-full max-w-[890px] touch-pan-y [--reel-step:40vw] focus-visible:rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:h-[480px] sm:[--reel-step:clamp(200px,28vw,305px)] lg:h-[540px]"
           >
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-[16%] inset-y-[15%] rounded-full bg-white/[.045] blur-3xl" />
 
@@ -96,9 +123,9 @@ export function VendingReels() {
                 <article
                   key={reel.src}
                   style={{ transform }}
-                  className={`group/video absolute left-1/2 top-1/2 aspect-[9/16] w-[min(65vw,245px)] overflow-hidden rounded-[22px] border bg-[#17241F] shadow-[0_16px_38px_rgba(9,31,26,.24)] will-change-transform transition-[transform,opacity,filter,border-color,box-shadow] duration-[700ms] ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none sm:w-[clamp(195px,24vw,280px)] sm:rounded-[26px] ${selected
-                    ? "z-20 border-white/55 opacity-100 shadow-[0_25px_55px_rgba(6,29,24,.4)]"
-                    : "pointer-events-none z-10 border-white/15 opacity-0 brightness-75 sm:pointer-events-auto sm:opacity-75 sm:hover:border-white/40 sm:hover:opacity-95 sm:hover:brightness-100"}`}
+                  className={`group/video absolute left-1/2 top-1/2 aspect-[9/16] w-[min(65vw,245px)] overflow-hidden rounded-[22px] bg-[#17241F] shadow-[0_16px_38px_rgba(9,31,26,.24)] will-change-transform transition-[transform,opacity,filter,box-shadow] duration-[700ms] ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none sm:w-[clamp(195px,24vw,280px)] sm:rounded-[26px] ${selected
+                    ? "z-20 opacity-100 shadow-[0_25px_55px_rgba(6,29,24,.4)]"
+                    : "pointer-events-none z-10 opacity-0 brightness-75 sm:pointer-events-auto sm:cursor-pointer sm:opacity-75 sm:hover:opacity-95 sm:hover:brightness-100"}`}
                 >
                   <video
                     ref={(element) => { videos.current[index] = element; }}
@@ -151,23 +178,6 @@ export function VendingReels() {
             })}
           </div>
 
-          <button
-            type="button"
-            onClick={() => select(active - 1)}
-            aria-label="Video anterior"
-            className="absolute left-0 top-1/2 z-30 grid size-10 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-white/10 text-white shadow-[0_5px_18px_rgba(0,0,0,.12)] backdrop-blur-md transition-[background-color,transform] duration-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none sm:left-1 sm:size-12 xl:-left-2"
-          >
-            <ChevronLeft size={22} strokeWidth={1.8} aria-hidden="true" />
-          </button>
-
-          <button
-            type="button"
-            onClick={() => select(active + 1)}
-            aria-label="Video siguiente"
-            className="absolute right-0 top-1/2 z-30 grid size-10 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-white/10 text-white shadow-[0_5px_18px_rgba(0,0,0,.12)] backdrop-blur-md transition-[background-color,transform] duration-200 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none sm:right-1 sm:size-12 xl:-right-2"
-          >
-            <ChevronRight size={22} strokeWidth={1.8} aria-hidden="true" />
-          </button>
         </div>
       </Container>
     </section>
