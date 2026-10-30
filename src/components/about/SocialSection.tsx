@@ -127,7 +127,7 @@ function SocialButton({
       scroll={false}
       target={href ? "_blank" : undefined}
       rel={href ? "noreferrer" : undefined}
-      className="flex min-h-10 items-center justify-center gap-2 rounded-full px-4 text-[13px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none"
+      className="mx-auto flex min-h-10 w-fit max-w-full items-center justify-center gap-2 rounded-full px-6 text-[13px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none"
       style={{ backgroundColor: background }}
     >
       {icon}
@@ -167,7 +167,7 @@ export function SocialSection() {
 
         {/* REDES */}
         <AboutReveal
-          className="mx-auto grid w-full max-w-[1080px] gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6"
+          className="mx-auto grid w-full max-w-[1120px] gap-7 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 xl:gap-12"
           amount={0.2}
           stagger={0.12}
         >
