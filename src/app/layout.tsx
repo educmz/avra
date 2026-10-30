@@ -53,8 +53,8 @@ const scriptFont = Pacifico({
 });
 
 export const metadata: Metadata = {
- metadataBase: new URL(siteUrl), title: { default: "AVRA | Alimentos Saludables y Máquinas Vending", template: "%s | AVRA" },
- description: siteConfig.description, applicationName: "AVRA",
+ metadataBase: new URL(siteUrl), title: { default: `${siteConfig.name} | Activa lo natural`, template: `${siteConfig.name} | %s` },
+ description: siteConfig.description, applicationName: siteConfig.name,
  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } : undefined,
 };
 
