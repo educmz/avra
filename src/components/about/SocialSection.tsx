@@ -127,11 +127,13 @@ function SocialButton({
       scroll={false}
       target={href ? "_blank" : undefined}
       rel={href ? "noreferrer" : undefined}
-      className="mx-auto flex min-h-10 w-fit max-w-full items-center justify-center gap-2 rounded-full px-6 text-[13px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none"
+      className={`${styles.socialSweep} mx-auto flex min-h-10 w-fit max-w-full items-center justify-center gap-2 rounded-full px-6 text-[13px] font-semibold text-white`}
       style={{ backgroundColor: background }}
     >
-      {icon}
-      {label}
+      <span className="relative z-10 inline-flex items-center justify-center gap-2">
+        {icon}
+        <span>{label}</span>
+      </span>
     </Link>
   );
 }
