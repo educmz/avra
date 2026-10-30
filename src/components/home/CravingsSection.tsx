@@ -31,7 +31,7 @@ export function CravingsSection() {
     <section aria-labelledby="cravings-title" className="bg-background pt-12 pb-12 sm:pb-16 lg:pb-20">
       <Container>
         <HomeHeading id="cravings-title" as="h1" eyebrow="A tu gusto">
-          Alimentos y bebidas saludables
+          ¿Qué se te antoja hoy?
         </HomeHeading>
         <div className="grid gap-4 md:grid-cols-2 lg:gap-5">
           {groups.map((group) => (
