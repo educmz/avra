@@ -6,13 +6,13 @@ import { useEffect, useRef, useState } from "react";
 
 const SLIDE_DURATION = 5500;
 const slides = [
-  { id: "slide-01", src: "/images/home/carousel/slide-01.png", mobileSrc: "/images/home/carousel/slide-01-mobile.png", alt: "Avra: imagen 1 del carrusel principal" },
-  { id: "slide-02", src: "/images/home/carousel/slide-02.png", mobileSrc: "/images/home/carousel/slide-02-mobile.png", alt: "Avra: imagen 2 del carrusel principal" },
-  { id: "slide-03", src: "/images/home/carousel/slide-03.png", mobileSrc: "/images/home/carousel/slide-03-mobile.png", alt: "Avra: imagen 3 del carrusel principal" },
-  { id: "slide-04", src: "/images/home/carousel/slide-04.png", mobileSrc: "/images/home/carousel/slide-04-mobile.png", alt: "Avra: imagen 4 del carrusel principal" },
-  { id: "slide-05", src: "/images/home/carousel/slide-05.png", mobileSrc: "/images/home/carousel/slide-05-mobile.png", alt: "Avra: imagen 5 del carrusel principal" },
-  { id: "slide-06", src: "/images/home/carousel/slide-06.png", mobileSrc: "/images/home/carousel/slide-06-mobile.png", alt: "Avra: imagen 6 del carrusel principal" },
-  { id: "slide-07", src: "/images/home/carousel/slide-07.png", mobileSrc: "/images/home/carousel/slide-07-mobile.png", alt: "Avra: imagen 7 del carrusel principal" },
+  { id: "slide-01", src: "/images/home/carousel/slide-01.webp", mobileSrc: "/images/home/carousel/slide-01-mobile.webp", alt: "Avra: imagen 1 del carrusel principal" },
+  { id: "slide-02", src: "/images/home/carousel/slide-02.webp", mobileSrc: "/images/home/carousel/slide-02-mobile.webp", alt: "Avra: imagen 2 del carrusel principal" },
+  { id: "slide-03", src: "/images/home/carousel/slide-03.webp", mobileSrc: "/images/home/carousel/slide-03-mobile.webp", alt: "Avra: imagen 3 del carrusel principal" },
+  { id: "slide-04", src: "/images/home/carousel/slide-04.webp", mobileSrc: "/images/home/carousel/slide-04-mobile.webp", alt: "Avra: imagen 4 del carrusel principal" },
+  { id: "slide-05", src: "/images/home/carousel/slide-05.webp", mobileSrc: "/images/home/carousel/slide-05-mobile.webp", alt: "Avra: imagen 5 del carrusel principal" },
+  { id: "slide-06", src: "/images/home/carousel/slide-06.webp", mobileSrc: "/images/home/carousel/slide-06-mobile.webp", alt: "Avra: imagen 6 del carrusel principal" },
+  { id: "slide-07", src: "/images/home/carousel/slide-07.webp", mobileSrc: "/images/home/carousel/slide-07-mobile.webp", alt: "Avra: imagen 7 del carrusel principal" },
 ] as const;
 
 export function HeroSection() {

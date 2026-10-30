@@ -12,7 +12,7 @@ const machine = {
     id: "avra", name: "Avra", kicker: "01 / Bebidas naturales",
     title: "Bebidas naturales, a tu alcance",
     description: "Con Avra, disfrutar bebidas naturales es más fácil. Una experiencia de autoservicio práctica y cómoda, pensada para acompañar cada pausa en tu espacio.",
-    image: "/images/vending/maquina-avra.png",
+    image: "/images/vending/maquina-avra.webp",
     alt: "Equipo dispensador naranja de Avra en una zona de descanso de oficina",
     accent: "#EA6F32", bg: "#FFFFFF",
     details: [

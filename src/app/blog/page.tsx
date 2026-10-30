@@ -13,7 +13,7 @@ export default function BlogPage() {
   return (
     <div className="bg-background pt-[68px] sm:pt-[74px] lg:pt-[84px]">
       <ImageHero
-        image="/images/blog/blog-hero.png"
+        image="/images/blog/blog-hero.webp"
         lines={["BLOG"]}
         kicker="Nuestro"
         subtitle="Ideas, novedades y momentos para disfrutar"

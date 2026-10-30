@@ -239,7 +239,7 @@ export function SocialSection() {
               {/* IMAGEN */}
               <div className={styles.media}>
                 <Image
-                  src="/images/about/social/instagram.png"
+                  src="/images/about/social/instagram.webp"
                   alt="Publicación de Instagram de Avra"
                   fill
                   sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 72px) / 2), calc(100vw - 48px)"
@@ -482,7 +482,7 @@ export function SocialSection() {
               {/* IMAGEN */}
               <div className={styles.media}>
                 <Image
-                  src="/images/about/social/facebook.png"
+                  src="/images/about/social/facebook.webp"
                   alt="Publicación de Facebook de Avra"
                   fill
                   sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 72px) / 2), calc(100vw - 48px)"

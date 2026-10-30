@@ -18,7 +18,7 @@ export function Header() {
       <Container className="flex h-[68px] items-center justify-between gap-4 sm:h-[74px] lg:h-[84px]">
         <Link href="/" aria-label="Avra, inicio" className="group relative z-10 shrink-0 rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#295C50]">
           <Image
-            src="/images/brand/avra-wordmark-black.png"
+            src="/images/brand/avra-wordmark-black.webp"
             alt="Avra"
             width={2172}
             height={724}

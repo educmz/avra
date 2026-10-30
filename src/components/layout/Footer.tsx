@@ -61,7 +61,7 @@ export function Footer() {
                 className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 <Image
-                  src="/images/brand/avra-wordmark-black.png"
+                  src="/images/brand/avra-wordmark-black.webp"
                   alt="Avra"
                   width={2172}
                   height={724}

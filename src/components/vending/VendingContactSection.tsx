@@ -14,7 +14,7 @@ export function VendingContactSection() {
           {/* La nueva imagen tiene un área despejada a la izquierda para el texto. */}
           <div className="pointer-events-none absolute inset-0 hidden lg:block">
             <Image
-              src="/images/vending/cta-vending.png"
+              src="/images/vending/cta-vending.webp"
               alt=""
               fill
               sizes="(min-width:1536px) 1452px, 100vw"
@@ -47,7 +47,7 @@ export function VendingContactSection() {
           {/* En pantallas pequeñas, la foto se muestra debajo del contenido. */}
           <div className="relative h-[210px] w-full overflow-hidden sm:h-[270px] lg:hidden">
             <Image
-              src="/images/vending/cta-vending.png"
+              src="/images/vending/cta-vending.webp"
               alt="Espacio de trabajo cálido y natural con plantas y una mesa"
               fill
               sizes="(min-width:640px) 90vw, 100vw"
