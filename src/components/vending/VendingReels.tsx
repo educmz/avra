@@ -4,7 +4,6 @@ import { useRef, useState } from "react";
 import {
   ChevronLeft,
   ChevronRight,
-  Instagram,
   Pause,
   Play,
   Volume2,
@@ -26,9 +25,9 @@ type Reel = {
 };
 
 const reels: Reel[] = [
-  { title: "Conoce nuestras máquinas", videoSrc: "/videos/vending/tiktoks/tiktok-1.mp4" },
-  { title: "Así funciona el vending", videoSrc: "/videos/vending/tiktoks/tiktok-2.mp4" },
-  { title: "Nuestra experiencia", videoSrc: "/videos/vending/tiktoks/tiktok-3.mp4" },
+  { title: "Conoce nuestras máquinas", videoSrc: "/videos/vending/tiktoks/tiktok-1.mp4", instagramUrl: "" },
+  { title: "Así funciona el vending", videoSrc: "/videos/vending/tiktoks/tiktok-2.mp4", instagramUrl: "" },
+  { title: "Nuestra experiencia", videoSrc: "/videos/vending/tiktoks/tiktok-3.mp4", instagramUrl: "" },
 ];
 
 function instagramEmbedUrl(url?: string): string | null {
@@ -145,6 +144,7 @@ export function VendingReels() {
             const deltaX = touch.clientX - start.x;
             const deltaY = touch.clientY - start.y;
             if (Math.abs(deltaX) >= 55 && Math.abs(deltaX) > Math.abs(deltaY) * 1.4) {
+              event.preventDefault();
               select(active + (deltaX < 0 ? 1 : -1));
             }
           }}
