@@ -8,8 +8,8 @@ const exploreLinks = [
   { label: "Inicio", href: "/" },
   { label: "Carta", href: "/carta" },
   { label: "Vending saludable", href: "/maquinas" },
-  { label: "Blog", href: "/blog" },
   { label: "Nosotros", href: "/nosotros" },
+  { label: "Blog", href: "/blog" },
 ];
 
 const legalLinks = [
@@ -67,7 +67,7 @@ export function Footer() {
                   className="h-auto w-[148px] brightness-0 invert lg:w-[158px]"
                 />
               </Link>
-              <p className="mt-1 text-[14px] font-medium">Activa lo natural.</p>
+              <p className="mt-1 text-[14px] font-medium">Activa lo natural</p>
 
               <div className="mt-4 flex items-center justify-center gap-2.5" aria-label="Redes sociales de Avra">
                 {socialLinks.map((social) => (
