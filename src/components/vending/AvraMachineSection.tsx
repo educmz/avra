@@ -47,7 +47,7 @@ export function AvraMachineSection() {
             <p className="mt-4 max-w-2xl text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">{machine.description}</p>
             </div>
             <div className="order-3 min-w-0">
-            <h3 className="mt-6 font-heading text-base font-extrabold uppercase tracking-wide text-[#302E2A]">Características del equipo</h3>
+            <h3 className="font-heading text-base font-extrabold uppercase tracking-wide text-[#302E2A] lg:mt-6">Características del equipo</h3>
             <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
               {machine.details.map((detail) => (
                 <li
