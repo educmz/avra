@@ -27,15 +27,15 @@ export function ImageHero({ image, lines, kicker, subtitle, flushBottom = false,
         {hasVendingStyle ? (
           <>
             <div aria-hidden="true" className="absolute inset-0 z-[1] bg-gradient-to-r from-black/50 via-black/15 to-transparent" />
-            <div className="absolute inset-y-0 left-0 z-10 flex w-[49%] items-center pl-[11%] sm:pl-[13%]">
+            <div className="absolute inset-y-0 left-0 z-10 flex w-[65%] items-center pl-[7%] sm:w-[49%] sm:pl-[13%]">
               <div className="max-w-[540px] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.22)]">
-                <p className="font-[family-name:var(--font-header)] text-[clamp(7px,1.1vw,17px)] font-medium uppercase tracking-[0.3em]">
+                <p className="font-[family-name:var(--font-header)] text-[11px] font-medium uppercase tracking-[0.2em] sm:text-[clamp(7px,1.1vw,17px)] sm:tracking-[0.3em]">
                   {kicker}
                 </p>
-                <h1 className="mt-[0.36em] font-heading text-[clamp(19px,4.7vw,78px)] font-extrabold uppercase leading-[0.9] tracking-[-0.035em]">
+                <h1 className="mt-[0.36em] font-heading text-[30px] font-extrabold uppercase leading-[0.95] tracking-[-0.035em] sm:text-[clamp(19px,4.7vw,78px)] sm:leading-[0.9]">
                   {lines.map((line) => <span key={line} className="block">{line}</span>)}
                 </h1>
-                <p className="mt-[1em] max-w-[32ch] font-[family-name:var(--font-header)] text-[clamp(7px,1.05vw,16px)] font-medium uppercase leading-[1.55] tracking-[0.2em]">
+                <p className="mt-[1em] max-w-[32ch] font-[family-name:var(--font-header)] text-[10px] font-medium uppercase leading-[1.5] tracking-[0.1em] sm:text-[clamp(7px,1.05vw,16px)] sm:leading-[1.55] sm:tracking-[0.2em]">
                   {subtitle}
                 </p>
                 <svg aria-hidden="true" viewBox="0 0 200 36" fill="none" className="mt-[0.65em] block w-[62%] max-w-[320px] overflow-visible">
