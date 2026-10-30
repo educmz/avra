@@ -67,7 +67,10 @@ export function VendingSpacesSection() {
                   <span className="grid size-12 shrink-0 place-items-center rounded-[14px] bg-[#E9F0EA] text-[#295C50] transition-[background-color,color,transform] duration-300 ease-out group-hover:-rotate-6 group-hover:bg-[#295C50] group-hover:text-white motion-reduce:transform-none motion-reduce:transition-none">
                     <Icon size={25} strokeWidth={1.8} aria-hidden="true" />
                   </span>
-                  <h3 className="mt-3 max-w-[260px] font-heading text-base font-semibold uppercase leading-[1.25] tracking-tight text-[#295C50] sm:text-[17px]">
+                  <h3
+                    className="mt-3 max-w-[260px] text-[15px] leading-[1.4] tracking-normal text-[#295C50] sm:text-base"
+                    style={{ fontFamily: "var(--font-manrope), Arial, sans-serif", fontWeight: 500 }}
+                  >
                     {label}
                   </h3>
                 </article>
