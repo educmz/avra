@@ -23,7 +23,7 @@ La canonical elimina query strings y usa HTTPS sin www. Next.js mantiene su norm
 
 Imagen social genérica de marca PNG 1200 × 630 generada en `/social-image` con `next/og`, sin sustituir banners ni atribuir una foto de Carta a Vending. Organization y WebSite se conectan por identificadores en un solo grafo JSON-LD. Se omiten LocalBusiness, Product, BlogPosting y BreadcrumbList por falta de datos o jerarquía visible apropiada. Redes oficiales vacías no se publican en el marcado.
 
-Se eliminan main anidados, se da H1 al título visible existente del Home y títulos legales específicos. Se conservan next/image, WebP, tamaños responsive y arte de banners. Los logos declaran sizes y el header deja de competir con el hero como recurso prioritario. El carrusel admite pausa y respeta movimiento reducido. El menú móvil contiene el foco y lo devuelve al control de apertura; hay enlace de salto al contenido.
+Se eliminan main anidados, se da H1 al título visible existente del Home y títulos legales específicos. Se conservan next/image, WebP, tamaños responsive y arte de banners. Los logos declaran sizes y el header deja de competir con el hero como recurso prioritario. El carrusel respeta la preferencia de movimiento reducido. La reproducción automática no incluye un control de pausa visible por decisión de diseño; revisar el criterio WCAG 2.2.2 si aplica. El menú móvil contiene el foco y lo devuelve al control de apertura; hay enlace de salto al contenido.
 
 Los originales de varias imágenes superan 2 MB; next/image sirve variantes optimizadas. No se recomprimió el catálogo completo. Pendiente evaluar descarga real, fuentes y vídeos con datos de campo. No se afirman puntuaciones Lighthouse ni LCP/INP/CLS p75.
 
