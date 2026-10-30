@@ -84,7 +84,7 @@ export function HeroSection() {
       }}
       onTouchCancel={() => { touchStart.current = null; }}
     >
-      <div data-home-hero className="group relative aspect-[1122/1402] w-full overflow-hidden bg-[#E8EFE7] md:aspect-auto md:h-[clamp(280px,34.6vw,650px)]">
+      <div data-home-hero className="group relative aspect-[870/863] w-full overflow-hidden bg-[#E8EFE7] md:aspect-auto md:h-[clamp(280px,34.6vw,650px)]">
         {slides.map((slide, index) => {
           const isActive = index === activeSlide;
           const imageOptions = {
@@ -93,7 +93,7 @@ export function HeroSection() {
             sizes: "100vw",
             loading: index === 0 ? ("eager" as const) : ("lazy" as const),
             fetchPriority: index === 0 ? ("high" as const) : ("auto" as const),
-            className: "h-full w-full object-cover object-center",
+            className: "h-full w-full object-contain object-center md:object-cover",
           };
           const { props: desktopImage } = getImageProps({ ...imageOptions, src: slide.src });
           const { props: mobileImage } = getImageProps({ ...imageOptions, src: slide.mobileSrc });
@@ -112,7 +112,7 @@ export function HeroSection() {
                 <img
                   {...desktopImage}
                   alt={slide.alt}
-                  className={`${desktopImage.className} transition-transform duration-[6500ms] ease-out motion-reduce:transition-none ${isActive && !reducedMotion ? "scale-[1.035]" : "scale-100"}`}
+                  className={`${desktopImage.className} transition-transform duration-[6500ms] ease-out motion-reduce:transition-none ${isActive && !reducedMotion ? "md:scale-[1.035]" : "scale-100"}`}
                 />
               </picture>
             </div>
