@@ -1,35 +1,6 @@
 .section {
   position: relative;
-  isolation: isolate;
-  overflow: hidden;
   background: #fbf4ef;
-}
-
-.section::before,
-.section::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  pointer-events: none;
-  border-radius: 48% 52% 62% 38% / 56% 43% 57% 44%;
-  background: #f7e8da;
-  opacity: 0.7;
-}
-
-.section::before {
-  width: 370px;
-  height: 400px;
-  top: -220px;
-  right: -120px;
-  transform: rotate(-24deg);
-}
-
-.section::after {
-  width: 330px;
-  height: 420px;
-  left: -235px;
-  top: 220px;
-  transform: rotate(22deg);
 }
 
 .card {
