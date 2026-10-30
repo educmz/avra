@@ -110,7 +110,7 @@ export function VendingReels() {
 
         {/* CTA visual inspirado en "La esencia Avra" del home. */}
         <div className="mx-auto mt-9 max-w-5xl sm:mt-12">
-          <div className="grid overflow-hidden rounded-[24px] bg-[#E8F0DE] shadow-[0_14px_36px_rgba(14,43,35,.13)] sm:rounded-[28px] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)]">
+          <div className="grid overflow-hidden rounded-[24px] bg-[#FBF4EF] shadow-[0_14px_36px_rgba(14,43,35,.13)] sm:rounded-[28px] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)]">
             <div className="relative z-10 flex min-w-0 flex-col justify-center px-6 py-9 sm:px-10 sm:py-12 lg:min-h-[390px] lg:px-12">
               <AnimatedTitle
                 as="h3"
@@ -130,7 +130,7 @@ export function VendingReels() {
                 <span>Hablar con un asesor</span>
               </a>
             </div>
-            <div className="relative h-[210px] min-w-0 overflow-hidden bg-[#DCE9D4] sm:h-[280px] lg:h-auto">
+            <div className="relative h-[210px] min-w-0 overflow-hidden bg-[#FBF4EF] sm:h-[280px] lg:h-auto">
               <Image
                 src="/images/vending/banner-vending.png"
                 alt="Máquinas expendedoras Avra y Nuna"
@@ -138,7 +138,7 @@ export function VendingReels() {
                 sizes="(min-width:1024px) 45vw, 100vw"
                 className="object-cover object-[72%_center]"
               />
-              <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-[#E8F0DE] via-transparent to-transparent lg:block" />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-[#FBF4EF] via-transparent to-transparent lg:block" />
             </div>
           </div>
         </div>
