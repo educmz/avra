@@ -44,7 +44,7 @@ export function VendingBenefitsSection() {
             className="mx-auto mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]"
           />
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
-            Más opciones para tus pausas, de manera simple y a tu ritmo.
+            Bebidas naturales, comidas y snacks a tu alcance, para disfrutar de cada pausa de forma práctica y sin complicaciones.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export function VendingBenefitsSection() {
             >
               <article className="group relative flex h-full min-h-[210px] flex-col items-start overflow-hidden rounded-[24px] border border-[#295C50]/15 border-t-[4px] border-t-[#EA6F32] bg-white px-6 py-6 shadow-[0_10px_28px_rgba(35,65,55,0.07)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(35,65,55,0.12)] motion-reduce:transform-none motion-reduce:transition-none sm:min-h-[225px] sm:px-7 sm:py-7">
                 <div className="flex w-full items-start justify-between gap-4">
-                  <span className="grid size-14 shrink-0 place-items-center rounded-[16px] bg-[#E9F0EA] text-[#295C50]">
+                  <span className="grid size-14 shrink-0 place-items-center rounded-[16px] bg-[#E9F0EA] text-[#295C50] transition-[background-color,color,transform] duration-300 ease-out group-hover:-rotate-6 group-hover:bg-[#295C50] group-hover:text-white motion-reduce:transform-none motion-reduce:transition-none">
                     <Icon size={30} strokeWidth={2} aria-hidden="true" />
                   </span>
                   <span
