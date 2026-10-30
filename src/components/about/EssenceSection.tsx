@@ -102,7 +102,7 @@ export function EssenceSection() {
   return (
     <section
       aria-labelledby="about-essence-title"
-      className={`${styles.section} py-10 sm:py-12 lg:py-14`
+      className={`${styles.section} py-10 sm:py-12 lg:py-14`}
     >
       <Container className="relative z-10">
         <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
