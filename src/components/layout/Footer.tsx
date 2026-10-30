@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, BookOpenText } from "lucide-react";
+import { ArrowUpRight, BookOpenText, Mail } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { socialLinks } from "./socialLinks";
 
@@ -21,7 +21,7 @@ const linkClass =
   "w-fit text-[14px] leading-[1.45] text-[#FBF4EF]/85 transition-colors hover:text-white focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
 
 const whatsappUrl = "https://wa.me/51948742332";
-const quoteUrl = "https://wa.me/51948742332?text=Hola%2C%20quiero%20cotizar%20una%20m%C3%A1quina%20vending%20de%20Avra.";
+
 
 export function Footer() {
   return (
@@ -70,8 +70,6 @@ export function Footer() {
 
             <address className="mt-4 flex flex-col gap-0.5 not-italic text-[14px] leading-[1.45] text-[#FBF4EF]/90">
               <span>Lima, Perú</span>
-              <a href="mailto:hola@avra.pe" className={linkClass}>hola@avra.pe</a>
-              <a href="tel:+51948742332" className={linkClass}>+51 948 742 332</a>
             </address>
 
             <div className="mt-4 flex items-center gap-2.5" aria-label="Redes sociales de Avra">
@@ -114,22 +112,25 @@ export function Footer() {
 
           <div className="col-span-2 flex min-w-0 flex-col items-start lg:col-span-1">
             <h2 className="font-[family-name:var(--font-header)] text-[16px] font-semibold">Contacto</h2>
-            <div className="mt-4 flex flex-col items-start gap-2.5">
+            <div className="mt-4 flex flex-col items-start gap-3">
               <a
-                href={quoteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
+                href="mailto:hola@avra.pe"
+                className={`${linkClass} inline-flex items-center gap-2.5`}
               >
-                Cotiza una máquina
+                <Mail size={19} strokeWidth={1.8} aria-hidden="true" className="shrink-0" />
+                <span>hola@avra.pe</span>
               </a>
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={linkClass}
+                className={`${linkClass} inline-flex items-center gap-2.5`}
               >
-                WhatsApp
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="size-[19px] shrink-0">
+                  <path d="M20.5 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.6-4.8A8.5 8.5 0 1 1 20.5 11.5Z" />
+                  <path d="M9 8.4c-.3.1-.6.8-.6 1.3 0 1.7 2.5 4.8 4.8 5.8 1.5.6 2.4.5 2.8-.4l.2-.7-2.2-1.1-.9 1c-1.2-.6-2.2-1.6-2.8-2.8l1-1L10.2 8.3Z" />
+                </svg>
+                <span>+51 948 742 332</span>
               </a>
             </div>
 
