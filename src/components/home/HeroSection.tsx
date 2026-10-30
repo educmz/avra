@@ -93,7 +93,7 @@ export function HeroSection() {
             sizes: "100vw",
             loading: index === 0 ? ("eager" as const) : ("lazy" as const),
             fetchPriority: index === 0 ? ("high" as const) : ("auto" as const),
-            className: "h-full w-full object-contain object-center md:object-cover",
+            className: "h-full w-full object-contain object-center",
           };
           const { props: desktopImage } = getImageProps({ ...imageOptions, src: slide.src });
           const { props: mobileImage } = getImageProps({ ...imageOptions, src: slide.mobileSrc });
@@ -112,7 +112,7 @@ export function HeroSection() {
                 <img
                   {...desktopImage}
                   alt={slide.alt}
-                  className={`${desktopImage.className} transition-transform duration-[6500ms] ease-out motion-reduce:transition-none ${isActive && !reducedMotion ? "md:scale-[1.035]" : "scale-100"}`}
+                  className={`${desktopImage.className} transition-transform duration-[6500ms] ease-out motion-reduce:transition-none scale-100`}
                 />
               </picture>
             </div>
