@@ -121,7 +121,7 @@ export function Footer() {
               </a>
             </div>
             <p className="mt-5 max-w-[29ch] text-[13px] leading-relaxed text-[#FBF4EF]/75">
-              ¿Tienes consultas sobre nuestros productos o máquinas vending? Escríbenos.
+              ¿Tienes alguna consulta? Estamos para ayudarte
             </p>
           </div>
 
