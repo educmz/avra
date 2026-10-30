@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+ import Image from "next/image";
 import { motion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
@@ -13,8 +12,7 @@ const items = {
     title: "CREAR MOMENTOS PARA DISFRUTAR",
     description:
       "Acercar opciones deliciosas y prácticas que acompañen las pequeñas pausas y los buenos momentos de cada día.",
-    image: "/images/about/essence/purpose-avra.png",
-    fallbackImage: "/images/about/essence/purpose-avra.webp",
+    image: "/images/about/essence/purpose-avra.webp",
     alt: "Sándwich y bebida de Avra",
   },
   mission: {
@@ -22,8 +20,7 @@ const items = {
     title: "HACER ESPECIAL LO COTIDIANO",
     description:
       "Ofrecer sabores y experiencias accesibles, cuidando los detalles para que disfrutar de Avra sea fácil y agradable.",
-    image: "/images/about/essence/mission-avra.png",
-    fallbackImage: "/images/about/essence/mission-avra.webp",
+    image: "/images/about/essence/mission-avra.webp",
     alt: "Bebidas de Avra compartidas en una pausa",
   },
   vision: {
@@ -31,8 +28,7 @@ const items = {
     title: "SEGUIR CRECIENDO CONTIGO",
     description:
       "Llegar a más personas y espacios con nuevas formas de disfrutar nuestros productos sin perder nuestra esencia cercana.",
-    image: "/images/about/essence/vision-avra.png",
-    fallbackImage: "/images/about/essence/vision-avra.webp",
+    image: "/images/about/essence/vision-avra.webp",
     alt: "Waffle de Avra acompañado de frutas",
   },
 } as const;
@@ -40,19 +36,13 @@ const items = {
 type EssenceItem = (typeof items)[keyof typeof items];
 
 function EssencePhoto({ item }: { item: EssenceItem }) {
-  // Las imágenes WEBP existentes mantienen la página funcional hasta que se suban los nuevos PNG.
-  const [imageSrc, setImageSrc] = useState<string>(item.image);
-
   return (
     <Image
-      src={imageSrc}
+      src={item.image}
       alt={item.alt}
       fill
       sizes="(min-width: 1280px) 34vw, (min-width: 1024px) 30vw, 100vw"
       className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.035]"
-      onError={() => {
-        if (imageSrc !== item.fallbackImage) setImageSrc(item.fallbackImage);
-      }}
     />
   );
 }

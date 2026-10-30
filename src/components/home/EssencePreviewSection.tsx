@@ -10,7 +10,7 @@ export function EssencePreviewSection() {
       <Container>
         <div className="relative isolate overflow-hidden rounded-[24px] bg-[#E8F0DE] sm:min-h-[450px] sm:rounded-[28px] lg:min-h-[460px]">
           <Image
-            src="/images/home/cta/essence-home.png"
+            src="/images/home/cta/essence-home.webp"
             alt="Waffle, sándwich y pizza de Avra sobre fondo verde claro"
             fill
             sizes="(min-width:1280px) 1200px, 100vw"
@@ -34,7 +34,7 @@ export function EssencePreviewSection() {
           {/* En móvil, la imagen continúa debajo del texto con un degradado suave. */}
           <div className="relative h-[210px] w-full overflow-hidden sm:hidden">
             <Image
-              src="/images/home/cta/essence-home.png"
+              src="/images/home/cta/essence-home.webp"
               alt="Waffle, sándwich y pizza de Avra"
               fill
               sizes="100vw"

@@ -51,7 +51,7 @@ export function MobileCarta({ isOpen, onClose }: MobileCartaProps) {
       <div className="mx-auto flex min-h-full w-full max-w-2xl flex-col px-5 pb-[max(24px,env(safe-area-inset-bottom))] pt-[max(16px,env(safe-area-inset-top))] sm:px-9">
         <div className="flex min-h-[58px] items-center justify-between">
           <Link href="/" onClick={onClose} aria-label="Avra, ir al inicio" className="flex w-[116px] items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#295C50] sm:w-[130px]">
-            <Image src="/images/brand/avra-wordmark-black.png" alt="Avra" width={2172} height={724} priority className="h-auto w-full object-contain" />
+            <Image src="/images/brand/avra-wordmark-black.webp" alt="Avra" width={2172} height={724} priority className="h-auto w-full object-contain" />
           </Link>
           <button type="button" onClick={onClose} aria-label="Cerrar menú" className="grid size-11 place-items-center rounded-xl border border-[#295C50]/20 bg-white/50 text-[#295C50] transition-colors hover:bg-[#E2EAE1] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#295C50]">
             <X size={21} aria-hidden="true" />

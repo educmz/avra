@@ -3,7 +3,7 @@ import { ImageHero } from "@/components/sections/ImageHero";
 export function AboutBanner() {
   return (
     <ImageHero
-      image="/images/about/about-hero.png"
+      image="/images/about/about-hero.webp"
       lines={["HISTORIA"]}
       kicker="Nuestra"
       subtitle="Momentos que nos inspiran a seguir creciendo"

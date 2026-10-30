@@ -19,7 +19,7 @@ export default function MachinesPage() {
       <section aria-label="Presentación de máquinas Avra" className="w-full pb-6 sm:pb-8 lg:pb-10">
         <div className="relative isolate h-[220px] w-full overflow-hidden sm:h-auto sm:aspect-[1530/380]">
           <Image
-            src="/images/vending/banner-vending.png"
+            src="/images/vending/banner-vending.webp"
             alt="Máquinas expendedoras Avra y Nuna"
             width={1920}
             height={1080}

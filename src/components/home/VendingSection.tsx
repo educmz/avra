@@ -6,8 +6,8 @@ import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 
 const machines = [
-  { name: "AVRA", description: "Bebidas naturales", image: "/images/vending/avra-home.png", href: "/maquinas#avra", bg: "#FBE5D7", accent: "#EA6F32", alt: "Máquina Avra de bebidas naturales" },
-  { name: "NUNA", description: "Snacks y bebidas", image: "/images/vending/nuna-home.png", href: "/maquinas#nuna", bg: "#E4EDD9", accent: "#295C50", alt: "Máquina Nuna de snacks y bebidas" },
+  { name: "AVRA", description: "Bebidas naturales", image: "/images/vending/avra-home.webp", href: "/maquinas#avra", bg: "#FBE5D7", accent: "#EA6F32", alt: "Máquina Avra de bebidas naturales" },
+  { name: "NUNA", description: "Snacks y bebidas", image: "/images/vending/nuna-home.webp", href: "/maquinas#nuna", bg: "#E4EDD9", accent: "#295C50", alt: "Máquina Nuna de snacks y bebidas" },
 ] as const;
 
 export function VendingSection() {

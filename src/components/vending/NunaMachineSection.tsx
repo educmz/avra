@@ -12,7 +12,7 @@ const machine = {
     id: "nuna", name: "Nuna", kicker: "02 / Comidas y snacks",
     title: "Comidas y snacks para tu día",
     description: "Con Nuna, tus pausas tienen más opciones. Encuentra comidas, snacks y bebidas en un solo lugar y elige lo que más te provoque con la comodidad del autoservicio.",
-    image: "/images/vending/maquina-nuna.png",
+    image: "/images/vending/maquina-nuna.webp",
     alt: "Equipo dispensador Nuna negro y verde en un espacio de coworking",
     accent: "#EA6F32", bg: "#FFFFFF",
     details: [

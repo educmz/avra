@@ -12,7 +12,7 @@ const groups = [
     button: "Elige tu sabor",
     href: "/carta#carta-smoothies",
     background: "#DCEEF2",
-    image: "/images/home/cravings/para-beber.png",
+    image: "/images/home/cravings/para-beber.webp",
     alt: "Selección de bebidas de Avra",
   },
   {
@@ -21,7 +21,7 @@ const groups = [
     button: "Nutre tu día",
     href: "/carta#carta-waffles",
     background: "#F8E6BF",
-    image: "/images/home/cravings/para-comer.png",
+    image: "/images/home/cravings/para-comer.webp",
     alt: "Selección de alimentos de Avra",
   },
 ];
