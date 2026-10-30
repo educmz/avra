@@ -45,16 +45,23 @@ export function AvraMachineSection() {
             <div className="mt-3 h-[3px] w-14 rounded-full" style={{ background: machine.accent }} />
             <p className="mt-4 max-w-2xl text-justify text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">{machine.description}</p>
             <h3 className="mt-6 font-heading text-base font-extrabold uppercase tracking-wide text-[#302E2A]">Características del equipo</h3>
-            <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+            <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
               {machine.details.map((detail) => (
-                <li key={detail} className="flex min-h-[54px] items-center gap-2.5 rounded-xl border border-[#302E2A]/10 bg-white/75 px-3.5 py-2.5">
-                  <CheckCircle2 size={19} className="shrink-0" style={{ color: machine.accent }} aria-hidden="true" />
-                  <span className="text-sm font-semibold leading-snug text-[#302E2A]">{detail}</span>
+                <li
+                  key={detail}
+                  className="group flex min-h-[58px] items-center gap-3 rounded-[14px] border border-[#295C50]/10 bg-white/85 px-3 py-2.5 shadow-[0_4px_14px_rgba(41,92,80,0.035)] transition-[border-color,background-color,box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:border-[#EA6F32]/35 hover:bg-white hover:shadow-[0_8px_22px_rgba(41,92,80,0.08)] motion-reduce:transform-none motion-reduce:transition-none"
+                >
+                  <span className="grid size-8 shrink-0 place-items-center rounded-[10px] bg-[#FFF0E5] text-[#EA6F32] transition-[background-color,color,transform] duration-300 group-hover:scale-105 group-hover:bg-[#EA6F32] group-hover:text-white motion-reduce:transform-none motion-reduce:transition-none">
+                    <CheckCircle2 size={18} strokeWidth={2} aria-hidden="true" />
+                  </span>
+                  <span className="text-[14px] font-semibold leading-snug text-[#295C50] sm:text-[15px]">
+                    {detail}
+                  </span>
                 </li>
               ))}
             </ul>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="avra-cta mt-5 w-fit">
-              <span>Consultar por la máquina Avra</span>
+              <span>Solicitar información</span>
             </a>
           </div>
         </div>
