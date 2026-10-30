@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -14,6 +14,7 @@ import {
   MessageCircle,
   MoreHorizontal,
   Play,
+  Pause,
   Send,
   Share2,
   ThumbsUp,
@@ -146,6 +147,20 @@ export function SocialSection() {
   const [instagramLiked, setInstagramLiked] = useState(false);
   const [facebookLiked, setFacebookLiked] = useState(false);
   const [tiktokLiked, setTiktokLiked] = useState(false);
+  const [tiktokPlaying, setTiktokPlaying] = useState(false);
+  const [tiktokMuted, setTiktokMuted] = useState(true);
+  const tiktokVideoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleTiktokPlayback = () => {
+    const video = tiktokVideoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      void video.play().catch(() => setTiktokPlaying(false));
+    } else {
+      video.pause();
+    }
+  };
 
   return (
     <section className={`${styles.section} !bg-background`}>
@@ -223,7 +238,7 @@ export function SocialSection() {
               {/* IMAGEN */}
               <div className={styles.media}>
                 <Image
-                  src="/images/about/social/instagram.webp"
+                  src="/images/about/social/instagram.png"
                   alt="Publicación de Instagram de Avra"
                   fill
                   sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 72px) / 2), calc(100vw - 48px)"
@@ -315,16 +330,22 @@ export function SocialSection() {
               className={styles.card}
               style={{ backgroundColor: "#111" }}
             >
-<div className={styles.media}>
-                <Image
-                  src="/images/about/social/tiktok.webp"
-                  alt="Publicación de TikTok de Avra"
-                  fill
-                  sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 72px) / 2), calc(100vw - 48px)"
-                  className="object-cover"
+              <div className={styles.media}>
+                <video
+                  ref={tiktokVideoRef}
+                  src="/images/about/social/tiktok.mp4"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  autoPlay={!reducedMotion}
+                  muted={tiktokMuted}
+                  loop
+                  playsInline
+                  preload="metadata"
+                  onPlay={() => setTiktokPlaying(true)}
+                  onPause={() => setTiktokPlaying(false)}
+                  aria-label="Video de TikTok de Avra"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
 
                 {/* SUPERIOR */}
                 <div className="absolute left-4 top-4 flex items-center gap-2 text-white">
@@ -335,19 +356,31 @@ export function SocialSection() {
                   </span>
                 </div>
 
-                {/* PLAY */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.button whileTap={reducedMotion ? undefined : { scale: 0.9 }}
+                {/* CONTROLES DE VIDEO */}
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                  <motion.button
+                    whileTap={reducedMotion ? undefined : { scale: 0.9 }}
                     type="button"
-                    aria-label="Reproducir video"
-                    className="flex size-14 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-transform duration-300 hover:scale-110"
+                    onClick={toggleTiktokPlayback}
+                    aria-label={tiktokPlaying ? "Pausar video" : "Reproducir video"}
+                    className={"pointer-events-auto flex size-14 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-all duration-300 hover:scale-110 " + (tiktokPlaying ? "opacity-0 hover:opacity-100 focus-visible:opacity-100" : "opacity-100")}
                   >
-                    <Play
-                      className="ml-1 size-5"
-                      fill="currentColor"
-                    />
+                    {tiktokPlaying ? (
+                      <Pause className="size-5" fill="currentColor" />
+                    ) : (
+                      <Play className="ml-1 size-5" fill="currentColor" />
+                    )}
                   </motion.button>
                 </div>
+
+                <button
+                  type="button"
+                  onClick={() => setTiktokMuted((value) => !value)}
+                  aria-label={tiktokMuted ? "Activar sonido del video" : "Silenciar video"}
+                  className="absolute right-4 top-4 z-10 rounded-full bg-black/40 px-3 py-2 text-xs font-semibold text-white backdrop-blur-sm"
+                >
+                  {tiktokMuted ? "Activar sonido" : "Silenciar"}
+                </button>
 
                 {/* ACCIONES */}
                 <div className="absolute bottom-6 right-4 flex flex-col items-center gap-5 text-white">
@@ -453,7 +486,7 @@ export function SocialSection() {
               {/* IMAGEN */}
               <div className={styles.media}>
                 <Image
-                  src="/images/about/social/facebook.webp"
+                  src="/images/about/social/facebook.png"
                   alt="Publicación de Facebook de Avra"
                   fill
                   sizes="(min-width: 1280px) 384px, (min-width: 1024px) calc((100vw - 128px) / 3), (min-width: 768px) calc((100vw - 72px) / 2), calc(100vw - 48px)"
