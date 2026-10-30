@@ -177,7 +177,7 @@ export function SocialSection() {
 
           <motion.div
             variants={aboutCardVariants}
-            className="mx-auto flex w-full max-w-[330px] min-w-0 flex-col gap-2.5"
+            className="mx-auto flex w-full max-w-[305px] min-w-0 flex-col gap-2.5"
           >
             <motion.article
               whileHover={{ y: -6 }}
@@ -303,7 +303,7 @@ export function SocialSection() {
 
           <motion.div
             variants={aboutCardVariants}
-            className="mx-auto flex w-full max-w-[330px] min-w-0 flex-col gap-2.5"
+            className="mx-auto flex w-full max-w-[305px] min-w-0 flex-col gap-2.5"
           >
             <motion.article
               whileHover={{ y: -6 }}
@@ -407,7 +407,7 @@ export function SocialSection() {
 
           <motion.div
             variants={aboutCardVariants}
-            className="mx-auto flex w-full max-w-[330px] min-w-0 flex-col gap-2.5"
+            className="mx-auto flex w-full max-w-[305px] min-w-0 flex-col gap-2.5"
           >
             <motion.article
               whileHover={{ y: -6 }}
