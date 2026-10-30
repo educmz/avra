@@ -93,6 +93,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
+      data-scroll-behavior="smooth"
       className={`h-full antialiased ${interfaceFont.variable} ${headerFont.variable} ${headingFont.variable} ${accentFont.variable} ${cartaFont.variable} ${scriptFont.variable}`}
     >
       <body className="flex min-h-full flex-col">
