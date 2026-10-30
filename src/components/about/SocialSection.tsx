@@ -334,7 +334,8 @@ export function SocialSection() {
                 <video
                   ref={tiktokVideoRef}
                   src="/images/about/social/tiktok.mp4"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full cursor-pointer object-cover"
+                  onClick={toggleTiktokPlayback}
                   autoPlay={!reducedMotion}
                   muted={tiktokMuted}
                   loop
@@ -363,7 +364,7 @@ export function SocialSection() {
                     type="button"
                     onClick={toggleTiktokPlayback}
                     aria-label={tiktokPlaying ? "Pausar video" : "Reproducir video"}
-                    className={"pointer-events-auto flex size-14 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-all duration-300 hover:scale-110 " + (tiktokPlaying ? "opacity-0 hover:opacity-100 focus-visible:opacity-100" : "opacity-100")}
+                    className="pointer-events-auto flex size-12 items-center justify-center rounded-full bg-black/50 text-white opacity-85 shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:opacity-100 focus-visible:opacity-100"
                   >
                     {tiktokPlaying ? (
                       <Pause className="size-5" fill="currentColor" />
@@ -476,12 +477,6 @@ export function SocialSection() {
                   strokeWidth={1.8}
                 />
               </div>
-
-              {/* TEXTO */}
-              <p className="shrink-0 px-4 pb-3 text-sm leading-6 text-[#050505]">
-                Una pausa, algo rico y una buena conversación. A veces no hace
-                falta más.
-              </p>
 
               {/* IMAGEN */}
               <div className={styles.media}>
