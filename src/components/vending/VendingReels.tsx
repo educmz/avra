@@ -2,7 +2,7 @@
 
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { ChevronLeft, ChevronRight, MessageCircle, Play, Pause, Volume2, VolumeX } from "lucide-react";
 
 const reels = [
   { src: "/videos/vending/tiktoks/tiktok-1.mp4", label: "Video 1 · Conoce Avra" },
@@ -107,6 +107,28 @@ export function VendingReels() {
           <button type="button" onClick={() => select(active + 1)} aria-label="Video siguiente" className="relative z-20 ml-1 grid size-9 shrink-0 place-items-center rounded-full border border-[#295C50]/20 bg-white text-[#295C50] shadow-sm transition-colors hover:bg-[#EAF0E4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#295C50] sm:ml-5 sm:size-12"><ChevronRight size={21} /></button>
         </div>
 
+        {/* Invitación a solicitar información después de ver las máquinas en acción. */}
+        <div className="mx-auto mt-9 max-w-5xl border-t border-white/20 pt-8 sm:mt-12 sm:pt-10">
+          <div className="flex flex-col items-center gap-5 text-center lg:flex-row lg:justify-between lg:gap-10 lg:text-left">
+            <div className="max-w-2xl">
+              <h3 className="font-heading text-xl font-extrabold uppercase leading-tight tracking-tight text-white sm:text-2xl">
+                ¿Quieres conocer más sobre nuestras máquinas?
+              </h3>
+              <p className="mt-3 text-base leading-7 text-white/80 sm:text-lg sm:leading-8">
+                Cuéntanos sobre tu espacio y nuestro equipo te orientará sobre las opciones disponibles.
+              </p>
+            </div>
+            <a
+              href={`https://wa.me/51948742332?text=${encodeURIComponent("Hola, quisiera recibir más información sobre las máquinas de vending saludable de Avra para mi espacio.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="avra-cta inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2.5 rounded-full bg-white px-6 py-3 font-[family-name:var(--font-header)] text-sm font-bold uppercase tracking-wide text-[#295C50] shadow-[0_8px_22px_rgba(0,0,0,.12)] transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#F7EEE5] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transform-none sm:w-auto"
+            >
+              <MessageCircle size={20} aria-hidden="true" />
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
