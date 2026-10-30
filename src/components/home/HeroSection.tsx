@@ -138,7 +138,7 @@ export function HeroSection() {
         <div
           role="group"
           aria-label="Seleccionar diapositiva"
-          className="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 items-center gap-0.5 rounded-full border border-white/30 bg-[#295C50]/55 px-2.5 py-1 shadow-[0_6px_20px_rgba(16,40,34,.2)] backdrop-blur-md sm:bottom-7 sm:gap-1 sm:px-3 sm:py-1.5"
+          className="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 items-center gap-0.5 rounded-full border border-white/30 bg-black/25 px-2.5 py-1 shadow-[0_6px_20px_rgba(16,40,34,.2)] backdrop-blur-md sm:bottom-7 sm:gap-1 sm:px-3 sm:py-1.5"
         >
           {slides.map((slide, index) => (
             <button
