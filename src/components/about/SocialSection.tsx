@@ -127,7 +127,7 @@ function SocialButton({
       scroll={false}
       target={href ? "_blank" : undefined}
       rel={href ? "noreferrer" : undefined}
-      className="flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transform-none"
+      className="flex min-h-10 items-center justify-center gap-2 rounded-full px-4 text-[13px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none"
       style={{ backgroundColor: background }}
     >
       {icon}
@@ -152,18 +152,22 @@ export function SocialSection() {
       <Container>
         {/* CABECERA */}
         <AboutReveal
-          className="mb-6 sm:mb-7"
+          className="mb-8 sm:mb-9"
           amount={0.5}
         >
           <AnimatedTitle
             text="Momentos que compartimos"
             className="mt-2 text-[28px] font-extrabold uppercase tracking-[0.01em] text-[#302E2A] sm:text-[34px] lg:text-[40px]"
           />
+          <span aria-hidden="true" className="mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
+          <p className="mt-5 max-w-[68ch] text-left text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
+            Descubre los sabores, las experiencias y los momentos que compartimos en nuestras redes sociales.
+          </p>
         </AboutReveal>
 
         {/* REDES */}
         <AboutReveal
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          className="mx-auto grid w-full max-w-[1080px] gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6"
           amount={0.2}
           stagger={0.12}
         >
@@ -173,7 +177,7 @@ export function SocialSection() {
 
           <motion.div
             variants={aboutCardVariants}
-            className="flex min-w-0 flex-col gap-3"
+            className="mx-auto flex w-full max-w-[330px] min-w-0 flex-col gap-2.5"
           >
             <motion.article
               whileHover={{ y: -6 }}
@@ -185,7 +189,7 @@ export function SocialSection() {
               className={`${styles.card} border border-[#302E2A]/10 bg-white`}
             >
               {/* HEADER */}
-              <div className="flex h-16 shrink-0 items-center justify-between px-4">
+              <div className="flex h-14 shrink-0 items-center justify-between px-4">
                 <div className="flex items-center gap-3">
                   <div className="flex size-9 items-center justify-center rounded-full bg-gradient-to-br from-[#FEDA75] via-[#FA7E1E] to-[#D62976] p-[2px]">
                     <div className="flex size-full items-center justify-center rounded-full bg-white">
@@ -299,7 +303,7 @@ export function SocialSection() {
 
           <motion.div
             variants={aboutCardVariants}
-            className="flex min-w-0 flex-col gap-3"
+            className="mx-auto flex w-full max-w-[330px] min-w-0 flex-col gap-2.5"
           >
             <motion.article
               whileHover={{ y: -6 }}
@@ -403,7 +407,7 @@ export function SocialSection() {
 
           <motion.div
             variants={aboutCardVariants}
-            className="flex min-w-0 flex-col gap-3"
+            className="mx-auto flex w-full max-w-[330px] min-w-0 flex-col gap-2.5"
           >
             <motion.article
               whileHover={{ y: -6 }}
