@@ -11,10 +11,6 @@ import {
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { Container } from "@/components/ui/Container";
 
-const whatsappUrl = `https://wa.me/51948742332?text=${encodeURIComponent(
-  "Hola, me gustaría recibir información sobre las máquinas expendedoras Avra para mi establecimiento."
-)}`;
-
 const spaces = [
   { Icon: Building2, label: "Empresas corporativas" },
   { Icon: Factory, label: "Plantas industriales" },
@@ -34,21 +30,23 @@ export function VendingSpacesSection() {
     >
       <Container>
         <div className="mx-auto max-w-[1200px]">
-          <AnimatedTitle
-            id="vending-spaces-title"
-            text="DONDE LAS PERSONAS TRABAJAN, ESTUDIAN O ENTRENAN, AVRA PUEDE ESTAR AHÍ."
-            className="max-w-[1100px] font-heading text-[30px] font-extrabold uppercase leading-[1.08] tracking-[-0.035em] text-[#302E2A] sm:text-[42px] lg:text-[52px]"
-          />
-          <span
-            aria-hidden="true"
-            className="mt-6 block h-[3px] w-14 rounded-full bg-[#EA6F32]"
-          />
-          <p className="mt-6 max-w-[850px] text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
-            Llevamos una experiencia de alimentación práctica y saludable a los
-            espacios donde las personas pasan gran parte de su día. Con nuestras
-            máquinas, acercamos bebidas naturales, comidas y snacks de forma
-            simple y cómoda, adaptándonos a distintos entornos.
-          </p>
+          <div className="mx-auto max-w-[960px] text-center">
+            <AnimatedTitle
+              id="vending-spaces-title"
+              text="DONDE LAS PERSONAS TRABAJAN, ESTUDIAN O ENTRENAN, AVRA PUEDE ESTAR AHÍ."
+              className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]"
+            />
+            <span
+              aria-hidden="true"
+              className="mx-auto mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]"
+            />
+            <p className="mx-auto mt-5 max-w-[850px] text-center text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
+              Llevamos una experiencia de alimentación práctica y saludable a los
+              espacios donde las personas pasan gran parte de su día. Con nuestras
+              máquinas, acercamos bebidas naturales, comidas y snacks de forma
+              simple y cómoda, adaptándonos a distintos entornos.
+            </p>
+          </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {spaces.map(({ Icon, label }) => (
@@ -68,16 +66,6 @@ export function VendingSpacesSection() {
             ))}
           </div>
 
-          <div className="mt-10 flex justify-start">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="avra-cta"
-            >
-              <span>Conversemos</span>
-            </a>
-          </div>
         </div>
       </Container>
     </section>
