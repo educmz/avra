@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Container } from "@/components/ui/Container";
+import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import styles from "./EssenceSection.module.css";
 
 const items = {
@@ -82,13 +83,13 @@ function EssenceCard({
       <div
         className={`order-2 flex min-w-0 flex-1 flex-col justify-center px-6 py-7 sm:px-8 lg:px-7 lg:py-8 xl:px-9 ${photoRight ? "lg:order-1" : "lg:order-2"}`}
       >
-        <p className="text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#295C50] sm:text-[13px]">
+        <p className="text-xs font-bold uppercase tracking-[.14em] text-[#295C50]">
           {item.label}
         </p>
-        <h3 className="mt-4 font-heading text-[22px] font-extrabold uppercase leading-[1.13] tracking-[-0.025em] text-[#302E2A] sm:text-[24px] xl:text-[26px]">
+        <h3 className="mt-3 font-heading text-xl font-extrabold uppercase leading-tight text-[#302E2A] sm:text-2xl">
           {item.title}
         </h3>
-        <p className="mt-5 text-[15px] leading-[1.65] text-[#555451] sm:text-[16px]">
+        <p className="mt-4 text-base leading-7 text-[#302E2A]/75">
           {item.description}
         </p>
         <span aria-hidden="true" className="mt-6 block h-[3px] w-[60px] rounded-full bg-[#EA6F32]" />
@@ -103,42 +104,17 @@ export function EssenceSection() {
       aria-labelledby="about-essence-title"
       className={`${styles.section} py-12 sm:py-16 lg:py-20`}
     >
-      {/* Motivos vegetales discretos, como en la referencia */}
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 130 245"
-        fill="none"
-        className="pointer-events-none absolute -left-4 top-0 hidden h-[245px] w-[130px] opacity-75 lg:block"
-      >
-        <path d="M-5 212C25 151 42 94 81 14" stroke="#6B8977" strokeWidth="3" />
-        <path d="M40 117C7 94 17 49 66 27C78 60 68 95 40 117Z" fill="#6B8977" />
-        <path d="M21 168C-6 150 -8 111 35 96C44 126 41 149 21 168Z" fill="#6B8977" />
-        <path d="M67 66C61 31 84 15 115 7C114 37 95 59 67 66Z" fill="#6B8977" />
-      </svg>
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 105 235"
-        fill="none"
-        className="pointer-events-none absolute -right-5 top-[45%] hidden h-[235px] w-[105px] opacity-65 xl:block"
-      >
-        <path d="M102 225C55 177 54 108 72 17" stroke="#EA6F32" strokeWidth="2.5" />
-        <path d="M71 99C45 87 40 50 58 21C78 44 84 71 71 99Z" stroke="#EA6F32" strokeWidth="2.5" />
-        <path d="M77 153C40 148 19 117 34 89C66 102 82 125 77 153Z" stroke="#EA6F32" strokeWidth="2.5" />
-      </svg>
-
       <Container className="relative z-10">
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-6">
-          {/* Encabezado arriba a la izquierda */}
+          {/* Encabezado: misma tipografía y jerarquía que las demás secciones */}
           <div className="flex min-w-0 flex-col items-center justify-center px-2 py-7 text-center sm:py-10 lg:col-span-5 lg:items-start lg:py-8 lg:pl-6 lg:text-left xl:pl-[70px]">
-            <span aria-hidden="true" className="mb-7 block h-[4px] w-[66px] rounded-full bg-[#EA6F32]" />
-            <h2
+            <AnimatedTitle
               id="about-essence-title"
-              className="font-heading text-[40px] font-extrabold uppercase leading-[1.04] tracking-[-0.045em] text-[#302E2A] sm:text-[52px] lg:text-[49px] xl:text-[62px]"
-            >
-              <span className="block">LO QUE NOS</span>
-              <span className="block text-[#295C50]">MUEVE</span>
-            </h2>
-            <p className="mt-7 max-w-[440px] text-[17px] leading-[1.55] text-[#686663] sm:text-[19px]">
+              text="LO QUE NOS MUEVE"
+              className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]"
+            />
+            <span aria-hidden="true" className="mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
+            <p className="mt-5 max-w-[62ch] text-base leading-7 text-[#302E2A]/80 sm:text-lg sm:leading-8">
               Estas ideas orientan lo que hacemos hoy y la forma en que queremos seguir creciendo.
             </p>
           </div>
