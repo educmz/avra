@@ -1,13 +1,17 @@
 import Image from "next/image";
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
+
+const whatsappUrl = `https://wa.me/51948742332?text=${encodeURIComponent(
+  "Hola, me gustaría recibir más información sobre la máquina Avra de bebidas naturales y cómo instalarla en mi espacio."
+)}`;
 
 // Los datos y el diseño de esta máquina se mantienen independientes de la otra.
 const machine = {
     id: "avra", name: "Avra", kicker: "01 / Bebidas naturales",
     title: "Bebidas naturales, a tu alcance",
-    description: "La máquina naranja Avra está pensada para acercar una experiencia de bebidas naturales a diferentes momentos del día. Su diseño distintivo y su sistema de autoservicio hacen que elegir una bebida resulte práctico.",
+    description: "Haz que disfrutar una bebida natural sea parte de cada pausa. La máquina Avra acerca esta opción a tu espacio con una experiencia de autoservicio sencilla, cómoda y sin complicaciones.",
     image: "/images/vending/maquina-avra.png",
     alt: "Máquina naranja Avra instalada en una zona de descanso de oficina",
     accent: "#EA6F32", bg: "#FFFFFF",
@@ -49,7 +53,9 @@ export function AvraMachineSection() {
                 </li>
               ))}
             </ul>
-            <a href="/nosotros" className="avra-cta mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#295C50] px-5 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-[#173E34]">Conoce más de Avra <ArrowUpRight size={17} /></a>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="avra-cta mt-5 w-fit">
+              <span>Consultar por la máquina Avra</span>
+            </a>
           </div>
         </div>
       </Container>
