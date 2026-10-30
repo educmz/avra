@@ -6,7 +6,9 @@ import { Container } from "@/components/ui/Container";
 // Se reutiliza el recurso existente para evitar imágenes rotas mientras llega la nueva.
 const spaceImage = "/images/vending/cta-vending.png";
 
-const whatsappUrl = `https://wa.me/51948742332?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20m%C3%A1quinas%20expendedoras%20Avra%20para%20mi%20establecimiento.`;
+const whatsappUrl = `https://wa.me/51948742332?text=${encodeURIComponent(
+  "Hola, me gustaría recibir información sobre las máquinas expendedoras Avra para mi establecimiento."
+)}`;
 
 export function VendingSpacesSection() {
   return (
@@ -20,8 +22,7 @@ export function VendingSpacesSection() {
               </p>
               <AnimatedTitle
                 id="vending-spaces-title"
-                text={"Haz que tu espacio
-ofrezca algo más."}
+                text="Haz que tu espacio ofrezca algo más."
                 className="mt-5 max-w-[16ch] font-heading text-[30px] font-extrabold uppercase leading-[1.08] tracking-[-0.03em] text-[#302E2A] sm:text-[38px] lg:text-[42px]"
               />
               <span aria-hidden="true" className="mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
