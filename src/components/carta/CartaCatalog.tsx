@@ -135,7 +135,7 @@ export function CartaCatalog() {
       } as CSSProperties}
     >
       <ImageHero
-        image="/images/carta/carta-hero.png"
+        image="/images/carta/carta-hero.webp"
         flushBottom
         lines={["CARTA"]}
         kicker="Nuestra"
