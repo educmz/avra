@@ -63,6 +63,7 @@ export function Footer() {
                 <Image
                   src="/images/brand/avra-wordmark-black.webp"
                   alt="Avra"
+                  sizes="(min-width: 1024px) 158px, (min-width: 640px) 148px, 112px"
                   width={2172}
                   height={724}
                   className="h-auto w-[112px] brightness-0 invert sm:w-[148px] lg:w-[158px]"
@@ -72,18 +73,21 @@ export function Footer() {
               </div>
 
               <div className="flex items-center justify-center gap-2 sm:mt-4 sm:gap-2.5" aria-label="Redes sociales de Avra">
-                {socialLinks.map((social) => (
-                  <a
+                {socialLinks.map((social) => {
+                  const Tag = social.href ? "a" : "span";
+                  return (
+                  <Tag
                     key={social.label}
-                    href={social.href}
+                    href={social.href || undefined}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={social.label}
+                    aria-label={social.href ? social.label : `${social.label}: enlace pendiente`}
+                    aria-disabled={!social.href || undefined}
                     className="grid size-8 place-items-center rounded-lg bg-[#FBF4EF] sm:size-9 text-[#295C50] transition-all hover:-translate-y-0.5 hover:bg-[#EADFCF] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
                   >
                     {social.icon}
-                  </a>
-                ))}
+                  </Tag>
+                ); })}
               </div>
             </div>
           </div>

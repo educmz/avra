@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/config/seo";
 import Image from "next/image";
 import { VendingReels } from "@/components/vending/VendingReels";
 import { VendingBenefitsSection } from "@/components/vending/VendingBenefitsSection";
@@ -7,15 +7,12 @@ import { AvraMachineSection } from "@/components/vending/AvraMachineSection";
 import { NunaMachineSection } from "@/components/vending/NunaMachineSection";
 import { VendingContactSection } from "@/components/vending/VendingContactSection";
 
-export const metadata: Metadata = {
-  title: "Vending saludable",
-  description: "Conoce las máquinas Avra y Nuna, sus productos y su funcionamiento. Bebidas naturales y comidas prácticas en un formato de autoservicio.",
-};
+
 
 
 export default function MachinesPage() {
   return (
-    <main className="bg-background pt-[68px] sm:pt-[74px] lg:pt-[84px]">
+    <div className="bg-background pt-[68px] sm:pt-[74px] lg:pt-[84px]">
       <section aria-label="Presentación de máquinas Avra" className="w-full pb-6 sm:pb-8 lg:pb-10">
         <div className="relative isolate h-[220px] w-full overflow-hidden sm:h-auto sm:aspect-[1530/380]">
           <Image
@@ -50,6 +47,8 @@ export default function MachinesPage() {
       <VendingReels />
       <VendingSpacesSection />
       <VendingContactSection />
-    </main>
+    </div>
   );
 }
+
+export const metadata = pageMetadata("/maquinas", "Máquinas Vending Saludables para Empresas | AVRA", "Conoce las máquinas vending saludables de AVRA y descubre una alternativa práctica para ofrecer alimentos y bebidas en empresas y otros espacios.", true);

@@ -11,6 +11,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { siteConfig } from "@/config/site";
 
+import { siteUrl } from "@/config/seo";
+import { Analytics } from "@/components/analytics/Analytics";
 import "./globals.css";
 
 const interfaceFont = Manrope({
@@ -51,40 +53,9 @@ const scriptFont = Pacifico({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://avra.pe"),
-
-  title: {
-    default: `${siteConfig.name} | Activa lo natural`,
-    template: `${siteConfig.name} | %s`,
-  },
-
-  description: siteConfig.description,
-
-  applicationName: siteConfig.name,
-
-  alternates: {
-    canonical: "https://avra.pe",
-  },
-
-  openGraph: {
-    type: "website",
-    locale: "es_PE",
-    url: "https://avra.pe",
-    siteName: siteConfig.name,
-    title: `${siteConfig.name} | Activa lo natural`,
-    description: siteConfig.description,
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: `${siteConfig.name} | Activa lo natural`,
-    description: siteConfig.description,
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-  },
+ metadataBase: new URL(siteUrl), title: { default: "AVRA | Alimentos Saludables y Máquinas Vending", template: "%s | AVRA" },
+ description: siteConfig.description, applicationName: "AVRA",
+ verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } : undefined,
 };
 
 export default function RootLayout({
@@ -97,9 +68,16 @@ export default function RootLayout({
       className={`h-full antialiased ${interfaceFont.variable} ${headerFont.variable} ${headingFont.variable} ${accentFont.variable} ${cartaFont.variable} ${scriptFont.variable}`}
     >
       <body className="flex min-h-full flex-col">
-        <Header />
+        <a href="#contenido" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-white focus:p-4">Saltar al contenido</a>
+<Header />
+<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+ "@context": "https://schema.org", "@graph": [
+ { "@type": "Organization", "@id": siteUrl + "/#organization", name: "AVRA", url: siteUrl, logo: siteUrl + "/images/brand/avra-wordmark-black.webp" },
+ { "@type": "WebSite", "@id": siteUrl + "/#website", name: "AVRA", url: siteUrl, inLanguage: "es-PE", publisher: { "@id": siteUrl + "/#organization" } }
+ ] }).replace(/</g, "\u003c") }} />
+<Analytics />
 
-        <main className="flex-1">
+        <main id="contenido" tabIndex={-1} className="flex-1">
           {children}
         </main>
 

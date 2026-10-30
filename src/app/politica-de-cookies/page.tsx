@@ -1,12 +1,11 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/config/seo";
 
 import { ComingSoonLegalPage } from "@/components/legal/ComingSoonLegalPage";
 
-export const metadata: Metadata = {
-  title: "Política de cookies | Avra",
-  description: "Sección de política de cookies de Avra en preparación.",
-};
+
 
 export default function CookiePolicyPage() {
   return <ComingSoonLegalPage title="Política de cookies" />;
 }
+
+export const metadata = pageMetadata("/politica-de-cookies", "Política de cookies | AVRA", "Política de cookies de AVRA: sección en preparación.", false);

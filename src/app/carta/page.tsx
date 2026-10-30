@@ -1,10 +1,8 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/config/seo";
 
 import { CartaCatalog } from "@/components/carta/CartaCatalog";
 
-export const metadata: Metadata = {
-  title: "Carta",
-};
+
 
 export default function CartaPage() {
   return (
@@ -13,3 +11,5 @@ export default function CartaPage() {
     </div>
   );
 }
+
+export const metadata = pageMetadata("/carta", "Carta de Alimentos y Bebidas Saludables | AVRA", "Explora la carta de AVRA y conoce nuestra selección de alimentos, snacks y bebidas saludables para disfrutar en tu día a día.", true);

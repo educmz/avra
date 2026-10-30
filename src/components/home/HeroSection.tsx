@@ -1,5 +1,6 @@
 "use client";
 
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { getImageProps } from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -16,6 +17,8 @@ const slides = [
 ] as const;
 
 export function HeroSection() {
+  const reducedMotion = useReducedMotion();
+  const [paused, setPaused] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
   const [interaction, setInteraction] = useState(0);
   const [hidden, setHidden] = useState(false);
@@ -29,12 +32,12 @@ export function HeroSection() {
   }, []);
 
   useEffect(() => {
-    if (hidden) return;
+    if (hidden || reducedMotion || paused) return;
     const timeout = window.setTimeout(() => {
       setActiveSlide((current) => (current + 1) % slides.length);
     }, SLIDE_DURATION);
     return () => window.clearTimeout(timeout);
-  }, [hidden, activeSlide, interaction]);
+  }, [hidden, reducedMotion, paused, activeSlide, interaction]);
 
   function changeSlide(direction: number) {
     setInteraction((current) => current + 1);
@@ -110,6 +113,7 @@ export function HeroSection() {
           );
         })}
 
+        <button type="button" onClick={() => setPaused(value => !value)} aria-pressed={paused} className="absolute right-3 bottom-5 z-30 rounded-full bg-black/70 px-3 py-2 text-sm text-white focus-visible:outline-2 focus-visible:outline-white">{paused ? "Reanudar" : "Pausar"}</button>
         {/* Sombreado mínimo, únicamente para que los controles se lean en cualquier imagen. */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-28 bg-gradient-to-t from-black/20 to-transparent" />
 

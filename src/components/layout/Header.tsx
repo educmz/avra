@@ -22,7 +22,7 @@ export function Header() {
             alt="Avra"
             width={2172}
             height={724}
-            priority
+            sizes="(min-width: 1280px) 143px, (min-width: 640px) 130px, 114px"
             className="h-auto w-[114px] object-contain transition-transform duration-200 group-hover:scale-[1.025] sm:w-[130px] xl:w-[143px]"
           />
         </Link>

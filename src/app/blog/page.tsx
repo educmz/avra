@@ -1,13 +1,10 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/config/seo";
 import Link from "next/link";
 import { ImageHero } from "@/components/sections/ImageHero";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { Container } from "@/components/ui/Container";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description: "Novedades y contenidos de Avra sobre alimentos y bienestar.",
-};
+
 
 export default function BlogPage() {
   return (
@@ -33,3 +30,5 @@ export default function BlogPage() {
     </div>
   );
 }
+
+export const metadata = pageMetadata("/blog", "Blog de Alimentación y Bienestar | AVRA", "Estamos preparando el blog de AVRA con ideas y contenidos sobre alimentación y bienestar.", false);

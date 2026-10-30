@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const menuItems = [
   { label: "Inicio", href: "/" },
@@ -21,14 +21,25 @@ interface MobileCartaProps {
 
 export function MobileCarta({ isOpen, onClose }: MobileCartaProps) {
   const pathname = usePathname();
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!isOpen) return;
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const dialog = dialogRef.current;
+    const focusable = () => Array.from(dialog?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])') ?? []);
+    focusable()[0]?.focus();
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") onClose();
+      if (event.key === "Tab") {
+        const items = focusable();
+        const first = items[0], last = items[items.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+      }
     };
     const desktop = window.matchMedia("(min-width: 1024px)");
     const handleResize = () => {
@@ -39,6 +50,7 @@ export function MobileCarta({ isOpen, onClose }: MobileCartaProps) {
     desktop.addEventListener("change", handleResize);
     return () => {
       document.body.style.overflow = previousOverflow;
+      previousFocus?.focus();
       window.removeEventListener("keydown", handleKeyDown);
       desktop.removeEventListener("change", handleResize);
     };
@@ -47,11 +59,11 @@ export function MobileCarta({ isOpen, onClose }: MobileCartaProps) {
   if (!isOpen) return null;
 
   return (
-    <div id="mobile-navigation" role="dialog" aria-modal="true" aria-label="Menú de navegación" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-[#FBF4EF] text-[#302E2A]">
+    <div ref={dialogRef} id="mobile-navigation" role="dialog" aria-modal="true" aria-label="Menú de navegación" className="fixed inset-0 z-[9998] overflow-y-auto overscroll-contain bg-[#FBF4EF] text-[#302E2A]">
       <div className="mx-auto flex min-h-full w-full max-w-2xl flex-col px-5 pb-[max(24px,env(safe-area-inset-bottom))] pt-[max(16px,env(safe-area-inset-top))] sm:px-9">
         <div className="flex min-h-[58px] items-center justify-between">
           <Link href="/" onClick={onClose} aria-label="Avra, ir al inicio" className="flex w-[116px] items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#295C50] sm:w-[130px]">
-            <Image src="/images/brand/avra-wordmark-black.webp" alt="Avra" width={2172} height={724} priority className="h-auto w-full object-contain" />
+            <Image src="/images/brand/avra-wordmark-black.webp" alt="Avra" width={2172} height={724} sizes="130px" className="h-auto w-full object-contain" />
           </Link>
           <button type="button" onClick={onClose} aria-label="Cerrar menú" className="grid size-11 place-items-center rounded-xl border border-[#295C50]/20 bg-white/50 text-[#295C50] transition-colors hover:bg-[#E2EAE1] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#295C50]">
             <X size={21} aria-hidden="true" />

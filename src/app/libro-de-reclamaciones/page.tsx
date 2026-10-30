@@ -1,12 +1,11 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/config/seo";
 
 import { ComingSoonLegalPage } from "@/components/legal/ComingSoonLegalPage";
 
-export const metadata: Metadata = {
-  title: "Libro de reclamaciones | Avra",
-  description: "Sección de libro de reclamaciones de Avra en preparación.",
-};
+
 
 export default function ComplaintBookPage() {
   return <ComingSoonLegalPage title="Libro de reclamaciones" />;
 }
+
+export const metadata = pageMetadata("/libro-de-reclamaciones", "Libro de reclamaciones | AVRA", "Libro de reclamaciones de AVRA: sección en preparación.", false);

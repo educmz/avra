@@ -17,7 +17,7 @@ export function ComingSoonLegalPage({ title }: ComingSoonLegalPageProps) {
           </p>
           <AnimatedTitle
             as="h1"
-            text="Próximamente"
+            text={title}
             className="font-heading text-[28px] font-extrabold uppercase tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]"
           />
           <p className="mt-6 max-w-xl text-justify text-base leading-8 text-[#302E2A]/75 sm:text-lg">
