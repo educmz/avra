@@ -105,14 +105,14 @@ export function VendingReels() {
       className="overflow-hidden bg-[#295C50] py-14 text-white sm:py-16 lg:py-20"
     >
       <Container>
-        <div className="mx-auto max-w-[960px] text-center">
+        <div className="mx-auto max-w-[1120px] text-center">
           <AnimatedTitle
             id="vending-videos-title"
             text="VENDING EN ACCIÓN"
             className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-white sm:text-[34px] lg:text-[40px]"
           />
           <span aria-hidden="true" className="mx-auto mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
-          <p className="mx-auto mt-5 max-w-[700px] text-center text-base leading-7 text-white/80 sm:text-lg sm:leading-8">
+          <p className="mx-auto mt-5 max-w-[700px] text-center text-base leading-7 text-white/80 sm:text-lg sm:leading-8 lg:max-w-none lg:whitespace-nowrap">
             Mira nuestras máquinas en acción y descubre cómo se vive la experiencia de vending saludable.
           </p>
         </div>
@@ -261,15 +261,6 @@ export function VendingReels() {
                       )}
                     </div>
 
-                    <div className="flex h-[55px] shrink-0 items-center justify-between border-t border-[#E9E7E3] px-4">
-                      <span className="max-w-[80%] truncate text-xs font-semibold text-[#295C50]">
-                        {reel.title}
-                      </span>
-                      <span className="text-[11px] text-[#302E2A]/55">
-                        {index + 1} / {reels.length}
-                      </span>
-                    </div>
-
                     {!selected && (
                       <button
                         type="button"
@@ -302,18 +293,6 @@ export function VendingReels() {
           <ChevronRight size={29} strokeWidth={1.8} aria-hidden="true" />
         </button>
 
-        <div className="mt-1 flex items-center justify-center gap-2 sm:mt-2">
-          {reels.map((reel, index) => (
-            <button
-              key={reel.videoSrc}
-              type="button"
-              onClick={() => select(index)}
-              aria-label={`Ir al video ${index + 1}: ${reel.title}`}
-              aria-current={index === active ? "true" : undefined}
-              className={`h-2 rounded-full transition-[width,background-color] duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${index === active ? "w-7 bg-[#EA6F32]" : "w-2 bg-white/50 hover:bg-white/80"}`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
