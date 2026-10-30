@@ -10,7 +10,7 @@ Base: origin/develop, commit 8074e5d. Copia aislada, árbol inicialmente limpio.
 - Media: Carta sin descripción particular; títulos legales duplicaban marca por template. Corregidos.
 - Media: redes sociales sin imagen, falta JSON-LD. Imagen PNG genérica de marca y grafo Organization/WebSite.
 - Media: main anidados, Home sin H1. Semántica corregida conservando clases y distribución.
-- Media: carrusel sin pausa y autoplay con movimiento reducido. Control visible de pausa y preferencia respetada.
+- Media: se respeta la preferencia de movimiento reducido. El carrusel conserva autoplay sin control visible de pausa por decisión de diseño; queda pendiente evaluar el criterio WCAG 2.2.2.
 - Media: diálogo móvil sin contención/restauración del foco. Corregido sin cambiar estructura visual.
 - Media: logos sin sizes y prioridad en logo. Ajustados para evitar descargas sobredimensionadas y competencia con hero.
 - Integraciones: no había Analytics, CMP, tokens Search Console, datos de redes oficiales ni configuración Hostinger específica. Integraciones preparadas y desactivadas; dependencias documentadas.
