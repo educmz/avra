@@ -97,7 +97,7 @@ export function Footer() {
             </div>
           </nav>
 
-          <div className="flex min-w-0 flex-col items-start">
+          <div className="col-span-2 flex min-w-0 flex-col items-start sm:col-span-1">
             <h2 className="text-[16px] leading-tight tracking-[0.01em]" style={{ fontFamily: "var(--font-header), sans-serif", fontWeight: 500 }}>Contacto</h2>
             <div className="mt-4 flex flex-col items-start gap-3">
               <a
@@ -120,8 +120,9 @@ export function Footer() {
                 <span>+51 948 742 332</span>
               </a>
             </div>
-            <p className="mt-5 max-w-[29ch] text-[13px] leading-relaxed text-[#FBF4EF]/75">
-              ¿Tienes alguna consulta? Estamos para ayudarte
+            <p className="mt-5 text-[13px] leading-relaxed text-[#FBF4EF]/75">
+              <span className="block whitespace-nowrap">¿Tienes alguna consulta?</span>
+              <span className="block whitespace-nowrap">Estamos para ayudarte</span>
             </p>
           </div>
 
@@ -154,7 +155,7 @@ export function Footer() {
         <div className="mt-8 border-t border-[#FBF4EF]/25 pt-4 sm:mt-9">
           <div className="flex flex-col gap-2 text-[12px] text-[#FBF4EF]/85 sm:flex-row sm:items-center sm:justify-between lg:grid lg:grid-cols-[1.2fr_.9fr_1.12fr_1.08fr] lg:items-start lg:gap-x-9 xl:gap-x-14">
             <p className="lg:col-span-3">© {new Date().getFullYear()} Avra. Todos los derechos reservados.</p>
-            <p className="lg:col-start-4">Diseño y desarrollo <span className="font-semibold text-[#FBF4EF]">educmz</span></p>
+            <p className="lg:col-start-4">Desarrollado por <span className="font-semibold text-[#FBF4EF]">educmz</span></p>
           </div>
         </div>
       </Container>
