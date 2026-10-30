@@ -10,7 +10,7 @@ export function EssencePreviewSection() {
       <Container>
         <div className="relative isolate min-h-[420px] overflow-hidden rounded-[24px] bg-[#E8F0DE] sm:min-h-[450px] sm:rounded-[28px] lg:min-h-[460px]">
           <Image
-            src="/images/home/essence/essence-home.png"
+            src="/images/home/cta/essence-home.png"
             alt="Waffle, sándwich y pizza de Avra sobre fondo verde claro"
             fill
             sizes="(min-width:1280px) 1200px, 100vw"
