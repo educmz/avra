@@ -111,6 +111,7 @@ export function HeroSection() {
                 <source media="(max-width: 767px)" srcSet={mobileImage.srcSet} sizes={mobileImage.sizes} />
                 <img
                   {...desktopImage}
+                  alt={slide.alt}
                   className={`${desktopImage.className} transition-transform duration-[6500ms] ease-out motion-reduce:transition-none ${isActive && !reducedMotion ? "scale-[1.035]" : "scale-100"}`}
                 />
               </picture>
