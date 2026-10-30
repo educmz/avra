@@ -1,10 +1,46 @@
 import type { Metadata } from "next";
+
 export const siteUrl = "https://avra.pe";
 export const indexablePaths = ["/", "/carta", "/maquinas", "/nosotros"] as const;
+
+// Keep the original, concise browser-tab labels without losing page-specific
+// descriptions, canonical URLs or richer titles for social previews.
+const browserTitles: Record<string, string> = {
+  "/": "Avra | Activa lo natural",
+  "/carta": "Avra | Carta",
+  "/maquinas": "Avra | Vending saludable",
+  "/nosotros": "Avra | Nosotros",
+  "/blog": "Avra | Blog",
+  "/libro-de-reclamaciones": "Avra | Libro de reclamaciones",
+  "/politica-de-cookies": "Avra | Política de cookies",
+  "/politica-de-privacidad": "Avra | Política de privacidad",
+  "/terminos-y-condiciones": "Avra | Términos y condiciones",
+};
+
 export function pageMetadata(path: string, title: string, description: string, index = true): Metadata {
- const url = new URL(path, siteUrl).href;
- const image = { url: siteUrl + "/social-image", width: 1200, height: 630, alt: "AVRA — Activa lo natural" };
- return { title: { absolute: title }, description, alternates: { canonical: url }, robots: { index, follow: true },
- openGraph: { type: "website", locale: "es_PE", siteName: "AVRA", url, title, description, images: [image] },
- twitter: { card: "summary_large_image", title, description, images: [image.url] } };
+  const url = new URL(path, siteUrl).href;
+  const socialTitle = title.replace(/\bAVRA\b/g, "Avra");
+  const image = { url: siteUrl + "/social-image", width: 1200, height: 630, alt: "Avra — Activa lo natural" };
+
+  return {
+    title: { absolute: browserTitles[path] ?? socialTitle },
+    description,
+    alternates: { canonical: url },
+    robots: { index, follow: true },
+    openGraph: {
+      type: "website",
+      locale: "es_PE",
+      siteName: "Avra",
+      url,
+      title: socialTitle,
+      description,
+      images: [image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: socialTitle,
+      description,
+      images: [image.url],
+    },
+  };
 }
