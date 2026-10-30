@@ -8,7 +8,7 @@ const whatsappUrl = `https://wa.me/51948742332?text=${encodeURIComponent(
 
 export function VendingContactSection() {
   return (
-    <section aria-labelledby="vending-contact-title" className="bg-[#FBF4EF] py-12 sm:py-16 lg:py-20">
+    <section aria-labelledby="vending-contact-title" className="bg-[#FBF4EF] pt-4 pb-12 sm:py-16 lg:py-20">
       <Container>
         <div className="relative isolate overflow-hidden rounded-[24px] bg-[#F8F3EB] shadow-[0_14px_36px_rgba(14,43,35,.09)] sm:rounded-[28px]">
           {/* La nueva imagen tiene un área despejada a la izquierda para el texto. */}
