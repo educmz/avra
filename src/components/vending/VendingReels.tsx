@@ -80,7 +80,7 @@ export function VendingReels() {
           </button>
 
           <div className="grid min-w-0 flex-1 grid-cols-1 items-center justify-items-center gap-4 sm:grid-cols-[minmax(0,.86fr)_minmax(0,1fr)_minmax(0,.86fr)] sm:gap-4 lg:gap-7">
-            {ordered.map((index, position) => {
+            {ordered.map((index) => {
               const reel = reels[index];
               const selected = index === active;
               return (
