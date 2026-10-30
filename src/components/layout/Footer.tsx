@@ -18,14 +18,14 @@ const companyLinks = [
 ];
 
 const linkClass =
-  "w-fit text-[15px] leading-relaxed text-[#FBF4EF]/85 transition-colors hover:text-white focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
+  "w-fit text-[14px] leading-[1.45] text-[#FBF4EF]/85 transition-colors hover:text-white focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
 
 const whatsappUrl = "https://wa.me/51948742332";
 const quoteUrl = "https://wa.me/51948742332?text=Hola%2C%20quiero%20cotizar%20una%20m%C3%A1quina%20vending%20de%20Avra.";
 
 export function Footer() {
   return (
-    <footer className="relative isolate overflow-hidden bg-[#295C50] text-[#FBF4EF]">
+    <footer className="relative isolate overflow-hidden bg-[#295C50] font-[family-name:var(--font-manrope)] text-[#FBF4EF]">
       <svg
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 h-full w-full"
@@ -50,8 +50,8 @@ export function Footer() {
         />
       </svg>
 
-      <Container className="relative z-10 pb-6 pt-14 sm:pt-16 lg:pt-[72px]">
-        <div className="grid grid-cols-2 gap-x-7 gap-y-12 sm:gap-x-12 lg:grid-cols-[1.25fr_1fr_1fr_1.04fr] lg:gap-x-10 xl:gap-x-16">
+      <Container className="relative z-10 pb-4 pt-9 sm:pt-10 lg:pt-11">
+        <div className="grid grid-cols-2 gap-x-7 gap-y-8 sm:gap-x-12 lg:grid-cols-[1.25fr_1fr_1fr_1.04fr] lg:gap-x-9 xl:gap-x-14">
           <div className="col-span-2 flex min-w-0 flex-col items-start lg:col-span-1">
             <Link
               href="/"
@@ -63,18 +63,18 @@ export function Footer() {
                 alt="Avra"
                 width={2172}
                 height={724}
-                className="h-auto w-[176px] brightness-0 invert lg:w-[190px]"
+                className="h-auto w-[148px] brightness-0 invert lg:w-[158px]"
               />
             </Link>
-            <p className="mt-2 text-[16px] font-medium">Activa lo natural.</p>
+            <p className="mt-1 text-[14px] font-medium">Activa lo natural.</p>
 
-            <address className="mt-8 flex flex-col gap-1 not-italic text-[15px] leading-relaxed text-[#FBF4EF]/90">
+            <address className="mt-4 flex flex-col gap-0.5 not-italic text-[14px] leading-[1.45] text-[#FBF4EF]/90">
               <span>Lima, Perú</span>
               <a href="mailto:hola@avra.pe" className={linkClass}>hola@avra.pe</a>
               <a href="tel:+51948742332" className={linkClass}>+51 948 742 332</a>
             </address>
 
-            <div className="mt-7 flex items-center gap-3" aria-label="Redes sociales de Avra">
+            <div className="mt-4 flex items-center gap-2.5" aria-label="Redes sociales de Avra">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -82,7 +82,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="grid size-10 place-items-center rounded-xl bg-[#FF8A00] text-[#224E43] transition-all hover:-translate-y-0.5 hover:bg-[#FBF4EF] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+                  className="grid size-9 place-items-center rounded-lg bg-[#FF8A00] text-[#224E43] transition-all hover:-translate-y-0.5 hover:bg-[#FBF4EF] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
                 >
                   {social.icon}
                 </a>
@@ -91,8 +91,8 @@ export function Footer() {
           </div>
 
           <nav aria-label="Explora Avra" className="flex min-w-0 flex-col items-start">
-            <h2 className="font-heading text-lg font-bold">Explora</h2>
-            <div className="mt-6 flex flex-col items-start gap-3.5">
+            <h2 className="font-[family-name:var(--font-header)] text-[16px] font-semibold">Explora</h2>
+            <div className="mt-4 flex flex-col items-start gap-2.5">
               {exploreLinks.map((item) => (
                 <Link key={item.href} href={item.href} className={linkClass}>
                   {item.label}
@@ -102,8 +102,8 @@ export function Footer() {
           </nav>
 
           <nav aria-label="Empresa e información legal" className="flex min-w-0 flex-col items-start">
-            <h2 className="font-heading text-lg font-bold">Empresa</h2>
-            <div className="mt-6 flex flex-col items-start gap-3.5">
+            <h2 className="font-[family-name:var(--font-header)] text-[16px] font-semibold">Empresa</h2>
+            <div className="mt-4 flex flex-col items-start gap-2.5">
               {companyLinks.map((item) => (
                 <Link key={item.href} href={item.href} className={linkClass}>
                   {item.label}
@@ -113,8 +113,8 @@ export function Footer() {
           </nav>
 
           <div className="col-span-2 flex min-w-0 flex-col items-start lg:col-span-1">
-            <h2 className="font-heading text-lg font-bold">Contacto</h2>
-            <div className="mt-6 flex flex-col items-start gap-3.5">
+            <h2 className="font-[family-name:var(--font-header)] text-[16px] font-semibold">Contacto</h2>
+            <div className="mt-4 flex flex-col items-start gap-2.5">
               <a
                 href={quoteUrl}
                 target="_blank"
@@ -136,10 +136,10 @@ export function Footer() {
             <Link
               href="/libro-de-reclamaciones"
               aria-label="Ir al Libro de Reclamaciones de Avra"
-              className="group mt-8 inline-flex min-h-[104px] w-[220px] max-w-full items-center justify-center gap-3 rounded-xl border border-[#FBF4EF]/45 bg-white/[.025] px-5 py-4 text-center transition-colors hover:border-[#FBF4EF]/80 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="group mt-5 inline-flex min-h-[78px] w-[198px] max-w-full items-center justify-center gap-2.5 rounded-xl border border-[#FBF4EF]/45 bg-white/[.025] px-3.5 py-3 text-center transition-colors hover:border-[#FBF4EF]/80 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
-              <BookOpenText size={29} strokeWidth={1.6} aria-hidden="true" className="shrink-0" />
-              <span className="font-heading text-sm font-bold leading-snug">
+              <BookOpenText size={24} strokeWidth={1.6} aria-hidden="true" className="shrink-0" />
+              <span className="font-[family-name:var(--font-header)] text-[13px] font-semibold leading-tight">
                 Libro de<br />Reclamaciones
               </span>
               <ArrowUpRight size={16} aria-hidden="true" className="self-start opacity-65 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -147,8 +147,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-[#FBF4EF]/25 pt-5 sm:mt-20">
-          <div className="flex flex-col gap-3 text-[13px] text-[#FBF4EF]/85 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 border-t border-[#FBF4EF]/25 pt-4 sm:mt-9">
+          <div className="flex flex-col gap-2 text-[12px] text-[#FBF4EF]/85 sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} Avra. Todos los derechos reservados.</p>
             <p>Diseño y desarrollo <span className="font-semibold text-[#FBF4EF]">educmz</span></p>
           </div>
