@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { AvraMachine3D } from "@/components/vending/AvraMachine3D";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
@@ -28,7 +28,7 @@ export function AvraMachineSection() {
           <div className="min-w-0">
             <div className="rounded-[1.75rem] p-4 sm:p-5" style={{ background: machine.bg }}>
               <div className="relative mx-auto h-[290px] max-w-[400px] sm:h-[380px] lg:h-[430px]">
-                <Image src={machine.image} alt={machine.alt} fill sizes="(min-width:1024px) 42vw, 90vw" className="object-contain" />
+                <AvraMachine3D fallbackSrc={machine.image} fallbackAlt={machine.alt} />
               </div>
             </div>
           </div>
