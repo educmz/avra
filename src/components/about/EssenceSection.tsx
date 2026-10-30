@@ -72,27 +72,27 @@ function EssenceCard({
     <motion.article
       whileHover={{ y: -4 }}
       transition={{ duration: 0.25 }}
-      className={`${styles.card} group flex min-w-0 flex-col lg:flex-row ${featured ? "lg:min-h-[270px] xl:min-h-[280px]" : "lg:min-h-[275px] xl:min-h-[285px]"}`}
+      className={`${styles.card} group flex min-w-0 flex-row sm:flex-col lg:flex-row ${featured ? "lg:min-h-[270px] xl:min-h-[280px]" : "lg:min-h-[275px] xl:min-h-[285px]"}`}
     >
       <div
-        className={`relative order-1 h-[185px] w-full shrink-0 overflow-hidden bg-[#EDE4DA] sm:h-[220px] lg:h-auto lg:w-[42%] ${photoRight ? `lg:order-2 ${styles.photoRight}` : `lg:order-1 ${styles.photoLeft}`}`}
+        className={`relative order-1 min-h-[180px] w-[34%] shrink-0 overflow-hidden bg-[#EDE4DA] sm:h-[220px] sm:min-h-0 sm:w-full lg:h-auto lg:w-[42%] ${photoRight ? `lg:order-2 ${styles.photoRight}` : `lg:order-1 ${styles.photoLeft}`}`}
       >
         <EssencePhoto item={item} />
       </div>
 
       <div
-        className={`order-2 flex min-w-0 flex-1 flex-col justify-center px-5 py-5 sm:px-6 lg:px-5 lg:py-5 xl:px-7 ${photoRight ? "lg:order-1" : "lg:order-2"}`}
+        className={`order-2 flex min-w-0 flex-1 flex-col justify-center px-3 py-3 sm:px-6 sm:py-5 lg:px-5 lg:py-5 xl:px-7 ${photoRight ? "lg:order-1" : "lg:order-2"}`}
       >
-        <p className="text-xs font-bold uppercase tracking-[.14em] text-[#295C50]">
+        <p className="text-[10px] font-bold uppercase tracking-[.1em] text-[#295C50] sm:text-xs sm:tracking-[.14em]">
           {item.label}
         </p>
-        <h3 className="mt-3 font-heading text-xl font-extrabold uppercase leading-tight text-[#302E2A] sm:text-2xl">
+        <h3 className="mt-1.5 font-heading text-[15px] font-extrabold uppercase leading-[1.15] text-[#302E2A] sm:mt-3 sm:text-2xl sm:leading-tight">
           {item.title}
         </h3>
-        <p className="mt-3 text-[15px] leading-6 text-[#302E2A]/75 sm:text-base sm:leading-7">
+        <p className="mt-2 text-[12px] leading-[1.45] text-[#302E2A]/75 sm:mt-3 sm:text-base sm:leading-7">
           {item.description}
         </p>
-        <span aria-hidden="true" className="mt-4 block h-[4px] w-[96px] rounded-full bg-[#EA6F32]" />
+        <span aria-hidden="true" className="mt-2 block h-[3px] w-12 rounded-full bg-[#EA6F32] sm:mt-4 sm:h-[4px] sm:w-[96px]" />
       </div>
     </motion.article>
   );
@@ -102,12 +102,12 @@ export function EssenceSection() {
   return (
     <section
       aria-labelledby="about-essence-title"
-      className={`${styles.section} py-10 sm:py-12 lg:py-14`}
+      className={`${styles.section} py-8 sm:py-12 lg:py-14`}
     >
       <Container className="relative z-10">
-        <div className="mx-auto grid max-w-[1260px] grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
+        <div className="mx-auto grid max-w-[1260px] grid-cols-1 gap-3 sm:gap-4 lg:grid-cols-12 lg:gap-5">
           {/* Encabezado: misma tipografía y jerarquía que las demás secciones */}
-          <div className="flex min-w-0 flex-col items-center justify-center px-2 py-7 text-center sm:py-10 lg:col-span-5 lg:items-start lg:py-8 lg:px-0 lg:text-left">
+          <div className="flex min-w-0 flex-col items-center justify-center px-2 py-4 text-center sm:py-10 lg:col-span-5 lg:items-start lg:py-8 lg:px-0 lg:text-left">
             <AnimatedTitle
               id="about-essence-title"
               text="LO QUE NOS MUEVE"
