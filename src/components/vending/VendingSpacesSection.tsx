@@ -44,7 +44,7 @@ export function VendingSpacesSection() {
             />
             <span
               aria-hidden="true"
-              className="mx-auto mt-5 block h-[3px] w-[72px] rounded-full bg-[#EA6F32]"
+              className="mx-auto mt-5 block h-[3px] w-[96px] rounded-full bg-[#EA6F32]"
             />
             <p className="mx-auto mt-5 max-w-[760px] text-center text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
               Nuestras máquinas en los lugares donde las personas trabajan,
