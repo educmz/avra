@@ -60,10 +60,12 @@ function EssencePhoto({ item }: { item: EssenceItem }) {
 function EssenceCard({
   item,
   imageSide,
+  mobileImageRight = false,
   featured = false,
 }: {
   item: EssenceItem;
   imageSide: "left" | "right";
+  mobileImageRight?: boolean;
   featured?: boolean;
 }) {
   const photoRight = imageSide === "right";
@@ -75,13 +77,13 @@ function EssenceCard({
       className={`${styles.card} group flex min-w-0 flex-row sm:flex-col lg:flex-row ${featured ? "lg:min-h-[270px] xl:min-h-[280px]" : "lg:min-h-[275px] xl:min-h-[285px]"}`}
     >
       <div
-        className={`relative order-1 min-h-[180px] w-[34%] shrink-0 overflow-hidden bg-[#EDE4DA] sm:h-[220px] sm:min-h-0 sm:w-full lg:h-auto lg:w-[42%] ${photoRight ? `lg:order-2 ${styles.photoRight}` : `lg:order-1 ${styles.photoLeft}`}`}
+        className={`relative ${mobileImageRight ? "order-2 sm:order-1" : "order-1"} min-h-[180px] w-[34%] shrink-0 overflow-hidden bg-[#EDE4DA] sm:h-[220px] sm:min-h-0 sm:w-full lg:h-auto lg:w-[42%] ${photoRight ? `lg:order-2 ${styles.photoRight}` : `lg:order-1 ${styles.photoLeft}`}`}
       >
         <EssencePhoto item={item} />
       </div>
 
       <div
-        className={`order-2 flex min-w-0 flex-1 flex-col justify-center px-3 py-3 sm:px-6 sm:py-5 lg:px-5 lg:py-5 xl:px-7 ${photoRight ? "lg:order-1" : "lg:order-2"}`}
+        className={`${mobileImageRight ? "order-1 sm:order-2" : "order-2"} flex min-w-0 flex-1 flex-col justify-center px-3 py-3 sm:px-6 sm:py-5 lg:px-5 lg:py-5 xl:px-7 ${photoRight ? "lg:order-1" : "lg:order-2"}`}
       >
         <p className="text-[10px] font-bold uppercase tracking-[.1em] text-[#295C50] sm:text-xs sm:tracking-[.14em]">
           {item.label}
@@ -126,7 +128,7 @@ export function EssenceSection() {
 
           {/* Misión y Visión abajo, en dos tarjetas equilibradas */}
           <div className="min-w-0 lg:col-span-6">
-            <EssenceCard item={items.mission} imageSide="left" />
+            <EssenceCard item={items.mission} imageSide="left" mobileImageRight />
           </div>
           <div className="min-w-0 lg:col-span-6">
             <EssenceCard item={items.vision} imageSide="right" />
