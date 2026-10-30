@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowDownRight, Clock3, CupSoda, MapPin } from "lucide-react";
+import { Clock3, CupSoda, MapPin } from "lucide-react";
 import { motion } from "motion/react";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { Container } from "@/components/ui/Container";
@@ -59,9 +59,17 @@ export function VendingBenefitsSection() {
               transition={{ duration: 0.55, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
               <article className="group relative flex h-full min-h-[210px] flex-col items-start overflow-hidden rounded-[24px] border border-[#295C50]/15 border-t-[4px] border-t-[#EA6F32] bg-white px-6 py-6 shadow-[0_10px_28px_rgba(35,65,55,0.07)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(35,65,55,0.12)] motion-reduce:transform-none motion-reduce:transition-none sm:min-h-[225px] sm:px-7 sm:py-7">
-                <span className="grid size-14 shrink-0 place-items-center rounded-[16px] bg-[#E9F0EA] text-[#295C50]">
-                  <Icon size={30} strokeWidth={2} aria-hidden="true" />
-                </span>
+                <div className="flex w-full items-start justify-between gap-4">
+                  <span className="grid size-14 shrink-0 place-items-center rounded-[16px] bg-[#E9F0EA] text-[#295C50]">
+                    <Icon size={30} strokeWidth={2} aria-hidden="true" />
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="font-heading text-[44px] font-extrabold leading-none tracking-tight text-[#EA6F32]/30 transition-[color,transform] duration-300 group-hover:scale-110 group-hover:text-[#EA6F32]/75 motion-reduce:transform-none motion-reduce:transition-none"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
                 <h3 className="mt-5 font-heading text-[22px] font-extrabold uppercase leading-[1.1] tracking-tight text-[#295C50] sm:text-[24px]">
                   {title}
                 </h3>
@@ -73,12 +81,6 @@ export function VendingBenefitsSection() {
           ))}
         </div>
 
-        <div className="mt-8 flex justify-center sm:mt-10">
-          <a href="#avra" className="avra-cta inline-flex min-h-11 items-center gap-2">
-            <span>Conoce nuestras máquinas</span>
-            <ArrowDownRight size={18} aria-hidden="true" />
-          </a>
-        </div>
       </Container>
     </section>
   );
