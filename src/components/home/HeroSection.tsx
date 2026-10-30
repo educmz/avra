@@ -19,16 +19,7 @@ export function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [interaction, setInteraction] = useState(0);
   const [hidden, setHidden] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
   const touchStart = useRef<{ x: number; y: number } | null>(null);
-
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const updateMotion = () => setReducedMotion(media.matches);
-    updateMotion();
-    media.addEventListener("change", updateMotion);
-    return () => media.removeEventListener("change", updateMotion);
-  }, []);
 
   useEffect(() => {
     const updateVisibility = () => setHidden(document.hidden);
@@ -112,7 +103,7 @@ export function HeroSection() {
                 <img
                   {...desktopImage}
                   alt={slide.alt}
-                  className={`${desktopImage.className} transition-transform duration-[6500ms] ease-out motion-reduce:transition-none scale-100`}
+                  className={desktopImage.className}
                 />
               </picture>
             </div>
