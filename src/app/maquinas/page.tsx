@@ -5,7 +5,6 @@ import { VendingBenefitsSection } from "@/components/vending/VendingBenefitsSect
 import { VendingSpacesSection } from "@/components/vending/VendingSpacesSection";
 import { AvraMachineSection } from "@/components/vending/AvraMachineSection";
 import { NunaMachineSection } from "@/components/vending/NunaMachineSection";
-import { VendingContactSection } from "@/components/vending/VendingContactSection";
 
 export const metadata: Metadata = {
   title: "Vending saludable",
@@ -49,7 +48,6 @@ export default function MachinesPage() {
       <NunaMachineSection />
       <VendingReels />
       <VendingSpacesSection />
-      <VendingContactSection />
     </main>
   );
 }

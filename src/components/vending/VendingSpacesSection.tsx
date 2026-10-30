@@ -1,69 +1,56 @@
+import Image from "next/image";
 import { AnimatedTitle } from "@/components/sections/AnimatedTitle";
 import { Container } from "@/components/ui/Container";
 
-// Fotografías referenciales de tipos de espacios, no de instalaciones de Avra.
-// Imágenes originales de Unsplash servidas desde su CDN.
-const spaces = [
-  {
-    name: "Oficinas",
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
-    alt: "Interior de una oficina moderna con áreas de trabajo y descanso",
-    position: "center",
-  },
-  {
-    name: "Universidades",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80",
-    alt: "Estudiantes trabajando juntos en un espacio de estudio",
-    position: "center",
-  },
-  {
-    name: "Gimnasios",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80",
-    alt: "Gimnasio con equipos de entrenamiento",
-    position: "center",
-  },
-];
+// Imagen temporal: sustituir este archivo por la fotografía definitiva que aporte el cliente.
+// Se reutiliza el recurso existente para evitar imágenes rotas mientras llega la nueva.
+const spaceImage = "/images/vending/cta-vending.png";
+
+const whatsappUrl = `https://wa.me/51948742332?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20m%C3%A1quinas%20expendedoras%20Avra%20para%20mi%20establecimiento.`;
 
 export function VendingSpacesSection() {
   return (
-    <section aria-labelledby="vending-spaces-title" className="bg-background py-10 sm:py-12 lg:py-14">
+    <section aria-labelledby="vending-spaces-title" className="bg-background py-10 sm:py-14 lg:py-20">
       <Container>
-        <div className="mx-auto max-w-3xl text-center">
-          <AnimatedTitle
-            id="vending-spaces-title"
-            text="AVRA EN TU ESPACIO"
-            className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]"
-          />
-          <span aria-hidden="true" className="mx-auto mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
-          <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
-            Una opción de alimentación práctica para distintos entornos y momentos del día.
-          </p>
-        </div>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-3 sm:gap-5 lg:mt-10 lg:gap-6">
-          {spaces.map((space) => (
-            <article
-              key={space.name}
-              className="group relative isolate aspect-[16/10] overflow-hidden rounded-[22px] bg-[#E8F0DE] shadow-[0_12px_30px_rgba(48,46,42,.09)] sm:aspect-[4/5] lg:aspect-[5/4]"
-            >
-              <div
-                role="img"
-                aria-label={space.alt}
-                className="absolute inset-0 bg-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transition-none"
-                style={{ backgroundImage: `url("${space.image}")`, backgroundPosition: space.position }}
+        <div className="isolate overflow-hidden rounded-[26px] border border-[#302E2A]/[0.06] bg-[#F8EEE5] shadow-[0_14px_45px_rgba(48,46,42,0.06)] sm:rounded-[32px]">
+          <div className="grid lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)]">
+            <div className="flex min-w-0 flex-col justify-center px-6 py-10 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
+              <p className="font-heading text-xs font-extrabold uppercase tracking-[0.2em] text-[#EA6F32] sm:text-sm">
+                Avra en tu espacio
+              </p>
+              <AnimatedTitle
+                id="vending-spaces-title"
+                text={"Haz que tu espacio
+ofrezca algo más."}
+                className="mt-5 max-w-[16ch] font-heading text-[30px] font-extrabold uppercase leading-[1.08] tracking-[-0.03em] text-[#302E2A] sm:text-[38px] lg:text-[42px]"
               />
-              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#172D27]/85 via-[#172D27]/10 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-5 pt-12 sm:px-5 sm:pb-6 lg:px-7 lg:pb-7">
-                <h3 className="font-heading text-xl font-extrabold uppercase leading-tight tracking-tight text-white sm:text-[22px]">
-                  {space.name}
-                </h3>
+              <span aria-hidden="true" className="mt-5 block h-[3px] w-14 rounded-full bg-[#EA6F32]" />
+              <p className="mt-6 max-w-[51ch] text-base leading-7 text-[#302E2A]/80 sm:text-lg sm:leading-8">
+                ¿Te gustaría contar con una máquina expendedora Avra en tu establecimiento?
+                Cuéntanos sobre tu espacio y conversemos sobre las opciones disponibles.
+              </p>
+              <div className="mt-7 flex flex-wrap items-center gap-4">
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="avra-cta">
+                  <span>Solicitar información</span>
+                </a>
               </div>
-            </article>
-          ))}
+              <p className="mt-4 max-w-[49ch] text-sm leading-6 text-[#302E2A]/65">
+                Cada espacio es diferente. Conversemos sobre el tuyo.
+              </p>
+            </div>
+
+            <div className="relative min-h-[280px] overflow-hidden bg-[#E9DED2] sm:min-h-[370px] lg:min-h-[470px]">
+              <Image
+                src={spaceImage}
+                alt="Ambiente cálido y natural, como referencia de los espacios que podrían contar con Avra"
+                fill
+                sizes="(min-width: 1024px) 45vw, (min-width: 640px) 90vw, 100vw"
+                className="object-cover object-[right_center]"
+              />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#173E34]/10 via-transparent to-transparent" />
+            </div>
+          </div>
         </div>
-        <p className="mt-5 text-center text-xs leading-5 text-[#302E2A]/60">
-          Imágenes referenciales de posibles espacios. No representan instalaciones actuales de Avra.
-        </p>
       </Container>
     </section>
   );
