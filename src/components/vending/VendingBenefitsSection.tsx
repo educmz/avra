@@ -40,13 +40,10 @@ export function VendingBenefitsSection() {
     >
       <Container>
         <div className="mx-auto max-w-[820px] text-center">
-          <p className="font-heading text-xs font-bold uppercase tracking-[0.22em] text-[#295C50] sm:text-sm">
-            ¿Por qué elegir Avra?
-          </p>
           <AnimatedTitle
             id="vending-overview-title"
-            text="Más opciones para disfrutar tu día"
-            className="mt-3 font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]"
+            text="Elige fácil, disfruta más"
+            className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]"
           />
           <span
             aria-hidden="true"
