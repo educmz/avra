@@ -41,7 +41,7 @@ export function VendingBenefitsSection() {
           />
           <span
             aria-hidden="true"
-            className="mx-auto mt-5 block h-[3px] w-[96px] rounded-full bg-[#EA6F32]"
+            className="mx-auto mt-5 block h-[4px] w-[96px] rounded-full bg-[#EA6F32]"
           />
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-7 text-[#302E2A]/75 sm:text-lg sm:leading-8">
             Bebidas naturales, comidas y snacks a tu alcance, para disfrutar de cada pausa de forma práctica y sin complicaciones.

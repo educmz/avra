@@ -68,7 +68,7 @@ export function FeaturedFavoritesSection() {
         <div className="grid gap-7 lg:grid-cols-[minmax(0,300px)_minmax(0,1fr)] lg:items-center lg:gap-10">
           <div>
             <AnimatedTitle id="featured-favorites-title" text="Nuestros imperdibles" className="font-heading text-[28px] font-extrabold uppercase leading-tight sm:text-[34px] lg:text-[40px]" />
-            <div className="mt-4 h-[3px] w-[96px] rounded-full bg-[#F9B444]" />
+            <div className="mt-4 h-[4px] w-[96px] rounded-full bg-[#F9B444]" />
             <p className="mt-4 max-w-sm text-justify text-base leading-7 text-white/85 sm:text-lg sm:leading-8">Sabores que enamoran desde el primer bocado y el primer sorbo.</p>
           </div>
           <div className="min-w-0">

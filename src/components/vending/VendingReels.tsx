@@ -111,7 +111,7 @@ export function VendingReels() {
             text="VENDING EN ACCIÓN"
             className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-white sm:text-[34px] lg:text-[40px]"
           />
-          <span aria-hidden="true" className="mx-auto mt-5 block h-[3px] w-[96px] rounded-full bg-[#EA6F32]" />
+          <span aria-hidden="true" className="mx-auto mt-5 block h-[4px] w-[96px] rounded-full bg-[#EA6F32]" />
           <p className="mx-auto mt-5 max-w-[700px] text-center text-base leading-7 text-white/80 sm:text-lg sm:leading-8 lg:max-w-none lg:whitespace-nowrap">
             Mira nuestras máquinas en acción y descubre cómo se vive la experiencia de vending saludable.
           </p>

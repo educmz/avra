@@ -92,7 +92,7 @@ function EssenceCard({
         <p className="mt-3 text-[15px] leading-6 text-[#302E2A]/75 sm:text-base sm:leading-7">
           {item.description}
         </p>
-        <span aria-hidden="true" className="mt-4 block h-[3px] w-[96px] rounded-full bg-[#EA6F32]" />
+        <span aria-hidden="true" className="mt-4 block h-[4px] w-[96px] rounded-full bg-[#EA6F32]" />
       </div>
     </motion.article>
   );
@@ -113,7 +113,7 @@ export function EssenceSection() {
               text="LO QUE NOS MUEVE"
               className="font-heading text-[28px] font-extrabold uppercase leading-[1.08] tracking-tight text-[#302E2A] sm:text-[34px] lg:text-[40px]"
             />
-            <span aria-hidden="true" className="mt-5 block h-[3px] w-[96px] rounded-full bg-[#EA6F32]" />
+            <span aria-hidden="true" className="mt-5 block h-[4px] w-[96px] rounded-full bg-[#EA6F32]" />
             <p className="mt-5 max-w-[62ch] text-base leading-7 text-[#302E2A]/80 sm:text-lg sm:leading-8">
               Estas ideas orientan lo que hacemos hoy y la forma en que queremos seguir creciendo.
             </p>
