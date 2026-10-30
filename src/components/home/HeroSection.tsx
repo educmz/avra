@@ -6,13 +6,13 @@ import { useEffect, useRef, useState } from "react";
 
 const SLIDE_DURATION = 5500;
 const slides = [
-  { id: "slide-01", src: "/images/home/carousel/slide-01.png", alt: "Avra: imagen 1 del carrusel principal" },
-  { id: "slide-02", src: "/images/home/carousel/slide-02.png", alt: "Avra: imagen 2 del carrusel principal" },
-  { id: "slide-03", src: "/images/home/carousel/slide-03.png", alt: "Avra: imagen 3 del carrusel principal" },
-  { id: "slide-04", src: "/images/home/carousel/slide-04.png", alt: "Avra: imagen 4 del carrusel principal" },
-  { id: "slide-05", src: "/images/home/carousel/slide-05.png", alt: "Avra: imagen 5 del carrusel principal" },
-  { id: "slide-06", src: "/images/home/carousel/slide-06.png", alt: "Avra: imagen 6 del carrusel principal" },
-  { id: "slide-07", src: "/images/home/carousel/slide-07.png", alt: "Avra: imagen 7 del carrusel principal" },
+  { id: "slide-01", src: "/images/home/carousel/slide-01.png", mobileSrc: "/images/home/carousel/slide-01-mobile.png", alt: "Avra: imagen 1 del carrusel principal" },
+  { id: "slide-02", src: "/images/home/carousel/slide-02.png", mobileSrc: "/images/home/carousel/slide-02-mobile.png", alt: "Avra: imagen 2 del carrusel principal" },
+  { id: "slide-03", src: "/images/home/carousel/slide-03.png", mobileSrc: "/images/home/carousel/slide-03-mobile.png", alt: "Avra: imagen 3 del carrusel principal" },
+  { id: "slide-04", src: "/images/home/carousel/slide-04.png", mobileSrc: "/images/home/carousel/slide-04-mobile.png", alt: "Avra: imagen 4 del carrusel principal" },
+  { id: "slide-05", src: "/images/home/carousel/slide-05.png", mobileSrc: "/images/home/carousel/slide-05-mobile.png", alt: "Avra: imagen 5 del carrusel principal" },
+  { id: "slide-06", src: "/images/home/carousel/slide-06.png", mobileSrc: "/images/home/carousel/slide-06-mobile.png", alt: "Avra: imagen 6 del carrusel principal" },
+  { id: "slide-07", src: "/images/home/carousel/slide-07.png", mobileSrc: "/images/home/carousel/slide-07-mobile.png", alt: "Avra: imagen 7 del carrusel principal" },
 ] as const;
 
 export function HeroSection() {
@@ -87,15 +87,16 @@ export function HeroSection() {
       <div data-home-hero className="group relative aspect-[1122/1402] w-full overflow-hidden bg-[#E8EFE7] md:aspect-auto md:h-[clamp(280px,34.6vw,650px)]">
         {slides.map((slide, index) => {
           const isActive = index === activeSlide;
-          const { props: image } = getImageProps({
-            src: slide.src,
+          const imageOptions = {
             alt: slide.alt,
-            fill: true,
+            fill: true as const,
             sizes: "100vw",
-            loading: index === 0 ? "eager" : "lazy",
-            fetchPriority: index === 0 ? "high" : "auto",
+            loading: index === 0 ? ("eager" as const) : ("lazy" as const),
+            fetchPriority: index === 0 ? ("high" as const) : ("auto" as const),
             className: "h-full w-full object-cover object-center",
-          });
+          };
+          const { props: desktopImage } = getImageProps({ ...imageOptions, src: slide.src });
+          const { props: mobileImage } = getImageProps({ ...imageOptions, src: slide.mobileSrc });
 
           return (
             <div
@@ -106,10 +107,13 @@ export function HeroSection() {
               aria-hidden={!isActive}
               className={`absolute inset-0 overflow-hidden transition-opacity duration-[1000ms] ease-in-out motion-reduce:transition-none ${isActive ? "z-10 opacity-100" : "pointer-events-none z-0 opacity-0"}`}
             >
-              <img
-                {...image}
-                className={`${image.className} transition-transform duration-[6500ms] ease-out motion-reduce:transition-none ${isActive && !reducedMotion ? "scale-[1.035]" : "scale-100"}`}
-              />
+              <picture>
+                <source media="(max-width: 767px)" srcSet={mobileImage.srcSet} sizes={mobileImage.sizes} />
+                <img
+                  {...desktopImage}
+                  className={`${desktopImage.className} transition-transform duration-[6500ms] ease-out motion-reduce:transition-none ${isActive && !reducedMotion ? "scale-[1.035]" : "scale-100"}`}
+                />
+              </picture>
             </div>
           );
         })}
