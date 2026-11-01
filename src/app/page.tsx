@@ -16,4 +16,4 @@ export default function Home() {
     </div>
   );
 }
-export const metadata = pageMetadata("/", "AVRA | Alimentos Saludables y Máquinas Vending", "Descubre AVRA: alimentos y bebidas saludables para tu día a día. Conoce nuestras máquinas vending y lleva opciones saludables a tu espacio.", true);
+export const metadata = pageMetadata("/", "Avra | Activa lo natural", "Avra ofrece una carta de alimentos y bebidas para disfrutar cada día: smoothies, waffles, sándwiches y más. Descubre también nuestro vending saludable.", true);
