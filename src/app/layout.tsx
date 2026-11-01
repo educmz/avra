@@ -72,8 +72,8 @@ export default function RootLayout({
 <Header />
 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
  "@context": "https://schema.org", "@graph": [
- { "@type": "Organization", "@id": siteUrl + "/#organization", name: "AVRA", url: siteUrl, logo: siteUrl + "/images/brand/avra-wordmark-black.webp" },
- { "@type": "WebSite", "@id": siteUrl + "/#website", name: "AVRA", url: siteUrl, inLanguage: "es-PE", publisher: { "@id": siteUrl + "/#organization" } }
+ { "@type": "Organization", "@id": siteUrl + "/#organization", name: siteConfig.name, url: siteUrl, description: siteConfig.description, logo: siteUrl + "/images/brand/avra-wordmark-black.webp" },
+ { "@type": "WebSite", "@id": siteUrl + "/#website", name: siteConfig.name, url: siteUrl, description: siteConfig.description, inLanguage: "es-PE", publisher: { "@id": siteUrl + "/#organization" } }
  ] }).replace(/</g, "\u003c") }} />
 <Analytics />
 
