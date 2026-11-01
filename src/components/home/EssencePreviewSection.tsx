@@ -24,7 +24,7 @@ export function EssencePreviewSection() {
             />
             <span aria-hidden="true" className="mt-4 block h-[4px] w-[96px] rounded-full bg-[#EA6F32] sm:mt-5" />
             <p className="mt-5 max-w-[47ch] text-left text-base leading-7 text-[#302E2A] sm:mt-6 sm:text-justify sm:text-lg sm:leading-8 sm:text-[#302E2A]/85">
-              Creemos que disfrutar de lo natural debe ser fácil. Por eso acercamos opciones deliciosas y prácticas a cada momento de tu día.
+              En Avra reunimos alimentos y bebidas para disfrutar cada momento del día. Nuestra carta y propuesta de vending saludable acercan opciones deliciosas y prácticas a tu rutina.
             </p>
             <Link href="/nosotros" className="avra-cta mt-6 w-fit sm:mt-8">
               <span>Conoce Avra</span>
